@@ -161,6 +161,8 @@ if __name__ == '__main__':
 
 class ExportInjectTests(unittest.TestCase):
     def test_inject_replaces_only_marker_region_and_is_idempotent(self):
+        if not (REPO_ROOT / 'research' / 'export_model.py').exists():
+            raise unittest.SkipTest('research/export_model.py not present in this checkout')
         from export_model import inject_blob
         src = ('HEAD\n# BEGIN GENERATED MODEL BLOB\n'
                "MODEL_B64 = 'old'\n"
@@ -173,6 +175,8 @@ class ExportInjectTests(unittest.TestCase):
         self.assertEqual(once, inject_blob(once, 'QUJD'))
 
     def test_inject_without_markers_raises(self):
+        if not (REPO_ROOT / 'research' / 'export_model.py').exists():
+            raise unittest.SkipTest('research/export_model.py not present in this checkout')
         from export_model import inject_blob
         with self.assertRaises(ValueError):
             inject_blob('no markers here', 'QUJD')
@@ -191,6 +195,8 @@ class RealBlobGuardTests(unittest.TestCase):
         self.assertEqual(model['schema'], 1)
         self.assertEqual(model['n_features'], 44)
         self.assertEqual(len(model['feature_keys']), 44)
+        if not (REPO_ROOT / 'research' / 'features.py').exists():
+            raise unittest.SkipTest('research/features.py not present in this checkout')
         import features
         self.assertEqual(model['feature_keys'], features.FEATURE_KEYS)
         self.assertTrue(math.isfinite(model['floor']) and model['floor'] > 0.0)
@@ -224,11 +230,15 @@ class FeatureParityTests(unittest.TestCase):
         return a == b
 
     def test_t3_feature_keys_order_identical(self):
+        if not (REPO_ROOT / 'research' / 'features.py').exists():
+            raise unittest.SkipTest('research/features.py not present in this checkout')
         import features
         self.assertEqual(policy.FEATURE_KEYS, features.FEATURE_KEYS)
 
     def test_t3_pair_features_identical_across_variants_and_days(self):
         import itertools
+        if not (REPO_ROOT / 'research' / 'features.py').exists():
+            raise unittest.SkipTest('research/features.py not present in this checkout')
         import features
         checked = 0
         for state in self._capture_states():
@@ -259,6 +269,8 @@ class ResearchRowParityTests(unittest.TestCase):
 
     def test_research_stored_rows_match_policy_features_on_replay(self):
         import csv as _csv
+        if not (REPO_ROOT / 'research' / 'collect.py').exists():
+            raise unittest.SkipTest('research/collect.py not present in this checkout')
         from collect import RandomCollector
         rows_path = REPO_ROOT / 'research' / 'out_scale800' / 'rows.csv'
         if not rows_path.exists():
@@ -747,6 +759,8 @@ class DecideDispatchTests(unittest.TestCase):
         self.assertNotIn('audit_structure_disclosure', src)
 
     def test_t11_feature_keys_have_no_forbidden_tokens(self):
+        if not (REPO_ROOT / 'research' / 'features.py').exists():
+            raise unittest.SkipTest('research/features.py not present in this checkout')
         import features
         for key in features.FEATURE_KEYS:
             for token in ('future_', 'hidden_', 'ground_truth', 'oracle'):
