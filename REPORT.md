@@ -83,8 +83,8 @@ Caveats stated rather than smoothed: waits are conditioned on being served, so `
 
 - **Local (host Python 3.13.5):** full official evaluation of 18 episodes in 319 s wall; mean inference 15.16 s/episode = about 0.25 s per decision, against the official 10 s-per-decision limit. `test_policy` T10 latency probes: ask phase 0.50 s, match phase 0.16 s on a day-50 replay (gates < 9 s / < 9 s passed).
 - **Container (`python:3.12.7-slim`, Docker 29.8.0):** image built in 5.2 s with no credentials and a build context containing only `kit.py`, `policy.py`, `Dockerfile`; container evaluation exit 0 in 65.3 s; in-container inference 60.0 s/episode (about 1 s per decision) with every decision inside the 10 s limit; episode digest byte-identical to local (1/1).
-- **Test suite:** 144 tests in 165.6 s, `OK (skipped=1)`; the skip is the Docker-latency test's own guard (daemon not yet started at that moment) - it is a conditional skip, not a failure. A clean checkout of the pinned commit runs the 81 root tests (the additional 63 come from the untracked research tree present in this workspace).
-- **Data integrity:** `verify_data.py` -> `verified: true`, 71 files, counts exactly matching PROBLEM_STATEMENT.md section 14.
+- **Test suite:** workspace final run: 144 tests in 184.3 s, `OK` (exit 0) - 81 root tests + 63 `research/test_pipeline` tests (untracked research tree present); a pre-fix run had shown `OK (skipped=1)` (the Docker-latency test skipping itself while the daemon was still down). A fresh `git clone` of the pinned commit also passes: 81 tests, `OK (skipped=8)`, exit 0 in 31.1 s - the 8 skips are the suite's guards for research-only assets (`features.py`, `export_model.py`, `collect.py`, `rows.csv`) deliberately not part of the pinned build.
+- **Data integrity:** `verify_data.py` -> `verified: true`, 71 files, counts exactly matching PROBLEM_STATEMENT.md section 14. Reproduced identically in a fresh clone of the pinned commit after `.gitattributes` (`* -text`) pinned byte-stable checkout (a machine-wide `core.autocrlf` had rewritten cloned data bytes and broken the recorded hashes).
 
 ## 8. Hypothesis-driven ablation: the score-floor filter (existing experiment) [C]/[I]
 
@@ -131,6 +131,7 @@ Overall research conclusion, stated exactly as the evidence supports: **the subm
 - Host (Python 3.13.5) and container (3.12.7) environments differ; action digests matched across both, but only the greedy path was cross-checked this way.
 - Environment/determinism: greedy is RNG-free; no `PYTHONHASHSEED` pin is required for it. Timing figures are single-run measurements on one machine.
 - `organise.py` (private holdout preparation) was never executed in this workspace; no private data exists here to leak.
+- Two packaging corrections were made only after a fresh-clone validation exposed them, each minimal and re-validated: seven `test_policy.py` tests now skip cleanly when the untracked `research/` tree is absent (workspace behaviour unchanged - all 144 still run), and `.gitattributes` (`* -text`) pins byte-stable checkout so the recorded data checksums survive any cloner's `core.autocrlf`. Neither touches policy behaviour; commands C-E were unaffected and their evidence stands on unchanged source bytes.
 
 **Remaining uncertainty, in one sentence:** we have verified that the submitted build is correct, fast, deterministic and spec-compliant; we have *not* established that greedy is optimal, that any tested alternative is better, or that the demonstrated mechanisms (floor suppression, gate equivalence) would generalize beyond the seeds and variants studied.
 
