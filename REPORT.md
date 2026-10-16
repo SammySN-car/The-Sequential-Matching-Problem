@@ -66,6 +66,16 @@ MSMI/100 by scenario family:
 
 Reading: clarifications matter enormously (removing them costs 0.25 MSMI/100 and 0.23 coverage); random-feasible matching is competitive with greedy on this seed grid (0.278 vs 0.389 primary, overlapping scenario pattern); A+C costs roughly double the clarification budget and does not outperform greedy here. These are descriptive differences on 18 episodes - consistent with the larger research record (section 9), which found no reliable alternative to greedy.
 
+**Per-seed variation (REPORT_GUIDE item 5).** Each cell is the mean over the six scenario variants for that seed (one episode per seed x variant, drawn from the same 18-episode files above - no new runs). Scenarios stay separate from the seed dimension and are shown in the table above; the funnel metrics (served/unserved members, waits, ask cost, missing feedback) remain pooled in section 6 rather than duplicated at this sample size.
+
+| Seed | greedy (submitted) | random-feasible | A+C research arm (`ac`) | no-clarification |
+|---|---|---|---|---|
+| 101 | 0.500 | 0.250 | 0.417 | 0.333 |
+| 102 | 0.333 | 0.500 | 0.083 | 0.000 |
+| 103 | 0.333 | 0.083 | 0.250 | 0.083 |
+
+What varies: greedy leads on seeds 101 and 103 and ranks second on 102; the arm ordering changes with the seed (seed-mean MSMI spans: greedy 0.333-0.500, random-feasible 0.083-0.500, A+C 0.083-0.417, no-clarification 0.000-0.333). Coverage varies much less (greedy 0.353-0.408, random-feasible 0.354-0.412, A+C 0.315-0.390, no-clarification 0.127-0.174). This is a 3-seed, 18-episode descriptive view: no confidence intervals, significance tests or generalizable ranking are claimed from it. The A+C column carries the section 10 provenance caveat (7 October source version, no digest-level re-verification against current code, not claimed bit-identical).
+
 ## 6. Coverage, waiting times, clarification costs and missing feedback [P]
 
 Computed from the same four `results/*.json` files. `first_introduction_wait_days` is the evaluator's per-served-member delay (first introduction day minus arrival day; `evaluate.py` L103-113); `missing_feedback` is the simulator's per-episode count of missing feedback events; both are means over the 18 episodes.
@@ -78,6 +88,12 @@ Computed from the same four `results/*.json` files. `first_introduction_wait_day
 | no_asks | 0.1428 | 28.6 | 171.4 | 4.17 | 0.0 | 13.3 |
 
 Caveats stated rather than smoothed: waits are conditioned on being served, so `no_asks` shows a shorter wait only because it serves 28.6 members instead of ~74 (selection effect, not a latency win); A+C both serves fewer members and waits longer (11.8 days) while spending twice the clarification budget; lower `missing_feedback` counts track lower introduction volume, not better feedback handling. No arm-level causal claim is made from these descriptors.
+
+**Failure mechanisms under partial observation (PROBLEM_STATEMENT.md L224; REPORT_GUIDE items 2 and 7).** These are structural properties of the supplied simulator that bound every arm's results. No quantified score loss is attributed to any of them: no arm-level counterfactual isolating them was run.
+
+- *Withheld or missing answers.* Clarification cannot recover everything. Declined answers stay unavailable and are never silently imputed (`kit.py` `resolve_asks` docstring, L113-114; declined fields are skipped at L127), and a member whose hard fields are still unobserved has eligibility status `needs_clarification`, so the simulator rejects any introduction that is not `feasible` (`kit.py` L87, L151). After an introduction, a non-response arrives as `value: null` with `missing_reason: 'no_response'` (`kit.py` L163-166): the policy learns only that nothing arrived - never an acceptance or a rejection. The `missing_feedback` column in section 6 counts exactly these events (`kit.py` L198), so it measures absent information, not policy quality.
+- *Competition for the same candidate.* Match batches must be disjoint (`kit.py` L147-148), each introduced member is then busy for at least 8 days (`kit.py` L167, checked at L100), and an introduced pair can never be reintroduced (`kit.py` L150). Choosing one feasible pair therefore consumes both endpoints and removes the other opportunities those two members could have appeared in - an allocation trade-off inherent to disjoint matching. What that trade-off costs in outcomes is not isolated here.
+- *Sparse supply, delayed feedback, incomplete observation.* The `sparse` variant scatters members across twelve zones with exactly one acceptable zone each, while normal variants use four zones and gain a second acceptable zone 30% of the time (`kit.py` L42-43, L53), thinning reciprocal zone overlap (the zone check runs in both directions, `kit.py` L77-81). Responses arrive 1-7 days late and the `delayed` family adds 5-12 more days (`kit.py` L161, L170); only 35% of members start with a complete questionnaire (20% under `cold_start`), with individual fields of the rest observed at 0.10 probability (`kit.py` L55-56). Together these cap what any policy can confirm or act on - visible in the scenario table of section 5 as a descriptive pattern, not as a measured causal loss.
 
 ## 7. Runtime and deployment validation [V]
 
@@ -132,6 +148,8 @@ Overall research conclusion, stated exactly as the evidence supports: **the subm
 - Environment/determinism: greedy is RNG-free; no `PYTHONHASHSEED` pin is required for it. Timing figures are single-run measurements on one machine.
 - `organise.py` (private holdout preparation) was never executed in this workspace; no private data exists here to leak.
 - Two packaging corrections were made only after a fresh-clone validation exposed them, each minimal and re-validated: seven `test_policy.py` tests now skip cleanly when the untracked `research/` tree is absent (workspace behaviour unchanged - all 144 still run), and `.gitattributes` (`* -text`) pins byte-stable checkout so the recorded data checksums survive any cloner's `core.autocrlf`. Neither touches policy behaviour; commands C-E were unaffected and their evidence stands on unchanged source bytes.
+
+**Real-world scope (REPORT_GUIDE item 8).** Every outcome reported here was produced inside the supplied invented simulator - the evaluator labels each episode `simulated_not_observed_product_performance` (`kit.py` L203) - and the policy has been evaluated only in this synthetic environment. These results cannot establish how real people would behave, consent, form relationships or be compatible, and no such claim is made. Any later authorised integration must use the documented adapter in `docs/INTEGRATION.md` (opaque ID mapping, explicit handling of unknown or declined answers, server-side re-validation of every batch, suggestions returned for human review) and must undergo the organiser's required validation on authorised inputs before use; this repository supplies no production licence (`docs/INTEGRATION.md`, final paragraph).
 
 **Remaining uncertainty, in one sentence:** we have verified that the submitted build is correct, fast, deterministic and spec-compliant; we have *not* established that greedy is optimal, that any tested alternative is better, or that the demonstrated mechanisms (floor suppression, gate equivalence) would generalize beyond the seeds and variants studied.
 

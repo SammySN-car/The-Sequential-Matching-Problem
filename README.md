@@ -152,6 +152,8 @@ Teams: **1-4 participants**.
 | Round 2 build starts | 12 October 2026 |
 | Final build submission closes | 18 October 2026, 23:59 |
 
+**Corrected operative deadline for this team: 17 October 2026, 23:59 IST.** The 18 October 2026 date shown in the table above is the original schedule carried in the supplied materials (`docs/SUBMISSION.md`, `PROBLEM_STATEMENT.md`, `docs/FAQ.md`); those organiser-provided documents are preserved unmodified, and this project-maintained note records the corrected date that governs this team's Round 2 submission.
+
 **Round 1:** submitted through a Google Form (closed).
 
 **Round 2:** use the [Final submission](https://github.com/RomeoJulietLove/The-Sequential-Matching-Problem/issues/new?template=final_submission.yml) issue form by the final deadline. Provide the immutable submitted version and required report/results. Use [Question](https://github.com/RomeoJulietLove/The-Sequential-Matching-Problem/issues/new?template=question.yml) for technical questions. Never post personal data, access codes or credentials in public issues.

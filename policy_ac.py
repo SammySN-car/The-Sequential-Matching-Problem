@@ -3,8 +3,9 @@
 evaluate.py always invokes local policies as `python <policy> --baseline <greedy|no_asks|random>`
 (choices frozen, spec C4). This shim parses NO arguments - the --baseline flag is
 deliberately ignored - and forces mode 'ac' on every request. The container path
-does not use this file: the Docker image runs `python policy.py` with no args and
-policy.py's argparse default ('ac') covers it.
+does not use this file: the Docker image runs `python policy.py` with no args, and
+policy.py's argparse default is 'greedy' (the Round-2 entrypoint flip), so the A+C
+research policy is not the container's default execution path.
 """
 import json
 import sys

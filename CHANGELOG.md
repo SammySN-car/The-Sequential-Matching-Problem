@@ -27,3 +27,8 @@ This release replaces the unpublished 0.1 development draft. All participant-fac
 - Retained the final build deadline of **18 October 2026, 23:59 IST** and its Final submission issue route.
 - Retired the Research submission issue template and aligned the guides and downloadable PDF. Google Form receipt times govern Round 1; the version pinned before the final deadline governs Round 2.
 - Published the [public schedule correction](https://github.com/RomeoJulietLove/The-Sequential-Matching-Problem/issues/1) before applying the revised rules.
+
+### Round 2 submission preparation - 16 October 2026
+
+- Corrected the operative final build deadline for this team to **17 October 2026, 23:59 IST**. The 18 October date above and in the supplied `docs/SUBMISSION.md`, `PROBLEM_STATEMENT.md` and `docs/FAQ.md` is the original schedule; those documents remain unmodified.
+- Corrected the stale `policy_ac.py` docstring sentence about the container argparse default (it now records that the current default is `greedy` and that the A+C research policy is not the container's default execution path), and completed `REPORT.md` with the report-guide items found missing in pre-submission audit (real-world scope caveat, partial-observation failure mechanisms, per-seed variation). Documentation only: no policy, evaluation, Dockerfile or result-JSON bytes changed.
