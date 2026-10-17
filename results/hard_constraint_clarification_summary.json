@@ -1,0 +1,150 @@
+{
+  "artifact": "hard_constraint_clarification_summary",
+  "generated": "2026-10-17T08:34:00+05:30",
+  "experiment": "Hard-constraint clarification prioritization (opportunity-unlock recipient allocation)",
+  "status": "complete; verdict INCONCLUSIVE (negative-leaning); candidate not promoted; greedy remains the submitted default",
+  "protocol": {
+    "document": "research/hard_constraint_clarification/PROTOCOL.md",
+    "frozen": "2026-10-16T16:35+05:30",
+    "amendment_A1": "2026-10-17: run-1 invalid episode (environmental day-0 policy-invocation timeout); full both-arms x all-seeds rerun; mechanics-only; hypothesis, endpoint and decision rules unchanged",
+    "protocol_sha256": "7064099242a04134bf239db8e0696f0d7c3db8e9cf42cb71edc407a832524767"
+  },
+  "sample": {
+    "paired_seed_groups": 100,
+    "seeds": "120001-120100 (verified unused before protocol freeze)",
+    "variants": 6,
+    "episodes_per_arm": 600,
+    "episodes_total": 1200,
+    "official_spot_check_keys": 6,
+    "spot_check_parity": "PASS",
+    "invalid_episodes_final_rerun": 0,
+    "invalid_run1": {
+      "description": "first confirmatory attempt, excluded from the endpoint per amendment A1",
+      "keys_recorded": 672,
+      "invalid_episodes": 1,
+      "key": "unlock__120047__development",
+      "cause": "day-0 policy invocation exceeded the evaluator's absolute 10 s limit during a host-load window (environmental); identical episode passed isolated; clean in the final rerun"
+    }
+  },
+  "primary": {
+    "endpoint": "mean over 100 seed groups of the equally weighted six-variant mean of msmi_per_100_arrived_members",
+    "source": "complete final rerun (progress_confirmatory_rerun.jsonl), 0 invalid",
+    "greedy_instrumented": 0.35583333333333333,
+    "unlock_candidate": 0.3383333333333334,
+    "paired_delta": -0.0175,
+    "ci95": [
+      -0.0675,
+      0.0325
+    ],
+    "ci_method": "percentile bootstrap, B=10000, seed=20261016",
+    "win_tie_loss": {
+      "wins": 35,
+      "ties": 20,
+      "losses": 45
+    },
+    "variants": {
+      "cold_start": {
+        "greedy": 0.31,
+        "unlock": 0.395,
+        "delta": 0.085,
+        "ci95": [
+          -0.015,
+          0.185
+        ]
+      },
+      "delayed": {
+        "greedy": 0.46,
+        "unlock": 0.465,
+        "delta": 0.005,
+        "ci95": [
+          -0.09,
+          0.1
+        ]
+      },
+      "development": {
+        "greedy": 0.435,
+        "unlock": 0.385,
+        "delta": -0.05,
+        "ci95": [
+          -0.14,
+          0.045
+        ]
+      },
+      "drift": {
+        "greedy": 0.415,
+        "unlock": 0.37,
+        "delta": -0.045,
+        "ci95": [
+          -0.135,
+          0.045
+        ]
+      },
+      "shift": {
+        "greedy": 0.395,
+        "unlock": 0.31,
+        "delta": -0.085,
+        "ci95": [
+          -0.19,
+          0.015
+        ]
+      },
+      "sparse": {
+        "greedy": 0.12,
+        "unlock": 0.105,
+        "delta": -0.015,
+        "ci95": [
+          -0.06,
+          0.03
+        ]
+      }
+    }
+  },
+  "budget_parity_confirmatory_scope": {
+    "scope": "seeds 120001-120100, 6 variants, both arms; compared from ask logs",
+    "days_with_any_ask": 11255,
+    "ask_days_differing": 0,
+    "daily_ask_counts_differing": 0,
+    "daily_spend_differing": 0,
+    "asks_total": {
+      "greedy": 38915,
+      "unlock": 38915
+    },
+    "spend_total": {
+      "greedy": 116745,
+      "unlock": 116745
+    },
+    "distinct_recipients": {
+      "greedy": 18572,
+      "unlock": 18572
+    },
+    "episodes_with_equal_ask_totals": "600/600",
+    "episodes_with_equal_spend": "600/600",
+    "note_pooled_diagnostics": "the analyzer 'asks' block pools the 3-seed pilot logs (618 episodes/arm; 40038 asks; 19102 recipients; 120114 spend); the confirmatory-only figures above supersede those for reporting"
+  },
+  "intervention_audit": {
+    "what_changed": "day-level recipient allocation (which member receives each clarification slot on which day) within a fixed final recipient pool; not a change of which population was ultimately asked",
+    "day_level_ask_sets_identical_ordered": 1726,
+    "day_level_same_set_different_order": 517,
+    "day_level_different_member_sets": 9012,
+    "member_day_decisions_union": 68475,
+    "member_day_decisions_differing": 59120,
+    "member_day_decisions_differing_fraction": 0.8634,
+    "per_episode_final_recipient_pools_identical": "600/600",
+    "episode_action_digests_identical": 0,
+    "other_behavior_held_constant": "same daily ask counts and spend on every ask-day; unmodified matching/acceptance/budget code; instrumented-greedy parity PASS (18 pilot keys via gate G1; 6 confirmatory spot-check keys at seed 120001)"
+  },
+  "verdict": {
+    "verdict": "INCONCLUSIVE",
+    "reasons": [
+      "point estimate -0.01750 not positive",
+      "only 2/6 variants >= 0"
+    ]
+  },
+  "provenance_sha256": {
+    "candidate_policy.py": "1a8cc00da5b5844a545424962ed8b96212fb1215b10d295593d51721af4fa694",
+    "run_experiment.py": "e67981703f1c6697481cafafcc7ebdec7e492099de77e8456c8bf74448871ba4",
+    "analyze_results.py": "9ca795b1a3ff342a4ef1de6d26019b2881f6cd8df009c8372e31bab901cdf8b5",
+    "progress_confirmatory_rerun.jsonl": "cb26d8f32045e64e11cfb4a079aaf3ca2182816faa61f364ff18c3ce21264f79",
+    "analysis_confirm.json": "278ebb03a022e9f0a823b4733155c1f00de2b0f6f384ef3d2dccf9dd0ee074c2"
+  }
+}

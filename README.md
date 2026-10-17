@@ -67,6 +67,8 @@ All six files have the official evaluator schema: `release`, `mode`, per-episode
 
 Historical files that are **not** part of the submission but remain in the local `results/` directory: `artifact.sha256` (a 2026-10-06 checksum pin that documents the historical `379cc2d9...` policy - deliberately left unmodified), `run_log.txt`, `pre_eval_diagnostics.json`, `_timing.json`, `ac_container.json`, `ac_rerun.json`.
 
+**Supporting evidence - hard-constraint clarification prioritization (17 October 2026).** A post-snapshot paired experiment on day-level clarification recipient allocation is summarized in `results/hard_constraint_clarification_summary.json` (machine-readable) and `results/hard_constraint_clarification_notes.md` (protocol and results note, with provenance hashes), with the report write-up in REPORT.md section 9. Verdict: **INCONCLUSIVE (negative-leaning)** - paired delta -0.01750, 95% CI [-0.06750, +0.03250]; the candidate is not promoted and the submitted greedy policy is unchanged. These two files are documentation/evidence only and are not part of the six required result files.
+
 ## What is included
 
 | File / folder | Purpose |
@@ -139,7 +141,7 @@ The new folder must not already exist. The generator uses only invented data and
 
 ## What this project researched (summary)
 
-Roughly 25 experiments, a 30-method tournament (985 recorded method-episodes) and a 100-seed-group paired evaluation were run during research. Headline: **no tested alternative established a statistically reliable improvement over greedy**, so the submission keeps greedy. Notable engineering results (an exact-cardinality blossom solver, a causal score-floor ablation) and two withdrawn claims are documented honestly in [REPORT.md](REPORT.md).
+Roughly 25 experiments, a 30-method tournament (985 recorded method-episodes) and a 100-seed-group paired evaluation were run during research. Headline: **no tested alternative established a statistically reliable improvement over greedy**, so the submission keeps greedy. Notable engineering results (an exact-cardinality blossom solver, a causal score-floor ablation) and two withdrawn claims are documented honestly in [REPORT.md](REPORT.md). The post-snapshot hard-constraint clarification prioritization experiment (100 paired seed groups; INCONCLUSIVE, negative-leaning) extends this record; its compact evidence is `results/hard_constraint_clarification_summary.json` plus `results/hard_constraint_clarification_notes.md`.
 
 ## Submit and ask questions
 
