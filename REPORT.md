@@ -1,6 +1,6 @@
 # Technical Report - The Sequential Matching Problem (Round 2 final build)
 
-Team: RomeoJulietLove | Release: 1.0.0 | Report date: 16 October 2026
+Team: MayNerd | Release: 1.0.0 | Report date: 16 October 2026
 
 All numbers below were re-verified against the files cited next to them during report preparation. File paths are relative to the repository root. Evidence classes are used throughout: **[V] verified engineering correctness**, **[C] descriptive or causal finding**, **[P] policy-level (descriptive) evidence**, **[I] inconclusive statistical comparison**.
 
