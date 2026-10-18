@@ -1,0 +1,12 @@
+{"day": 19, "invocation_seconds": 0.07337950001237914, "k_chosen": 3, "k_greedy": 3, "n_edges": 10, "phase": "match", "pid": 25264, "solver_seconds": 0.0006502000032924116}
+{"day": 9, "invocation_seconds": 0.06751560000702739, "k_chosen": 2, "k_greedy": 2, "n_edges": 3, "phase": "match", "pid": 25264, "solver_seconds": 0.00013929998385719955}
+{"day": 14, "invocation_seconds": 0.07356839999556541, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 25264, "solver_seconds": 7.429998368024826e-05}
+{"day": 43, "invocation_seconds": 0.08903580001788214, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 25264, "solver_seconds": 0.0}
+{"day": 20, "invocation_seconds": 0.10786310001276433, "k_chosen": 2, "k_greedy": 2, "n_edges": 3, "phase": "match", "pid": 25264, "solver_seconds": 0.00014259997988119721}
+{"day": 28, "invocation_seconds": 0.08322380000026897, "k_chosen": 2, "k_greedy": 2, "n_edges": 2, "phase": "match", "pid": 25264, "solver_seconds": 9.300000965595245e-05}
+{"day": 24, "invocation_seconds": 0.09343740000622347, "k_chosen": 2, "k_greedy": 2, "n_edges": 3, "phase": "match", "pid": 25264, "solver_seconds": 0.0001314000110141933}
+{"day": 55, "invocation_seconds": 0.08252979998360388, "k_chosen": 1, "k_greedy": 1, "n_edges": 2, "phase": "match", "pid": 25264, "solver_seconds": 0.00010040000779554248}
+{"day": 15, "invocation_seconds": 0.07520279998425394, "k_chosen": 8, "k_greedy": 8, "n_edges": 14, "phase": "match", "pid": 25264, "solver_seconds": 0.0010888999968301505}
+{"day": 45, "invocation_seconds": 0.08077139998204075, "k_chosen": 1, "k_greedy": 1, "n_edges": 4, "phase": "match", "pid": 25264, "solver_seconds": 0.00017060001846402884}
+{"day": 11, "invocation_seconds": 0.06148930001654662, "k_chosen": 3, "k_greedy": 3, "n_edges": 3, "phase": "match", "pid": 25264, "solver_seconds": 0.00012280000373721123}
+{"day": 40, "invocation_seconds": 0.10906580000300892, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 25264, "solver_seconds": 0.0}

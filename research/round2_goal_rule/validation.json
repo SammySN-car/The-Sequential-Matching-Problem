@@ -1,0 +1,139 @@
+{
+ "checks": [
+  {
+   "check": "decision-ceiling seal current",
+   "detail": "stale=none",
+   "passed": 1
+  },
+  {
+   "check": "fixed-cardinality seal current",
+   "detail": "stale=none",
+   "passed": 1
+  },
+  {
+   "check": "missed-oracle seal current",
+   "detail": "stale=none",
+   "passed": 1
+  },
+  {
+   "check": "stagewise-signal seal current",
+   "detail": "stale=none",
+   "passed": 1
+  },
+  {
+   "check": "analysis_plan hash frozen",
+   "detail": "221070644a317fc0",
+   "passed": 1
+  },
+  {
+   "check": "7,560 states",
+   "detail": "7560",
+   "passed": 1
+  },
+  {
+   "check": "selection_diagnostics covers same states",
+   "detail": "7560 diag",
+   "passed": 1
+  },
+  {
+   "check": "sum k_t = 8,433",
+   "detail": "8433",
+   "passed": 1
+  },
+  {
+   "check": "sum feasible edges = 15,304",
+   "detail": "15304",
+   "passed": 1
+  },
+  {
+   "check": "sum p_t = 173",
+   "detail": "173",
+   "passed": 1
+  },
+  {
+   "check": "edge keys sorted ascending (orientation)",
+   "detail": "",
+   "passed": 1
+  },
+  {
+   "check": "every edge has a counterfactual label",
+   "detail": "missing=0",
+   "passed": 1
+  },
+  {
+   "check": "every edge has a frozen OOF F2 score",
+   "detail": "missing=0",
+   "passed": 1
+  },
+  {
+   "check": "k_t = len(recorded greedy pairs) on every state",
+   "detail": "",
+   "passed": 1
+  },
+  {
+   "check": "recomputed GREEDY set == recorded action set",
+   "detail": "7560/7560",
+   "passed": 1
+  },
+  {
+   "check": "frozen arm cardinality == k_t on every state",
+   "detail": "",
+   "passed": 1
+  },
+  {
+   "check": "frozen totals GREEDY=90 F1=81 F2=94 F5=161",
+   "detail": "G=90 F1=81 F2=94 F5=161",
+   "passed": 1
+  },
+  {
+   "check": "82 headroom / 7,478 zero-headroom states",
+   "detail": "82/7478",
+   "passed": 1
+  },
+  {
+   "check": "V3 G1f reproduces frozen F1-SCORE set on every state",
+   "detail": "mismatch=0",
+   "passed": 1
+  },
+  {
+   "check": "V3 G4 reproduces frozen F2-SOFT set on every state",
+   "detail": "mismatch=0",
+   "passed": 1
+  },
+  {
+   "check": "V6 G1m match-count >= greedy (maximizer direction)",
+   "detail": "G1m=7358 G0=7245 G1f=3752",
+   "passed": 1
+  },
+  {
+   "check": "V4 every arm has exactly k_t non-overlapping feasible pairs",
+   "detail": "states=7560 failures=0",
+   "passed": 1
+  }
+ ],
+ "failures": [],
+ "info": {
+  "frozen_totals": {
+   "F1": 81,
+   "F2": 94,
+   "F5": 161,
+   "GREEDY": 90
+  },
+  "g1m_states_differing_from_frozen_F1": 1232,
+  "headroom_states": 82,
+  "match_count_sums": {
+   "G0": 7245,
+   "G1f": 3752,
+   "G1m": 7358
+  },
+  "n_edges": 15304,
+  "sum_k_t": 8433,
+  "sum_p_t": 173,
+  "v3_mismatch": {
+   "G1f": 0,
+   "G4": 0
+  }
+ },
+ "n_checks": 22,
+ "passed": true
+}

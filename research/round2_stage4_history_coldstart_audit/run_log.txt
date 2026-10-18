@@ -1,0 +1,130 @@
+==================================================================
+Round 2 Stage 4 - History/Cold-Start Audit - RUN LOG
+Directory: research/round2_stage4_history_coldstart_audit/
+Date: 2026-10-07
+Scope: X0 (history-lift on scale800), X1 (original-floor cold-start
+       penalty from stored Stage 1.5/2/3 diagnostics), simulator
+       RNG/outcome read-only audit. No tuning, no new policy runs,
+       no promotion experiment, no holdout access.
+==================================================================
+
+[SETUP] Before-hashes of frozen files recorded (16-char prefixes):
+  policy.py=379CC2D9519E8D3B  policy_ac.py=90FB9AD306E89BFB
+  kit.py=0D2CB3D3B46CA2A6  evaluate.py=D09CC14BF634A741
+  organise.py=DA9D6B3A197F1FF8  Dockerfile=FEF95FA3D6BC038F
+  .dockerignore=6FA959B629F9ED8C
+  S3 preregistration.md=FA11A2FB4DF53D50
+  S3 final_interpretation_and_promotion_audit.md=B76AE4ABAC72F5EB
+  S3 promotion_audit.json=0138D36F0B13DF42
+  S3 intermediate_policy.py=A76FD0EE0C2B9579
+  S3 report.md=D47BAE2512527587  S3 summary.json=C4B4EF5690B617C6
+  S2 report.md=09E4FF744184ADFA  S2 interpretation.md=E46A066AC6D97E2C
+  round1-research-record.md=661115F512A41B5A
+  results/artifact.sha256=79ACD52BDC11C909
+
+[DISCOVERY] Inputs located:
+  - research/out_scale800/{rows.csv 86,711,700 B, worlds.csv,
+    report.json, report.txt}: 3520 rollouts (3200 random / 320
+    greedy), 800 worlds, 60+40 days, 259,696 matured rows,
+    56 columns (12 meta + 44 feat_*), train 209,238 / val 50,458,
+    640/160 world split, split_overlap 0/0.
+  - Original pipeline: research/{run_experiment,analyze,features,
+    labels,collect,integrity,test_pipeline}.py
+    - split: analyze.world_split(rows, val_frac=0.2, split_seed=0),
+      world_key=(world_seed, variant), whole-world split
+    - model: HistGradientBoostingClassifier(random_state=0,
+      max_iter=200, learning_rate=0.1) via analyze.fit_models
+    - Model B = same pipeline with feature_keys minus
+      features.FEATURE_GROUPS['history'] (10 hist_* features,
+      5 groups x {mean,absdiff}); 44 -> 34 features. TEMPORAL
+      (day, days_since_arrival_*, ask_budget) NOT in history group.
+    - experience derivable exactly: hist_n_intros_mean=(a+b)/2,
+      hist_n_intros_absdiff=|a-b| => min=mean-absdiff/2 is exact
+      (integer), i.e. less-experienced member's prior intro count.
+    - logging policy: rows.csv 'policy' column (random|greedy).
+  - X1 stored data verified: probe_seed101_run{1,2}.json and
+    Stage2/3 diag JSONs contain per-day COUNTS (n_cand/n_above/
+    n_below, category) + per-variant aggregates + selected_scored
+    (selected pairs only) + survivorship bands; NO per-candidate
+    records for all feasible candidates; NO member-experience field
+    anywhere (no hist_n_intros/prior-intro per candidate).
+    => X1 computes variant-level (cold_start) floor-exclusion from
+    stored aggregates; candidate experience stratification reported
+    as limitation [UNKNOWN].
+======================================================================
+[RESULTS] Stage 4 outcomes (2026-10-07)
+======================================================================
+X0 (history-lift, scale800, exact pipeline reuse):
+  fidelity: Model A reproduces report.json hist_gb metrics
+            diff=0.0 on roc_auc/ap/logloss/brier, BOTH targets
+  mutual  : dAUC=+0.011306  cluster-CI [+0.006265,+0.016122]
+            (frac<0=0.000); dAP=+0.007243 CI [+0.002644,+0.011268]
+            dlogloss=-0.002196; all 6 joint strata positive;
+            experience marginals monotone +0.0081/+0.0130/+0.0169
+  msmi    : dAUC=+0.008725  cluster-CI [-0.017894,+0.034163]
+            (includes 0); dAP=-0.000581 -> WEAK/inconclusive
+  verdict : small-but-consistent history signal for mutual;
+            none resolvable for MSMI (pre-stated heuristics)
+
+X1 (original-floor cold-start penalty, stored diagnostics only):
+  determinism: probe run1 == run2 (sha256 3897d631cc655ff4...)
+  stage1.5 exclusion by variant: dev .8424 sparse .9419
+    cold_start .8011 delayed .8638 shift .8571 drift .8540
+  cold_start > others-mean in only 3/16 stored settings
+  day-proxy pooled: 0-9 .6032 | 10-19 .7189 | 20-39 .8818 |
+    40-59 .9465 (early=lowest -> opposite of newcomer penalty,
+    day confounded by frontier depletion)
+  half-floor recovery (s3, 9 settings): cold_start .369 vs
+    development .326 / sparse .405 -> sparse dominates
+  STOP: candidate-level experience stratification NOT
+    reconstructible from stored data (counts only for
+    below-floor candidates; no experience field anywhere)
+
+RNG audit (kit.py read-only): content-addressed rand_for =
+  Random(SHA256(seed|a|b|day)[:16]); exact world-level CRN;
+  exact outcome coupling on shared (pair,day); no global stream;
+  asks deterministic; coupling broken by selection/timing;
+  rare MSMI funnel (9-13 events/arm) dominates residual noise
+
+Q3 noise (stored Stage 3 runs): paired SD I-F=0.2406,
+  N-F=0.2097, N-I=0.1443 (n=3, unstable); normal-approx n:
+  12 seeds @ d=0.20, 46 @ d=0.10, 182 @ d=0.05
+
+Q4 decision: PROCEED (frozen candidate unchanged; exploration/
+  cold-start work = optional follow-up, low-moderate priority)
+
+[FINAL INTEGRITY RE-VERIFY]
+OK   379CC2D9519E8D3B policy.py
+OK   90FB9AD306E89BFB policy_ac.py
+OK   0D2CB3D3B46CA2A6 kit.py
+OK   D09CC14BF634A741 evaluate.py
+OK   DA9D6B3A197F1FF8 organise.py
+OK   FEF95FA3D6BC038F Dockerfile
+OK   6FA959B629F9ED8C .dockerignore
+OK   FA11A2FB4DF53D50 research/round2_stage3_intermediate_floor/preregistration.md
+OK   B76AE4ABAC72F5EB research/round2_stage3_intermediate_floor/final_interpretation_and_promotion_audit.md
+OK   0138D36F0B13DF42 research/round2_stage3_intermediate_floor/promotion_audit.json
+OK   A76FD0EE0C2B9579 research/round2_stage3_intermediate_floor/intermediate_policy.py
+OK   D47BAE2512527587 research/round2_stage3_intermediate_floor/report.md
+OK   C4B4EF5690B617C6 research/round2_stage3_intermediate_floor/summary.json
+OK   09E4FF744184ADFA research/round2_stage2_floor_ablation/report.md
+OK   E46A066AC6D97E2C research/round2_stage2_floor_ablation/interpretation.md
+OK   661115F512A41B5A docs/superpowers/round1-research-record.md
+OK   79ACD52BDC11C909 results/artifact.sha256
+ALL MATCH: True
+
+[DELIVERABLES] sha256 first16 / bytes:
+  report.md                    9C3CB74F081C54E4  24520
+  summary.json                 A032F509ADE2E052  14882
+  run_log.txt                  E953F51D58600DD3  2946
+  x0_history_lift.py           3B8A10D706DD7299  15081
+  x0_results.json              3E5BF72A99172C72  36270
+  x1_coldstart_penalty.py      502E48FB7CE1BEB8  15357
+  x1_results.json              8C0652F50AB121BC  136580
+  q3_noise_from_stage3.py      890F4048C37172CB  4161
+  q3_noise_results.json        4258399FF906960B  4071
+  verify_integrity.py          40BE8860EF5A23F9  1966
+  integrity_after.json         BC7883B6FDB3A065  2598
+  build_summary.py             7B9B66549797F68D  9204
+
+END OF RUN LOG - stage complete.

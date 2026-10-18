@@ -1,0 +1,188 @@
+{
+ "checks": [
+  {
+   "check": "report_section_Q1",
+   "detail": "## Q1",
+   "passed": true
+  },
+  {
+   "check": "report_section_Q2",
+   "detail": "## Q2",
+   "passed": true
+  },
+  {
+   "check": "report_section_Q3",
+   "detail": "## Q3",
+   "passed": true
+  },
+  {
+   "check": "report_section_Q4",
+   "detail": "## Q4",
+   "passed": true
+  },
+  {
+   "check": "report_section_Q5",
+   "detail": "## Q5",
+   "passed": true
+  },
+  {
+   "check": "report_section_Q6",
+   "detail": "## Q6",
+   "passed": true
+  },
+  {
+   "check": "report_section_Q7",
+   "detail": "## Q7",
+   "passed": true
+  },
+  {
+   "check": "report_section_Statusofeachhistoricalconclusion",
+   "detail": "## Status of each historical conclusion",
+   "passed": true
+  },
+  {
+   "check": "no_next_experiment_recommendation",
+   "detail": "explicit out-of-scope statement present",
+   "passed": true
+  },
+  {
+   "check": "hierarchy_four_tiers",
+   "detail": "tiers 1-4",
+   "passed": true
+  },
+  {
+   "check": "status_table_15_rows",
+   "detail": "n=15",
+   "passed": true
+  },
+  {
+   "check": "q_g4_g1m_6_ci",
+   "detail": "expect delta 6 ci [-0.2857,+0.9524] in report",
+   "passed": true
+  },
+  {
+   "check": "q_g2_g0_2_ci",
+   "detail": "expect delta 2 ci [-0.2857,0.5714]",
+   "passed": true
+  },
+  {
+   "check": "q_g4_g1f_13_ci",
+   "detail": "expect delta 13 ci [0.0476,1.2381]",
+   "passed": true
+  },
+  {
+   "check": "q_g4_g0_4_ci",
+   "detail": "expect delta 4 ci [-0.3333,0.7143]",
+   "passed": true
+  },
+  {
+   "check": "q_g5_g0_71_ci",
+   "detail": "expect delta 71 ci [2.2381,4.619] (gr/C2)",
+   "passed": true
+  },
+  {
+   "check": "q_g1f_g0_9",
+   "detail": "expect delta -9 ci [-1.3345,0.4286] in report",
+   "passed": true
+  },
+  {
+   "check": "q_seeds_G4_G1m",
+   "detail": "csv=7/8/6 report-has=True",
+   "passed": true
+  },
+  {
+   "check": "q_seeds_G2_G0",
+   "detail": "csv=3/13/5 report-has=True",
+   "passed": true
+  },
+  {
+   "check": "q_seeds_G4_G1f",
+   "detail": "csv=11/7/3 report-has=True",
+   "passed": true
+  },
+  {
+   "check": "q_rank_pub_pct",
+   "detail": "csv=0.388022 variants-in-report=True hierarchy=True",
+   "passed": true
+  },
+  {
+   "check": "q_rank_corr_pct",
+   "detail": "csv=0.343518 variants-in-report=True hierarchy=True",
+   "passed": true
+  },
+  {
+   "check": "q_rank_corr_share",
+   "detail": "csv=0.34104 variants-in-report=True hierarchy=True",
+   "passed": true
+  },
+  {
+   "check": "q_rank_cap_mean",
+   "detail": "csv=2.085106 variants-in-report=True hierarchy=True",
+   "passed": true
+  },
+  {
+   "check": "q_rank_miss_mean",
+   "detail": "csv=2.895522 variants-in-report=True hierarchy=True",
+   "passed": true
+  },
+  {
+   "check": "q_totals_7",
+   "detail": "sum_k_t=8433 in report=False",
+   "passed": true
+  },
+  {
+   "check": "q_headroom_82",
+   "detail": "82 in both",
+   "passed": true
+  },
+  {
+   "check": "q_setdiff_80",
+   "detail": "states_differing_G0_vs_G1m=80",
+   "passed": true
+  },
+  {
+   "check": "q_decomposition_60_7",
+   "detail": "c6 sums rank=60 conflict=7",
+   "passed": true
+  },
+  {
+   "check": "q_matrix_42",
+   "detail": "rows=42",
+   "passed": true
+  },
+  {
+   "check": "q_count_CORRECT_AND_",
+   "detail": "CORRECT_AND_COMPARABLE = 29 in hierarchy table",
+   "passed": true
+  },
+  {
+   "check": "q_count_CORRECT_BUT_",
+   "detail": "CORRECT_BUT_NOT_COMPARABLE = 4 in hierarchy table",
+   "passed": true
+  },
+  {
+   "check": "q_count_OTHER_IMPLEM",
+   "detail": "OTHER_IMPLEMENTATION_DEFECT = 1 in hierarchy table",
+   "passed": true
+  },
+  {
+   "check": "q_count_DIRECTION_BU",
+   "detail": "DIRECTION_BUG = 7 in hierarchy table",
+   "passed": true
+  },
+  {
+   "check": "q_count_UNVERIFIABLE",
+   "detail": "UNVERIFIABLE_FROM_SAVED_ARTIFACTS = 1 in hierarchy table",
+   "passed": true
+  },
+  {
+   "check": "q_plan_hash",
+   "detail": "e04280fc79e44271",
+   "passed": true
+  }
+ ],
+ "failures": [],
+ "generated": "2026-10-13 18:16:31",
+ "n_checks": 36,
+ "n_failed": 0
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "experiment_id": "round2_gated_maxweight",
+  "frozen_at": "2026-10-12T00:00:00+05:30",
+  "hypothesis": "Adopting an exact maximum-weight non-overlapping matching in place of official greedy, only when it has >= greedy cardinality and strictly greater observable score sum, improves realized MSMI/100 on unseen seeds.",
+  "interpretation_boundary": "The gate proves observable-objective improvement only; MSMI improvement is the empirical hypothesis under test.",
+  "arms": [
+    {"id": "greedy", "kind": "official_control", "command": ["python", "policy.py", "--baseline", "greedy"]},
+    {"id": "ungated_mw", "kind": "ablation", "command": ["python", "research/round2/policies/mw_alloc.py", "--arm", "ungated"]},
+    {"id": "gated_mw", "kind": "candidate", "command": ["python", "research/round2/policies/mw_alloc.py", "--arm", "gated"]},
+    {"id": "no_asks", "kind": "official_baseline", "command": ["python", "policy.py", "--baseline", "no_asks"]},
+    {"id": "random", "kind": "official_baseline", "command": ["python", "policy.py", "--baseline", "random"]}
+  ],
+  "candidate": {
+    "ask_phase": "kit.baseline_asks (identical to greedy)",
+    "score_rule": "official observed equal-SOFT-field count (kit.baseline_match formula)",
+    "greedy_baseline_allocation": "sort (-score, pair_key), take non-overlapping, zero-score pairs included",
+    "exact_solver": "hungarian O(n^3) e-maxx/vorobyev, pure python, zero-weight real pairs retained",
+    "exact_available_iff": {"bipartite": true, "node_cap": 180, "node_cap_source": "common.HUNGARIAN_NODE_CAP (frozen tournament constant)"},
+    "gate": {
+      "G1": "len(K_exact) >= K_greedy",
+      "G2": "S_exact > S_greedy",
+      "adopt_exact_iff": "exact_available AND G1 AND G2",
+      "otherwise": "official greedy matching unchanged",
+      "tunable_constants": 0
+    },
+    "ungated_ablation": "adopt K_exact whenever exact_available, else greedy; no gate"
+  },
+  "worlds": {
+    "generator": "kit.generate(seed, 200, 'evaluation', variant)",
+    "variants": ["development", "sparse", "cold_start", "delayed", "shift", "drift"],
+    "eval_seeds": [301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312],
+    "fixture_seeds": [90250, 90251, 90252],
+    "fixture_use": "implementation validation only, never performance",
+    "freshness_audit": {
+      "date": "2026-10-12",
+      "consumed_excluded": "95,101-163,182,200,256,90210-90212,90290",
+      "note": "200 excluded as ambiguous (appears in multiple contexts)"
+    },
+    "paired": true,
+    "total_episodes": 360
+  },
+  "primary_metric": "summarise.primary_score = msmi_per_100_arrived_members equally averaged over 6 families",
+  "secondary_metrics": ["coverage", "zero_selection_days", "introductions_per_100", "mutual_acceptances_per_100", "msmi_per_introduction", "mutual_per_introduction", "ask_cost", "solver_activation_frequency", "gate_reject_g1", "gate_reject_g2", "score_gain_when_adopted", "cardinality_change", "per_family_msmi", "inference_seconds"],
+  "statistics": {
+    "pairing": "same (seed, variant) world across arms",
+    "clustering": "by seed (12 cluster means)",
+    "ci": "two-sided t, df=11; primary 95% (t=2.201); also report 99% (t=3.106)",
+    "primary_claim": "single superiority claim gated_mw vs greedy; no multiplicity correction; ungated contrast is descriptive ablation"
+  },
+  "promotion_criteria": {
+    "P1_mean_gt_0": true,
+    "P2_ci95_lower_gt_0": true,
+    "P3_zero_invalid": true,
+    "P4_no_family_catastrophe": "every family paired-mean diff >= -0.20 msmi/100 absolute",
+    "P5_validity": "determinism across PYTHONHASHSEED {0,1,random}; local/container parity on gated arm; every invoke < 10 s; mean invoke < 2 s"
+  },
+  "fail_behavior": "Any criterion fails -> keep greedy; report honestly; no redesign.",
+  "stopping_rule": "Full grid, no interim looks. Invalid episode -> stop, document, defect-only fix, rerun affected worlds.",
+  "post_freeze_prohibitions": ["gate edits", "solver edits", "score edits", "method swaps", "seed-dependent logic", "post-result tuning"],
+  "calibration": {
+    "candidate_emits_probabilities": false,
+    "score_is": "integer agreement count 0-4, ranking only",
+    "diagnostic": "MSMI conversion by score band with counts + Wilson 95% CI, separate replay pass, never used for tuning"
+  },
+  "close_line_criterion": "Promotion criteria fail -> close allocation-method line; keep greedy; no post-hoc successor.",
+  "deadline": "2026-10-17T23:59:00+05:30"
+}

@@ -1,0 +1,12 @@
+{"day": 56, "invocation_seconds": 0.09327639997354709, "k_chosen": 3, "k_greedy": 3, "n_edges": 5, "phase": "match", "pid": 11748, "solver_seconds": 0.00036249999538995326}
+{"day": 6, "invocation_seconds": 0.044500799995148554, "k_chosen": 2, "k_greedy": 2, "n_edges": 3, "phase": "match", "pid": 11748, "solver_seconds": 0.00012469998910091817}
+{"day": 56, "invocation_seconds": 0.09797589998925105, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 11748, "solver_seconds": 0.0}
+{"day": 20, "invocation_seconds": 0.07922740001231432, "k_chosen": 3, "k_greedy": 3, "n_edges": 4, "phase": "match", "pid": 11748, "solver_seconds": 0.00011140000424347818}
+{"day": 50, "invocation_seconds": 0.09270830001332797, "k_chosen": 1, "k_greedy": 1, "n_edges": 2, "phase": "match", "pid": 11748, "solver_seconds": 0.00011140000424347818}
+{"day": 35, "invocation_seconds": 0.10370289999991655, "k_chosen": 2, "k_greedy": 2, "n_edges": 7, "phase": "match", "pid": 11748, "solver_seconds": 0.00030929999775253236}
+{"day": 54, "invocation_seconds": 0.09544260002439842, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 11748, "solver_seconds": 8.640001760795712e-05}
+{"day": 42, "invocation_seconds": 0.10752749998937361, "k_chosen": 1, "k_greedy": 1, "n_edges": 5, "phase": "match", "pid": 11748, "solver_seconds": 0.00023969999165274203}
+{"day": 11, "invocation_seconds": 0.04793830000562593, "k_chosen": 2, "k_greedy": 2, "n_edges": 3, "phase": "match", "pid": 11748, "solver_seconds": 0.00012920002336613834}
+{"day": 2, "invocation_seconds": 0.044939099985640496, "k_chosen": 2, "k_greedy": 2, "n_edges": 2, "phase": "match", "pid": 11748, "solver_seconds": 9.519999730400741e-05}
+{"day": 50, "invocation_seconds": 0.09344170000986196, "k_chosen": 2, "k_greedy": 2, "n_edges": 3, "phase": "match", "pid": 11748, "solver_seconds": 0.00020329997641965747}
+{"day": 42, "invocation_seconds": 0.08781859997543506, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 11748, "solver_seconds": 0.0}

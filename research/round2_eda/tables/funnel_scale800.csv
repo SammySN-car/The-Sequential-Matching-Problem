@@ -1,0 +1,6 @@
+stage,n,denominator,denominator_stage,rate_pct,wilson95_lo_pct,wilson95_hi_pct
+assigned,259696,259696,-,100.0,99.999,100.0
+mutual,37445,259696,assigned,14.419,14.284,14.554
+date_happened,29105,37445,mutual,77.727,77.303,78.146
+msmi,2569,29105,date,8.827,8.506,9.158
+msmi_from_assigned,2569,259696,assigned,0.989,0.952,1.028

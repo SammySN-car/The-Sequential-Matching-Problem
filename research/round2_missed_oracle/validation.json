@@ -1,0 +1,16 @@
+{
+ "failures": [],
+ "info": {
+  "arm_totals": {
+   "F1-SCORE": 81,
+   "F2-SOFT": 94,
+   "F3-OBSERV": 85,
+   "F5-ORACLE": 161,
+   "GREEDY": 90
+  },
+  "oof_max_abs_diff_f1": 0.0,
+  "oof_max_abs_diff_f2": 0.0
+ },
+ "n_checks": 18,
+ "passed": true
+}

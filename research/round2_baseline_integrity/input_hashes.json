@@ -1,0 +1,277 @@
+{
+ "counterfactual_seed_error": null,
+ "counterfactual_seed_groups": [
+  143,
+  144,
+  145,
+  146,
+  147,
+  148,
+  149,
+  150,
+  151,
+  152,
+  153,
+  154,
+  155,
+  156,
+  157,
+  158,
+  159,
+  160,
+  161,
+  162,
+  163
+ ],
+ "f2_policy_like_files": [],
+ "f2_reference_files": [
+  "research/round2_decision_ceiling/scripts/s3_signal.py",
+  "research/round2_decision_ceiling/scripts/s3b_question_e.py",
+  "research/round2_decision_ceiling/scripts/s5_headroom.py",
+  "research/round2_decision_ceiling/scripts/s6_report.py",
+  "research/round2_fixed_cardinality/scripts/fc_report.py",
+  "research/round2_fixed_cardinality/scripts/fc_selectors.py",
+  "research/round2_fixed_cardinality/scripts/fc_solvers_test.py",
+  "research/round2_fixed_cardinality/scripts/fc_stats.py",
+  "research/round2_fixed_cardinality/scripts/fc_verify.py",
+  "research/round2_goal_rule/scripts/gr0_validate.py",
+  "research/round2_goal_rule/scripts/gr1_selectors.py",
+  "research/round2_goal_rule/scripts/gr4_report.py",
+  "research/round2_goal_rule/scripts/gr_common.py",
+  "research/round2_missed_oracle/scripts/mo_analyze.py",
+  "research/round2_missed_oracle/scripts/mo_stats.py",
+  "research/round2_missed_oracle/scripts/mo_tail.py",
+  "research/round2_missed_oracle/scripts/mo_taxonomy.py",
+  "research/round2_missed_oracle/scripts/mo_validate.py",
+  "research/round2_stagewise_signal/scripts/ss0_validate.py",
+  "research/round2_stagewise_signal/scripts/ss_common.py"
+ ],
+ "generated": "2026-10-13 15:52:49",
+ "inputs": {
+  "Dockerfile": "fef95fa3d6bc038fba8e7abde628d9155ac3dbdb4e4b693f1afd208bbfd1826e",
+  "evaluate.py": "d09cc14bf634a741515ad9965469821cac336a0d037b4da265eb1bf5fe20e162",
+  "kit.py": "0d2cb3d3b46ca2a6ee7c8b74b78c55642ef98686e59a890ec18f66f2cabc1f3e",
+  "policy.py": "c2ea0ffc95387c3e92ee214419a0bbde3c747e053eb4f35c5477337de5178d50",
+  "policy_ac.py": "90fb9ad306e89bfb3cc11d072c68de7ee3b1667e8709596979d04be41fa56a97",
+  "research/e3_rel_experiment/report.md": "8c54d3c9483fb19939f279c8588e5c941514e477afcfeb8c5c1f60fcb444c2de",
+  "research/e3_rel_experiment/summary.json": "241d6374fdff6133c1df71f6a08ee393b1976932d42365868002e5427e316640",
+  "research/method_tournament/confirmation_results.json": "5dd8945473a8545d307d2504b9385f0931339dc1c28cbef7520ef3a22fc3b24c",
+  "research/method_tournament/final_report.md": "d389d6fda0a151d668fb05f51c791409b3b36342407296a8318482767e0df124",
+  "research/method_tournament/final_results.json": "9cb63f343ff8d382ae5527260ba08286059f2db814f22d91b209b3115f4f5f73",
+  "research/next_method_search/report.md": "544fe36531857f1e660d025989f68b06a1522ea2ab14f8f36f0f8885a769e32f",
+  "research/out/report.txt": "298c583fd13e36546c5d86679836017438acb49664f67dfdc99ba9b52b5069aa",
+  "research/out_scale800/report.txt": "cd1e5bed85c5708f9abb5917d6f1f7f02a219cc2c4f5c3515bff0a41b5bdd5ce",
+  "research/round2/report.md": "8b0d4d6f44c0101bdad700e2e2c3be09dc552b41e1d8254f704845f456135a0b",
+  "research/round2_decision_ceiling/counterfactual_pairs.jsonl": "589f913b16e1804d75ea323ae5326dcb845e879ef0969b6bc54e66b43705cae5",
+  "research/round2_decision_ceiling/day_edges.jsonl": "241f3e0baec9b3f70f7f520b1f28ecf3d7394cabdfe9632756b3fba40dc60f39",
+  "research/round2_decision_ceiling/integrity.sha256": "c73c71449bb097a306a65a68acb0785e2d408a6e9e9b756596276d7412697f0c",
+  "research/round2_decision_ceiling/oof_scores.jsonl": "57f87d3a0918b40d01e07762a845bc49499fc4dcb4cfc432598c5ddc2ab5d9f1",
+  "research/round2_eda/integrity.sha256": "d54b7395a8da7667549386c93284ad11de99dabee07c465c573b58b1090401b5",
+  "research/round2_eda/report.md": "0c42da06277a0eec45de5d561b05bd3013efc7401665761da2c412c0a18287d9",
+  "research/round2_fixed_cardinality/integrity.sha256": "6445244fed15b66061f0c9d44b4cc36b5cfc7cac7636de739fcdb4c3e816c477",
+  "research/round2_fixed_cardinality/report.md": "48997f281026fc603151b7ab8e62a3a16549d951723a9eee99302b80e3710f4a",
+  "research/round2_fixed_cardinality/selector_summary.csv": "3d029c285a12238694f06812eb3fbee0d1e16ebf26e2233cf475e98243a762c5",
+  "research/round2_fixed_cardinality/statistics.json": "240bdb30db29fb0fae5d2867ab532b74e3bfba98943f952f126cb82f5499eb4e",
+  "research/round2_goal_rule/analysis_plan.md": "221070644a317fc0ac6b8f1d64350158a14a2c96fb218cfd64804224ccefe832",
+  "research/round2_goal_rule/analysis_plan.sha256": "0911cb9679f60324b8076b31a673e446b795cc65f32b1405e10d79230167004e",
+  "research/round2_goal_rule/evaluation.json": "48b1f984f8f7119cd714e2b280909793803d9f683e90cf79d5c4ab5e399dcf27",
+  "research/round2_goal_rule/integrity.sha256": "f48f007631cc2f9295a1ef3aa3bf6f928489615bf53e601a5eb97e28b6d15d59",
+  "research/round2_goal_rule/per_state_results.csv": "7a486fbbb1465a6fc5a46e70d2dff1c2fcb65c7c89fd0c655e15a5b44a7c309e",
+  "research/round2_goal_rule/report.md": "d9d4827e35a6c2ee1a5150253720ef884c9b5ed6d13e40aeb9a00a950e696d76",
+  "research/round2_goal_rule/selector_sets.jsonl": "1011644f9786ef01977466383d66876a65d7964ff616f1097a4aba39488aa82d",
+  "research/round2_goal_rule/selector_summary.csv": "fbb0f07f5e341b9ad54ea4afb358e7a9bd27e28244151e74937e6a548eda77bb",
+  "research/round2_missed_oracle/decomposition_agg.json": "9bf77aa59cdce1ac4d00bf7b279b933d4b509c86f5a7d7caea63e204a1b370e6",
+  "research/round2_missed_oracle/gap_decomposition.csv": "1cc4a5ea7596dcc7c546297f9e676e2631552df0cb8fb97c12f1c3751d6387c3",
+  "research/round2_missed_oracle/integrity.sha256": "ee062db0bcb86e0a4fef8f6d57372e345d0ce0c3323d08c764512ba7a8396789",
+  "research/round2_missed_oracle/positive_edge_ranks.csv": "776f9051a784de1af3c8223d346b65bd2ef49d654557488bc1864ad6d323db49",
+  "research/round2_missed_oracle/recomputed_sets.jsonl": "ac220dcf704821fb9b821410b20045d878ac7236476b1365b21205271c7dd3a6",
+  "research/round2_missed_oracle/report.md": "59eb09c37623e93c871541deb9952d4cf0c1d80232ef0b9a2f7338e14470afdc",
+  "research/round2_missed_oracle/selection_diagnostics.jsonl": "e35c336369869819978b9d39af4c78ba687ce3d69a61d4631b06d6f5c6c073e9",
+  "research/round2_opr/integrity.sha256": "b37e93fe6103f977304e698405bfb18584a2c21882f46cfed646ee3a0c702d55",
+  "research/round2_promotion_fresh_seeds/report.md": "644d07ee6b1fe91d817c201c8584437ebc07deea2d87268c58a52976bf2107df",
+  "research/round2_promotion_fresh_seeds/summary.json": "f6d5e77eb254e4e89cbfe9861db154e8fec30f629be73e67e1197b7de57eb5e9",
+  "research/round2_stagewise_signal/integrity.sha256": "4bd72cd66d80ccaae482c6b2c0cb02a803425f1050edad85598e120c56aae48b",
+  "research/round2_stagewise_signal/ranking_by_stage.json": "1ba332b54d2b7cca822bd72d20711f3a7b1adfc318f44bd467f18b4c286c3db2",
+  "research/round2_stagewise_signal/report.md": "13eb078deb3bcf360888b5eaaa3f796ccf7834dc0bf58094f6758af9d12f4f13",
+  "research/round2_stagewise_signal/seed_group_metrics.csv": "0fde6533b7ec57769b445fcd81fee131103680d6f4ebe840408f6784f2a75bf2"
+ },
+ "inputs_missing": [],
+ "inventory": {
+  "e3_rel_experiment": {
+   "exists": true,
+   "files": 51
+  },
+  "method_tournament": {
+   "exists": true,
+   "files": 83
+  },
+  "next_method_search": {
+   "exists": true,
+   "files": 10
+  },
+  "next_strategy_research": {
+   "exists": true,
+   "files": 6
+  },
+  "out": {
+   "exists": true,
+   "files": 4
+  },
+  "out_scale800": {
+   "exists": true,
+   "files": 4
+  },
+  "round1_submission": {
+   "exists": true,
+   "files": 4
+  },
+  "round2": {
+   "exists": true,
+   "files": 15
+  },
+  "round2_baseline_integrity": {
+   "exists": true,
+   "files": 5
+  },
+  "round2_decision_ceiling": {
+   "exists": true,
+   "files": 37
+  },
+  "round2_eda": {
+   "exists": true,
+   "files": 58
+  },
+  "round2_fixed_cardinality": {
+   "exists": true,
+   "files": 23
+  },
+  "round2_goal_rule": {
+   "exists": true,
+   "files": 23
+  },
+  "round2_missed_oracle": {
+   "exists": true,
+   "files": 28
+  },
+  "round2_opr": {
+   "exists": true,
+   "files": 12
+  },
+  "round2_promotion_fresh_seeds": {
+   "exists": true,
+   "files": 81
+  },
+  "round2_stage1_5": {
+   "exists": true,
+   "files": 3
+  },
+  "round2_stage2_floor_ablation": {
+   "exists": true,
+   "files": 24
+  },
+  "round2_stage3_intermediate_floor": {
+   "exists": true,
+   "files": 29
+  },
+  "round2_stage4_history_coldstart_audit": {
+   "exists": true,
+   "files": 12
+  },
+  "round2_stagewise_signal": {
+   "exists": true,
+   "files": 30
+  }
+ },
+ "plan_sha256": "e04280fc79e4427166608527329a0a475a4085058f4e428b7e3428c2f27da465",
+ "protected": {
+  "Dockerfile": "fef95fa3d6bc038fba8e7abde628d9155ac3dbdb4e4b693f1afd208bbfd1826e",
+  "evaluate.py": "d09cc14bf634a741515ad9965469821cac336a0d037b4da265eb1bf5fe20e162",
+  "kit.py": "0d2cb3d3b46ca2a6ee7c8b74b78c55642ef98686e59a890ec18f66f2cabc1f3e",
+  "policy.py": "c2ea0ffc95387c3e92ee214419a0bbde3c747e053eb4f35c5477337de5178d50",
+  "policy_ac.py": "90fb9ad306e89bfb3cc11d072c68de7ee3b1667e8709596979d04be41fa56a97",
+  "research/features.py": "23f8ed496145a68041ffe90fd0cc8c18216e1236a94966349ed7e8ee599f8d71",
+  "research/test_pipeline.py": "45e514635574bc4b8586dd57ec5c3e6ab67f02ad9dd2c52a0caa910662265e84",
+  "test_kit.py": "a7a065acad398d5ad8c8565b17e912f9fad9ca2823f7beebbb9e81bbde3ac509",
+  "test_policy.py": "264417979a625f15377b7ad87b58319fe54b3bd38781676438bfb4c453d5466a"
+ },
+ "protected_missing": [],
+ "seal_fail_non_runlog": [],
+ "seals": {
+  "round2_decision_ceiling": {
+   "entries": 38,
+   "manifest": true,
+   "path_base": "root",
+   "run_log_tolerated_by_convention": true,
+   "stale_non_runlog": [],
+   "stale_run_log": [
+    "research/round2_decision_ceiling/run_log.txt"
+   ],
+   "stale_strict": [
+    "research/round2_decision_ceiling/run_log.txt"
+   ]
+  },
+  "round2_eda": {
+   "entries": 58,
+   "manifest": true,
+   "path_base": "study_dir",
+   "run_log_tolerated_by_convention": true,
+   "stale_non_runlog": [],
+   "stale_run_log": [],
+   "stale_strict": []
+  },
+  "round2_fixed_cardinality": {
+   "entries": 23,
+   "manifest": true,
+   "path_base": "root",
+   "run_log_tolerated_by_convention": false,
+   "stale_non_runlog": [],
+   "stale_run_log": [],
+   "stale_strict": []
+  },
+  "round2_goal_rule": {
+   "entries": 22,
+   "manifest": true,
+   "path_base": "root",
+   "run_log_tolerated_by_convention": true,
+   "stale_non_runlog": [],
+   "stale_run_log": [
+    "research/round2_goal_rule/run_log.txt"
+   ],
+   "stale_strict": [
+    "research/round2_goal_rule/run_log.txt"
+   ]
+  },
+  "round2_missed_oracle": {
+   "entries": 26,
+   "manifest": true,
+   "path_base": "root",
+   "run_log_tolerated_by_convention": false,
+   "stale_non_runlog": [],
+   "stale_run_log": [],
+   "stale_strict": []
+  },
+  "round2_opr": {
+   "entries": 11,
+   "manifest": true,
+   "path_base": "study_dir",
+   "run_log_tolerated_by_convention": true,
+   "stale_non_runlog": [],
+   "stale_run_log": [],
+   "stale_strict": []
+  },
+  "round2_stagewise_signal": {
+   "entries": 29,
+   "manifest": true,
+   "path_base": "root",
+   "run_log_tolerated_by_convention": true,
+   "stale_non_runlog": [],
+   "stale_run_log": [
+    "research/round2_stagewise_signal/run_log.txt"
+   ],
+   "stale_strict": [
+    "research/round2_stagewise_signal/run_log.txt"
+   ]
+  }
+ },
+ "study": "round2_baseline_integrity"
+}

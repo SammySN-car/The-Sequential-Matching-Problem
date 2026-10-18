@@ -1,0 +1,13 @@
+{"day": 31, "invocation_seconds": 0.08005439999396913, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 28280, "solver_seconds": 0.0}
+{"day": 11, "invocation_seconds": 0.0834947999974247, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 28280, "solver_seconds": 0.0}
+{"day": 26, "invocation_seconds": 0.11150300002191216, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 28280, "solver_seconds": 0.0}
+{"day": 11, "invocation_seconds": 0.0912868999876082, "k_chosen": 2, "k_greedy": 2, "n_edges": 2, "phase": "match", "pid": 28280, "solver_seconds": 9.2999980552122e-05}
+{"day": 40, "invocation_seconds": 0.1079310999775771, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 28280, "solver_seconds": 0.0}
+{"day": 39, "invocation_seconds": 0.11245410001720302, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 28280, "solver_seconds": 0.0}
+{"day": 2, "invocation_seconds": 0.06386250001378357, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 28280, "solver_seconds": 0.0}
+{"day": 35, "invocation_seconds": 0.07626659999368712, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 28280, "solver_seconds": 0.0}
+{"day": 26, "invocation_seconds": 0.08834229997592047, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 28280, "solver_seconds": 0.0}
+{"day": 47, "invocation_seconds": 0.0782933000009507, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 28280, "solver_seconds": 0.0}
+{"day": 48, "invocation_seconds": 0.08483350000460632, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 28280, "solver_seconds": 6.710001616738737e-05}
+{"day": 37, "invocation_seconds": 0.08909299998776987, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 28280, "solver_seconds": 5.930001498199999e-05}
+{"day": 57, "invocation_seconds": 0.14472660000319593, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 28280, "solver_seconds": 0.0}

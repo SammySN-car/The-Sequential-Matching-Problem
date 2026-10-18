@@ -1,0 +1,160 @@
+{
+  "arms": [
+    "m19_arrival_age",
+    "m03_reciprocal_min",
+    "m14_mutual_regret",
+    "m26_greedy_one_swap"
+  ],
+  "cluster_note": "Inference clusters on seed: 6 per-variant deltas are averaged per seed -> 6 seed-level means (df = 5) (design section 9).",
+  "code_fingerprint": "fd5b92ff5999d1b8",
+  "not_ranked_note": "Ranking metric: mean paired delta of MSMI/100 vs control. Never AUC, offline expected value, mutual acceptances, introduction counts, or ask efficiency. Absolute numbers are never compared across seed sets.",
+  "per_method": {
+    "m03_reciprocal_min": {
+      "behavioral": {
+        "distinct_digests": 31,
+        "worlds_differing_from_control": 24
+      },
+      "ci95": [
+        -0.078899,
+        0.162232
+      ],
+      "ci99": [
+        -0.147411,
+        0.230744
+      ],
+      "cross_variant_dispersion_mean": 0.113685,
+      "eligible": true,
+      "ineligibility_reasons": [],
+      "invalid_episodes": 0,
+      "mean_delta": 0.041666666666666664,
+      "n_seeds": 6,
+      "n_units": 36,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.0,
+        "development": 0.08333333333333333,
+        "drift": 0.08333333333333333,
+        "shift": 0.08333333333333333,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 200.1,
+        "coverage_mean": 0.321,
+        "intros_per_100_mean": 33.361,
+        "max_inference_seconds": 17.5
+      }
+    },
+    "m14_mutual_regret": {
+      "behavioral": {
+        "distinct_digests": 31,
+        "worlds_differing_from_control": 0
+      },
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "ci99": [
+        0.0,
+        0.0
+      ],
+      "cross_variant_dispersion_mean": 0.0,
+      "eligible": true,
+      "ineligibility_reasons": [],
+      "invalid_episodes": 0,
+      "mean_delta": 0.0,
+      "n_seeds": 6,
+      "n_units": 36,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.0,
+        "development": 0.0,
+        "drift": 0.0,
+        "shift": 0.0,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 200.1,
+        "coverage_mean": 0.3208,
+        "intros_per_100_mean": 33.361,
+        "max_inference_seconds": 16.7
+      }
+    },
+    "m19_arrival_age": {
+      "behavioral": {
+        "distinct_digests": 31,
+        "worlds_differing_from_control": 32
+      },
+      "ci95": [
+        -0.099886,
+        0.072108
+      ],
+      "ci99": [
+        -0.148755,
+        0.120977
+      ],
+      "cross_variant_dispersion_mean": 0.102062,
+      "eligible": true,
+      "ineligibility_reasons": [],
+      "invalid_episodes": 0,
+      "mean_delta": -0.013888888888888888,
+      "n_seeds": 6,
+      "n_units": 36,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.16666666666666666,
+        "development": -0.08333333333333333,
+        "drift": -0.08333333333333333,
+        "shift": -0.08333333333333333,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 200.1,
+        "coverage_mean": 0.3206,
+        "intros_per_100_mean": 33.444,
+        "max_inference_seconds": 21.5
+      }
+    },
+    "m26_greedy_one_swap": {
+      "behavioral": {
+        "distinct_digests": 31,
+        "worlds_differing_from_control": 36
+      },
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "ci99": [
+        0.0,
+        0.0
+      ],
+      "cross_variant_dispersion_mean": 0.0,
+      "eligible": true,
+      "ineligibility_reasons": [],
+      "invalid_episodes": 0,
+      "mean_delta": 0.0,
+      "n_seeds": 6,
+      "n_units": 36,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.0,
+        "development": 0.0,
+        "drift": 0.0,
+        "shift": 0.0,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 200.1,
+        "coverage_mean": 0.3208,
+        "intros_per_100_mean": 33.361,
+        "max_inference_seconds": 20.8
+      }
+    }
+  },
+  "phase": "confirm1",
+  "selected": [
+    "m03_reciprocal_min",
+    "m14_mutual_regret"
+  ],
+  "selection_rule": "Top 2 by FULL-precision mean paired delta (sign-independent); zero-invalid only; m01 excluded; ties by (round(mean, 6), method_id) (design section 9).",
+  "worlds": 36
+}

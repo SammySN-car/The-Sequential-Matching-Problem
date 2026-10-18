@@ -1,0 +1,12 @@
+{"day": 14, "invocation_seconds": 0.06073719999403693, "k_chosen": 4, "k_greedy": 4, "n_edges": 5, "phase": "match", "pid": 25652, "solver_seconds": 0.00020520001999102533}
+{"day": 23, "invocation_seconds": 0.08791890001157299, "k_chosen": 1, "k_greedy": 1, "n_edges": 4, "phase": "match", "pid": 25652, "solver_seconds": 0.00015559999155811965}
+{"day": 53, "invocation_seconds": 0.08324629999697208, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 25652, "solver_seconds": 0.0}
+{"day": 11, "invocation_seconds": 0.07554300001356751, "k_chosen": 7, "k_greedy": 7, "n_edges": 15, "phase": "match", "pid": 25652, "solver_seconds": 0.001508999994257465}
+{"day": 52, "invocation_seconds": 0.09693650002009235, "k_chosen": 2, "k_greedy": 2, "n_edges": 5, "phase": "match", "pid": 25652, "solver_seconds": 0.00022369998623616993}
+{"day": 33, "invocation_seconds": 0.08120389998657629, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 25652, "solver_seconds": 0.0}
+{"day": 15, "invocation_seconds": 0.06448359999922104, "k_chosen": 2, "k_greedy": 2, "n_edges": 2, "phase": "match", "pid": 25652, "solver_seconds": 9.429999045096338e-05}
+{"day": 48, "invocation_seconds": 0.07698310000705533, "k_chosen": 2, "k_greedy": 2, "n_edges": 4, "phase": "match", "pid": 25652, "solver_seconds": 0.00017419998766854405}
+{"day": 13, "invocation_seconds": 0.0682331999996677, "k_chosen": 2, "k_greedy": 2, "n_edges": 3, "phase": "match", "pid": 25652, "solver_seconds": 0.00013689999468624592}
+{"day": 48, "invocation_seconds": 0.12120199998025782, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 25652, "solver_seconds": 7.770000956952572e-05}
+{"day": 16, "invocation_seconds": 0.07493909998447634, "k_chosen": 2, "k_greedy": 2, "n_edges": 3, "phase": "match", "pid": 25652, "solver_seconds": 0.00014380001812241971}
+{"day": 19, "invocation_seconds": 0.07587699999567121, "k_chosen": 3, "k_greedy": 3, "n_edges": 10, "phase": "match", "pid": 25652, "solver_seconds": 0.0007040000054985285}

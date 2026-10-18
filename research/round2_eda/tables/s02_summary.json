@@ -1,0 +1,5 @@
+{
+  "members_examined_scale800": 160000,
+  "members_with_any_declined_hard_pct": 34.323,
+  "note": "truth/exit_day used only where marked diagnostic; populations regenerated deterministically from recorded seeds via kit.generate (no rollouts)."
+}

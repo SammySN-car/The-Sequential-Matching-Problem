@@ -1,0 +1,8 @@
+variable,hidden,observable_via_asks,affects
+member bias,yes,no,acceptance logit
+second_bias,yes,no,second intention logit
+response_rate,yes,no,response gates + second answer gate
+pair shared shock,yes,no,acceptance AND second intention (correlates the two stages)
+soft truth fields (4 REL),partial,yes iff field_status != declined (S02: ~34% members have >=1 declined hard; soft declines also exist),fit (acceptance) + goal match (second)
+hard fields,partial,yes iff not declined,feasibility ONLY
+variant drift/shift/cold_start,no (variant is public),n/a,"weights (shift), -0.5 drift logit, lower cold-start soft coverage"

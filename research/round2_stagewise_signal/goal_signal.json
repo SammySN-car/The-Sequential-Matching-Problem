@@ -1,0 +1,116 @@
+{
+ "both_responded": {
+  "diff_ci": [
+   -0.084022,
+   0.091258
+  ],
+  "excludes_zero_rate": false,
+  "excludes_zero_score": false,
+  "n_match": 2042,
+  "n_match_edges": 2042,
+  "n_mismatch": 2324,
+  "rate_diff": 0.00582,
+  "rate_match": 0.622429,
+  "rate_mismatch": 0.616609,
+  "score_delta": -0.004693,
+  "score_delta_ci": [
+   -0.03794,
+   0.020921
+  ]
+ },
+ "date": {
+  "diff_ci": [
+   0.096066,
+   0.156308
+  ],
+  "excludes_zero_rate": true,
+  "excludes_zero_score": true,
+  "n_match": 2042,
+  "n_match_edges": 2042,
+  "n_mismatch": 2324,
+  "rate_diff": 0.125167,
+  "rate_match": 0.173359,
+  "rate_mismatch": 0.048193,
+  "score_delta": 0.099075,
+  "score_delta_ci": [
+   0.090079,
+   0.110059
+  ]
+ },
+ "date_within_deadline": {
+  "diff_ci": [
+   0.095597,
+   0.156921
+  ],
+  "excludes_zero_rate": true,
+  "excludes_zero_score": true,
+  "n_match": 2042,
+  "n_match_edges": 2042,
+  "n_mismatch": 2324,
+  "rate_diff": 0.125048,
+  "rate_match": 0.17238,
+  "rate_mismatch": 0.047332,
+  "score_delta": 0.104748,
+  "score_delta_ci": [
+   0.089909,
+   0.117851
+  ]
+ },
+ "final_msmi": {
+  "diff_ci": [
+   0.009813,
+   0.027527
+  ],
+  "excludes_zero_rate": true,
+  "excludes_zero_score": true,
+  "n_match": 2042,
+  "n_match_edges": 2042,
+  "n_mismatch": 2324,
+  "rate_diff": 0.017986,
+  "rate_match": 0.020568,
+  "rate_mismatch": 0.002582,
+  "score_delta": 0.011761,
+  "score_delta_ci": [
+   0.009398,
+   0.014057
+  ]
+ },
+ "mutual": {
+  "diff_ci": [
+   0.114637,
+   0.186441
+  ],
+  "excludes_zero_rate": true,
+  "excludes_zero_score": true,
+  "n_match": 2042,
+  "n_match_edges": 2042,
+  "n_mismatch": 2324,
+  "rate_diff": 0.149685,
+  "rate_match": 0.219393,
+  "rate_mismatch": 0.069707,
+  "score_delta": 0.130441,
+  "score_delta_ci": [
+   0.117471,
+   0.145554
+  ]
+ },
+ "timely_second": {
+  "diff_ci": [
+   0.010084,
+   0.028158
+  ],
+  "excludes_zero_rate": true,
+  "excludes_zero_score": true,
+  "n_match": 2042,
+  "n_match_edges": 2042,
+  "n_mismatch": 2324,
+  "rate_diff": 0.018476,
+  "rate_match": 0.021058,
+  "rate_mismatch": 0.002582,
+  "score_delta": 0.010624,
+  "score_delta_ci": [
+   0.00755,
+   0.013707
+  ]
+ }
+}

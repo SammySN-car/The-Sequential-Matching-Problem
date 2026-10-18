@@ -1,0 +1,431 @@
+{
+  "schema": "round2_stage4_summary_v1",
+  "generated": "2026-10-07 15:59:45",
+  "stage": "round2_stage4_history_coldstart_audit",
+  "decision_memo": {
+    "Q1_history_signal": {
+      "answer": "YES-small for mutual; NO/inconclusive for MSMI",
+      "mutual_delta_auc": 0.011305525752291712,
+      "mutual_ci95": [
+        0.00626503483134222,
+        0.016122359868346592
+      ],
+      "mutual_strata_all_positive": true,
+      "msmi_delta_auc": 0.00872488224943846,
+      "msmi_ci95": [
+        -0.0178944917127209,
+        0.03416265358862217
+      ],
+      "vs_heuristics": "mutual between <0.01 weak and >=0.02 meaningful; MSMI CI includes 0",
+      "confidence": "moderate (exact pipeline reproduction, world-clustered)"
+    },
+    "Q2_newcomer_penalty": {
+      "answer": "not observed at variant level; candidate-level experience = UNKNOWN (STOP rule applied)",
+      "cold_start_above_others_count": 3,
+      "cold_start_settings": 16,
+      "stage15_cold_start_exclusion": 0.8011472275334608,
+      "day_proxy_pooled_exclusion": {
+        "0-9": 0.6032110091743119,
+        "10-19": 0.7188612099644128,
+        "20-39": 0.8817910447761194,
+        "40-59": 0.9464751958224543
+      },
+      "stop_reason": "candidate-level experience stratification impossible from stored data",
+      "dominant_driver_observed": "profile sparsity (sparse variant 94.2% excluded, 47/60 all-below-floor days), not newcomer status"
+    },
+    "Q3_promotion_noise": {
+      "paired_sd_intermediate_minus_frozen": 0.2405626121623441,
+      "paired_diffs": {
+        "intermediate_minus_frozen": {
+          "mean": 0.1111111111111111,
+          "sd": 0.2405626121623441
+        },
+        "nofloor_minus_frozen": {
+          "mean": 0.027777777777777773,
+          "sd": 0.20971762320196527
+        },
+        "nofloor_minus_intermediate": {
+          "mean": -0.08333333333333333,
+          "sd": 0.14433756729740643
+        }
+      },
+      "normal_approx_seeds": {
+        "detect_mean_diff_0.05": {
+          "approx_n_paired_seeds": 182,
+          "formula": "n = ceil(((1.96+0.84)*sd/d)^2), sd = paired across-seed SD, normal approximation"
+        },
+        "detect_mean_diff_0.10": {
+          "approx_n_paired_seeds": 46,
+          "formula": "n = ceil(((1.96+0.84)*sd/d)^2), sd = paired across-seed SD, normal approximation"
+        },
+        "detect_mean_diff_0.20": {
+          "approx_n_paired_seeds": 12,
+          "formula": "n = ceil(((1.96+0.84)*sd/d)^2), sd = paired across-seed SD, normal approximation"
+        }
+      },
+      "crn": "kit.py outcomes are content-addressed per (world_seed, pair, day): exact world-level CRN + exact shared-(pair,day) outcome coupling; floor-induced selection divergence breaks most shared keys; rare MSMI events (9-13/arm) dominate residual noise",
+      "recommendation": "retain same-seed paired comparisons; ~12 paired seeds for 0.2-scale effects, ~46 for 0.1-scale"
+    },
+    "Q4_promotion": {
+      "decision": "PROCEED",
+      "grounds": "X0 no blocker (history lift small/additive); X1 no cold-start penalty to exacerbate; Stage 3 option 2 unchanged; exploration/cold-start work optional follow-up (low-moderate priority), not promotion-blocking",
+      "would_change_it": "candidate-level experience analysis (needs new runs, separate approval) or inability to fund >= ~12 paired seeds in the promotion protocol"
+    }
+  },
+  "x0": {
+    "dataset": {
+      "rows_csv": "research/out_scale800/rows.csv",
+      "rows_csv_sha256": "1d5cf4d9055dd6d3a35bb4316907ef24d707e83e598abbd05b395d9255db1508",
+      "n_rows": 259696
+    },
+    "split": {
+      "train_rows": 209238,
+      "val_rows": 50458,
+      "train_worlds": 640,
+      "val_worlds": 160,
+      "split_overlap": {
+        "worlds": 0,
+        "seeds": 0
+      }
+    },
+    "models": {
+      "a_features": 44,
+      "b_features": 34,
+      "removed": [
+        "hist_n_intros_mean",
+        "hist_n_intros_absdiff",
+        "hist_n_mutual_mean",
+        "hist_n_mutual_absdiff",
+        "hist_n_dates_mean",
+        "hist_n_dates_absdiff",
+        "hist_yes_rate_mean",
+        "hist_yes_rate_absdiff",
+        "hist_n_missing_mean",
+        "hist_n_missing_absdiff"
+      ],
+      "hyperparameters": "sklearn HistGradientBoostingClassifier via analyze.fit_models, {\"random_state\": 0, \"max_iter\": 200, \"learning_rate\": 0.1}"
+    },
+    "fidelity_check": {
+      "mutual": {
+        "roc_auc": {
+          "model_a_ours": 0.61314528880174,
+          "report_json": 0.61314528880174,
+          "diff": 0.0
+        },
+        "avg_precision": {
+          "model_a_ours": 0.19718715755920482,
+          "report_json": 0.19718715755920482,
+          "diff": 0.0
+        },
+        "log_loss": {
+          "model_a_ours": 0.3965965204344219,
+          "report_json": 0.3965965204344219,
+          "diff": 0.0
+        },
+        "brier": {
+          "model_a_ours": 0.11878505753259425,
+          "report_json": 0.11878505753259425,
+          "diff": 0.0
+        }
+      },
+      "msmi": {
+        "roc_auc": {
+          "model_a_ours": 0.5937198015746407,
+          "report_json": 0.5937198015746407,
+          "diff": 0.0
+        },
+        "avg_precision": {
+          "model_a_ours": 0.01227300020739052,
+          "report_json": 0.01227300020739052,
+          "diff": 0.0
+        },
+        "log_loss": {
+          "model_a_ours": 0.05413815795614733,
+          "report_json": 0.05413815795614733,
+          "diff": 0.0
+        },
+        "brier": {
+          "model_a_ours": 0.009469290898231609,
+          "report_json": 0.009469290898231609,
+          "diff": 0.0
+        }
+      }
+    },
+    "mutual": {
+      "model_a": {
+        "roc_auc": 0.61314528880174,
+        "auc_ci95_rowlevel": [
+          0.6057567158287854,
+          0.6205338617746946
+        ],
+        "avg_precision": 0.19718715755920482,
+        "log_loss": 0.3965965204344219,
+        "brier": 0.11878505753259425,
+        "n": 50458,
+        "positives": 7108,
+        "prevalence": 0.14086963415117523
+      },
+      "model_b": {
+        "roc_auc": 0.6018397630494483,
+        "auc_ci95_rowlevel": [
+          0.5944433065672442,
+          0.6092362195316524
+        ],
+        "avg_precision": 0.18994428378477934,
+        "log_loss": 0.39879234601698293,
+        "brier": 0.11941505136531703,
+        "n": 50458,
+        "positives": 7108,
+        "prevalence": 0.14086963415117523
+      },
+      "delta_auc": 0.011305525752291712,
+      "delta_auc_ci95": {
+        "n_valid": 2000,
+        "mean": 0.011302900064760663,
+        "ci95_percentile": [
+          0.00626503483134222,
+          0.016122359868346592
+        ],
+        "frac_lt_zero": 0.0,
+        "frac_gt_zero": 1.0
+      },
+      "delta_ap": 0.007242873774425479,
+      "delta_ap_ci95": {
+        "n_valid": 2000,
+        "mean": 0.0071836784513559385,
+        "ci95_percentile": [
+          0.002644302839979943,
+          0.01126773762028143
+        ],
+        "frac_lt_zero": 0.0015,
+        "frac_gt_zero": 0.9985
+      },
+      "delta_logloss": -0.0021958255825610395,
+      "delta_brier": -0.0006299938327227889,
+      "experience_marginal_dauc": {
+        "0": 0.00810791285163559,
+        "1-2": 0.013011593497235463,
+        "3+": 0.01690934175569825
+      },
+      "policy_marginal_dauc": {
+        "random": 0.009974646736168657,
+        "greedy": 0.027738482922363694
+      }
+    },
+    "msmi": {
+      "model_a": {
+        "roc_auc": 0.5937198015746407,
+        "auc_ci95_rowlevel": [
+          0.5666617808016222,
+          0.6207778223476591
+        ],
+        "avg_precision": 0.01227300020739052,
+        "log_loss": 0.05413815795614733,
+        "brier": 0.009469290898231609,
+        "n": 50458,
+        "positives": 475,
+        "prevalence": 0.009413769868009037
+      },
+      "model_b": {
+        "roc_auc": 0.5849949193252022,
+        "auc_ci95_rowlevel": [
+          0.5579732772944672,
+          0.6120165613559372
+        ],
+        "avg_precision": 0.012853915277319428,
+        "log_loss": 0.05397540164573942,
+        "brier": 0.009438590183199414,
+        "n": 50458,
+        "positives": 475,
+        "prevalence": 0.009413769868009037
+      },
+      "delta_auc": 0.00872488224943846,
+      "delta_auc_ci95": {
+        "n_valid": 2000,
+        "mean": 0.008866715170868499,
+        "ci95_percentile": [
+          -0.0178944917127209,
+          0.03416265358862217
+        ],
+        "frac_lt_zero": 0.2545,
+        "frac_gt_zero": 0.7455
+      },
+      "delta_ap": -0.0005809150699289077,
+      "delta_ap_ci95": {
+        "n_valid": 2000,
+        "mean": -0.0010481015916802088,
+        "ci95_percentile": [
+          -0.006732224000382478,
+          0.0013158455086925618
+        ],
+        "frac_lt_zero": 0.684,
+        "frac_gt_zero": 0.316
+      },
+      "delta_logloss": 0.00016275631040790772,
+      "delta_brier": 3.0700715032194736e-05,
+      "stability_warning": "joint-cell positives 1-16; cell-level deltas unreliable; rely on clustered CI"
+    },
+    "bootstrap": {
+      "clusters": "validation worlds",
+      "n_clusters": 160,
+      "resamples": 2000,
+      "seeds": {
+        "mutual": 9099,
+        "msmi": 9100
+      },
+      "ci": "percentile [2.5, 97.5]"
+    },
+    "stratification": {
+      "experience": "min_prior = hist_n_intros_mean - hist_n_intros_absdiff/2 (exact min(a,b) at decision time); groups 0 / 1-2 / 3+",
+      "policy": "rows.csv 'policy' column (random|greedy)",
+      "scope": "validation rows only"
+    }
+  },
+  "x1": {
+    "determinism_probe_run1_eq_run2": true,
+    "stage15_exclusion_by_variant": {
+      "development": 0.8423707440100883,
+      "sparse": 0.9418960244648318,
+      "cold_start": 0.8011472275334608,
+      "delayed": 0.8637951105937136,
+      "shift": 0.8571428571428572,
+      "drift": 0.8539719626168224
+    },
+    "stage15_zero_selection_days": {
+      "development": {
+        "all_below_floor": 17
+      },
+      "sparse": {
+        "all_below_floor": 47
+      },
+      "cold_start": {
+        "all_below_floor": 25
+      },
+      "delayed": {
+        "all_below_floor": 19
+      },
+      "shift": {
+        "all_below_floor": 22
+      },
+      "drift": {
+        "all_below_floor": 18
+      }
+    },
+    "day_proxy_pooled": {
+      "0-9": 0.6032110091743119,
+      "10-19": 0.7188612099644128,
+      "20-39": 0.8817910447761194,
+      "40-59": 0.9464751958224543
+    },
+    "coldstart_vs_others": {
+      "n_settings": 16,
+      "cold_start_gt_others": 3
+    },
+    "limitations": [
+      {
+        "id": "X1-L1",
+        "claim": "candidate-level experience stratification impossible from stored data",
+        "evidence": [
+          "probe/stage2/stage3 per-day match records store COUNTS only (n_cand/n_above/n_below...); no per-candidate rows for below-floor candidates",
+          "per-candidate pair ids + scores exist ONLY for SELECTED pairs (key 'selected_scored'); below-floor candidates are a count (n_below) with no ids/scores/experience",
+          "no stored key anywhere contains 'hist_', 'experience', 'prior_intro' or member-history fields for candidates",
+          "schema_discovery in this file lists the exact stored keys"
+        ],
+        "consequence": "the required 'history available at candidate decision time' stratification (0/1-2/3+ prior intros per feasible candidate) cannot be computed without NEW simulator runs, which this stage does not perform; reported as STOP for that sub-part",
+        "proxy_used": "variant identity (cold_start) and decision-day buckets (early days = low accumulated history) are reported as explicitly-labeled proxies only"
+      }
+    ]
+  },
+  "rng_audit": {
+    "file": "kit.py (read-only, sha16 0D2CB3D3B46CA2A6)",
+    "keyed_rng": "kit.rand_for = Random(SHA256(parts)[:16]) - stateless, content-addressed, no global stream",
+    "outcome_key": "(world_seed, member_a, member_b, introduction_day)",
+    "world_level_crn": "exact (generate(seed) identical for all policies)",
+    "pair_day_crn": "exact on shared (pair, day) keys; conditional draw paths deterministic within key",
+    "asks_random": false,
+    "coupling_limits": [
+      "floor changes selection -> keys diverge",
+      "day in key -> timing shifts decouple",
+      "drift variant probability depends on day>=35",
+      "rare MSMI funnel dominates residual variance"
+    ]
+  },
+  "integrity": {
+    "checked": 17,
+    "all_match": true
+  },
+  "prohibitions": {
+    "new_policy_or_model_tuning": false,
+    "promotion_experiment": false,
+    "holdout_access": false,
+    "threshold_sweeps": false,
+    "episode_seeds_107_118_used": false,
+    "thompson_or_rl": false,
+    "frozen_files_modified": false,
+    "simulator_episodes_run": false
+  },
+  "evidence_tags": [
+    "OBSERVED",
+    "INTERPRETATION",
+    "HYPOTHESIS",
+    "UNKNOWN",
+    "RECOMMENDATION"
+  ],
+  "artifacts": [
+    {
+      "name": "report.md",
+      "bytes": 24520,
+      "sha256": "9c3cb74f081c54e46be93ed7e9b7b73da704962465aa8c66fd65051700073ce7"
+    },
+    {
+      "name": "run_log.txt",
+      "bytes": 2946,
+      "sha256": "e953f51d58600dd330b9b58b35918e83b4868d12ccde073f5c1d90cdadbed9de"
+    },
+    {
+      "name": "x0_history_lift.py",
+      "bytes": 15081,
+      "sha256": "3b8a10d706dd7299f30c6b3ec271b2e8912a1276aa0d54181808eaf1ff584577"
+    },
+    {
+      "name": "x0_results.json",
+      "bytes": 36270,
+      "sha256": "3e5bf72a99172c723cd9aaf108dfccd762093bf0ea2a9f2ebb20ac68f4251e81"
+    },
+    {
+      "name": "x1_coldstart_penalty.py",
+      "bytes": 15357,
+      "sha256": "502e48fb7ce1beb812bb9bf39b3c40e57f3ced9c8fc1ea8dfcb53a9a6983583e"
+    },
+    {
+      "name": "x1_results.json",
+      "bytes": 136580,
+      "sha256": "8c0652f50ab121bc7102d5fc8fca4b4d4e05da2dd09f4124365173402b594f46"
+    },
+    {
+      "name": "q3_noise_from_stage3.py",
+      "bytes": 4161,
+      "sha256": "890f4048c37172cbb6a6454320de63a58a6760df2dfae6ff98e283e837189b31"
+    },
+    {
+      "name": "q3_noise_results.json",
+      "bytes": 4071,
+      "sha256": "4258399ff906960b216789ed829e7c06f3b21d4bb1e43b43b7aefdee7d1f99a9"
+    },
+    {
+      "name": "verify_integrity.py",
+      "bytes": 1966,
+      "sha256": "40be8860ef5a23f95b9fff92f886e94c49378af9d54a1b0c0f512e8e9886e9f9"
+    },
+    {
+      "name": "integrity_after.json",
+      "bytes": 2598,
+      "sha256": "bc7883b6fdb3a06554fdd51a9dcd82e09e8190c4302e0fb14117d252d4cf480f"
+    },
+    {
+      "name": "build_summary.py",
+      "bytes": 9204,
+      "sha256": "7b9b66549797f68d7daeffe18da70dae2564655b6ce8f2139599afca9e67c46f"
+    }
+  ]
+}

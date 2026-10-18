@@ -1,0 +1,5 @@
+measure,value,source
+ask_cost_baseline_hard_only,2226,"probe_seed101 (6 variants, A+C floor policy context)"
+ask_cost_ac_total,2404,same
+ask_cost_ac_soft_only,178,same
+ask_overlap_members_hard,87,same

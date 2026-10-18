@@ -1,0 +1,21 @@
+{
+ "f5_checked": 82,
+ "f5_flat_within_state": 82,
+ "failures": [],
+ "k_t_max": 14,
+ "k_t_zero_states": 3566,
+ "n_cf": 15304,
+ "n_edges": 15304,
+ "n_headroom_states": 82,
+ "n_label_disagree": 0,
+ "n_missing_labels": 0,
+ "n_missing_oof": 0,
+ "n_not_disjoint": 0,
+ "n_not_subset": 0,
+ "n_oof": 15304,
+ "n_seed_groups": 21,
+ "n_states": 7560,
+ "n_variants": 6,
+ "passed": true,
+ "prior_seal_stale": []
+}

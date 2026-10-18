@@ -1,0 +1,2730 @@
+{
+  "battery": "research/round2_stagewise_reward/scripts/sr_solver_test.py",
+  "created_utc": "2026-10-13T22:42:08Z",
+  "environment": {
+    "platform": "Windows-11-10.0.26300-SP0",
+    "python": "3.13.5"
+  },
+  "fc_own_suite": {
+    "attempted": true,
+    "command": "python -B -c <write-divert-wrapper> fc_solvers_test.py",
+    "cwd": "research/round2_fixed_cardinality/scripts",
+    "exit_code": 0,
+    "method": "subprocess python -B with cwd=round2_fixed_cardinality/scripts; the suite runs unmodified (same files, same RNG, same exit code) while a wrapper diverts its single output write (round2_fixed_cardinality/solver_validation.json) to a temp file and blocks any other repo write - required by the hard constraint never to modify prior research files",
+    "note_on_prior": "prior solver_validation.json preserved untouched; sha256 cited above is the provenance anchor",
+    "prior_artifact": {
+      "passed_field": true,
+      "path": "research\\round2_fixed_cardinality\\solver_validation.json",
+      "sha256": "74357d1630a3930a064702035dd8294bde98835f968289bf243966413363aa1a"
+    },
+    "rerun_artifact": {
+      "byte_identical_to_prior": true,
+      "path": "C:\\Users\\samar\\AppData\\Local\\Temp\\opencode\\fc_solver_validation_rerun.json",
+      "sha256": "74357d1630a3930a064702035dd8294bde98835f968289bf243966413363aa1a"
+    },
+    "seconds": 30.7,
+    "status": "PASSED_RERUN",
+    "stderr": "",
+    "stdout": "--- V-SOLV-01a: synthetic random graphs vs exhaustive enumeration ---\n  synthetic checks=12310  disagreements=0  constraint_fail=0  det_fail=0  (24.8s)\n--- V-SOLV-01b: every real state with n_edges <= 16, all four weightings ---\n  real states with n_edges<=16: 7489   checks/arm={'F1-SCORE': 7489, 'F2-SOFT': 7489, 'F3-OBSERV': 7489, 'F5-ORACLE': 7489}\n  disagreements={'F1-SCORE': 0, 'F2-SOFT': 0, 'F3-OBSERV': 0, 'F5-ORACLE': 0}  constraint_fail=0  max_nodes=2101  (4.4s)\n--- V-SOLV-04: solver objective >= greedy objective (F1-SCORE weighting) ---\n  better=1228 equal=6332 worse=0 node_limit=0 (1.0s)\n\nSOLVER VALIDATION: PASS\n",
+    "timed_out": false,
+    "timeout_seconds": 3600
+  },
+  "gates": {
+    "v1_zero_disagreements": true,
+    "v2_determinism_and_lexmin": true,
+    "v3_zero_violations": true,
+    "v4_max_seconds_lt_3": false,
+    "v4_zero_data_errors": true,
+    "v4_zero_node_limit_failures": false,
+    "v5_zero_disagreements": true
+  },
+  "model_artifact": {
+    "features": [
+      "age_diff",
+      "age_slack",
+      "gender_fit_ab",
+      "gender_fit_ba",
+      "zone_common",
+      "schedule_overlap",
+      "arrival_diff",
+      "soft_equal",
+      "soft_differ",
+      "soft_missing",
+      "soft_declined",
+      "goal_agree",
+      "prev_intros_mean",
+      "hist_yes",
+      "current_day",
+      "degree_a",
+      "degree_b"
+    ],
+    "frozen_sha256_ok": true,
+    "model_artifact_sha256": "7f1ddfe00211e2603e88c4e8318d3a62980aeb8364f51bc41909e8875fa275f2"
+  },
+  "passed": false,
+  "phat_crosscheck": {
+    "bit_exact": true,
+    "status": "OK",
+    "vectors": 5
+  },
+  "schema": 1,
+  "solver_under_test": {
+    "entry_point": "solve_exact_k",
+    "node_limit_pass1": 8000000,
+    "node_limit_pass2_cumulative": 16000000,
+    "objective": "MAXIMISE sum of weights over a vertex-disjoint set of EXACTLY k edges",
+    "path": "research\\round2_fixed_cardinality\\scripts\\fc_matching.py",
+    "return_semantics": [
+      "first element = tuple of INPUT EDGE INDICES (not pairs)",
+      "k==0 -> ((), 0.0, 0, False)",
+      "infeasible -> (None, None, nodes, False): failed stays False",
+      "node-limit -> (None, None, nodes, True): failed=True, value None",
+      "returned optimum is the lexicographically smallest optimum under canonical (u,v) key u<=v (pass 2, source L96-130)"
+    ],
+    "sha256": "59c852debde55fdde4b2e0b967d310d1ca29b1dd09a51d81d38d6c1c68a66b1e",
+    "signature_from_source": "solve_exact_k(edges: Sequence[Tuple[str,str]], weights: Sequence[float], k: int) -> (edge_indices|None, value|None, nodes: int, failed: bool)",
+    "verified_by": "direct source read of fc_matching.py (read-only)"
+  },
+  "task": 7,
+  "v1_random_graphs": {
+    "by_type": {},
+    "checks": 9421,
+    "disagreements": 0,
+    "duplicate_behavior_failures": 0,
+    "duplicate_edge_tests": [
+      {
+        "edges": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b",
+            "c"
+          ]
+        ],
+        "expected": [
+          [
+            1
+          ],
+          2.0
+        ],
+        "failed": false,
+        "k": 1,
+        "name": "dup_heavier_copy_wins",
+        "observed": [
+          [
+            1
+          ],
+          2.0
+        ],
+        "ok": true,
+        "weights": [
+          1.0,
+          2.0,
+          1.5
+        ]
+      },
+      {
+        "edges": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "b",
+            "c"
+          ]
+        ],
+        "expected": [
+          [
+            2
+          ],
+          1.5
+        ],
+        "failed": false,
+        "k": 1,
+        "name": "dup_equal_prefers_earlier_index",
+        "observed": [
+          [
+            2
+          ],
+          1.5
+        ],
+        "ok": true,
+        "weights": [
+          1.0,
+          1.0,
+          1.5
+        ]
+      },
+      {
+        "edges": [
+          [
+            "a",
+            "b"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "c",
+            "d"
+          ]
+        ],
+        "expected": [
+          [
+            0,
+            2
+          ],
+          2.0
+        ],
+        "failed": false,
+        "k": 2,
+        "name": "dup_k2_lex_first_occurrence",
+        "observed": [
+          [
+            0,
+            2
+          ],
+          2.0
+        ],
+        "ok": true,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "edges": [
+          [
+            "b",
+            "a"
+          ],
+          [
+            "a",
+            "b"
+          ],
+          [
+            "c",
+            "d"
+          ]
+        ],
+        "expected": [
+          [
+            0
+          ],
+          1.0
+        ],
+        "failed": false,
+        "k": 1,
+        "name": "dup_orientation_canon_tie",
+        "observed": [
+          [
+            0
+          ],
+          1.0
+        ],
+        "ok": true,
+        "weights": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      {
+        "edges": [
+          [
+            "a",
+            "b"
+          ]
+        ],
+        "expected": [
+          null,
+          null
+        ],
+        "failed": false,
+        "k": -1,
+        "name": "negative_k_infeasible",
+        "observed": [
+          null,
+          null
+        ],
+        "ok": true,
+        "weights": [
+          1.0
+        ]
+      }
+    ],
+    "examples": [],
+    "graphs": 2000,
+    "infeasible_checks": 3616,
+    "infeasible_reporting_note": "solver reports infeasible as (None, None, failed=False); failed=True is reserved for node-limit breaches",
+    "k0_checks": 2000,
+    "k_selection": "sorted set {0, 1, max_matching, max_matching+1, n_edges+1, random(0..max_matching+1)}",
+    "max_edges_per_graph": 14,
+    "passed": true,
+    "rng": "stdlib random.Random(4242)",
+    "vertices_range": [
+      6,
+      10
+    ],
+    "weight_pool": [
+      -2.0,
+      -1.0,
+      -0.5,
+      0.0,
+      0.0,
+      0.25,
+      0.5,
+      1.0,
+      2.0,
+      3.5,
+      7.0
+    ]
+  },
+  "v2_determinism_ties": {
+    "determinism": {
+      "examples": [],
+      "inputs": 151,
+      "mismatches": 0,
+      "runs_per_input": 3
+    },
+    "disagreements": 0,
+    "lexicographic_ties": {
+      "cases": 8,
+      "detail": [
+        {
+          "brute_force_lex_min": [
+            0
+          ],
+          "brute_force_value": 1.0,
+          "deterministic": true,
+          "edges": [
+            [
+              "a",
+              "b"
+            ],
+            [
+              "b",
+              "c"
+            ],
+            [
+              "c",
+              "d"
+            ]
+          ],
+          "k": 1,
+          "n_optima": 3,
+          "name": "path3_k1",
+          "ok": true,
+          "solver_indices": [
+            0
+          ],
+          "value": 1.0,
+          "weights": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "brute_force_lex_min": [
+            0
+          ],
+          "brute_force_value": 1.0,
+          "deterministic": true,
+          "edges": [
+            [
+              "a",
+              "b"
+            ],
+            [
+              "a",
+              "c"
+            ],
+            [
+              "a",
+              "d"
+            ]
+          ],
+          "k": 1,
+          "n_optima": 3,
+          "name": "star4_k1",
+          "ok": true,
+          "solver_indices": [
+            0
+          ],
+          "value": 1.0,
+          "weights": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "brute_force_lex_min": [
+            0,
+            2
+          ],
+          "brute_force_value": 2.0,
+          "deterministic": true,
+          "edges": [
+            [
+              "a",
+              "b"
+            ],
+            [
+              "b",
+              "c"
+            ],
+            [
+              "c",
+              "d"
+            ],
+            [
+              "d",
+              "a"
+            ]
+          ],
+          "k": 2,
+          "n_optima": 2,
+          "name": "cycle4_k2",
+          "ok": true,
+          "solver_indices": [
+            0,
+            2
+          ],
+          "value": 2.0,
+          "weights": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "brute_force_lex_min": [
+            0
+          ],
+          "brute_force_value": -1.0,
+          "deterministic": true,
+          "edges": [
+            [
+              "a",
+              "b"
+            ],
+            [
+              "b",
+              "c"
+            ],
+            [
+              "c",
+              "d"
+            ]
+          ],
+          "k": 1,
+          "n_optima": 3,
+          "name": "neg_tie_k1",
+          "ok": true,
+          "solver_indices": [
+            0
+          ],
+          "value": -1.0,
+          "weights": [
+            -1.0,
+            -1.0,
+            -1.0
+          ]
+        },
+        {
+          "brute_force_lex_min": [
+            0,
+            2
+          ],
+          "brute_force_value": 3.0,
+          "deterministic": true,
+          "edges": [
+            [
+              "a",
+              "b"
+            ],
+            [
+              "a",
+              "b"
+            ],
+            [
+              "c",
+              "d"
+            ]
+          ],
+          "k": 2,
+          "n_optima": 2,
+          "name": "dup_k2_lex_first",
+          "ok": true,
+          "solver_indices": [
+            0,
+            2
+          ],
+          "value": 3.0,
+          "weights": [
+            1.0,
+            1.0,
+            2.0
+          ]
+        },
+        {
+          "brute_force_lex_min": [
+            0
+          ],
+          "brute_force_value": 1.0,
+          "deterministic": true,
+          "edges": [
+            [
+              "b",
+              "a"
+            ],
+            [
+              "a",
+              "b"
+            ],
+            [
+              "c",
+              "d"
+            ]
+          ],
+          "k": 1,
+          "n_optima": 3,
+          "name": "dup_orientation_k1",
+          "ok": true,
+          "solver_indices": [
+            0
+          ],
+          "value": 1.0,
+          "weights": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        },
+        {
+          "brute_force_lex_min": [
+            0
+          ],
+          "brute_force_value": 2.0,
+          "deterministic": true,
+          "edges": [
+            [
+              "a",
+              "b"
+            ],
+            [
+              "b",
+              "c"
+            ],
+            [
+              "a",
+              "c"
+            ]
+          ],
+          "k": 1,
+          "n_optima": 3,
+          "name": "triangle_k1",
+          "ok": true,
+          "solver_indices": [
+            0
+          ],
+          "value": 2.0,
+          "weights": [
+            2.0,
+            2.0,
+            2.0
+          ]
+        },
+        {
+          "brute_force_lex_min": [
+            0,
+            1
+          ],
+          "brute_force_value": 2.0,
+          "deterministic": true,
+          "edges": [
+            [
+              "a",
+              "b"
+            ],
+            [
+              "c",
+              "d"
+            ],
+            [
+              "e",
+              "f"
+            ]
+          ],
+          "k": 2,
+          "n_optima": 3,
+          "name": "disjoint3_k2",
+          "ok": true,
+          "solver_indices": [
+            0,
+            1
+          ],
+          "value": 2.0,
+          "weights": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "failures": 0
+    },
+    "passed": true
+  },
+  "v3_pilot_replay": {
+    "match_days": 60,
+    "max_nodes": 80513,
+    "node_limit_failures": 0,
+    "passed": true,
+    "replay_parity": {
+      "compared": 360,
+      "examples": [],
+      "mismatches": 0,
+      "missing_states": 0,
+      "source": "data/states/seed_40001.jsonl (all fields incl. edge_priorities floats)"
+    },
+    "seed_group": 40001,
+    "solve_seconds": {
+      "max": 0.021583299996564165,
+      "mean": 0.0002836783337746359,
+      "min": 1.4999968698248267e-06,
+      "n": 360,
+      "p50": 1.944999530678615e-05,
+      "p95": 5.667999503202738e-05
+    },
+    "states_checked": 360,
+    "total_violations_including_parity": 0,
+    "variants": [
+      "development",
+      "sparse",
+      "cold_start",
+      "delayed",
+      "shift",
+      "drift"
+    ],
+    "violation_examples": [],
+    "violations": 0,
+    "violations_by_type": {},
+    "weights": "P_hat = p_s1*p_s2*p_s3 (frozen model_artifact.json)"
+  },
+  "v4_dense_timing": {
+    "data_errors": [],
+    "day0": {
+      "n_edges_histogram": {
+        "0": 28,
+        "1": 85,
+        "10": 147,
+        "11": 107,
+        "12": 157,
+        "13": 116,
+        "14": 124,
+        "15": 72,
+        "16": 134,
+        "17": 128,
+        "18": 90,
+        "19": 139,
+        "2": 124,
+        "20": 93,
+        "21": 69,
+        "22": 68,
+        "23": 36,
+        "24": 49,
+        "25": 36,
+        "26": 44,
+        "27": 24,
+        "28": 25,
+        "29": 16,
+        "3": 159,
+        "30": 20,
+        "31": 4,
+        "32": 20,
+        "33": 8,
+        "34": 16,
+        "35": 12,
+        "36": 8,
+        "37": 20,
+        "38": 4,
+        "39": 4,
+        "4": 142,
+        "40": 8,
+        "41": 8,
+        "43": 8,
+        "44": 8,
+        "45": 4,
+        "48": 4,
+        "49": 4,
+        "5": 140,
+        "51": 4,
+        "6": 100,
+        "65": 4,
+        "7": 139,
+        "8": 102,
+        "9": 139
+      },
+      "n_edges_max": 65,
+      "n_edges_mean": 13.374333333333333,
+      "n_edges_min": 0,
+      "states": 3000,
+      "zero_edge_states": 28
+    },
+    "day0_states_timed": [
+      {
+        "failed": true,
+        "k": 17,
+        "n_edges": 65,
+        "seconds": 5.938688,
+        "seed_group": 40137,
+        "variant": "shift"
+      },
+      {
+        "failed": true,
+        "k": 17,
+        "n_edges": 65,
+        "seconds": 5.828159,
+        "seed_group": 40137,
+        "variant": "drift"
+      },
+      {
+        "failed": true,
+        "k": 17,
+        "n_edges": 65,
+        "seconds": 5.95603,
+        "seed_group": 40137,
+        "variant": "development"
+      },
+      {
+        "failed": true,
+        "k": 17,
+        "n_edges": 65,
+        "seconds": 5.817365,
+        "seed_group": 40137,
+        "variant": "delayed"
+      },
+      {
+        "failed": false,
+        "k": 11,
+        "n_edges": 51,
+        "seconds": 0.883419,
+        "seed_group": 40499,
+        "variant": "shift"
+      },
+      {
+        "failed": false,
+        "k": 11,
+        "n_edges": 51,
+        "seconds": 0.939747,
+        "seed_group": 40499,
+        "variant": "drift"
+      },
+      {
+        "failed": false,
+        "k": 11,
+        "n_edges": 51,
+        "seconds": 0.887322,
+        "seed_group": 40499,
+        "variant": "development"
+      },
+      {
+        "failed": false,
+        "k": 11,
+        "n_edges": 51,
+        "seconds": 0.886683,
+        "seed_group": 40499,
+        "variant": "delayed"
+      },
+      {
+        "failed": true,
+        "k": 13,
+        "n_edges": 49,
+        "seconds": 3.838308,
+        "seed_group": 40289,
+        "variant": "shift"
+      },
+      {
+        "failed": true,
+        "k": 13,
+        "n_edges": 49,
+        "seconds": 3.800735,
+        "seed_group": 40289,
+        "variant": "drift"
+      },
+      {
+        "failed": true,
+        "k": 13,
+        "n_edges": 49,
+        "seconds": 3.75367,
+        "seed_group": 40289,
+        "variant": "development"
+      },
+      {
+        "failed": true,
+        "k": 13,
+        "n_edges": 49,
+        "seconds": 3.906445,
+        "seed_group": 40289,
+        "variant": "delayed"
+      },
+      {
+        "failed": false,
+        "k": 16,
+        "n_edges": 48,
+        "seconds": 3.471129,
+        "seed_group": 40111,
+        "variant": "shift"
+      },
+      {
+        "failed": false,
+        "k": 16,
+        "n_edges": 48,
+        "seconds": 3.433691,
+        "seed_group": 40111,
+        "variant": "drift"
+      },
+      {
+        "failed": false,
+        "k": 16,
+        "n_edges": 48,
+        "seconds": 3.450476,
+        "seed_group": 40111,
+        "variant": "development"
+      },
+      {
+        "failed": false,
+        "k": 16,
+        "n_edges": 48,
+        "seconds": 3.463501,
+        "seed_group": 40111,
+        "variant": "delayed"
+      },
+      {
+        "failed": false,
+        "k": 11,
+        "n_edges": 45,
+        "seconds": 2.572795,
+        "seed_group": 40224,
+        "variant": "shift"
+      },
+      {
+        "failed": false,
+        "k": 11,
+        "n_edges": 45,
+        "seconds": 2.546172,
+        "seed_group": 40224,
+        "variant": "drift"
+      },
+      {
+        "failed": false,
+        "k": 11,
+        "n_edges": 45,
+        "seconds": 2.516177,
+        "seed_group": 40224,
+        "variant": "development"
+      },
+      {
+        "failed": false,
+        "k": 11,
+        "n_edges": 45,
+        "seconds": 2.718598,
+        "seed_group": 40224,
+        "variant": "delayed"
+      },
+      {
+        "failed": false,
+        "k": 11,
+        "n_edges": 44,
+        "seconds": 0.603017,
+        "seed_group": 40347,
+        "variant": "shift"
+      },
+      {
+        "failed": false,
+        "k": 11,
+        "n_edges": 44,
+        "seconds": 0.60196,
+        "seed_group": 40347,
+        "variant": "drift"
+      },
+      {
+        "failed": false,
+        "k": 11,
+        "n_edges": 44,
+        "seconds": 0.608155,
+        "seed_group": 40347,
+        "variant": "development"
+      },
+      {
+        "failed": false,
+        "k": 11,
+        "n_edges": 44,
+        "seconds": 0.593368,
+        "seed_group": 40347,
+        "variant": "delayed"
+      },
+      {
+        "failed": false,
+        "k": 12,
+        "n_edges": 44,
+        "seconds": 1.069509,
+        "seed_group": 40081,
+        "variant": "shift"
+      },
+      {
+        "failed": false,
+        "k": 12,
+        "n_edges": 44,
+        "seconds": 1.083569,
+        "seed_group": 40081,
+        "variant": "drift"
+      },
+      {
+        "failed": false,
+        "k": 12,
+        "n_edges": 44,
+        "seconds": 1.076746,
+        "seed_group": 40081,
+        "variant": "development"
+      },
+      {
+        "failed": false,
+        "k": 12,
+        "n_edges": 44,
+        "seconds": 1.055151,
+        "seed_group": 40081,
+        "variant": "delayed"
+      },
+      {
+        "failed": false,
+        "k": 12,
+        "n_edges": 43,
+        "seconds": 2.210608,
+        "seed_group": 40364,
+        "variant": "shift"
+      },
+      {
+        "failed": false,
+        "k": 0,
+        "n_edges": 0,
+        "seconds": 2e-06,
+        "seed_group": 40026,
+        "variant": "sparse"
+      },
+      {
+        "failed": false,
+        "k": 0,
+        "n_edges": 0,
+        "seconds": 1e-06,
+        "seed_group": 40087,
+        "variant": "cold_start"
+      },
+      {
+        "failed": false,
+        "k": 0,
+        "n_edges": 0,
+        "seconds": 1e-06,
+        "seed_group": 40095,
+        "variant": "cold_start"
+      }
+    ],
+    "entries": [
+      {
+        "day": 0,
+        "failed": true,
+        "k": 17,
+        "matching_size": null,
+        "n_edges": 65,
+        "nodes": 16000014,
+        "seconds": 5.938688,
+        "seed_group": 40137,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": true,
+        "k": 17,
+        "matching_size": null,
+        "n_edges": 65,
+        "nodes": 16000014,
+        "seconds": 5.828159,
+        "seed_group": 40137,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "drift"
+      },
+      {
+        "day": 0,
+        "failed": true,
+        "k": 17,
+        "matching_size": null,
+        "n_edges": 65,
+        "nodes": 16000014,
+        "seconds": 5.95603,
+        "seed_group": 40137,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "development"
+      },
+      {
+        "day": 0,
+        "failed": true,
+        "k": 17,
+        "matching_size": null,
+        "n_edges": 65,
+        "nodes": 16000014,
+        "seconds": 5.817365,
+        "seed_group": 40137,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "delayed"
+      },
+      {
+        "day": 16,
+        "failed": true,
+        "k": 13,
+        "matching_size": null,
+        "n_edges": 63,
+        "nodes": 16000013,
+        "seconds": 8.406217,
+        "seed_group": 40358,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "delayed"
+      },
+      {
+        "day": 8,
+        "failed": true,
+        "k": 18,
+        "matching_size": null,
+        "n_edges": 61,
+        "nodes": 16000015,
+        "seconds": 9.957387,
+        "seed_group": 40137,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "drift"
+      },
+      {
+        "day": 8,
+        "failed": true,
+        "k": 11,
+        "matching_size": null,
+        "n_edges": 60,
+        "nodes": 16000011,
+        "seconds": 8.563172,
+        "seed_group": 40347,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "development"
+      },
+      {
+        "day": 8,
+        "failed": true,
+        "k": 13,
+        "matching_size": null,
+        "n_edges": 56,
+        "nodes": 16000009,
+        "seconds": 17.199167,
+        "seed_group": 40289,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "drift"
+      },
+      {
+        "day": 8,
+        "failed": true,
+        "k": 12,
+        "matching_size": null,
+        "n_edges": 55,
+        "nodes": 16000010,
+        "seconds": 14.726025,
+        "seed_group": 40358,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "delayed"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 51,
+        "nodes": 3658987,
+        "seconds": 0.883419,
+        "seed_group": 40499,
+        "set": "top50",
+        "source": "val_shard(usable_features)",
+        "value": 0.20039070641964038,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 51,
+        "nodes": 3658987,
+        "seconds": 0.939747,
+        "seed_group": 40499,
+        "set": "top50",
+        "source": "val_shard(usable_features)",
+        "value": 0.20039070641964038,
+        "variant": "drift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 51,
+        "nodes": 3658987,
+        "seconds": 0.887322,
+        "seed_group": 40499,
+        "set": "top50",
+        "source": "val_shard(usable_features)",
+        "value": 0.20039070641964038,
+        "variant": "development"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 51,
+        "nodes": 3658987,
+        "seconds": 0.886683,
+        "seed_group": 40499,
+        "set": "top50",
+        "source": "val_shard(usable_features)",
+        "value": 0.20039070641964038,
+        "variant": "delayed"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 13,
+        "matching_size": 13,
+        "n_edges": 51,
+        "nodes": 6591263,
+        "seconds": 1.607321,
+        "seed_group": 40364,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.18782877009108456,
+        "variant": "shift"
+      },
+      {
+        "day": 16,
+        "failed": false,
+        "k": 14,
+        "matching_size": 14,
+        "n_edges": 49,
+        "nodes": 1333847,
+        "seconds": 0.297386,
+        "seed_group": 40347,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.1841415069191141,
+        "variant": "development"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 13,
+        "matching_size": 13,
+        "n_edges": 49,
+        "nodes": 8176867,
+        "seconds": 2.034238,
+        "seed_group": 40289,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.17986864523084747,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": true,
+        "k": 13,
+        "matching_size": null,
+        "n_edges": 49,
+        "nodes": 16000011,
+        "seconds": 3.838308,
+        "seed_group": 40289,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": true,
+        "k": 13,
+        "matching_size": null,
+        "n_edges": 49,
+        "nodes": 16000011,
+        "seconds": 3.800735,
+        "seed_group": 40289,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "drift"
+      },
+      {
+        "day": 0,
+        "failed": true,
+        "k": 13,
+        "matching_size": null,
+        "n_edges": 49,
+        "nodes": 16000011,
+        "seconds": 3.75367,
+        "seed_group": 40289,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "development"
+      },
+      {
+        "day": 0,
+        "failed": true,
+        "k": 13,
+        "matching_size": null,
+        "n_edges": 49,
+        "nodes": 16000011,
+        "seconds": 3.906445,
+        "seed_group": 40289,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "delayed"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 48,
+        "nodes": 4769856,
+        "seconds": 1.119663,
+        "seed_group": 40247,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.1403521056231441,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 16,
+        "matching_size": 16,
+        "n_edges": 48,
+        "nodes": 13887573,
+        "seconds": 3.471129,
+        "seed_group": 40111,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.24637403349567294,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 16,
+        "matching_size": 16,
+        "n_edges": 48,
+        "nodes": 13887573,
+        "seconds": 3.433691,
+        "seed_group": 40111,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.24637403349567294,
+        "variant": "drift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 16,
+        "matching_size": 16,
+        "n_edges": 48,
+        "nodes": 13887573,
+        "seconds": 3.450476,
+        "seed_group": 40111,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.24637403349567294,
+        "variant": "development"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 16,
+        "matching_size": 16,
+        "n_edges": 48,
+        "nodes": 13887573,
+        "seconds": 3.463501,
+        "seed_group": 40111,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.24637403349567294,
+        "variant": "delayed"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 13,
+        "matching_size": 13,
+        "n_edges": 47,
+        "nodes": 1421183,
+        "seconds": 0.346726,
+        "seed_group": 40364,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.19384143079996025,
+        "variant": "drift"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 12,
+        "matching_size": 12,
+        "n_edges": 47,
+        "nodes": 6464256,
+        "seconds": 1.578929,
+        "seed_group": 40358,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.16577322998329996,
+        "variant": "development"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 47,
+        "nodes": 4222809,
+        "seconds": 0.973334,
+        "seed_group": 40247,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.15510759074385685,
+        "variant": "drift"
+      },
+      {
+        "day": 16,
+        "failed": false,
+        "k": 13,
+        "matching_size": 13,
+        "n_edges": 47,
+        "nodes": 1350683,
+        "seconds": 0.332708,
+        "seed_group": 40247,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.17530579176941158,
+        "variant": "development"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 12,
+        "matching_size": 12,
+        "n_edges": 46,
+        "nodes": 2162523,
+        "seconds": 0.511469,
+        "seed_group": 40289,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.17548493877469368,
+        "variant": "delayed"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 45,
+        "nodes": 3957945,
+        "seconds": 0.932923,
+        "seed_group": 40247,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.15849428104555197,
+        "variant": "development"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 45,
+        "nodes": 10945976,
+        "seconds": 2.572795,
+        "seed_group": 40224,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.16047648613378693,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 45,
+        "nodes": 10945976,
+        "seconds": 2.546172,
+        "seed_group": 40224,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.16047648613378693,
+        "variant": "drift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 45,
+        "nodes": 10945976,
+        "seconds": 2.516177,
+        "seed_group": 40224,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.16047648613378693,
+        "variant": "development"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 45,
+        "nodes": 10945976,
+        "seconds": 2.718598,
+        "seed_group": 40224,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.16047648613378693,
+        "variant": "delayed"
+      },
+      {
+        "day": 8,
+        "failed": true,
+        "k": 13,
+        "matching_size": null,
+        "n_edges": 45,
+        "nodes": 16000009,
+        "seconds": 3.86101,
+        "seed_group": 40151,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "drift"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 13,
+        "matching_size": 13,
+        "n_edges": 45,
+        "nodes": 3288489,
+        "seconds": 0.73412,
+        "seed_group": 40150,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.16235653777187506,
+        "variant": "delayed"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 45,
+        "nodes": 244987,
+        "seconds": 0.056274,
+        "seed_group": 40131,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.15119464464290278,
+        "variant": "drift"
+      },
+      {
+        "day": 16,
+        "failed": false,
+        "k": 12,
+        "matching_size": 12,
+        "n_edges": 44,
+        "nodes": 1020814,
+        "seconds": 0.266354,
+        "seed_group": 40347,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.1705538864060961,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 44,
+        "nodes": 2542041,
+        "seconds": 0.603017,
+        "seed_group": 40347,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.17952248230139967,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 44,
+        "nodes": 2542041,
+        "seconds": 0.60196,
+        "seed_group": 40347,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.17952248230139967,
+        "variant": "drift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 44,
+        "nodes": 2542041,
+        "seconds": 0.608155,
+        "seed_group": 40347,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.17952248230139967,
+        "variant": "development"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 44,
+        "nodes": 2542041,
+        "seconds": 0.593368,
+        "seed_group": 40347,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.17952248230139967,
+        "variant": "delayed"
+      },
+      {
+        "day": 8,
+        "failed": true,
+        "k": 16,
+        "matching_size": null,
+        "n_edges": 44,
+        "nodes": 16000006,
+        "seconds": 4.024708,
+        "seed_group": 40137,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "delayed"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 12,
+        "matching_size": 12,
+        "n_edges": 44,
+        "nodes": 222062,
+        "seconds": 0.052146,
+        "seed_group": 40131,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.15583266173652988,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 12,
+        "matching_size": 12,
+        "n_edges": 44,
+        "nodes": 4462042,
+        "seconds": 1.069509,
+        "seed_group": 40081,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.21063707803197496,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 12,
+        "matching_size": 12,
+        "n_edges": 44,
+        "nodes": 4462042,
+        "seconds": 1.083569,
+        "seed_group": 40081,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.21063707803197496,
+        "variant": "drift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 12,
+        "matching_size": 12,
+        "n_edges": 44,
+        "nodes": 4462042,
+        "seconds": 1.076746,
+        "seed_group": 40081,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.21063707803197496,
+        "variant": "development"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 12,
+        "matching_size": 12,
+        "n_edges": 44,
+        "nodes": 4462042,
+        "seconds": 1.055151,
+        "seed_group": 40081,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.21063707803197496,
+        "variant": "delayed"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 12,
+        "matching_size": 12,
+        "n_edges": 43,
+        "nodes": 8886573,
+        "seconds": 2.210608,
+        "seed_group": 40364,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.20253248465685364,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 0,
+        "matching_size": 0,
+        "n_edges": 0,
+        "nodes": 0,
+        "seconds": 2e-06,
+        "seed_group": 40026,
+        "set": "day0_zero_extra",
+        "source": "in_process_replay",
+        "value": 0.0,
+        "variant": "sparse"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 0,
+        "matching_size": 0,
+        "n_edges": 0,
+        "nodes": 0,
+        "seconds": 1e-06,
+        "seed_group": 40087,
+        "set": "day0_zero_extra",
+        "source": "in_process_replay",
+        "value": 0.0,
+        "variant": "cold_start"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 0,
+        "matching_size": 0,
+        "n_edges": 0,
+        "nodes": 0,
+        "seconds": 1e-06,
+        "seed_group": 40095,
+        "set": "day0_zero_extra",
+        "source": "in_process_replay",
+        "value": 0.0,
+        "variant": "cold_start"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 51,
+        "nodes": 3658987,
+        "seconds": 0.876969,
+        "seed_group": 40499,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.20039070641964038,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 51,
+        "nodes": 3658987,
+        "seconds": 0.888362,
+        "seed_group": 40499,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.20039070641964038,
+        "variant": "drift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 51,
+        "nodes": 3658987,
+        "seconds": 0.864423,
+        "seed_group": 40499,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.20039070641964038,
+        "variant": "development"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 51,
+        "nodes": 3658987,
+        "seconds": 0.881955,
+        "seed_group": 40499,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.20039070641964038,
+        "variant": "delayed"
+      },
+      {
+        "day": 16,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 39,
+        "nodes": 109138,
+        "seconds": 0.026234,
+        "seed_group": 40469,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.14453684152654758,
+        "variant": "shift"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 39,
+        "nodes": 539184,
+        "seconds": 0.12649,
+        "seed_group": 40402,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.11665348873968624,
+        "variant": "drift"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 8,
+        "matching_size": 8,
+        "n_edges": 38,
+        "nodes": 761423,
+        "seconds": 0.170774,
+        "seed_group": 40499,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.1384418917952382,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 37,
+        "nodes": 2213,
+        "seconds": 0.0008,
+        "seed_group": 40441,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.15707937710984507,
+        "variant": "shift"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 37,
+        "nodes": 375629,
+        "seconds": 0.088661,
+        "seed_group": 40441,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.1242338963334301,
+        "variant": "drift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 37,
+        "nodes": 2213,
+        "seconds": 0.000605,
+        "seed_group": 40441,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.15707937710984507,
+        "variant": "drift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 37,
+        "nodes": 2213,
+        "seconds": 0.000575,
+        "seed_group": 40441,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.15707937710984507,
+        "variant": "development"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 37,
+        "nodes": 2213,
+        "seconds": 0.000537,
+        "seed_group": 40441,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.15707937710984507,
+        "variant": "delayed"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 36,
+        "nodes": 510514,
+        "seconds": 0.133448,
+        "seed_group": 40499,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.1395482808600069,
+        "variant": "development"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 36,
+        "nodes": 324442,
+        "seconds": 0.077523,
+        "seed_group": 40441,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.1292336313766593,
+        "variant": "shift"
+      },
+      {
+        "day": 16,
+        "failed": false,
+        "k": 8,
+        "matching_size": 8,
+        "n_edges": 36,
+        "nodes": 578039,
+        "seconds": 0.130564,
+        "seed_group": 40402,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.09760130505238357,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 13,
+        "matching_size": 13,
+        "n_edges": 35,
+        "nodes": 93753,
+        "seconds": 0.021977,
+        "seed_group": 40500,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.1776147432032685,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 13,
+        "matching_size": 13,
+        "n_edges": 35,
+        "nodes": 93753,
+        "seconds": 0.022797,
+        "seed_group": 40500,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.1776147432032685,
+        "variant": "drift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 13,
+        "matching_size": 13,
+        "n_edges": 35,
+        "nodes": 93753,
+        "seconds": 0.022202,
+        "seed_group": 40500,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.1776147432032685,
+        "variant": "development"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 13,
+        "matching_size": 13,
+        "n_edges": 35,
+        "nodes": 93753,
+        "seconds": 0.022603,
+        "seed_group": 40500,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.1776147432032685,
+        "variant": "delayed"
+      },
+      {
+        "day": 24,
+        "failed": false,
+        "k": 10,
+        "matching_size": 10,
+        "n_edges": 35,
+        "nodes": 180309,
+        "seconds": 0.038894,
+        "seed_group": 40499,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.11943058416063916,
+        "variant": "drift"
+      },
+      {
+        "day": 16,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 35,
+        "nodes": 942667,
+        "seconds": 0.289085,
+        "seed_group": 40414,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.12021065456501251,
+        "variant": "drift"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 8,
+        "matching_size": 8,
+        "n_edges": 35,
+        "nodes": 461161,
+        "seconds": 0.112194,
+        "seed_group": 40402,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.10592817580711288,
+        "variant": "shift"
+      },
+      {
+        "day": 16,
+        "failed": false,
+        "k": 10,
+        "matching_size": 10,
+        "n_edges": 34,
+        "nodes": 165281,
+        "seconds": 0.039184,
+        "seed_group": 40499,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.11792174414239252,
+        "variant": "drift"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 34,
+        "nodes": 555366,
+        "seconds": 0.129708,
+        "seed_group": 40499,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.1357649510165983,
+        "variant": "drift"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 34,
+        "nodes": 450535,
+        "seconds": 0.113551,
+        "seed_group": 40448,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.15723940676763312,
+        "variant": "drift"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 34,
+        "nodes": 206645,
+        "seconds": 0.055722,
+        "seed_group": 40441,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.11044707164629011,
+        "variant": "development"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 10,
+        "matching_size": 10,
+        "n_edges": 34,
+        "nodes": 256741,
+        "seconds": 0.067341,
+        "seed_group": 40441,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.1298278170321817,
+        "variant": "delayed"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 12,
+        "matching_size": 12,
+        "n_edges": 34,
+        "nodes": 1433077,
+        "seconds": 0.337298,
+        "seed_group": 40414,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.17077769183562366,
+        "variant": "drift"
+      },
+      {
+        "day": 32,
+        "failed": false,
+        "k": 7,
+        "matching_size": 7,
+        "n_edges": 34,
+        "nodes": 190348,
+        "seconds": 0.04493,
+        "seed_group": 40402,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.0857474367690997,
+        "variant": "shift"
+      },
+      {
+        "day": 16,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 33,
+        "nodes": 1195261,
+        "seconds": 0.277714,
+        "seed_group": 40500,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.14054834560351576,
+        "variant": "shift"
+      },
+      {
+        "day": 24,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 33,
+        "nodes": 101857,
+        "seconds": 0.023614,
+        "seed_group": 40469,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.11384154094684133,
+        "variant": "shift"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 7,
+        "matching_size": 7,
+        "n_edges": 32,
+        "nodes": 9658,
+        "seconds": 0.002519,
+        "seed_group": 40469,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.09679414929393498,
+        "variant": "shift"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 8,
+        "matching_size": 8,
+        "n_edges": 32,
+        "nodes": 4874,
+        "seconds": 0.001157,
+        "seed_group": 40469,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.10546166096228694,
+        "variant": "delayed"
+      },
+      {
+        "day": 32,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 32,
+        "nodes": 552623,
+        "seconds": 0.134298,
+        "seed_group": 40462,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.1200021708879842,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 32,
+        "nodes": 52477,
+        "seconds": 0.013411,
+        "seed_group": 40458,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.13215710031575315,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 32,
+        "nodes": 52477,
+        "seconds": 0.013376,
+        "seed_group": 40458,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.13215710031575315,
+        "variant": "drift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 32,
+        "nodes": 52477,
+        "seconds": 0.013022,
+        "seed_group": 40458,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.13215710031575315,
+        "variant": "development"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 32,
+        "nodes": 52477,
+        "seconds": 0.01306,
+        "seed_group": 40458,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.13215710031575315,
+        "variant": "delayed"
+      },
+      {
+        "day": 16,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 32,
+        "nodes": 221681,
+        "seconds": 0.050535,
+        "seed_group": 40441,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.12855301945456588,
+        "variant": "development"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 12,
+        "matching_size": 12,
+        "n_edges": 32,
+        "nodes": 25621,
+        "seconds": 0.006296,
+        "seed_group": 40424,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.17348487395168838,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 12,
+        "matching_size": 12,
+        "n_edges": 32,
+        "nodes": 25621,
+        "seconds": 0.006235,
+        "seed_group": 40424,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.17348487395168838,
+        "variant": "drift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 12,
+        "matching_size": 12,
+        "n_edges": 32,
+        "nodes": 25621,
+        "seconds": 0.006467,
+        "seed_group": 40424,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.17348487395168838,
+        "variant": "development"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 12,
+        "matching_size": 12,
+        "n_edges": 32,
+        "nodes": 25621,
+        "seconds": 0.006134,
+        "seed_group": 40424,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.17348487395168838,
+        "variant": "delayed"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 32,
+        "nodes": 160193,
+        "seconds": 0.036875,
+        "seed_group": 40414,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.14534320336971124,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 32,
+        "nodes": 160193,
+        "seconds": 0.038012,
+        "seed_group": 40414,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.14534320336971124,
+        "variant": "drift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 32,
+        "nodes": 160193,
+        "seconds": 0.037398,
+        "seed_group": 40414,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.14534320336971124,
+        "variant": "development"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 32,
+        "nodes": 160193,
+        "seconds": 0.036689,
+        "seed_group": 40414,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.14534320336971124,
+        "variant": "delayed"
+      },
+      {
+        "day": 16,
+        "failed": false,
+        "k": 11,
+        "matching_size": 11,
+        "n_edges": 31,
+        "nodes": 337504,
+        "seconds": 0.085488,
+        "seed_group": 40465,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.14230799071993358,
+        "variant": "shift"
+      },
+      {
+        "day": 24,
+        "failed": false,
+        "k": 9,
+        "matching_size": 9,
+        "n_edges": 31,
+        "nodes": 56405,
+        "seconds": 0.014037,
+        "seed_group": 40462,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.10368330126155027,
+        "variant": "shift"
+      },
+      {
+        "day": 8,
+        "failed": false,
+        "k": 15,
+        "matching_size": 15,
+        "n_edges": 30,
+        "nodes": 75267,
+        "seconds": 0.018944,
+        "seed_group": 40500,
+        "set": "val_top50_supplemental",
+        "source": "val_shard(usable_features)",
+        "value": 0.19668401540559052,
+        "variant": "shift"
+      }
+    ],
+    "failures": [
+      {
+        "day": 0,
+        "failed": true,
+        "k": 17,
+        "matching_size": null,
+        "n_edges": 65,
+        "nodes": 16000014,
+        "seconds": 5.938688,
+        "seed_group": 40137,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": true,
+        "k": 17,
+        "matching_size": null,
+        "n_edges": 65,
+        "nodes": 16000014,
+        "seconds": 5.828159,
+        "seed_group": 40137,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "drift"
+      },
+      {
+        "day": 0,
+        "failed": true,
+        "k": 17,
+        "matching_size": null,
+        "n_edges": 65,
+        "nodes": 16000014,
+        "seconds": 5.95603,
+        "seed_group": 40137,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "development"
+      },
+      {
+        "day": 0,
+        "failed": true,
+        "k": 17,
+        "matching_size": null,
+        "n_edges": 65,
+        "nodes": 16000014,
+        "seconds": 5.817365,
+        "seed_group": 40137,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "delayed"
+      },
+      {
+        "day": 16,
+        "failed": true,
+        "k": 13,
+        "matching_size": null,
+        "n_edges": 63,
+        "nodes": 16000013,
+        "seconds": 8.406217,
+        "seed_group": 40358,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "delayed"
+      },
+      {
+        "day": 8,
+        "failed": true,
+        "k": 18,
+        "matching_size": null,
+        "n_edges": 61,
+        "nodes": 16000015,
+        "seconds": 9.957387,
+        "seed_group": 40137,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "drift"
+      },
+      {
+        "day": 8,
+        "failed": true,
+        "k": 11,
+        "matching_size": null,
+        "n_edges": 60,
+        "nodes": 16000011,
+        "seconds": 8.563172,
+        "seed_group": 40347,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "development"
+      },
+      {
+        "day": 8,
+        "failed": true,
+        "k": 13,
+        "matching_size": null,
+        "n_edges": 56,
+        "nodes": 16000009,
+        "seconds": 17.199167,
+        "seed_group": 40289,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "drift"
+      },
+      {
+        "day": 8,
+        "failed": true,
+        "k": 12,
+        "matching_size": null,
+        "n_edges": 55,
+        "nodes": 16000010,
+        "seconds": 14.726025,
+        "seed_group": 40358,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "delayed"
+      },
+      {
+        "day": 0,
+        "failed": true,
+        "k": 13,
+        "matching_size": null,
+        "n_edges": 49,
+        "nodes": 16000011,
+        "seconds": 3.838308,
+        "seed_group": 40289,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": true,
+        "k": 13,
+        "matching_size": null,
+        "n_edges": 49,
+        "nodes": 16000011,
+        "seconds": 3.800735,
+        "seed_group": 40289,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "drift"
+      },
+      {
+        "day": 0,
+        "failed": true,
+        "k": 13,
+        "matching_size": null,
+        "n_edges": 49,
+        "nodes": 16000011,
+        "seconds": 3.75367,
+        "seed_group": 40289,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "development"
+      },
+      {
+        "day": 0,
+        "failed": true,
+        "k": 13,
+        "matching_size": null,
+        "n_edges": 49,
+        "nodes": 16000011,
+        "seconds": 3.906445,
+        "seed_group": 40289,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "delayed"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 16,
+        "matching_size": 16,
+        "n_edges": 48,
+        "nodes": 13887573,
+        "seconds": 3.471129,
+        "seed_group": 40111,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.24637403349567294,
+        "variant": "shift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 16,
+        "matching_size": 16,
+        "n_edges": 48,
+        "nodes": 13887573,
+        "seconds": 3.433691,
+        "seed_group": 40111,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.24637403349567294,
+        "variant": "drift"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 16,
+        "matching_size": 16,
+        "n_edges": 48,
+        "nodes": 13887573,
+        "seconds": 3.450476,
+        "seed_group": 40111,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.24637403349567294,
+        "variant": "development"
+      },
+      {
+        "day": 0,
+        "failed": false,
+        "k": 16,
+        "matching_size": 16,
+        "n_edges": 48,
+        "nodes": 13887573,
+        "seconds": 3.463501,
+        "seed_group": 40111,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": 0.24637403349567294,
+        "variant": "delayed"
+      },
+      {
+        "day": 8,
+        "failed": true,
+        "k": 13,
+        "matching_size": null,
+        "n_edges": 45,
+        "nodes": 16000009,
+        "seconds": 3.86101,
+        "seed_group": 40151,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "drift"
+      },
+      {
+        "day": 8,
+        "failed": true,
+        "k": 16,
+        "matching_size": null,
+        "n_edges": 44,
+        "nodes": 16000006,
+        "seconds": 4.024708,
+        "seed_group": 40137,
+        "set": "top50",
+        "source": "in_process_replay",
+        "value": null,
+        "variant": "delayed"
+      }
+    ],
+    "gates": {
+      "limit_seconds": 3.0,
+      "max_seconds": 17.199167,
+      "max_seconds_lt_3": false,
+      "node_limit_failures": 15,
+      "zero_data_errors": true,
+      "zero_no_value_solves": false,
+      "zero_node_limit_failures": false
+    },
+    "nodes": {
+      "max": 16000015.0,
+      "mean": 8228317.094339622,
+      "min": 0.0,
+      "n": 53,
+      "p50": 6464256.0,
+      "p95": 16000014.0
+    },
+    "passed": false,
+    "seconds": {
+      "max": 17.199167,
+      "mean": 2.888537245283019,
+      "min": 1e-06,
+      "n": 53,
+      "p50": 1.578929,
+      "p95": 9.120857999999998
+    },
+    "selection": "GLOBAL top-50 by n_edges over all 500 groups (data/states.jsonl main batch 40012-40500 + unmerged seed_40001..40011 shards), plus 3 explicit zero-edge day-0 states; k = k_greedy from the state record; weights = P_hat (frozen artifact); one timed solve per state, no warm-up special-casing (battery already warm)",
+    "sources_used": [
+      "data/states.jsonl",
+      "data/states/seed_40001.jsonl",
+      "data/states/seed_40002.jsonl",
+      "data/states/seed_40003.jsonl",
+      "data/states/seed_40004.jsonl",
+      "data/states/seed_40005.jsonl",
+      "data/states/seed_40006.jsonl",
+      "data/states/seed_40007.jsonl",
+      "data/states/seed_40008.jsonl",
+      "data/states/seed_40009.jsonl",
+      "data/states/seed_40010.jsonl",
+      "data/states/seed_40011.jsonl"
+    ],
+    "states_streamed": 180000,
+    "supplemental_val_top50": {
+      "max_seconds": 0.888362,
+      "max_seconds_lt_3": true,
+      "node_limit_failures": 0,
+      "note": "diagnostic only, NOT part of the gate: top-50 within val groups 40401-40500 (the alternative selection the brief allows)",
+      "seconds": {
+        "max": 0.888362,
+        "mean": 0.12841374,
+        "min": 0.000537,
+        "n": 50,
+        "p50": 0.037705,
+        "p95": 0.8713233
+      },
+      "timed": 50
+    },
+    "timed_primary": 53,
+    "timed_primary_ok": 53
+  },
+  "v5_small_states_bruteforce": {
+    "brute_force": "exhaustive enumeration of ALL size-k index subsets (itertools.combinations + disjoint filter)",
+    "disagreements": 0,
+    "examples": [],
+    "max_edges": 13,
+    "passed": true,
+    "source": "pilot seed 40001 match states with n_edges <= 14",
+    "states": 348
+  }
+}

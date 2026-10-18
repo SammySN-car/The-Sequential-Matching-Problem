@@ -1,0 +1,7 @@
+variant,n,both_responded_pct,mutual_given_responded_pct,date_given_mutual_pct,second_given_date_pct,msmi_given_second_pct,msmi,second
+development,1653,56.38,27.68,75.58,8.72,100.0,17,17
+sparse,410,53.9,30.77,77.94,5.66,100.0,3,3
+cold_start,1416,55.58,27.95,74.09,12.88,100.0,21,21
+delayed,1621,56.57,27.7,78.35,8.04,93.75,15,16
+shift,1677,56.65,24.42,73.28,10.0,100.0,17,17
+drift,1656,56.52,26.39,74.9,9.19,100.0,17,17

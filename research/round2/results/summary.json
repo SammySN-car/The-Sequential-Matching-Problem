@@ -1,0 +1,363 @@
+{
+  "primary_gated_vs_greedy": {
+    "mean": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "ci99": [
+      0.0,
+      0.0
+    ],
+    "clusters": 12,
+    "wtl": {
+      "w": 0,
+      "t": 72,
+      "l": 0
+    },
+    "per_family": {
+      "cold_start": 0.0,
+      "delayed": 0.0,
+      "development": 0.0,
+      "drift": 0.0,
+      "shift": 0.0,
+      "sparse": 0.0
+    },
+    "n_worlds": 72
+  },
+  "ablation_ungated_vs_greedy": {
+    "mean": -0.048611111111111105,
+    "ci95": [
+      -0.1579602595511208,
+      0.0607380373288986
+    ],
+    "ci99": [
+      -0.20292208569296943,
+      0.10569986347074722
+    ],
+    "clusters": 12,
+    "wtl": {
+      "w": 10,
+      "t": 46,
+      "l": 16
+    },
+    "per_family": {
+      "cold_start": 0.08333333333333333,
+      "delayed": 0.0,
+      "development": -0.08333333333333333,
+      "drift": -0.125,
+      "shift": -0.125,
+      "sparse": -0.041666666666666664
+    },
+    "n_worlds": 72
+  },
+  "coverage_gated_vs_greedy": {
+    "mean": 0.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "ci99": [
+      0.0,
+      0.0
+    ],
+    "clusters": 12,
+    "wtl": {
+      "w": 0,
+      "t": 72,
+      "l": 0
+    },
+    "per_family": {
+      "cold_start": 0.0,
+      "delayed": 0.0,
+      "development": 0.0,
+      "drift": 0.0,
+      "shift": 0.0,
+      "sparse": 0.0
+    },
+    "n_worlds": 72
+  },
+  "arm_summaries": {
+    "gated": {
+      "overall": {
+        "msmi_per_100_arrived_members": 0.3194444444444444,
+        "coverage": 0.34381944444444446,
+        "mutual_acceptances_per_100": 5.479166666666667,
+        "ask_cost": 203.91666666666666,
+        "inference_seconds": 19.704645725106175
+      },
+      "family_msmi": {
+        "cold_start": 0.375,
+        "delayed": 0.5,
+        "development": 0.3333333333333333,
+        "drift": 0.3333333333333333,
+        "shift": 0.2916666666666667,
+        "sparse": 0.08333333333333333
+      },
+      "primary_score": 0.3194444444444444,
+      "valid_all": true
+    },
+    "greedy": {
+      "overall": {
+        "msmi_per_100_arrived_members": 0.3194444444444444,
+        "coverage": 0.34381944444444446,
+        "mutual_acceptances_per_100": 5.4375,
+        "ask_cost": 203.91666666666666,
+        "inference_seconds": 12.291103608354913
+      },
+      "family_msmi": {
+        "cold_start": 0.375,
+        "delayed": 0.5,
+        "development": 0.3333333333333333,
+        "drift": 0.3333333333333333,
+        "shift": 0.2916666666666667,
+        "sparse": 0.08333333333333333
+      },
+      "primary_score": 0.3194444444444444,
+      "valid_all": true
+    },
+    "no_asks": {
+      "overall": {
+        "msmi_per_100_arrived_members": 0.041666666666666664,
+        "coverage": 0.11493055555555556,
+        "mutual_acceptances_per_100": 1.2777777777777777,
+        "ask_cost": 0,
+        "inference_seconds": 13.375112950007962
+      },
+      "family_msmi": {
+        "cold_start": 0.041666666666666664,
+        "delayed": 0.125,
+        "development": 0.041666666666666664,
+        "drift": 0.041666666666666664,
+        "shift": 0.0,
+        "sparse": 0.0
+      },
+      "primary_score": 0.041666666666666664,
+      "valid_all": true
+    },
+    "random": {
+      "overall": {
+        "msmi_per_100_arrived_members": 0.3194444444444444,
+        "coverage": 0.343125,
+        "mutual_acceptances_per_100": 5.444444444444445,
+        "ask_cost": 203.91666666666666,
+        "inference_seconds": 12.250477313854692
+      },
+      "family_msmi": {
+        "cold_start": 0.4166666666666667,
+        "delayed": 0.5416666666666666,
+        "development": 0.25,
+        "drift": 0.25,
+        "shift": 0.3333333333333333,
+        "sparse": 0.125
+      },
+      "primary_score": 0.3194444444444444,
+      "valid_all": true
+    },
+    "ungated": {
+      "overall": {
+        "msmi_per_100_arrived_members": 0.2708333333333333,
+        "coverage": 0.33868055555555554,
+        "mutual_acceptances_per_100": 4.840277777777778,
+        "ask_cost": 203.91666666666666,
+        "inference_seconds": 14.569363716682549
+      },
+      "family_msmi": {
+        "cold_start": 0.4583333333333333,
+        "delayed": 0.5,
+        "development": 0.25,
+        "drift": 0.20833333333333334,
+        "shift": 0.16666666666666666,
+        "sparse": 0.041666666666666664
+      },
+      "primary_score": 0.2708333333333333,
+      "valid_all": true
+    }
+  },
+  "gate_telemetry": {
+    "gated": {
+      "solver_tried": 4320,
+      "solver_exact": 4155,
+      "gate_adopted": 5,
+      "reject_g1": 581,
+      "reject_g2": 3569,
+      "reject_other": 165,
+      "score_gain_sum": 5,
+      "card_delta_sum": 5,
+      "solver_activation_freq": 1.0,
+      "exact_available_freq": 0.9618055555555556,
+      "gate_adopt_freq": 0.0011574074074074073,
+      "zero_selection_days": 0.45925925925925926,
+      "days": 4320,
+      "pairs_total": 5466
+    },
+    "ungated": {
+      "solver_tried": 4320,
+      "solver_exact": 4064,
+      "gate_adopted": 4064,
+      "reject_g1": 0,
+      "reject_g2": 0,
+      "reject_other": 256,
+      "score_gain_sum": 5,
+      "card_delta_sum": -6769,
+      "solver_activation_freq": 1.0,
+      "exact_available_freq": 0.9407407407407408,
+      "gate_adopt_freq": 0.9407407407407408,
+      "zero_selection_days": 0.47847222222222224,
+      "days": 4320,
+      "pairs_total": 5229
+    }
+  },
+  "calibration_bands_gated": {
+    "0": {
+      "intros": 3420,
+      "mutual": 377,
+      "dates": 310,
+      "msmi": 22,
+      "msmi_rate": 0.006432748538011696,
+      "msmi_wilson95": [
+        0.004251964889284831,
+        0.00972111143527411
+      ],
+      "mutual_rate": 0.11023391812865498
+    },
+    "1": {
+      "intros": 936,
+      "mutual": 163,
+      "dates": 130,
+      "msmi": 8,
+      "msmi_rate": 0.008547008547008548,
+      "msmi_wilson95": [
+        0.004337091074551544,
+        0.016774551568208684
+      ],
+      "mutual_rate": 0.17414529914529914
+    },
+    "2": {
+      "intros": 472,
+      "mutual": 51,
+      "dates": 42,
+      "msmi": 11,
+      "msmi_rate": 0.023305084745762712,
+      "msmi_wilson95": [
+        0.013061930592807768,
+        0.041245216995801554
+      ],
+      "mutual_rate": 0.10805084745762712
+    },
+    "3": {
+      "intros": 335,
+      "mutual": 60,
+      "dates": 53,
+      "msmi": 1,
+      "msmi_rate": 0.0029850746268656717,
+      "msmi_wilson95": [
+        0.0005271198970087645,
+        0.016712793974251437
+      ],
+      "mutual_rate": 0.1791044776119403
+    },
+    "4": {
+      "intros": 198,
+      "mutual": 31,
+      "dates": 22,
+      "msmi": 1,
+      "msmi_rate": 0.005050505050505051,
+      "msmi_wilson95": [
+        0.0008920722330250877,
+        0.02804943437413617
+      ],
+      "mutual_rate": 0.15656565656565657
+    },
+    "5": {
+      "intros": 88,
+      "mutual": 13,
+      "dates": 10,
+      "msmi": 0,
+      "msmi_rate": 0.0,
+      "msmi_wilson95": [
+        3.324325052829198e-18,
+        0.04182853957248131
+      ],
+      "mutual_rate": 0.14772727272727273
+    },
+    "6": {
+      "intros": 13,
+      "mutual": 1,
+      "dates": 0,
+      "msmi": 0,
+      "msmi_rate": 0.0,
+      "msmi_wilson95": [
+        0.0,
+        0.22810184305529166
+      ],
+      "mutual_rate": 0.07692307692307693
+    },
+    "7": {
+      "intros": 4,
+      "mutual": 4,
+      "dates": 4,
+      "msmi": 0,
+      "msmi_rate": 0.0,
+      "msmi_wilson95": [
+        0.0,
+        0.48990002040399916
+      ],
+      "mutual_rate": 1.0
+    }
+  },
+  "waiting": {
+    "greedy": {
+      "mean_wait_days": 6.957786305796809,
+      "median_wait_days": 5,
+      "zero_selection_days_overall": null,
+      "unserved_mean": 131.23611111111111
+    },
+    "gated": {
+      "mean_wait_days": 6.963845687739851,
+      "median_wait_days": 5,
+      "zero_selection_days_overall": 0.45925925925925926,
+      "unserved_mean": 131.23611111111111
+    },
+    "ungated": {
+      "mean_wait_days": 7.567767069920033,
+      "median_wait_days": 6,
+      "zero_selection_days_overall": 0.47847222222222224,
+      "unserved_mean": 132.26388888888889
+    }
+  },
+  "promotion_checks": {
+    "P1_mean_gt_0": false,
+    "P2_ci95_lower_gt_0": false,
+    "P3_zero_invalid": true,
+    "P3_n_valid": 360,
+    "P4_no_family_catastrophe": true,
+    "P4_min_family_diff": 0.0,
+    "P5_determinism": true,
+    "P5_determinism_detail": "full-episode decision digest identical across PYTHONHASHSEED {0,1,42,random}; timing field (inference_seconds) excluded as wall-clock",
+    "P5_container_parity": true,
+    "P5_container_parity_detail": "32/32 request-response pairs byte-identical local vs docker (image smp-round2-parity, PYTHONHASHSEED=0, research/round2 mounted ro)",
+    "P5_latency_ok_local": true,
+    "mean_invoke_seconds": 0.12031783885667716,
+    "max_episode_inference_seconds": 46.863726400071755,
+    "all_pass": false,
+    "failing": [
+      "P1_mean_gt_0",
+      "P2_ci95_lower_gt_0"
+    ]
+  },
+  "decision": {
+    "verdict": "keep_greedy",
+    "criterion": "design.md section 9 close-this-line; promotion criteria 1-2 fail (mean 0.0000, ci95 [0,0])",
+    "entrypoint_flip": {
+      "required_by": "Round 2 spec section 8 (final submission keeps greedy)",
+      "changes": [
+        "policy.py decide() default mode: ac -> greedy",
+        "policy.py argparse --baseline default: ac -> greedy"
+      ],
+      "policy_py_sha256_before": "379cc2d9519e8d3b9295f6c0bf2039e7a1a40d30729f6be0a9dfd17f6fddb47c",
+      "note": "Round 1 frozen hash; flip changes it by explicit spec permission (documented). Full new hash in integrity/manifest_post.sha256. 81 root tests OK post-flip; no-arg entrypoint exits 0 on empty state returning greedy behavior."
+    }
+  },
+  "calibration_note": "Band collector defect (intro settle fired on date_happened before second-intention events arrived) was found in the first diagnostics pass, fixed, and diagnostics re-run (144/144). Allocation path never read bands; official-episode action_sha256 parity test passed throughout; eval_rows.jsonl (360 primary rows) unaffected. Late intros (proposed after ~day 55) cannot settle within the decision window; pending entries at episode end are expected."
+}

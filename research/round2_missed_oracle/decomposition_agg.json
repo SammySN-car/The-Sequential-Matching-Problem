@@ -1,0 +1,30 @@
+{
+ "missed_positive_flag_combos": {
+  "A": 1,
+  "AB": 28,
+  "ABD": 17,
+  "B": 1,
+  "BD": 20
+ },
+ "missed_positive_flag_counts_nonexclusive": {
+  "A": 46,
+  "B": 66,
+  "C": 46,
+  "D": 37
+ },
+ "missed_positive_primary": {
+  "A_ranking_failure": 1,
+  "B_matching_conflict": 66
+ },
+ "n_captured": 106,
+ "n_missed": 67,
+ "n_positive_edges_ranked": 173,
+ "n_rank_rows": 173,
+ "n_states": 7560,
+ "states_with_F2_rank_fail": 46,
+ "states_with_conflicted_topk": 1164,
+ "sum_conflict_component": 7,
+ "sum_gap_F5_F2": 67,
+ "sum_irreducible_matching_cost": 12,
+ "sum_ranking_component": 60
+}

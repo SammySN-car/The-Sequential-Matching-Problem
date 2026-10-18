@@ -1,0 +1,157 @@
+{
+ "F2_minus_GREEDY_total": 4,
+ "bootstrap_seed_groups": {
+  "B": 2000,
+  "F2_minus_GREEDY": {
+   "ci95": [
+    -0.3333333333333333,
+    0.7142857142857143
+   ],
+   "mean": 0.19047619047619047,
+   "seed_values": [
+    0,
+    2,
+    0,
+    0,
+    1,
+    3,
+    1,
+    1,
+    -2,
+    0,
+    -1,
+    0,
+    0,
+    -1,
+    2,
+    0,
+    0,
+    0,
+    -2,
+    1,
+    -1
+   ]
+  },
+  "conflict_component": {
+   "ci95": [
+    -0.38095238095238093,
+    0.9523809523809523
+   ],
+   "mean": 0.3333333333333333,
+   "seed_values": [
+    1,
+    2,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    -2,
+    0,
+    3,
+    -2,
+    -1,
+    2,
+    0,
+    3,
+    0,
+    -4,
+    1,
+    1,
+    2
+   ]
+  },
+  "ranking_component": {
+   "ci95": [
+    1.9523809523809523,
+    3.761904761904762
+   ],
+   "mean": 2.857142857142857,
+   "seed_values": [
+    7,
+    4,
+    2,
+    1,
+    3,
+    1,
+    5,
+    0,
+    4,
+    1,
+    3,
+    4,
+    1,
+    3,
+    4,
+    6,
+    0,
+    4,
+    6,
+    1,
+    0
+   ]
+  },
+  "regret_F5_minus_F2": {
+   "ci95": [
+    2.0952380952380953,
+    4.286904761904755
+   ],
+   "mean": 3.1904761904761907,
+   "seed_values": [
+    8,
+    6,
+    2,
+    2,
+    3,
+    1,
+    5,
+    0,
+    2,
+    1,
+    6,
+    2,
+    0,
+    5,
+    4,
+    9,
+    0,
+    0,
+    7,
+    2,
+    2
+   ]
+  },
+  "rng_seed": 4242,
+  "unit": "seed group (all 6 variants kept together)"
+ },
+ "capture": {
+  "F1": 81,
+  "F2": 94,
+  "F5": 161,
+  "GREEDY": 90
+ },
+ "decomposition": {
+  "conflict_component_total": 7,
+  "conflict_share_of_gap": 0.1044776119402985,
+  "irreducible_matching_cost_total": 12,
+  "ranking_component_total": 60,
+  "ranking_share_of_gap": 0.8955223880597015
+ },
+ "denominators": {
+  "sum_k_t": 8433,
+  "sum_p_t": 173,
+  "sum_positives_in_F2": 94,
+  "sum_positives_in_F5": 161
+ },
+ "global_auc_F2": 0.5634077037418491,
+ "n_seed_groups": 21,
+ "n_states": 7560,
+ "pooled_precision_of_F2": 0.011146685639748606,
+ "pooled_recall_at_kt": 0.5433526011560693,
+ "regret_F5_minus_F2_total": 67,
+ "within_state_auc": {
+  "mean": 0.5881171142725555,
+  "n_states": 159
+ }
+}

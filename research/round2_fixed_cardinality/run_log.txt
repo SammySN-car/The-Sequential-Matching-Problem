@@ -1,0 +1,2 @@
+[FREEZE] analysis_plan.md frozen BEFORE any selector comparison.
+[FREEZE] sha256=0c1ba0e7e287126ca040ecc3789070ef41b00596cfe2b73883f9bc2d26b65578  bytes=18747  lines=347

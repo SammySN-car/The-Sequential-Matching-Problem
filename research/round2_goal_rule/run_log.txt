@@ -1,0 +1,67 @@
+[2026-10-13T13:19:21] gr0_validate start
+[2026-10-13T13:19:23] gr0_validate PASSED (18/18 checks, 2.0s)
+[2026-10-13T13:20:11] gr1_selectors start
+[2026-10-13T13:20:13] wrote channel_states.json (15304 rows)
+[2026-10-13T13:20:13] channel states loaded (15304 edges)
+[2026-10-13T13:20:17] wrote selector_sets.jsonl (7560 rows)
+[2026-10-13T13:20:31] gr0_validate start
+[2026-10-13T13:20:32] gr0_validate PASSED (18/18 checks, 0.7s)
+[2026-10-13T13:20:33] gr1_selectors start
+[2026-10-13T13:20:34] channel states loaded (15304 edges)
+[2026-10-13T13:20:38] wrote selector_sets.jsonl (7560 rows)
+[2026-10-13T13:20:38] gr1_selectors done (4.2s, 21 checks total)
+[2026-10-13T13:22:00] gr2_evaluate start
+[2026-10-13T13:22:01] wrote per_state_results.csv (7560 rows)
+[2026-10-13T13:22:01] wrote per_seed_results.csv (21 rows)
+[2026-10-13T13:22:01] wrote per_variant_results.csv (6 rows)
+[2026-10-13T13:25:10] gr2_evaluate start
+[2026-10-13T13:25:10] wrote per_state_results.csv (7560 rows, 37 cols)
+[2026-10-13T13:35:23] gr2_evaluate start
+[2026-10-13T13:35:23] wrote per_state_results.csv (7560 rows, 37 cols)
+[2026-10-13T13:35:23] wrote per_seed_results.csv (21 rows, 22 cols)
+[2026-10-13T13:35:23] wrote per_variant_results.csv (6 rows, 21 cols)
+[2026-10-13T13:35:23] wrote tie_analysis.json
+[2026-10-13T13:35:23] wrote selector_summary.csv (6 rows, 24 cols)
+[2026-10-13T13:35:23] wrote evaluation.json: totals={'G0': 90, 'G1': 81, 'G2': 92, 'G3': 92, 'G4': 94, 'G5': 161} deltas_G0={'G0': 0, 'G1': -9, 'G2': 2, 'G3': 2, 'G4': 4, 'G5': 71}
+[2026-10-13T13:35:23] gr2_evaluate done (0.8s)
+[2026-10-13T13:59:29] gr0_validate start
+[2026-10-13T13:59:30] gr0_validate PASSED (18/18 checks, 0.7s)
+[2026-10-13T13:59:31] gr1_selectors start (7 arms, Amendment 1)
+[2026-10-13T13:59:32] channel states loaded (15304 edges)
+[2026-10-13T13:59:39] wrote selector_sets.jsonl (7560 rows)
+[2026-10-13T13:59:39] gr1 done: G1m differs from frozen F1 on 1232 states; count sums {'G0': 7245, 'G1f': 3752, 'G1m': 7358}
+[2026-10-13T13:59:39] gr1_selectors done (7.4s, 22 checks total)
+[2026-10-13T14:00:33] gr2_evaluate start (7 arms)
+[2026-10-13T14:00:33] wrote per_state_results.csv (7560 rows, 52 cols)
+[2026-10-13T14:00:33] reconciliation OK: {'G0': 90, 'G1f': 81, 'G1m': 88, 'G2': 92, 'G3': 92, 'G4': 94, 'G5': 161} sum_k=8433
+[2026-10-13T14:00:33] wrote per_seed_results.csv (21 rows, 31 cols)
+[2026-10-13T14:00:33] wrote per_variant_results.csv (6 rows, 30 cols)
+[2026-10-13T14:00:34] wrote tie_analysis.json
+[2026-10-13T14:00:34] wrote selector_summary.csv (7 rows, 30 cols)
+[2026-10-13T14:00:34] wrote evaluation.json: totals={'G0': 90, 'G1f': 81, 'G1m': 88, 'G2': 92, 'G3': 92, 'G4': 94, 'G5': 161}
+[2026-10-13T14:00:34] gr2_evaluate done (1.0s)
+[2026-10-13T14:02:17] gr3_goal start
+[2026-10-13T14:02:52] gr3_goal start
+[2026-10-13T14:02:54] wrote goal_analysis.json (observable=1662/7560 states, g3!=g2 on 128)
+[2026-10-13T14:02:54] gr3_goal done (2.0s)
+[2026-10-13T14:06:49] gr4_report start
+[2026-10-13T14:07:37] gr4_report start
+[2026-10-13T14:10:19] gr4_report start
+[2026-10-13T14:10:19] wrote report.md (133 lines)
+[2026-10-13T14:10:19] gr4_report done (0.0s)
+[2026-10-13T14:12:35] gr4_report start
+[2026-10-13T14:12:35] wrote report.md (133 lines)
+[2026-10-13T14:12:35] gr4_report done (0.0s)
+[2026-10-13T14:13:51] gr_seal start
+[2026-10-13T14:13:51] gr_seal: 23 files sealed
+[2026-10-13T14:13:53] gr_verify start
+[2026-10-13T14:13:54] gr_verify PASSED (17/17 checks, 0.3s)
+[2026-10-13T14:14:48] gr_seal start
+[2026-10-13T14:14:48] gr_seal: 22 files sealed
+[2026-10-13T14:14:50] gr_verify start
+[2026-10-13T14:14:50] gr_verify PASSED (17/17 checks, 0.3s)
+[2026-10-13T14:16:09] plan provenance: analysis_plan.md originally frozen at sha256 f0121e1395054057d7cc1e515127db1844e2e09d6be1c231cc765e803b12375d; Amendment 1 appended 2026-10-13 BEFORE any selector result; current sha256 221070644a317fc0ac6b8f1d64350158a14a2c96fb218cfd64804224ccefe832 (see analysis_plan.sha256)
+[2026-10-13T14:16:11] gr_seal start
+[2026-10-13T14:16:11] gr_seal: 22 files sealed
+[2026-10-13T14:16:13] gr_verify start
+[2026-10-13T14:16:13] gr_verify PASSED (17/17 checks, 0.3s)

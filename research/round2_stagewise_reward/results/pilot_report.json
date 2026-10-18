@@ -1,0 +1,186 @@
+{
+  "entry_point": "plumbing_pilot",
+  "overall": "PASS",
+  "pilot_seed": 40001,
+  "steps": {
+    "P1_greedy_official": {
+      "action_sha256": {
+        "cold_start": "cbabd8e7d08e1273e836469799221d9ab06ed072d1b2e93cf353572355aa14e9",
+        "delayed": "dc870b20c73525f009aa4c6ac78053462fbabae5022de8858cce3e5f00624b5a",
+        "development": "60bf1e3e655744abf260e694693ba6008e5efdc7d07c84126641e3687442ba57",
+        "drift": "f01ba6102578e00659a1938e68f28bd458a0bacf7310fa872dec37fb9dfcb399",
+        "shift": "60bf1e3e655744abf260e694693ba6008e5efdc7d07c84126641e3687442ba57",
+        "sparse": "4fd4ef8e4977a64952141b91a5a9c7ed572516960d32dd6afc100bd51c34d662"
+      },
+      "all_valid": true,
+      "episodes": 6,
+      "file": "C:\\Users\\samar\\Downloads\\New folder (11)\\The-Sequential-Matching-Problem\\research\\round2_stagewise_reward\\results\\pilot_greedy_official.json",
+      "inference_seconds": {
+        "cold_start": 14.262797299925296,
+        "delayed": 14.933794599972316,
+        "development": 14.347251399973175,
+        "drift": 13.823882200042135,
+        "shift": 13.199063399901206,
+        "sparse": 14.695327300018107
+      },
+      "status": "PASS",
+      "wall_seconds": 0.0
+    },
+    "P2_parity": {
+      "action_sha256": {
+        "cold_start": "cbabd8e7d08e1273e836469799221d9ab06ed072d1b2e93cf353572355aa14e9",
+        "delayed": "dc870b20c73525f009aa4c6ac78053462fbabae5022de8858cce3e5f00624b5a",
+        "development": "60bf1e3e655744abf260e694693ba6008e5efdc7d07c84126641e3687442ba57",
+        "drift": "f01ba6102578e00659a1938e68f28bd458a0bacf7310fa872dec37fb9dfcb399",
+        "shift": "60bf1e3e655744abf260e694693ba6008e5efdc7d07c84126641e3687442ba57",
+        "sparse": "4fd4ef8e4977a64952141b91a5a9c7ed572516960d32dd6afc100bd51c34d662"
+      },
+      "all_valid": true,
+      "digests_equal": 6,
+      "episodes": 6,
+      "file": "C:\\Users\\samar\\Downloads\\New folder (11)\\The-Sequential-Matching-Problem\\research\\round2_stagewise_reward\\results\\pilot_parity_official.json",
+      "inference_seconds": {
+        "cold_start": 17.072318500031542,
+        "delayed": 15.584226600018155,
+        "development": 15.78449520002323,
+        "drift": 16.020425700022315,
+        "shift": 16.156548000028124,
+        "sparse": 18.150073099961446
+      },
+      "status": "PASS",
+      "wall_seconds": 0.0
+    },
+    "P3_collection": {
+      "collector_group_seconds": 32.908,
+      "feasible_edges_total": 847,
+      "intros": 466,
+      "label_crosscheck": "6/6 variants, 466 rows reproduced from deterministic replay",
+      "label_file_bytes": 75364,
+      "maturity_per_stage_max_observed_day": {
+        "cold_start": {
+          "s1": 65,
+          "s2": 56,
+          "s3": 61
+        },
+        "delayed": {
+          "s1": 61,
+          "s2": 69,
+          "s3": 73
+        },
+        "development": {
+          "s1": 61,
+          "s2": 49,
+          "s3": 51
+        },
+        "drift": {
+          "s1": 60,
+          "s2": 60,
+          "s3": 49
+        },
+        "shift": {
+          "s1": 54,
+          "s2": 57,
+          "s3": 61
+        },
+        "sparse": {
+          "s1": 47,
+          "s2": 29,
+          "s3": 34
+        }
+      },
+      "not_in_population": {
+        "msmi": 0,
+        "s1": 0,
+        "s2": 385,
+        "s3": 403
+      },
+      "positives": {
+        "msmi": 5,
+        "s1": 81,
+        "s2": 63,
+        "s3": 5
+      },
+      "rows": 466,
+      "seconds_per_episode": 5.4848,
+      "snapshot_file_bytes": 186696,
+      "states": 360,
+      "status": "PASS",
+      "unknown": {
+        "msmi": 0,
+        "s1": 0,
+        "s2": 0,
+        "s3": 0
+      },
+      "wall_seconds": 52.024
+    },
+    "P4_deterministic_replay": {
+      "files_compared": [
+        "snapshots/seed_40001.jsonl",
+        "labels/seed_40001.jsonl",
+        "states/seed_40001.jsonl"
+      ],
+      "files_identical": true,
+      "sha256": {
+        "labels": "ee26f50fe54a304e10068d89321f057987394ffa157cd36d3bb8c80f11d67507",
+        "snapshots": "319dbb310e824680f0e605a9a644fd8ed98c3b6e5860854c6e22a58c64c79b5a",
+        "states": "4f11ee7c2079f2376077c76492ff806294ab433f0505f3e1a83c01b257882979"
+      },
+      "status": "PASS",
+      "wall_seconds": 32.991
+    },
+    "P5_protocol_smoke": {
+      "inference_seconds_per_episode": 14.436,
+      "inference_seconds_total": 86.617,
+      "instrumentation_files": 317,
+      "instrumentation_lines": 360,
+      "k_chosen_eq_k_greedy_all_lines": true,
+      "max_per_call_match_seconds": 0.059223499993095174,
+      "seconds_per_episode_wall": 15.584,
+      "status": "PASS",
+      "wall_seconds": 97.132
+    },
+    "P6_measurements": {
+      "in_process_seconds_per_episode": 5.4848,
+      "in_process_seconds_per_episode_basis": "P3 collect_group wall 52.02s / 6 episodes",
+      "max_per_call_match_seconds_instrumented": 0.059223499993095174,
+      "official_max_episode_inference_seconds": 18.15,
+      "official_mean_per_call_inference_seconds": 0.1513,
+      "peak_memory_episode": "development (one in-process collect_episode)",
+      "peak_python_memory_bytes_tracemalloc": 2714881,
+      "positives_per_stage": {
+        "msmi": 5,
+        "s1": 81,
+        "s2": 63,
+        "s3": 5
+      },
+      "rows_written": {
+        "labels": 466,
+        "note": "states = 60 decision days x 6 variants for seed 40001",
+        "snapshots": 466,
+        "states": 360
+      },
+      "status": "PASS",
+      "subprocess_basis": "P5 evaluate.py wall 97.1s / 6; inference = sum(inference_seconds)/6",
+      "subprocess_seconds_per_episode_inference": 14.436,
+      "subprocess_seconds_per_episode_wall": 15.584,
+      "ten_second_invocation_limit_headroom": 168.9,
+      "tracemalloc_episode_intros": 87,
+      "unknown_per_stage": {
+        "msmi": 0,
+        "s1": 0,
+        "s2": 0,
+        "s3": 0
+      },
+      "wall_seconds": 46.656
+    }
+  },
+  "task": 5,
+  "variants": [
+    "development",
+    "sparse",
+    "cold_start",
+    "delayed",
+    "shift",
+    "drift"
+  ]
+}

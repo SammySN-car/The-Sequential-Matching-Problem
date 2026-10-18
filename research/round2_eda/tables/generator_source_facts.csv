@@ -1,0 +1,20 @@
+fact,value,source
+acceptance_inputs,sigmoid(-0.25 + bias + fit + shared + drift),kit.py L133-140 (_prob)
+fit_weights_default,"{'relationship_goal': 0.7, 'relationship_pace': 0.4, 'lifestyle': 0.25, 'conversations': 0.2}",kit.py L135
+fit_weights_shift,"{'relationship_goal': 0.25, 'relationship_pace': 0.8, 'lifestyle': -0.25, 'conversations': 0.5}",kit.py L136
+fit_match_value,"+1 equal, -0.5 unequal",kit.py L137
+shared_shock,"N(0, 0.45), pair-level, used by BOTH acceptance and second intention","kit.py L157, L139, L179"
+member_bias,"N(0, 0.7), per member, hidden","kit.py L64, L139"
+second_bias,"N(0, 0.5), per member, hidden","kit.py L65, L179"
+response_rate,"U(0.55, 0.98), per member, hidden; gates response AND second answer","kit.py L64, L159, L178"
+drift_effect,-0.5 on acceptance logit when variant=drift and day>=35,kit.py L138
+date_probability,"Bernoulli(0.78), constant, independent of fit",kit.py L171
+date_delay,max(response_days) + U(1..14); delayed variant +U(5..12),kit.py L169-170
+second_yes_probability,sigmoid(0.15 + second_bias + shared + 0.4*[goal match]),kit.py L179
+second_on_time_probability,P(U(1..5) delay <= 3) = 3/5 per member,"kit.py L178, L180"
+msmi_deadline,date_day - assigned_day <= 30 AND both seconds yes <=3d,kit.py L197
+hard_fields_outcome_effect,ZERO - hard fields are feasibility-only (eligibility),kit.py L69-88 vs L133-140
+soft_declined_truth_visibility,asks reveal truth only if field_status != declined,kit.py L125-128
+declined_is_fixed_at_generation,7% of unobserved fields marked declined at generate(),kit.py L57
+age_zone_gender_outcome_effect,"ZERO - feasibility/features only, never in _prob","kit.py L41-43, L74-86 vs L133-140"
+history_wait_competition_outcome_effect,ZERO - allocation-side only; conversion equations have no state terms,kit.py L133-189

@@ -1,0 +1,8 @@
+{
+  "experiment": "round2_stagewise_reward_solver",
+  "task": 6,
+  "sealed_files": 3051,
+  "checks": 14,
+  "failures": [],
+  "passed": true
+}

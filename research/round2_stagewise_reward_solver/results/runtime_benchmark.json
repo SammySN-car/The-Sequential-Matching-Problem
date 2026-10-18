@@ -1,0 +1,92 @@
+{
+  "experiment": "round2_stagewise_reward_solver",
+  "task": 4,
+  "script": "scripts/srws_benchmark.py",
+  "threshold_seconds": 3.0,
+  "corpus_size": 6041,
+  "expected_corpus_size": 6041,
+  "reconstruction_failures": 0,
+  "reconstruction_failure_samples": [],
+  "rule_counts": {
+    "R-A": 3000,
+    "R-B": 93,
+    "R-C": 53,
+    "R-D": 3000
+  },
+  "solver_seconds": {
+    "count": 6041,
+    "p50": 0.0004408999811857939,
+    "p95": 0.008999600016977638,
+    "p99": 0.02092393999337219,
+    "max": 0.05028820000006817,
+    "min": 0.0,
+    "mean": 0.002051503012834445
+  },
+  "end2end_seconds": {
+    "count": 6041,
+    "p50": 0.16963220000616275,
+    "p95": 0.21824020001804456,
+    "p99": 0.25010872001294054,
+    "max": 0.4442113999975845,
+    "min": 0.12254119999124669,
+    "mean": 0.17395922560853083
+  },
+  "solver_invocations": 4651,
+  "solver_zero_or_skipped": 1390,
+  "n_edges_distribution": {
+    "count": 6041,
+    "p50": 4.0,
+    "p95": 26.0,
+    "p99": 42.600000000000364,
+    "max": 65.0,
+    "min": 0.0,
+    "mean": 7.9692103956298626
+  },
+  "k_distribution": {
+    "count": 6041,
+    "p50": 3.0,
+    "p95": 11.0,
+    "p99": 13.0,
+    "max": 18.0,
+    "min": 0.0,
+    "mean": 3.7651051150471777
+  },
+  "gates": {
+    "R1_solver_lt_3s_every_state": {
+      "pass": true,
+      "max_seconds": 0.05028820000006817
+    },
+    "R2_end2end_lt_3s_every_state": {
+      "pass": true,
+      "max_seconds": 0.4442113999975845
+    },
+    "R3_zero_failures_and_invalid": {
+      "pass": true,
+      "solver_errors": 0,
+      "end2end_errors": 0,
+      "malformed_outputs": 0,
+      "invalid_matchings": 0,
+      "invalid_end2end_matchings": 0,
+      "silent_fallbacks": 0
+    },
+    "R4_farl_below_10s": {
+      "pass": true,
+      "max_seconds": 0.4442113999975845,
+      "evaluator_limit_seconds": 10
+    },
+    "R5_stdlib_plus_kit_only": {
+      "pass": true,
+      "violations": []
+    }
+  },
+  "all_gates_passed": true,
+  "wall_seconds": 15551.4,
+  "wall_seconds_note": "run3 launch-to-emit wall; includes one harness process-suspension interval that corrupted a single end-to-end measurement (seed_40213/development/day_0, 9778s), subsequently re-measured at 0.1545s. Threshold/corpus/policy unchanged.",
+  "remeasurement_applied": {
+    "state_id": "seed_40213/development/day_0",
+    "original_end2end_seconds": 9778.435254199983,
+    "original_error": "timeout(>30s)",
+    "clean_end2end_seconds": 0.1545,
+    "cause": "harness suspended the run2 measurement process while it was blocked on this single subprocess (same external interference that killed runs 1 and 2); the 30s subprocess timeout fired only after unsuspend, so the wall delta captured ~2.7h of suspension, not policy compute. Proven by 8 clean re-measurements (0.15-0.18s), position exactly at run2 kill point, no system sleep event, and identical policy code for all 6040 other states (all < 0.45s)."
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "schema": "round2_stage4_q3_v1",
+  "source_files": {
+    "frozen_seed104": {
+      "file": "research/round2_stage3_intermediate_floor/arm_frozen_seed104.json",
+      "primary_score": 0.16666666666666666
+    },
+    "frozen_seed105": {
+      "file": "research/round2_stage3_intermediate_floor/arm_frozen_seed105.json",
+      "primary_score": 0.5
+    },
+    "frozen_seed106": {
+      "file": "research/round2_stage3_intermediate_floor/arm_frozen_seed106.json",
+      "primary_score": 0.08333333333333333
+    },
+    "intermediate_seed104": {
+      "file": "research/round2_stage3_intermediate_floor/arm_intermediate_seed104.json",
+      "primary_score": 0.4166666666666667
+    },
+    "intermediate_seed105": {
+      "file": "research/round2_stage3_intermediate_floor/arm_intermediate_seed105.json",
+      "primary_score": 0.3333333333333333
+    },
+    "intermediate_seed106": {
+      "file": "research/round2_stage3_intermediate_floor/arm_intermediate_seed106.json",
+      "primary_score": 0.3333333333333333
+    },
+    "nofloor_seed104": {
+      "file": "research/round2_stage3_intermediate_floor/arm_nofloor_seed104.json",
+      "primary_score": 0.16666666666666666
+    },
+    "nofloor_seed105": {
+      "file": "research/round2_stage3_intermediate_floor/arm_nofloor_seed105.json",
+      "primary_score": 0.3333333333333333
+    },
+    "nofloor_seed106": {
+      "file": "research/round2_stage3_intermediate_floor/arm_nofloor_seed106.json",
+      "primary_score": 0.3333333333333333
+    }
+  },
+  "primary_by_arm_seed": {
+    "frozen": {
+      "104": 0.16666666666666666,
+      "105": 0.5,
+      "106": 0.08333333333333333
+    },
+    "intermediate": {
+      "104": 0.4166666666666667,
+      "105": 0.3333333333333333,
+      "106": 0.3333333333333333
+    },
+    "nofloor": {
+      "104": 0.16666666666666666,
+      "105": 0.3333333333333333,
+      "106": 0.3333333333333333
+    }
+  },
+  "paired_differences": {
+    "intermediate_minus_frozen": {
+      "per_seed": {
+        "104": 0.25,
+        "105": -0.16666666666666669,
+        "106": 0.25
+      },
+      "mean": 0.1111111111111111,
+      "sd_across_seeds": 0.2405626121623441,
+      "sem": 0.13888888888888892
+    },
+    "nofloor_minus_frozen": {
+      "per_seed": {
+        "104": 0.0,
+        "105": -0.16666666666666669,
+        "106": 0.25
+      },
+      "mean": 0.027777777777777773,
+      "sd_across_seeds": 0.20971762320196527,
+      "sem": 0.12108052620946316
+    },
+    "nofloor_minus_intermediate": {
+      "per_seed": {
+        "104": -0.25,
+        "105": 0.0,
+        "106": 0.0
+      },
+      "mean": -0.08333333333333333,
+      "sd_across_seeds": 0.14433756729740643,
+      "sem": 0.08333333333333333
+    }
+  },
+  "noise_estimate": {
+    "basis": "3 paired development seeds (104-106) from frozen Stage 3; descriptive, not a power analysis claim",
+    "paired_sd_key": "intermediate_minus_frozen",
+    "paired_sd": 0.2405626121623441,
+    "normal_approx_guidance": {
+      "detect_mean_diff_0.05": {
+        "approx_n_paired_seeds": 182,
+        "formula": "n = ceil(((1.96+0.84)*sd/d)^2), sd = paired across-seed SD, normal approximation"
+      },
+      "detect_mean_diff_0.10": {
+        "approx_n_paired_seeds": 46,
+        "formula": "n = ceil(((1.96+0.84)*sd/d)^2), sd = paired across-seed SD, normal approximation"
+      },
+      "detect_mean_diff_0.20": {
+        "approx_n_paired_seeds": 12,
+        "formula": "n = ceil(((1.96+0.84)*sd/d)^2), sd = paired across-seed SD, normal approximation"
+      }
+    },
+    "msmi_rarity_note": "primary score counts MSMI events (9-13 per arm over 18 episodes); Poisson relative SE of a count k is 1/sqrt(k) ~ 0.28-0.33"
+  },
+  "msmi_events": {
+    "from_stage3_summary_note": "stored report: MSMI events frozen 9 / intermediate 13 / nofloor 10 over 18 episodes each"
+  },
+  "arm_run_top_level_keys": [
+    "decision_days",
+    "episodes",
+    "follow_up_days",
+    "members_per_episode",
+    "mode",
+    "release",
+    "summary"
+  ]
+}

@@ -1,0 +1,291 @@
+{
+ "c1": {
+  "expected_totals": {
+   "G0": 90,
+   "G1f": 81,
+   "G1m": 88,
+   "G2": 92,
+   "G3": 92,
+   "G4": 94,
+   "G5": 161
+  },
+  "headroom_match": true,
+  "n_headroom": 82,
+  "n_seeds": 21,
+  "n_states": 7560,
+  "sum_k_t": 8433,
+  "sum_kt_match": true,
+  "totals": {
+   "G0": 90,
+   "G1f": 81,
+   "G1m": 88,
+   "G2": 92,
+   "G3": 92,
+   "G4": 94,
+   "G5": 161
+  },
+  "totals_match": true
+ },
+ "c2": {
+  "exact_matches": 14,
+  "failures": [],
+  "pairs": 14
+ },
+ "c3": {
+  "cardinality_violations": 0,
+  "count_sums": {
+   "G0": 7245,
+   "G1f": 3752,
+   "G1m": 7358,
+   "G2": 6045,
+   "G3": 6117,
+   "G4": 5754,
+   "G5": 5422
+  },
+  "diff_states": {
+   "states_differing_G0_vs_G1f": 1228,
+   "states_differing_G0_vs_G1m": 80,
+   "states_differing_G1f_vs_G1m": 1232
+  }
+ },
+ "c4": {
+  "cross_checks": {
+   "G0_eq_P_GREEDY": true,
+   "G1f_eq_P_F1": true,
+   "G4_eq_P_F2": true,
+   "G5_eq_P_F5": true
+  },
+  "gr": {
+   "G0": 2,
+   "G1f": 19,
+   "G1m": 2,
+   "G2": 10,
+   "G3": 10,
+   "G4": 14,
+   "G5": 73
+  },
+  "headroom_states_from_gr": 82,
+  "headroom_states_from_mo": 82,
+  "mo": {
+   "P_F1": 19,
+   "P_F2": 14,
+   "P_F3": 21,
+   "P_F5": 73,
+   "P_GREEDY": 2
+  }
+ },
+ "c5": {
+  "corrected": {
+   "f2_better_than_true_baseline_share": 0.34104,
+   "mean_true_baseline_percentile": 0.343518,
+   "median_true_baseline_percentile": 0.25,
+   "sign_chain_all_match": true,
+   "sign_chain_rows_verified": 173,
+   "true_baseline_rank_captured_mean": 2.085106,
+   "true_baseline_rank_missed_mean": 2.895522
+  },
+  "published": {
+   "baseline_rank_captured_mean": 4.382979,
+   "baseline_rank_missed_mean": 2.343284,
+   "f2_better_than_baseline_share": 0.323699,
+   "mean_baseline_percentile": 0.388022,
+   "mean_f2_percentile": 0.454823,
+   "median_f2_percentile": 0.416667,
+   "n_f2_selected": 94,
+   "n_in_F5": 161,
+   "n_missed": 67,
+   "n_positive_edges": 173
+  },
+  "ss_published_mean_f2": 0.454823
+ },
+ "c6": {
+  "agg": {
+   "conflict": 7,
+   "gap": 67,
+   "n_captured": 106,
+   "n_missed": 67,
+   "rank": 60
+  },
+  "checks": {
+   "agg_agrees": true,
+   "closure": true,
+   "conflict_7": true,
+   "f2_minus_f1_13": true,
+   "p1_81": true,
+   "p2_94": true,
+   "p5_161": true,
+   "pg_90": true,
+   "rank_60": true,
+   "rt_101": true
+  },
+  "n_captured_field": {
+   "f2_selected_sum": 94,
+   "note": "known label issue: n_captured=106 is \"positives not in F5-F2\"; F2 actually selected 94 positives",
+   "value": 106
+  },
+  "sums": {
+   "conflict": 7,
+   "n_hr": 0,
+   "p1": 81,
+   "p2": 94,
+   "p5": 161,
+   "pg": 90,
+   "rank": 60,
+   "rt": 101
+  }
+ },
+ "c7": {
+  "fc_contrast": {
+   "delta": 13,
+   "match": true,
+   "mine": [
+    0.0476,
+    1.2381
+   ],
+   "published": [
+    0.0476,
+    1.2381
+   ],
+   "published_delta": 13
+  },
+  "fc_headroom": {
+   "F1-SCORE": {
+    "match": true,
+    "mine": [
+     0.2857,
+     1.4762
+    ],
+    "published": [
+     0.2857,
+     1.4762
+    ],
+    "published_total": 19,
+    "total": 19
+   },
+   "F2-SOFT": {
+    "match": true,
+    "mine": [
+     0.1905,
+     1.0
+    ],
+    "published": [
+     0.1905,
+     1.0
+    ],
+    "published_total": 14,
+    "total": 14
+   },
+   "F3-OBSERV": {
+    "match": true,
+    "mine": [
+     0.4762,
+     1.381
+    ],
+    "published": [
+     0.4762,
+     1.381
+    ],
+    "published_total": 21,
+    "total": 21
+   },
+   "F4-RANDOM": {
+    "match": true,
+    "mine": [
+     0.7152,
+     1.4433
+    ],
+    "published": [
+     0.7152,
+     1.4433
+    ],
+    "published_total": 24.61,
+    "total": 24.61
+   },
+   "F5-ORACLE": {
+    "match": true,
+    "mine": [
+     2.2857,
+     4.5238
+    ],
+    "published": [
+     2.2857,
+     4.5238
+    ],
+    "published_total": 73,
+    "total": 73
+   }
+  },
+  "fc_main": {
+   "F1-SCORE": {
+    "match": true,
+    "mine": [
+     -1.4286,
+     0.4286
+    ],
+    "published": [
+     -1.4286,
+     0.4286
+    ],
+    "published_total": 81,
+    "total": 81
+   },
+   "F2-SOFT": {
+    "match": true,
+    "mine": [
+     -0.3333,
+     0.7619
+    ],
+    "published": [
+     -0.3333,
+     0.7619
+    ],
+    "published_total": 94,
+    "total": 94
+   },
+   "F3-OBSERV": {
+    "match": true,
+    "mine": [
+     -0.9048,
+     0.4286
+    ],
+    "published": [
+     -0.9048,
+     0.4286
+    ],
+    "published_total": 85,
+    "total": 85
+   },
+   "F4-RANDOM": {
+    "match": true,
+    "mine": [
+     -0.8814,
+     0.32
+    ],
+    "published": [
+     -0.8814,
+     0.32
+    ],
+    "published_total": 85.25,
+    "total": 85.25
+   },
+   "F5-ORACLE": {
+    "match": true,
+    "mine": [
+     2.1905,
+     4.5714
+    ],
+    "published": [
+     2.1905,
+     4.5714
+    ],
+    "published_total": 161,
+    "total": 161
+   }
+  },
+  "gr_pairs_exact": 14,
+  "gr_pairs_total": 14
+ },
+ "failures": [],
+ "generated": "2026-10-13 16:07:29",
+ "label": "POST HOC integrity checks (analysis_plan.md sec.7); no prior result altered; local fixed-cardinality counterfactuals on saved artifacts only"
+}

@@ -1,0 +1,7 @@
+variant,mean_available_all_days,mean_feasible_edges_all_days,mean_feasible_edges_when_any,pct_days_zero_selection,pct_days_unmatched_despite_edges,mean_selected_per_day
+development,158.9,2.452,4.146,40.87,86.59,1.312
+sparse,175.8,0.388,1.722,77.46,5.95,0.325
+cold_start,161.7,1.965,3.396,42.14,65.08,1.124
+delayed,157.4,2.399,4.113,41.67,85.64,1.287
+shift,159.0,2.48,4.139,40.08,87.22,1.331
+drift,159.0,2.462,4.158,40.79,87.22,1.314

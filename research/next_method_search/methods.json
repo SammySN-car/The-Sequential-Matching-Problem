@@ -1,0 +1,74 @@
+{
+  "status": "PROPOSED - nothing executed; awaiting instruction",
+  "written_after": "tournament Phase-3 verdict: no credible candidate; greedy remains best empirically supported among evaluated candidates",
+  "metric": "realized MSMI/100, paired on identical worlds, cluster-by-seed CI",
+  "dev_seeds_only_until_preregistered": true,
+  "methods": [
+    {
+      "id": "n01_decision_state_autopsy",
+      "priority": 1,
+      "direction": "decision-state analysis",
+      "type": "diagnostic (not a policy)",
+      "mechanism": "On dev-only seeds (90210 family x 6 variants), run greedy episodes with a decision-day dump: feasible edges + scores, chosen pairs, compatible-but-unmatched members, ask spend, availability/busy windows; join each historical introduction with feedback events observed within a fixed horizon to label conversions. Produce feature x conversion-rate tables using ONLY decision-time-visible fields (fields/field_status, wait days, feasible degree, past feedback, ask_log).",
+      "expected_benefit": "Locates and quantifies where greedy actually loses (conversion heterogeneity, unserved-member patterns, blocking), converting 'try another idea' into measured loss channels; decides which of n02/n03/n04 deserve implementation. May show the binding constraint is field observation rather than pairing.",
+      "implementation_effort": "S-M (~1-2 days): reuses evaluate.episode in-process like instrument.py; kit/frozen files untouched; output = analysis artifacts only",
+      "failure_mode": "No legal decision-time feature separates conversion outcomes, or effects are <5% of introductions -> the feedback/stateful families have no signal and must not be built (this is a cheap, successful kill).",
+      "evidence_needed_to_justify_followons": [
+        ">=1 decision-time-legal feature with conversion-rate ratio >= 2x between halves",
+        "that split covers >= 5% of introductions on >= 3 of 6 variants",
+        "replicates on >= 3 dev seeds (not a single-seed artifact)",
+        "additionally for P4 only: >= 5% of matched pairs are low-prospect while both endpoints had a better-compatible arrival inside the busy window (thick variants), with rate ~ 0 on cold_start/delayed"
+      ]
+    },
+    {
+      "id": "n02_feedback_reweighted_pairs",
+      "priority": 2,
+      "direction": "feedback-driven policy",
+      "type": "match-phase decide function",
+      "mechanism": "Keep greedy's structure (score -> greedy take) but reweight pair scores by conversion history already visible at decision time: smooth empirical conversion rates of pair types (agreement patterns on SOFT/REL fields) built from state['feedback'] + state['introductions']; blend with base score; when history < N events, output is byte-identical to control (guard). Ask phase = baseline_asks (isolates the match lever).",
+      "expected_benefit": "Targets the metric's real leverage (which pairs date -> conversions), the one lesson from m14/m26 no-ops: only changed conversions move MSMI. Bounded downside: guard makes worst case = control.",
+      "implementation_effort": "S-M (decide fn + smoothing constants + TDD fixtures incl. thin-history guard and determinism; ~1 day)",
+      "failure_mode": "Feedback too sparse early (cold_start) -> guard keeps it = control (no gain, no loss); rates non-stationary across variants -> smoothing window mis-set; looks identical to family A if blending weight is too low (must differ measurably: distinct digests on thick variants).",
+      "evidence_needed_to_justify_testing": [
+        "P1 gate met (all three replication conditions)",
+        "offline backtest on P1 dumps: reweighting selects a converting pair where greedy selected a non-converting one on >= 3% of decision days that have edges",
+        "no cold_start regression in backtest (guard verified to bind)"
+      ]
+    },
+    {
+      "id": "n03_adaptive_ask_from_feedback",
+      "priority": 3,
+      "direction": "stateful policy (feedback-conditioned asking)",
+      "type": "ask-phase decide function",
+      "mechanism": "Choose next-day SOFT asks from what history shows converts: build rolling per-field-option response/conversion stats from state['ask_log'] + state['feedback'] (both already in observe()); prioritize fields whose observed answers historically preceded mutual interest for similar members; keep the constraints-bundle-first rule; carry compact rolling counters in protocol memory only if recomputation is too costly (note: state already contains full history, so memory is convenience, not capability - evaluate.py L32 caps its size).",
+      "expected_benefit": "Untested half of asking: m29/m30 were static rules and failed; history-conditioned allocation could raise conversion per introduction (instrument shows mutual/intro ~0.15 and MSMI/intro near 0 on the sample seed - conversions are the scarce output).",
+      "implementation_effort": "M (~2-3 days): ask logic + rolling-stat builder + memory size tests + protocol roundtrip fixtures",
+      "failure_mode": "Same cold_start sparsity as n02 (needs guard -> baseline_asks until enough ask_log history); memory cap exceeded would create invalid episodes (must be unit-tested up front); ask budget reallocation could reduce coverage (guardrail: coverage delta >= -0.05).",
+      "evidence_needed_to_justify_testing": [
+        "P1 gate met, AND P1 dumps show ask outcomes are decision-time predictable: fields chosen by baseline_asks convert at measurably different rates than unchosen observed fields (ratio >= 1.5x on >= 3 variants)",
+        "ask_log history is non-trivial: >= 30 logged ask answers before day 40 on >= 4 variants (else no learning material)"
+      ]
+    },
+    {
+      "id": "n04_guarded_lookahead_wait",
+      "priority": 4,
+      "direction": "sequential lookahead",
+      "type": "match-phase decide function",
+      "mechanism": "For each candidate pair, compare match-now value against preserved value: estimate each endpoint's future partner quality from the arrival stream observed so far (distribution of new arrivals' observed fields + endpoint's current feasible-degree trend) and the pair's conversion probability (from P1/n02 stats). Drop a match only when BOTH endpoints' expected future partners exceed the current pair AND conversion probability is low. HARD GUARD: never wait when today's edge count <= T_thin or either endpoint's wait exceeds a cap (reproduces the exact failure condition of families m16-m23 so it cannot repeat it).",
+      "expected_benefit": "Family C failed only because waiting was unconditional; conditional value-based waiting on thick markets could pair high-compatibility members with better future matches while the guard protects scarce markets. Coverage ~0.32 and ~33% zero-selection days show service headroom.",
+      "implementation_effort": "M-L (~4-6 days incl. arrival-rate estimator and backtest harness; gated behind P1)",
+      "failure_mode": "Estimator noise drops converting pairs (the proven losing move - every dropped pair is a lost date); guard mis-set re-fails cold_start/delayed exactly like m16/m18/m21/m22/m25; latency must stay << 10 s/invoke (budget check: current worst 0.43 s/invoke).",
+      "evidence_needed_to_justify_testing": [
+        "P1 'blocking' condition met (>= 5% low-prospect matches with better-compatible arrival inside busy window, ~0 on cold_start/delayed)",
+        "offline replay on P1 dumps: guarded rule keeps 100% of greedy's converting pairs on cold_start/delayed and strictly improves conversion on >= 4 of 6 variants",
+        "estimated per-invoke cost <= 2 s (stay under the 10 s/invoke gate with margin)"
+      ]
+    }
+  ],
+  "explicitly_not_proposed": [
+    "any variant of families A-E with new formulas or thresholds (ruled out by evidence)",
+    "re-running or re-tuning any of m01-m30 (frozen; results preserved)",
+    "comparing absolute scores across screening/confirm1/confirm2 seed sets",
+    "claiming greedy is globally optimal (only 'best empirically supported among evaluated')"
+  ]
+}

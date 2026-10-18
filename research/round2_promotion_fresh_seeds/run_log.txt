@@ -1,0 +1,255 @@
+==================================================================
+ROUND 2 PROMOTION - FRESH-SEED EVALUATION - RUN LOG
+Directory: research/round2_promotion_fresh_seeds/
+Date: 2026-10-07
+Nature: GENERALIZATION/PROMOTION experiment (not development/tuning).
+==================================================================
+
+[REGISTRATION - BEFORE ANY RUN] 2026-10-07 16:15:41
+
+Frozen candidate (verified via integrity_before.py):
+  model floor            = 0.007905174015296758  (embedded blob in policy.py)
+  candidate floor        = float(model['floor']) / 2.0
+                        = 0.003952587007648379   == registered value  OK
+  apparatus (frozen)     = research/round2_stage3_intermediate_floor/
+                           intermediate_policy.py (sha256 A76FD0EE0C2B9579...)
+  guards: shim raises unless floor argument == registered frozen value.
+
+Pre-run integrity: 21 frozen files hashed -> integrity_before.json
+  git head a8e26b35118c (no commits made, none planned)
+
+Experiment design (per task specification):
+  fresh seeds   = 107,108,109,110,111,112,113,114,115,116,117,118 (12)
+  variants      = development,sparse,cold_start,delayed,shift,drift (6)
+  worlds        = 12 x 6 = 72 per arm; 3 arms -> 216 official episodes
+  arms:
+    A greedy     : python evaluate.py --policy policy.py --baseline greedy
+    B original   : python evaluate.py --policy policy_ac.py
+    C floorhalf  : python evaluate.py --policy
+                   research/round2_stage3_intermediate_floor/
+                   intermediate_policy.py
+  primary metric: MSMI per 100 arrived members via evaluate.summarise()
+                  (official evaluator; equal-weight mean over 6 family means;
+                  families are equal-sized here so == grand mean of 72)
+  contrasts     : C-B, C-A, B-A paired per (seed, variant) world
+  uncertainty   : cluster bootstrap, unit = SEED (12 clusters), 10000 reps,
+                  percentile CI, rng seed fixed per contrast - same method
+                  family as Stage 2/3 analyze scripts
+  inference unit: seed pairing (12 independent seeds; 72 worlds are clustered)
+
+Pre-specified criteria (from task; NOT invented after seeing results):
+  volume confirmation : floorhalf introductions > original in >= 80% of
+                        the 72 paired worlds
+  mutual no-harm ref  : ~8% relative degradation in mutual/100 vs original
+                        = warning threshold from prior research (reference only)
+  interpretation      : hierarchy fixed in task sections 8/16
+                        (READY / NEED-MORE-EVIDENCE / REJECT)
+
+Integrity gates planned:
+  G1 validity      : all episodes valid (0 invalid across runs+rereuns)
+  G2 determinism   : rerun (A,B,C @ seed107) + (C @ seed118) -> compare
+                     action_sha256 + metrics + summary excl. inference_seconds
+  G3 local/container: docker image sequential-policy:1.0 exists; verify
+                     image policy.py/kit.py sha == repo files; run arm A
+                     seed107 container vs local; A+C arms cannot run in the
+                     frozen image (Dockerfile ships policy.py only; Dockerfile
+                     is frozen) - scope documented honestly
+  G4 frozen hashes : before/after on 21 files (integrity_before/after.json)
+  G5 no holdout    : only public seeds 107-118 used; organise.py not run;
+                     no organiser/holdout files exist or were read;
+                     git status unchanged
+
+Diagnostics (section 11): diagnose3.py is frozen with an output-location
+  assert, so a byte-preserving COPY (diag_promo.py, only sys.path lines
+  added) will be used to measure per-day floor/zero-selection diagnostics for
+  arms B and C x 12 seeds (24 runs), each checked against its official run
+  via diagnose fidelity (action_sha256 + metrics vs --ref official JSON).
+
+NO RUNS YET at registration time.
+[2026-10-07 16:17:21] phase=official seeds=[107, 108, 109, 110] runs=12 workers=6 @ 16:17:21
+16:17:41 | official | arm_greedy_seed109.json      |   19.4s | OK 
+16:17:41 | official | arm_greedy_seed107.json      |   19.6s | OK 
+16:17:41 | official | arm_greedy_seed110.json      |   19.7s | OK 
+16:17:41 | official | arm_greedy_seed108.json      |   19.8s | OK 
+16:17:48 | official | arm_original_seed107.json    |   26.7s | OK 
+16:17:50 | official | arm_original_seed108.json    |   28.5s | OK 
+16:18:07 | official | arm_original_seed109.json    |   26.7s | OK 
+16:18:09 | official | arm_floorhalf_seed107.json   |   28.2s | OK 
+16:18:10 | official | arm_original_seed110.json    |   29.1s | OK 
+16:18:11 | official | arm_floorhalf_seed108.json   |   29.6s | OK 
+16:18:13 | official | arm_floorhalf_seed109.json   |   25.0s | OK 
+16:18:16 | official | arm_floorhalf_seed110.json   |   25.9s | OK 
+  phase done: 12 runs, 0 bad, wall 54.4s
+
+[2026-10-07 16:18:23] phase=official seeds=[111, 112, 113, 114, 115, 116, 117, 118] runs=24 workers=6 @ 16:18:23
+16:18:44 | official | arm_greedy_seed116.json      |   20.4s | OK 
+16:18:44 | official | arm_greedy_seed114.json      |   20.5s | OK 
+16:18:44 | official | arm_greedy_seed112.json      |   20.5s | OK 
+16:18:44 | official | arm_greedy_seed113.json      |   20.6s | OK 
+16:18:44 | official | arm_greedy_seed111.json      |   20.7s | OK 
+16:18:44 | official | arm_greedy_seed115.json      |   20.7s | OK 
+16:19:05 | official | arm_greedy_seed117.json      |   21.6s | OK 
+16:19:06 | official | arm_greedy_seed118.json      |   21.7s | OK 
+16:19:14 | official | arm_original_seed112.json    |   30.1s | OK 
+16:19:14 | official | arm_original_seed111.json    |   30.3s | OK 
+16:19:15 | official | arm_original_seed113.json    |   30.5s | OK 
+16:19:15 | official | arm_original_seed114.json    |   30.7s | OK 
+16:19:36 | official | arm_original_seed116.json    |   30.3s | OK 
+16:19:37 | official | arm_original_seed115.json    |   31.4s | OK 
+16:19:45 | official | arm_original_seed117.json    |   30.6s | OK 
+16:19:45 | official | arm_floorhalf_seed112.json   |   30.0s | OK 
+16:19:45 | official | arm_floorhalf_seed111.json   |   30.4s | OK 
+16:19:46 | official | arm_original_seed118.json    |   32.1s | OK 
+16:20:07 | official | arm_floorhalf_seed113.json   |   31.4s | OK 
+16:20:08 | official | arm_floorhalf_seed114.json   |   31.1s | OK 
+16:20:14 | official | arm_floorhalf_seed116.json   |   29.3s | OK 
+16:20:14 | official | arm_floorhalf_seed117.json   |   29.3s | OK 
+16:20:15 | official | arm_floorhalf_seed115.json   |   30.0s | OK 
+16:20:16 | official | arm_floorhalf_seed118.json   |   29.9s | OK 
+  phase done: 24 runs, 0 bad, wall 112.8s
+
+[2026-10-07 16:20:28] phase=rerun seeds=[107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118] runs=4 workers=4 @ 16:20:28
+16:20:44 | rerun   | arm_greedy_seed107_rerun.json |   16.6s | OK 
+16:20:50 | rerun   | arm_original_seed107_rerun.json |   22.4s | OK 
+
+16:20:51 | rerun   | arm_floorhalf_seed118_rerun.json |   23.5s | OK 
+  phase done: 4 runs, 0 bad, wall 23.5s
+
+[2026-10-07 16:20:51] phase=container seeds=[107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118] runs=1 workers=1 @ 16:20:51
+16:22:06 | container | arm_greedy_seed107_container.json |   74.1s | OK 
+  phase done: 1 runs, 0 bad, wall 74.1s
+
+[INCIDENT - 2026-10-07 16:23:42]
+First execution attempt used evaluate.py without '--variants all'
+(evaluate.py line 140: --variants default = 'development'), so each of the
+41 outputs contained only the development variant. Detected at G1 validity
+sweep (episodes=1 per file, vs Stage 3 precedent of 6). All 41 partial
+outputs are being deleted and the entire run matrix is being re-executed
+with --variants all. No analysis was performed on the partial outputs.
+Root cause: run_promo.py omitted --variants all; the Stage 3 run_log.txt
+abbreviates its command lines and did not show the flag.
+
+[2026-10-07 16:23:47] phase=official seeds=[107, 108, 109, 110, 111, 112] runs=18 workers=6 @ 16:23:47
+16:25:54 | official | arm_greedy_seed109.json      |  127.0s | OK 
+16:25:55 | official | arm_greedy_seed107.json      |  128.3s | OK 
+16:25:55 | official | arm_greedy_seed108.json      |  128.4s | OK 
+16:25:55 | official | arm_greedy_seed112.json      |  128.6s | OK 
+16:25:56 | official | arm_greedy_seed110.json      |  128.8s | OK 
+16:25:56 | official | arm_greedy_seed111.json      |  129.4s | OK 
+16:28:56 | official | arm_original_seed109.json    |  181.1s | OK 
+16:29:00 | official | arm_original_seed107.json    |  186.6s | OK 
+16:29:06 | official | arm_original_seed112.json    |  189.9s | OK 
+16:29:06 | official | arm_original_seed110.json    |  190.9s | OK 
+16:29:10 | official | arm_original_seed108.json    |  194.7s | OK 
+16:29:11 | official | arm_original_seed111.json    |  195.5s | OK 
+16:32:02 | official | arm_floorhalf_seed107.json   |  185.4s | OK 
+16:32:06 | official | arm_floorhalf_seed109.json   |  179.8s | OK 
+16:32:13 | official | arm_floorhalf_seed110.json   |  186.3s | OK 
+16:32:13 | official | arm_floorhalf_seed108.json   |  192.5s | OK 
+16:32:15 | official | arm_floorhalf_seed112.json   |  184.0s | OK 
+16:32:17 | official | arm_floorhalf_seed111.json   |  187.5s | OK 
+  phase done: 18 runs, 0 bad, wall 510.5s
+
+[2026-10-07 16:32:28] phase=official seeds=[113, 114, 115, 116, 117, 118] runs=18 workers=6 @ 16:32:28
+16:34:37 | official | arm_greedy_seed113.json      |  129.2s | OK 
+16:34:37 | official | arm_greedy_seed114.json      |  129.3s | OK 
+16:34:38 | official | arm_greedy_seed116.json      |  130.0s | OK 
+16:34:38 | official | arm_greedy_seed118.json      |  130.5s | OK 
+16:34:38 | official | arm_greedy_seed117.json      |  130.6s | OK 
+16:34:39 | official | arm_greedy_seed115.json      |  131.5s | OK 
+16:37:49 | official | arm_original_seed113.json    |  191.7s | OK 
+16:37:51 | official | arm_original_seed116.json    |  192.8s | OK 
+16:37:52 | official | arm_original_seed114.json    |  195.1s | OK 
+16:37:53 | official | arm_original_seed115.json    |  195.1s | OK 
+16:37:54 | official | arm_original_seed117.json    |  195.7s | OK 
+16:37:58 | official | arm_original_seed118.json    |  199.1s | OK 
+16:41:01 | official | arm_floorhalf_seed113.json   |  192.3s | OK 
+16:41:04 | official | arm_floorhalf_seed116.json   |  191.6s | OK 
+16:41:06 | official | arm_floorhalf_seed114.json   |  194.9s | OK 
+16:41:06 | official | arm_floorhalf_seed115.json   |  194.1s | OK 
+16:41:07 | official | arm_floorhalf_seed117.json   |  192.8s | OK 
+16:41:12 | official | arm_floorhalf_seed118.json   |  194.2s | OK 
+  phase done: 18 runs, 0 bad, wall 524.7s
+
+[2026-10-07 16:41:44] phase=rerun seeds=[107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118] runs=4 workers=4 @ 16:41:44
+16:43:26 | rerun   | arm_greedy_seed107_rerun.json |  102.4s | OK 
+16:44:06 | rerun   | arm_floorhalf_seed107_rerun.json |  142.3s | OK 
+16:44:07 | rerun   | arm_original_seed107_rerun.json |  142.6s | OK 
+16:44:14 | rerun   | arm_floorhalf_seed118_rerun.json |  149.9s | OK 
+  phase done: 4 runs, 0 bad, wall 149.9s
+
+[2026-10-07 16:44:14] phase=container seeds=[107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118] runs=1 workers=1 @ 16:44:14
+16:51:14 | container | arm_greedy_seed107_container.json |  419.6s | OK 
+  phase done: 1 runs, 0 bad, wall 419.6s
+
+[GATES - 2026-10-07 16:55:34]
+G1 validity: 41 files x 6 episodes = 246 episodes, 0 invalid, all variant
+  sets complete, all summaries present. PASS.
+G2 determinism: reruns (greedy/orig/floorhalf @107, floorhalf @118) vs
+  originals, excluding inference_seconds: 4/4 byte-equal, all action_sha256
+  match, primary scores match. PASS.
+G3 local/container: image sequential-policy:1.0 policy.py+kit.py sha256
+  byte-identical to repo. NOTE: evaluate.py docker path runs policy.py with
+  no args -> default ac mode == arm B; container seed107 output compared
+  against LOCAL ARM B (file renamed arm_greedy_seed107_container.json ->
+  arm_original_seed107_container.json after correcting the wrong-target
+  comparison): 0 diffs, all 6 action_sha256 match, primary equal. Matches
+  Round 1 ac.json/ac_container.json parity precedent. Arms A/C cannot run in
+  the frozen image (Dockerfile ships policy.py only, ENTRYPOINT policy.py;
+  Dockerfile frozen - extending image scope would require modifying it).
+  PASS (within existing verification scope).
+
+[2026-10-07 17:04:04] phase=diag jobs=2 workers=2
+17:06:18 | diag   | diag_intermediate_seed107.json |  134.0s | OK 
+17:06:20 | diag   | diag_frozen_seed107.json       |  135.6s | OK 
+
+[2026-10-07 17:06:29] phase=diag jobs=22 workers=6
+17:09:47 | diag   | diag_frozen_seed109.json       |  197.6s | OK 
+17:10:27 | diag   | diag_frozen_seed113.json       |  237.9s | OK 
+17:10:29 | diag   | diag_frozen_seed112.json       |  239.7s | OK 
+17:10:32 | diag   | diag_frozen_seed110.json       |  243.2s | OK 
+17:10:32 | diag   | diag_frozen_seed108.json       |  243.5s | OK 
+17:10:42 | diag   | diag_frozen_seed111.json       |  252.9s | OK 
+17:15:16 | diag   | diag_frozen_seed114.json       |  329.6s | OK 
+17:15:36 | diag   | diag_frozen_seed116.json       |  307.1s | OK 
+17:15:41 | diag   | diag_intermediate_seed108.json |  298.6s | OK 
+17:15:47 | diag   | diag_frozen_seed115.json       |  319.5s | OK 
+17:15:47 | diag   | diag_frozen_seed117.json       |  314.3s | OK 
+17:15:58 | diag   | diag_frozen_seed118.json       |  325.1s | OK 
+17:20:10 | diag   | diag_intermediate_seed109.json |  293.3s | OK 
+17:21:13 | diag   | diag_intermediate_seed110.json |  336.8s | OK 
+17:21:22 | diag   | diag_intermediate_seed112.json |  335.4s | OK 
+17:21:33 | diag   | diag_intermediate_seed113.json |  346.3s | OK 
+17:21:37 | diag   | diag_intermediate_seed111.json |  356.0s | OK 
+17:21:55 | diag   | diag_intermediate_seed114.json |  357.7s | OK 
+17:25:44 | diag   | diag_intermediate_seed115.json |  334.3s | OK 
+17:26:07 | diag   | diag_intermediate_seed116.json |  293.9s | OK 
+17:26:17 | diag   | diag_intermediate_seed117.json |  294.9s | OK 
+17:26:30 | diag   | diag_intermediate_seed118.json |  297.0s | OK 
+
+[ANALYSIS - 2026-10-07 17:45:10]
+analyze_promo.py executed: summary.json written. Key results:
+  primary: A 0.4931 / B 0.3750 / C 0.4028
+  C-B primary +0.0278 ci [-0.118,+0.188] (21/31/20 worlds; seeds 5/2/5)
+  C-A -0.0903 ci [-0.257,+0.069]; B-A -0.1181 ci [-0.340,+0.076]
+  volume C>B 65/4/3 = 90.28% >= 80% -> MEETS (seed 12/0/0, ci [+5.67,+10.60])
+  mutual C vs B rel +5.46% ci [-9.59,+24.56] -> warning -8% not exceeded
+  diagnostics: 24/24 fidelity OK; C keeps 47.8% of feasible vs B 17.1%;
+  zero-sel-with-cand 1816(B) -> 1264(C); mid_band n=1784, mutual 12.7%
+  totals: intro A5486/B4598/C5178; mutual A780/B733/C773; MSMI A71/B54/C58
+
+[G4/G5 FINAL - 2026-10-07 17:45:10]
+G4: 21/21 frozen hashes identical before/after; git head a8e26b35118c
+  unchanged; git status unchanged; 0 new commits. PASS.
+G5: only seeds 107-118 passed to evaluate.py; worlds generated in-process
+  from seed (evaluate.py:152 kit.generate); organise.py never executed;
+  no organiser/holdout data in repo. PASS.
+
+[REPORT - 2026-10-07 17:45:10]
+report.md written: 20 sections, labels [OBSERVED]/[INTERPRETATION]/
+[UNKNOWN]/[DECISION]. DECISION: READY / PROMOTE with disclosed
+uncertainties; Section 17 threshold exploration remains ENDED.
+
+[MANIFEST - 2026-10-07 17:45:10]
+manifest.sha256 generated over this directory (except itself).
+Experiment complete.

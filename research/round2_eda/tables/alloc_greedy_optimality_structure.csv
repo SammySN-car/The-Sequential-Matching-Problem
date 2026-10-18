@@ -1,0 +1,7 @@
+measure,value,note
+intros_total,8433,n01 greedy
+score_is_max_fraction,0.6254,chosen pair attains day max score
+deficit_positive_count,0,chosen score < day max (expect 0 for greedy)
+tied_at_chosen_score_fraction,0.6567,edges_at_same_score > 1
+mean_edges_at_chosen_score,3.143,competition among co-max-score edges
+pair_rank_modes,"{0: 3994, 1: 2087, 2: 1064, 3: 554, 4: 315}",rank of chosen pair within day ordering

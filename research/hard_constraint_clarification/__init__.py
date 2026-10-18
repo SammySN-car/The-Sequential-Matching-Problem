@@ -1,0 +1,1 @@
+"""Isolated experiment: hard-constraint clarification allocation (Round 2 research)."""

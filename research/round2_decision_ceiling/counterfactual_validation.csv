@@ -1,0 +1,7 @@
+check,passed,detail
+V1_selected_pair_agreement,1,8433/8433 selected pairs match frozen labels
+V2_batch_independence,1,established by G0 T2 (0 mismatches)
+V3_maturity,1,"15304 rows, 0 None labels at horizon 100"
+V4_count_integrity,1,total=15304 selected=8433 duplicate_keys=0
+V5_orientation,1,all keys sorted ascending; G0 T1 passed
+V6_feature_legality,1,"34 feature columns, none banned"

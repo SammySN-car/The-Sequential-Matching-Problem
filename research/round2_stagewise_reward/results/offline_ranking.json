@@ -1,0 +1,470 @@
+{
+  "artifact_plan_sha256": "80615fbcc3d09c41e052ce96ff88a57aff147c99a3a056b1a9e906fd7f80308b",
+  "artifact_sha256": "7f1ddfe00211e2603e88c4e8318d3a62980aeb8364f51bc41909e8875fa275f2",
+  "caveats": [
+    "SELECTION BIAS: realized outcomes (s1/s2/s3/msmi) exist ONLY for pairs the greedy collection policy actually introduced. Every outcome-based ranking statistic in this file conditions on that introduced subset, which was chosen by greedy priorities - not at random with respect to the features the model scores on.",
+    "NO COUNTERFACTUAL LABELS: for feasible pairs that were never introduced in a validation state, no outcome is computed, imputed or assumed anywhere in this file. \"P_hat spread within a state\" is a score statement only; it says nothing about whether the high-scored edge would have outperformed the low-scored edge.",
+    "OBSERVED POPULATIONS ONLY: sections 1-3 are distributions over the collected validation states (feasible-edge sets produced by the greedy rollout dynamics of the collection policy); they are not a sample from any other environment or policy distribution.",
+    "PREDICTION-VS-DECISION SEPARATION: this file evaluates the frozen model as a RANKER on observed outcomes only. It says nothing about realized sequential MSMIs, about deployability of the exact-k solver, or about the value of any policy that would rank/sort by P_hat. The pre-registered final policy evaluation remains stopped per the solver deployability failure; this diagnostic cannot change that.",
+    "The within-state ranking statistic pools pairs across states (micro) and also reports an unweighted per-state mean (macro); states contribute comparably only if they have >= 2 introduced pairs with decided outcomes, so small-k states are underrepresented."
+  ],
+  "created": "2026-10-13T23:36:28Z",
+  "discrimination_frequency": {
+    "definition": "Per validation state (seed_group, variant, day) with >=1 feasible edge: spread = max(P_hat) - min(P_hat) over its feasible edges. \"share_ge_x\" = fraction of states whose spread >= x.",
+    "n_edges_total": 87204,
+    "n_states": 20555,
+    "share_ge_0.01": 0.11583556312332766,
+    "share_ge_0.02": 0.007735344198491851,
+    "share_ge_0.05": 0.0,
+    "spread": {
+      "max": 0.04089927947529071,
+      "mean": 0.004136949037536186,
+      "min": 0.0,
+      "n": 20555,
+      "p1": 0.0,
+      "p25": 1.9759994350628148e-05,
+      "p5": 0.0,
+      "p50": 0.0026976353570355317,
+      "p75": 0.0063659329682915124,
+      "p95": 0.013443734694769945,
+      "p99": 0.019302473342339522
+    },
+    "threshold_note": "0.02 is the plan threshold; 0.01 and 0.05 are context only."
+  },
+  "distribution_drift": {
+    "definition": "INTRODUCED rows only: fit = snapshots seed groups 40002-40400 (n=180262), val = snapshots seed groups 40401-40500 (n=45803). mean_drift_in_fit_sd = (val_mean - fit_mean) / fit_std. share_val_outside_fit_box is per feature.",
+    "per_feature": {
+      "age_diff": {
+        "fit_mean": 2.89206821182501,
+        "fit_std": 2.0662680793321333,
+        "mean_drift_in_fit_sd": 0.005363407075010281,
+        "share_val_outside_fit_box": 0.0,
+        "std_ratio_val_over_fit": 1.0092592224267187,
+        "val_mean": 2.903150448660568,
+        "val_std": 2.0854001150718986
+      },
+      "age_slack": {
+        "fit_mean": 2.547375486791448,
+        "fit_std": 1.826734533517457,
+        "mean_drift_in_fit_sd": 0.014372674816281236,
+        "share_val_outside_fit_box": 0.0,
+        "std_ratio_val_over_fit": 1.0120305804797498,
+        "val_mean": 2.573630548217366,
+        "val_std": 1.848711210338077
+      },
+      "arrival_diff": {
+        "fit_mean": 4.819429497065383,
+        "fit_std": 6.311165044508244,
+        "mean_drift_in_fit_sd": -0.010265078531861637,
+        "share_val_outside_fit_box": 0.0,
+        "std_ratio_val_over_fit": 1.0052075227214978,
+        "val_mean": 4.754644892255966,
+        "val_std": 6.344030579876644
+      },
+      "current_day": {
+        "fit_mean": 20.208180315318813,
+        "fit_std": 14.784395131425955,
+        "mean_drift_in_fit_sd": 0.012757094200605333,
+        "share_val_outside_fit_box": 0.0,
+        "std_ratio_val_over_fit": 1.011452184367631,
+        "val_mean": 20.396786236709385,
+        "val_std": 14.95370875023495
+      },
+      "degree_a": {
+        "fit_mean": 1.5203869922668116,
+        "fit_std": 1.0176204906003417,
+        "mean_drift_in_fit_sd": 0.014475725394458924,
+        "share_val_outside_fit_box": 0.0,
+        "std_ratio_val_over_fit": 1.0090761898298444,
+        "val_mean": 1.5351177870445167,
+        "val_std": 1.0268566073477696
+      },
+      "degree_b": {
+        "fit_mean": 1.5243367986597287,
+        "fit_std": 1.0255653372866171,
+        "mean_drift_in_fit_sd": 0.025179937581367964,
+        "share_val_outside_fit_box": 0.0,
+        "std_ratio_val_over_fit": 1.055626152171944,
+        "val_mean": 1.5501604698382203,
+        "val_std": 1.0826135908007937
+      },
+      "gender_fit_ab": {
+        "fit_mean": 1.0,
+        "fit_std": 0.0,
+        "mean_drift_in_fit_sd": 0.0,
+        "share_val_outside_fit_box": 0.0,
+        "std_ratio_val_over_fit": null,
+        "val_mean": 1.0,
+        "val_std": 0.0
+      },
+      "gender_fit_ba": {
+        "fit_mean": 1.0,
+        "fit_std": 0.0,
+        "mean_drift_in_fit_sd": 0.0,
+        "share_val_outside_fit_box": 0.0,
+        "std_ratio_val_over_fit": null,
+        "val_mean": 1.0,
+        "val_std": 0.0
+      },
+      "goal_agree": {
+        "fit_mean": 0.15227280292019393,
+        "fit_std": 0.35928511854935175,
+        "mean_drift_in_fit_sd": 0.0005134075835641005,
+        "share_val_outside_fit_box": 0.0,
+        "std_ratio_val_over_fit": 1.0004966365452446,
+        "val_mean": 0.1524572626247189,
+        "val_std": 0.35946355266938584
+      },
+      "hist_yes": {
+        "fit_mean": 0.9152733243833975,
+        "fit_std": 1.4185160013980131,
+        "mean_drift_in_fit_sd": 0.01781891867383922,
+        "share_val_outside_fit_box": 0.0,
+        "std_ratio_val_over_fit": 1.014867556549628,
+        "val_mean": 0.9405497456498483,
+        "val_std": 1.43960586826535
+      },
+      "prev_intros_mean": {
+        "fit_mean": 1.110073115798116,
+        "fit_std": 1.193629256897654,
+        "mean_drift_in_fit_sd": 0.02529313202613719,
+        "share_val_outside_fit_box": 0.0,
+        "std_ratio_val_over_fit": 1.0182358364740878,
+        "val_mean": 1.1402637381830885,
+        "val_std": 1.2153960848371266
+      },
+      "schedule_overlap": {
+        "fit_mean": 1.5399585048429507,
+        "fit_std": 0.7020546991978529,
+        "mean_drift_in_fit_sd": -0.004065136770840371,
+        "share_val_outside_fit_box": 0.0,
+        "std_ratio_val_over_fit": 1.002969433965023,
+        "val_mean": 1.5371045564701002,
+        "val_std": 0.704139404266955
+      },
+      "soft_declined": {
+        "fit_mean": 0.42967458477105547,
+        "fit_std": 0.6956818546557343,
+        "mean_drift_in_fit_sd": 0.013953382645579793,
+        "share_val_outside_fit_box": 0.0,
+        "std_ratio_val_over_fit": 0.9890460217060327,
+        "val_mean": 0.43938169988865355,
+        "val_std": 0.6880613707203285
+      },
+      "soft_differ": {
+        "fit_mean": 1.3484095372291443,
+        "fit_std": 1.9620631428406656,
+        "mean_drift_in_fit_sd": 0.008921914281350399,
+        "share_val_outside_fit_box": 0.0,
+        "std_ratio_val_over_fit": 1.0038881308420433,
+        "val_mean": 1.3659148964041656,
+        "val_std": 1.9696919010603808
+      },
+      "soft_equal": {
+        "fit_mean": 0.7909320877389577,
+        "fit_std": 1.2829147360448576,
+        "mean_drift_in_fit_sd": 0.004559759335411934,
+        "share_val_outside_fit_box": 0.0,
+        "std_ratio_val_over_fit": 1.0005347851291189,
+        "val_mean": 0.7967818701831758,
+        "val_std": 1.2836008197676219
+      },
+      "soft_missing": {
+        "fit_mean": 4.860658375031898,
+        "fit_std": 2.9066480151932015,
+        "mean_drift_in_fit_sd": -0.00803507734585024,
+        "share_val_outside_fit_box": 0.0,
+        "std_ratio_val_over_fit": 1.004705344867646,
+        "val_mean": 4.837303233412658,
+        "val_std": 2.920324796513544
+      },
+      "zone_common": {
+        "fit_mean": 1.0219680243201563,
+        "fit_std": 0.14657909205485356,
+        "mean_drift_in_fit_sd": -0.007328442207517075,
+        "share_val_outside_fit_box": 0.0,
+        "std_ratio_val_over_fit": 0.9757799129266127,
+        "val_mean": 1.020893827915202,
+        "val_std": 0.14302893368214695
+      }
+    },
+    "val_rows_any_feature_outside_box_share": 0.0
+  },
+  "feature_order": [
+    "age_diff",
+    "age_slack",
+    "gender_fit_ab",
+    "gender_fit_ba",
+    "zone_common",
+    "schedule_overlap",
+    "arrival_diff",
+    "soft_equal",
+    "soft_differ",
+    "soft_missing",
+    "soft_declined",
+    "goal_agree",
+    "prev_intros_mean",
+    "hist_yes",
+    "current_day",
+    "degree_a",
+    "degree_b"
+  ],
+  "feature_support_ood": {
+    "all_features_outside_box_share": 0.0,
+    "exact_vector_definition": "A val feasible edge is \"represented\" iff its 17-vector rounded to 9 decimals (1e-9 grid) exactly equals the rounded 17-vector of SOME introduced fit row. Distinct from the box test: box membership only needs per-feature bounds, exact-vector membership needs the whole joint vector to have been observed during fitting.",
+    "exact_vector_in_fit_introduced": {
+      "n_edges": 6818,
+      "n_fit_rows": 180262,
+      "n_fit_unique_rounded_vectors": 134473,
+      "share": 0.07818448695013991
+    },
+    "fit_box_definition": "Per-feature min/max over INTRODUCED fit-split rows (snapshots, seed groups 40002-40400, n=180262). An edge is outside a feature's box iff its value is < min or > max (exact float comparison).",
+    "n_edges_outside_box_all_features": 0,
+    "n_edges_total": 87204,
+    "per_feature_outside_box_share": {
+      "age_diff": 0.0,
+      "age_slack": 0.0,
+      "arrival_diff": 0.0,
+      "current_day": 0.0,
+      "degree_a": 0.0,
+      "degree_b": 0.0,
+      "gender_fit_ab": 0.0,
+      "gender_fit_ba": 0.0,
+      "goal_agree": 0.0,
+      "hist_yes": 0.0,
+      "prev_intros_mean": 0.0,
+      "schedule_overlap": 0.0,
+      "soft_declined": 0.0,
+      "soft_differ": 0.0,
+      "soft_equal": 0.0,
+      "soft_missing": 0.0,
+      "zone_common": 0.0
+    }
+  },
+  "integrity": {
+    "checks": {
+      "artifact_features_17": {
+        "detail": "n=17 names=age_diff,age_slack,gender_fit_ab,gender_fit_ba,zone_common,schedule_overlap,arrival_diff,soft_equal,soft_differ,soft_missing,soft_declined,goal_agree,prev_intros_mean,hist_yes,current_day,degree_a,degree_b",
+        "ok": true
+      },
+      "artifact_sha256": {
+        "detail": "sha256=7f1ddfe00211e2603e88c4e8318d3a62980aeb8364f51bc41909e8875fa275f2 expected=7f1ddfe00211e2603e88c4e8318d3a62980aeb8364f51bc41909e8875fa275f2",
+        "ok": true
+      },
+      "artifact_stages_frozen": {
+        "detail": "statuses={\"s1\": \"OK\", \"s2\": \"OK\", \"s3\": \"OK\"}",
+        "ok": true
+      },
+      "fit_snapshots_present": {
+        "detail": "fit introduced rows=180262 (seeds 40002-40400)",
+        "ok": true
+      },
+      "label_join_complete": {
+        "detail": "introduced rows without label=0 (sample [])",
+        "ok": true
+      },
+      "merged_equals_shard_sum": {
+        "detail": "merged=87204 shard_sum=87204",
+        "ok": true
+      },
+      "merged_rows_wellformed": {
+        "detail": "rows=87204 bad_feature_count=0 outside_val_range=0",
+        "ok": true
+      },
+      "shard_seed_coverage": {
+        "detail": "shard groups=100 range=40401-40500 expected val 40401-40500",
+        "ok": true
+      },
+      "split_disjoint": {
+        "detail": "fit 40002-40400 val 40401-40500",
+        "ok": true
+      },
+      "states_vs_snapshots_introduced": {
+        "detail": "val states=36000 introduced-set mismatches=0 extra_states_no_intro=15445",
+        "ok": true
+      },
+      "val_labels_present": {
+        "detail": "val labels=45803 missing_groups=none",
+        "ok": true
+      },
+      "val_snapshots_present": {
+        "detail": "val introduced rows=45803 missing_groups=none",
+        "ok": true
+      }
+    },
+    "problems": []
+  },
+  "predictive_metrics_source": {
+    "file": "results/train_metrics.json",
+    "note": "Per-stage and combined predictive metrics (PR-AUC, ROC-AUC, log loss, calibration, prevalence, constant baseline) are NOT recomputed in this file; they are produced by Task 6 (scripts/sr_train.py) and cited here from the frozen results/train_metrics.json. This Task 9 file covers the RANKING diagnostics only.",
+    "present": true,
+    "sha256": "fd6f2b2a267352e04e1719883bd6b4aad4b21a8b3d9596f3fb04763ce780a0bd"
+  },
+  "schema": 1,
+  "score_distributions": {
+    "definition": "P_hat and per-stage p over ALL feasible edges in validation groups 40401-40500 (data/feasible_edges_val.jsonl); percentiles by numpy linear interpolation.",
+    "n_edges_total": 87204,
+    "p_hat": {
+      "max": 0.04982951094217254,
+      "mean": 0.010423352777765323,
+      "min": 0.0016892216846941623,
+      "n": 87204,
+      "p1": 0.00446645016011144,
+      "p25": 0.008336446654590225,
+      "p5": 0.005888906820785526,
+      "p50": 0.010002594488737238,
+      "p75": 0.011793184916304053,
+      "p95": 0.01687722802422679,
+      "p99": 0.021956249664341503
+    },
+    "per_stage": {
+      "s1": {
+        "max": 0.44783469801493314,
+        "mean": 0.14064870527022247,
+        "min": 0.03274970649977452,
+        "n": 87204,
+        "p1": 0.06454722910372014,
+        "p25": 0.12083215132754808,
+        "p5": 0.08258884328166496,
+        "p50": 0.13869329875070108,
+        "p75": 0.15258505459086813,
+        "p95": 0.21830587628713455,
+        "p99": 0.26551798837507484
+      },
+      "s2": {
+        "max": 0.8141299084134781,
+        "mean": 0.7786911434076845,
+        "min": 0.7095986810251165,
+        "n": 87204,
+        "p1": 0.7464844672274086,
+        "p25": 0.773490692637538,
+        "p5": 0.7609609317827346,
+        "p50": 0.7790753242996404,
+        "p75": 0.7840447528942928,
+        "p95": 0.7974039307045941,
+        "p99": 0.8023631358909795
+      },
+      "s3": {
+        "max": 0.17352651467745944,
+        "mean": 0.09446140447672897,
+        "min": 0.053733771548342656,
+        "n": 87204,
+        "p1": 0.06998175091178746,
+        "p25": 0.08709277089622999,
+        "p5": 0.07700406903022355,
+        "p50": 0.09398306392440892,
+        "p75": 0.10111117904473436,
+        "p95": 0.11352167743483307,
+        "p99": 0.12522004129091463
+      }
+    }
+  },
+  "split": {
+    "excluded": [
+      40001
+    ],
+    "fit_range": [
+      40002,
+      40400
+    ],
+    "val_range": [
+      40401,
+      40500
+    ]
+  },
+  "task": "Task 9 offline ranking diagnostics (plan S.9) - scoring only, frozen artifact, validation groups 40401-40500, no policy runs, no final-eval seeds.",
+  "within_state_ranking": {
+    "primary_msmi": {
+      "macro_mean_per_state_concordance": 0.5333830073358868,
+      "micro_concordant_share": 0.5484848484848485,
+      "n_comparable_pairs": 1155,
+      "n_introduced_rows_used": 37039,
+      "n_states_ge_2_introduced": 11791,
+      "n_states_with_decided_outcomes_ge_2": 11791,
+      "outcome": "realized msmi (0/1) on introduced pairs; score = P_hat = p1*p2*p3",
+      "per_state_concordance": {
+        "max": 1.0,
+        "mean": 0.5333830073358868,
+        "min": 0.0,
+        "n": 382,
+        "p1": 0.0,
+        "p25": 0.0,
+        "p5": 0.0,
+        "p50": 0.5,
+        "p75": 1.0,
+        "p95": 1.0,
+        "p99": 1.0
+      }
+    },
+    "secondary_stage_chain": {
+      "s1": {
+        "macro_mean_per_state_concordance": 0.5699740036358764,
+        "micro_concordant_share": 0.580504818064145,
+        "n_comparable_pairs": 13906,
+        "n_introduced_rows_used": 37039,
+        "n_states_ge_2_introduced": 11791,
+        "n_states_with_decided_outcomes_ge_2": 11791,
+        "outcome": "realized s1; score = p1",
+        "per_state_concordance": {
+          "max": 1.0,
+          "mean": 0.5699740036358764,
+          "min": 0.0,
+          "n": 4085,
+          "p1": 0.0,
+          "p25": 0.0,
+          "p5": 0.0,
+          "p50": 0.625,
+          "p75": 1.0,
+          "p95": 1.0,
+          "p99": 1.0
+        }
+      },
+      "s2": {
+        "macro_mean_per_state_concordance": 0.49884696016771485,
+        "micro_concordant_share": 0.5153664302600472,
+        "n_comparable_pairs": 423,
+        "n_introduced_rows_used": 1797,
+        "n_states_ge_2_introduced": 11791,
+        "n_states_with_decided_outcomes_ge_2": 809,
+        "outcome": "realized s2 (in-population only); score = p2",
+        "per_state_concordance": {
+          "max": 1.0,
+          "mean": 0.49884696016771485,
+          "min": 0.0,
+          "n": 318,
+          "p1": 0.0,
+          "p25": 0.0,
+          "p5": 0.0,
+          "p50": 0.5,
+          "p75": 1.0,
+          "p95": 1.0,
+          "p99": 1.0
+        }
+      },
+      "s3": {
+        "macro_mean_per_state_concordance": 0.4842105263157895,
+        "micro_concordant_share": 0.48623853211009177,
+        "n_comparable_pairs": 109,
+        "n_introduced_rows_used": 1140,
+        "n_states_ge_2_introduced": 11791,
+        "n_states_with_decided_outcomes_ge_2": 524,
+        "outcome": "realized s3 (in-population only); score = p3",
+        "per_state_concordance": {
+          "max": 1.0,
+          "mean": 0.4842105263157895,
+          "min": 0.0,
+          "n": 95,
+          "p1": 0.0,
+          "p25": 0.0,
+          "p5": 0.0,
+          "p50": 0.5,
+          "p75": 1.0,
+          "p95": 1.0,
+          "p99": 1.0
+        }
+      }
+    },
+    "selection_bias_statement": "Outcomes exist ONLY for introduced pairs; these statistics are NOT top-k accuracy over all feasible pairs, and counterfactual outcomes of never-introduced pairs are never computed or imputed. See caveats.",
+    "statistic_definition": "PAIRWISE CONCORDANCE (not Spearman rho; binary outcome ties make per-state rho degenerate). For each val state with >= 2 introduced pairs whose outcome y is decided (in {0,1}), every unordered pair of introduced pairs with y_i != y_j is COMPARABLE (outcome ties excluded). Each comparable pair scores 1.0 if sign(score_i - score_j) == sign(y_i - y_j) (concordant), 0.5 if score_i == score_j (prediction tie), else 0.0 (discordant). micro_concordant_share = total score / total comparable pairs, pooled over all states. macro_mean_per_state_concordance = unweighted mean over states of the per-state score share; states with zero comparable pairs (all outcomes tied) are excluded from the macro mean and from n_comparable_pairs."
+  }
+}

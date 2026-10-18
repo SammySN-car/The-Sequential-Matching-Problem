@@ -1,0 +1,7 @@
+variant,members,soft_observed_mean,soft_observed_p10,soft_observed_p50,soft_observed_p90,pct_zero_soft,pct_full_soft
+development,31000,2.899,0,1,7,31.274,34.877
+sparse,31000,2.903,0,1,7,31.103,35.065
+cold_start,30800,1.957,0,1,7,38.292,19.919
+delayed,30800,2.91,0,1,7,31.068,35.045
+shift,30800,2.872,0,1,7,31.399,34.51
+drift,30800,2.87,0,1,7,31.539,34.445

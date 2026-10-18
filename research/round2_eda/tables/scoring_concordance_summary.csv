@@ -1,0 +1,9 @@
+measure,value,note
+global_auc_full_44feat,0.5932,"reproduction; frozen report: 0.5937 [0.5667,0.6208]"
+global_auc_no_soft_features,0.596,delta vs full: +0.0028
+global_auc_state_only,0.5105,day/budget/competition/history features only
+within_day_mean_auc,0.5811,2022 two-class days; pairs ranked only inside a day
+within_day_world_mean_auc,0.5825,± 0.3050 across worlds (world is unit)
+between_day_auc,0.5943,day-mean score vs day-mean label; days as unit
+score_var_between_days_share,0.6596,between=3.26671e-05 within=1.68577e-05
+n_positive,2569,scale800 all rows

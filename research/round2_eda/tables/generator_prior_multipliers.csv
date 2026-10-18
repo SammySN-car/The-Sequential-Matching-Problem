@@ -1,0 +1,6 @@
+multiplier,mean,p10,p50,p90,note
+P(both respond),0.5838,,,,empirical funnel n01: 0.562 (matches E[R]^2 = 0.585 prior)
+P(accept | actor A),0.4793,0.1902,0.4741,0.7776,shared+bias+fit; empirical mutual/responded n01: 0.270 (two-actor product)
+P(date | both accept),0.78,,,,"constant 0.78; empirical date/mutual n01: 0.754, scale800: 0.777"
+"P(second yes on time | actor A, responded)",0.2653,0.1582,0.261,0.3786,response_rate*3/5*p_yes; empirical sqrt(0.094)~0.31/actor consistent
+P(date <= 30d | date),0.989,,,,empirical msmi/second n01: 0.989 (deadline rarely binds)

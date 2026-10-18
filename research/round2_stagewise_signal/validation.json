@@ -1,0 +1,24 @@
+{
+ "failures": [],
+ "info": {
+  "counts": {
+   "duplicate_keys": 0,
+   "msmi_pos": 173,
+   "msmi_pos_selected": 90,
+   "rows": 15304,
+   "selected": 8433
+  },
+  "v2_max_abs_diff": {
+   "missing": 0,
+   "y_date": 0,
+   "y_msmi": 0,
+   "y_mutual": 0,
+   "y_second": 0
+  },
+  "v5_max_abs_diff_A_baseline_count": 0.0,
+  "v5_max_abs_diff_B_soft_state": 0.0,
+  "v5_max_abs_diff_C_full_legal": 0.0
+ },
+ "n_checks": 13,
+ "passed": true
+}

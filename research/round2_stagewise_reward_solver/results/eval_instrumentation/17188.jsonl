@@ -1,0 +1,13 @@
+{"day": 22, "invocation_seconds": 0.0982916000066325, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 17188, "solver_seconds": 8.13000078778714e-05}
+{"day": 10, "invocation_seconds": 0.06078259999048896, "k_chosen": 4, "k_greedy": 4, "n_edges": 7, "phase": "match", "pid": 17188, "solver_seconds": 0.00036360000376589596}
+{"day": 24, "invocation_seconds": 0.08923969999887049, "k_chosen": 5, "k_greedy": 5, "n_edges": 13, "phase": "match", "pid": 17188, "solver_seconds": 0.0005419999943114817}
+{"day": 21, "invocation_seconds": 0.09530290000839159, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 17188, "solver_seconds": 7.449998520314693e-05}
+{"day": 14, "invocation_seconds": 0.06477040000027046, "k_chosen": 1, "k_greedy": 1, "n_edges": 2, "phase": "match", "pid": 17188, "solver_seconds": 0.00014119999832473695}
+{"day": 26, "invocation_seconds": 0.08466289998614229, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 17188, "solver_seconds": 8.600001456215978e-05}
+{"day": 49, "invocation_seconds": 0.10074620001250878, "k_chosen": 1, "k_greedy": 1, "n_edges": 4, "phase": "match", "pid": 17188, "solver_seconds": 0.00017680000746622682}
+{"day": 2, "invocation_seconds": 0.08566209999844432, "k_chosen": 1, "k_greedy": 1, "n_edges": 2, "phase": "match", "pid": 17188, "solver_seconds": 0.0001472999865654856}
+{"day": 14, "invocation_seconds": 0.08905270000104792, "k_chosen": 1, "k_greedy": 1, "n_edges": 2, "phase": "match", "pid": 17188, "solver_seconds": 0.00011990001075901091}
+{"day": 3, "invocation_seconds": 0.06867609999608248, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 17188, "solver_seconds": 0.0}
+{"day": 3, "invocation_seconds": 0.05247560000861995, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 17188, "solver_seconds": 7.479998748749495e-05}
+{"day": 42, "invocation_seconds": 0.069973800011212, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 17188, "solver_seconds": 0.0}
+{"day": 55, "invocation_seconds": 0.12846850001369603, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 17188, "solver_seconds": 0.0}

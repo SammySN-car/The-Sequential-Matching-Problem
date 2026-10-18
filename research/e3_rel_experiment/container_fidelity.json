@@ -1,0 +1,24 @@
+{
+  "images": {
+    "C": "e3-control",
+    "E1": "e3-arm-e1",
+    "E2": "e3-arm-e2",
+    "E3": "e3-arm-e3",
+    "C_greedy_derived": "e3-control-greedy"
+  },
+  "slice_seeds": [
+    119,
+    130
+  ],
+  "episodes_per_comparison": 12,
+  "parity_checks": {
+    "E1_local_vs_container": [],
+    "E2_local_vs_container": [],
+    "E3_local_vs_container": [],
+    "C_greedy_derived_image_local_vs_container": [],
+    "C_ac_official_image_local_vs_container": []
+  },
+  "ac_official_image_invalid": [],
+  "note": "The frozen Dockerfile ENTRYPOINT runs policy.py with NO args; policy.py argparse default is ac (A+C), not greedy - see docs/POLICY_INTERFACE.md. Therefore: (1) official-image parity is verified on its default A+C mode (C_ac_*), (2) greedy parity uses the derived Dockerfile.control image (e3-control-greedy), and (3) the original plain-image comparison (e3-control vs local greedy, 12/12 differing) is the expected mode difference, not an environment divergence. Evidence: day-by-day request/response diff over all 60 days showed NO divergence for greedy local vs container (seed 119, development); one cold-start 10s invocation timeout in the verification slice was retried successfully after a warm-up invoke.",
+  "pass": true
+}

@@ -1,0 +1,593 @@
+{
+  "schema_version": "1.0.0",
+  "note": "Registry of record for the discovery tournament. The 30 entries are policy variants/mechanisms with documented overlaps (see known_risks and design.md section 11), not 30 independent paradigms. implementation_status is flipped from pending to implemented by each group task and must read implemented for all 30 before Phase 1 (test_registry_all_implemented).",
+  "methods": [
+    {
+      "method_id": "m01_greedy_baseline",
+      "name": "Greedy baseline (control)",
+      "group": "A",
+      "mechanism": "Observed soft-field agreement count; sort by (-score, pair_key); take non-overlapping pairs; asks = baseline_asks. Byte-identical to policy.py --baseline greedy.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions",
+        "state.ask_budget_remaining"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2) per match phase (a = available members)",
+      "implementation_status": "implemented",
+      "known_risks": "Control reference: any divergence from policy.py corrupts every paired delta (test_m01_matches_control_greedy).",
+      "literature_inspiration": "Validated greedy implementation in this repository (kit.baseline_match).",
+      "file": "methods_a.py",
+      "decide_function": "decide_m01"
+    },
+    {
+      "method_id": "m02_reciprocal_sum",
+      "name": "Reciprocal sum",
+      "group": "A",
+      "mechanism": "directional(a,b) = sum over SOFT fields a observed of (1 equal / 0 unequal / prior 1/|OPTIONS[k]| when b missing); score = d(a,b) + d(b,a); greedy take.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions",
+        "kit.OPTIONS"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2 * |SOFT|) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Collapses to 2x match-count when both sides fully observed; differentiation driven by missing fields and asked values.",
+      "literature_inspiration": "Reciprocal recommender bilateral fusion (sum aggregation of directional preferences).",
+      "file": "methods_a.py",
+      "decide_function": "decide_m02"
+    },
+    {
+      "method_id": "m03_reciprocal_min",
+      "name": "Reciprocal minimum",
+      "group": "A",
+      "mechanism": "score = min(d(a,b), d(b,a)) with the same directional as m02; greedy take.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions",
+        "kit.OPTIONS"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2 * |SOFT|) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Weakest-side rule can starve asymmetric-coverage members; coarse ties on low-coverage pools.",
+      "literature_inspiration": "Weakest-side reciprocity (bilateral min fusion in reciprocal recommendation).",
+      "file": "methods_a.py",
+      "decide_function": "decide_m03"
+    },
+    {
+      "method_id": "m04_reciprocal_product",
+      "name": "Reciprocal product",
+      "group": "A",
+      "mechanism": "score = d(a,b) * d(b,a); greedy take.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions",
+        "kit.OPTIONS"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2 * |SOFT|) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Zero when either direction has no observed overlap; may reduce introductions on cold_start.",
+      "literature_inspiration": "Mutual scoring via product of directional preferences (bilateral compatibility).",
+      "file": "methods_a.py",
+      "decide_function": "decide_m04"
+    },
+    {
+      "method_id": "m05_harmonic_reciprocal",
+      "name": "Harmonic reciprocal score",
+      "group": "A",
+      "mechanism": "score = 2*d(a,b)*d(b,a)/(d(a,b)+d(b,a)), 0 when the sum is 0; greedy take.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions",
+        "kit.OPTIONS"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2 * |SOFT|) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Rank correlates strongly with m04 (flagged as partial redundancy for retention diagnostics).",
+      "literature_inspiration": "Harmonic-mean aggregation for symmetric fit (penalizes asymmetry).",
+      "file": "methods_a.py",
+      "decide_function": "decide_m05"
+    },
+    {
+      "method_id": "m06_bottleneck",
+      "name": "Bottleneck compatibility",
+      "group": "A",
+      "mechanism": "score = min over the 4 REL fields of (1 equal / 0 unequal when both observed, prior 1/|OPTIONS[k]| when either missing); greedy take.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions",
+        "kit.OPTIONS"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2 * 4) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Only REL fields decide rank; coarse ties when REL coverage is low.",
+      "literature_inspiration": "Weakest-link / bottleneck compatibility (prioritizing the weakest important dimension).",
+      "file": "methods_a.py",
+      "decide_function": "decide_m06"
+    },
+    {
+      "method_id": "m07_prune_and_greedy",
+      "name": "Prune-and-greedy",
+      "group": "A",
+      "mechanism": "Drop candidate pairs whose observed soft agreement is below PRUNE_MIN_SCORE=2, then greedy take on survivors using base score.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Cutoff constant frozen pre-tournament; may reduce introductions when coverage is sparse.",
+      "literature_inspiration": "Prune-and-greedy (Gravin, Tang, Wang: pruned search heuristics for online matching).",
+      "substituted_from": "m07_match_count_symmetric: symmetric observed-soft count yields the identical ordering to greedy control by construction - honestly impossible to distinguish, replaced per spec Section 3.",
+      "file": "methods_a.py",
+      "decide_function": "decide_m07"
+    },
+    {
+      "method_id": "m08_weighted_compatibility",
+      "name": "Weighted compatibility score",
+      "group": "A",
+      "mechanism": "Static structure-only weights w_k = 1 - 1/|OPTIONS[k]| from kit.OPTIONS cardinalities; score = sum w_k*(1 equal / 0 unequal when both observed; w_k*p_k when exactly one observed; 0 both missing); greedy take.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions",
+        "kit.OPTIONS"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2 * |SOFT|) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Prior-fill terms may dominate ranking on cold_start (low coverage); no outcome fitting is used by design.",
+      "literature_inspiration": "Principled field-discrimination weighting; analogous to static thresholds derived from visible option distributions.",
+      "file": "methods_a.py",
+      "decide_function": "decide_m08"
+    },
+    {
+      "method_id": "m09_partner_scarcity",
+      "name": "Partner scarcity",
+      "group": "B",
+      "mechanism": "score = base / max(1, min(deg_a, deg_b)) where deg = member's feasible degree in today's graph; rescues scarce members.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Degree distributions differ sharply per variant; may over-rescue on sparse.",
+      "literature_inspiration": "Degree-aware matching / scarce-partner preference in queueing with degree-aware admission.",
+      "file": "methods_b.py",
+      "decide_function": "decide_m09"
+    },
+    {
+      "method_id": "m10_degree_balanced",
+      "name": "Degree-balanced matching",
+      "group": "B",
+      "mechanism": "score = base / max(1, max(deg_a, deg_b)); penalizes consuming members who have many alternatives.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Opposite bias to m09; both may suppress total introductions (guardrail metrics report this).",
+      "literature_inspiration": "Opportunity-cost degree balancing (value members relative to outside options).",
+      "file": "methods_b.py",
+      "decide_function": "decide_m10"
+    },
+    {
+      "method_id": "m11_scarcity_x_compat",
+      "name": "Scarcity x compatibility",
+      "group": "B",
+      "mechanism": "score = base * 2/(deg_a + deg_b); multiplicative product of pair quality with average scarcity.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Near-monotone with m09 in practice (flagged as redundancy risk for retention diagnostics).",
+      "literature_inspiration": "Scarcity-weighted quality scoring (product form).",
+      "file": "methods_b.py",
+      "decide_function": "decide_m11"
+    },
+    {
+      "method_id": "m12_regret_score",
+      "name": "Regret score",
+      "group": "B",
+      "mechanism": "score = base - max(0, alt_a - base) - max(0, alt_b - base) where alt_m = m's best other feasible edge score today.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Only the top alternative counts; many moderate options are ignored.",
+      "literature_inspiration": "Regret / opportunity-cost matching (waiting-loss accounting for both endpoints).",
+      "file": "methods_b.py",
+      "decide_function": "decide_m12"
+    },
+    {
+      "method_id": "m13_opportunity_cost",
+      "name": "Opportunity-cost score",
+      "group": "B",
+      "mechanism": "score = base - max(gap_a, gap_b); conservative single-side second-best comparison.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Suppresses strong pairs when one endpoint has a strong alternative (may trade MSMI for coverage).",
+      "literature_inspiration": "Second-best alternative comparison (opportunity cost of consuming a member).",
+      "file": "methods_b.py",
+      "decide_function": "decide_m13"
+    },
+    {
+      "method_id": "m14_mutual_regret",
+      "name": "Mutual regret",
+      "group": "B",
+      "mechanism": "score = base - min(gap_a, gap_b); penalizes only when both endpoints have waiting alternatives.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Weak penalty when only one side is scarce; correlates with m13 on dense pools.",
+      "literature_inspiration": "Mutual (both-sides) opportunity-cost combination.",
+      "file": "methods_b.py",
+      "decide_function": "decide_m14"
+    },
+    {
+      "method_id": "m15_reserve_high_option",
+      "name": "Reserve high-option-value members",
+      "group": "B",
+      "mechanism": "score = base - (cnt_a + cnt_b) where cnt_m = count of m's other feasible edges with base >= STRONG_SCORE=3.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Count-based rule overlaps m28 blocked-value accounting (flagged as redundancy risk).",
+      "literature_inspiration": "Reservation of high-option members (avoid consuming members with many strong alternatives).",
+      "file": "methods_b.py",
+      "decide_function": "decide_m15"
+    },
+    {
+      "method_id": "m16_patient_policy",
+      "name": "Patient policy",
+      "group": "C",
+      "mechanism": "Wait when quality is weak: keep only pairs with base >= PATIENT_MIN_SCORE=3 (at least 3 of the 7 observed soft fields - the suite strong-alignment cutoff, same constant as STRONG_SCORE), then greedy take.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions"
+      ],
+      "asking": "baseline",
+      "waiting": true,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Adapted WITHOUT departure signals; Akbarpour et al. show patient wins require them - may idle too much (zero-selection days diagnose this).",
+      "literature_inspiration": "Patient vs greedy matching (Akbarpour, Eeckhout, Lerman, Milton, JPE 2020), adapted to a quality gate since exit_day is unobservable.",
+      "file": "methods_c.py",
+      "decide_function": "decide_m16"
+    },
+    {
+      "method_id": "m17_daily_quota",
+      "name": "Daily quota policy",
+      "group": "C",
+      "mechanism": "Greedy take, then keep only the top ceil(n/QUOTA_DIVISOR) = ceil(n/2) selected pairs (QUOTA_DIVISOR=2); withheld pairs remain available for later days.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions"
+      ],
+      "asking": "baseline",
+      "waiting": true,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Half-throughput days interact badly with a fixed 60-day horizon if late days are thin.",
+      "literature_inspiration": "Batching / controlled clearing (Eom & Toriello 2026: batching and greedy near-optimal in two-sided matching).",
+      "file": "methods_c.py",
+      "decide_function": "decide_m17"
+    },
+    {
+      "method_id": "m18_time_threshold",
+      "name": "Time-dependent acceptance threshold",
+      "group": "C",
+      "mechanism": "Gate: keep pairs with base >= max(1, TIME_T0 - day//TIME_STEP); equals 4 on days 0-19, 3 on 20-39, 2 on 40-59.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions",
+        "state.day"
+      ],
+      "asking": "baseline",
+      "waiting": true,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Late-horizon laxness may admit weak pairs; all constants frozen pre-tournament.",
+      "literature_inspiration": "Time-decreasing acceptance thresholds (dual/delay-cost threshold policies in online matching).",
+      "file": "methods_c.py",
+      "decide_function": "decide_m18"
+    },
+    {
+      "method_id": "m19_arrival_age",
+      "name": "Arrival-age policy",
+      "group": "C",
+      "mechanism": "Greedy take ordered by primary key -max(wait_a, wait_b), then -base, then pair key: longest-waiting members matched first.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions",
+        "state.day"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Priority may override strong pairs for old weak ones; reads only arrived_day (never exit_day).",
+      "literature_inspiration": "Fairness / FCFS arrival-age priority in matchmaking and queue admission.",
+      "file": "methods_c.py",
+      "decide_function": "decide_m19"
+    },
+    {
+      "method_id": "m20_new_arrival_protection",
+      "name": "New-arrival protection",
+      "group": "C",
+      "mechanism": "Filter out any pair where min(wait_a, wait_b) < PROTECT_DAYS=3; greedy take on the rest (new members accumulate alternatives first).",
+      "required_inputs": [
+        "state.members",
+        "state.introductions",
+        "state.day"
+      ],
+      "asking": "baseline",
+      "waiting": true,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Three-day grace constant frozen; reduces early-horizon throughput.",
+      "literature_inspiration": "Exploration warm-up / new-arrival protection (bandit warm-up analogy).",
+      "file": "methods_c.py",
+      "decide_function": "decide_m20"
+    },
+    {
+      "method_id": "m21_delay_cost_threshold",
+      "name": "Delay-cost threshold",
+      "group": "C",
+      "mechanism": "Per-pair gate: keep if base >= max(0, DELAY_T0 - max(wait_a, wait_b)//DELAY_STEP); 4 for waits 0-14, 3 for 15-29, 2 for 30-44, 1 for 45-59, 0 afterwards; then greedy take.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions",
+        "state.day"
+      ],
+      "asking": "baseline",
+      "waiting": true,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Wait time is only a statistical proxy for remaining availability, not real expiration data.",
+      "literature_inspiration": "Delay-cost threshold policies (Mari, Bernasconi, Baumann, Stoesser, Dilkina, AAMAS 2023).",
+      "substituted_from": "m21_expiration_aware: requires exit_day, which is a banned unobservable input (spec Section 9) - replaced per spec Section 3.",
+      "file": "methods_c.py",
+      "decide_function": "decide_m21"
+    },
+    {
+      "method_id": "m22_market_thickness",
+      "name": "Market-thickness policy",
+      "group": "C",
+      "mechanism": "If today's average feasible degree 2E/V < THIN_AVG_DEG=2.0: match nothing (wait); otherwise full greedy.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions"
+      ],
+      "asking": "baseline",
+      "waiting": true,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Binary all-day gate can idle entire days at degree just under the cutoff; no partial response.",
+      "literature_inspiration": "Cost-balancing WHEN-to-match trigger (Liu, Zhang, Zhang, arXiv:2601.21858) and epsilon-proxy clearing (Kerimov et al.).",
+      "file": "methods_c.py",
+      "decide_function": "decide_m22"
+    },
+    {
+      "method_id": "m23_hybrid_patient_greedy",
+      "name": "Hybrid patient-greedy",
+      "group": "C",
+      "mechanism": "Favorable if max base >= HYBRID_MIN_SCORE=4 OR avg degree >= HYBRID_AVG_DEG=3.0: full greedy; otherwise match nothing (wait).",
+      "required_inputs": [
+        "state.members",
+        "state.introductions"
+      ],
+      "asking": "baseline",
+      "waiting": true,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "OR-gate makes waiting rare (top score >= 4 happens most days); thresholds frozen pre-tournament.",
+      "literature_inspiration": "Conditional patience: greedy under favorable conditions, wait under low opportunity density (Akbarpour et al.; Costabal et al. WHEN-to-match).",
+      "file": "methods_c.py",
+      "decide_function": "decide_m23"
+    },
+    {
+      "method_id": "m24_max_cardinality",
+      "name": "Maximum-cardinality-first matching",
+      "group": "D",
+      "mechanism": "Cardinality first: exact Kuhn augmenting-path maximum matching on the bipartite 2-coloring of today's feasible graph (adjacency sorted by -base then pair key as secondary preference); non-bipartite graphs fall back to greedy take plus length-3 augmenting exchanges (documented approximation).",
+      "required_inputs": [
+        "state.members",
+        "state.introductions"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": true,
+      "computational_complexity": "O(V*E) Kuhn per match phase; fallback O(E * rounds)",
+      "implementation_status": "implemented",
+      "known_risks": "Odd-cycle graphs take the approximate fallback (measured reachable: 5/90 fixture snapshots; forced by odd-cycle tests); secondary score preference is heuristic (adjacency order only); fallback mechanism overlaps m27 (flagged).",
+      "literature_inspiration": "Maximum-cardinality bipartite matching (Kuhn/Hopcroft-Karp); cardinality-first allocation.",
+      "file": "methods_d.py",
+      "decide_function": "decide_m24"
+    },
+    {
+      "method_id": "m25_max_weight",
+      "name": "Maximum-weight matching",
+      "group": "D",
+      "mechanism": "Maximize total base-score weight: zero-score edges pruned (exact for value), Hungarian/Kuhn-Munkres O(n^3) when the graph is 2-colorable and node count <= HUNGARIAN_NODE_CAP=180; otherwise greedy take plus one-swap improvement (documented approximation).",
+      "required_inputs": [
+        "state.members",
+        "state.introductions"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": true,
+      "computational_complexity": "O(n^3) Hungarian (n <= 180) else O(E * swaps)",
+      "implementation_status": "implemented",
+      "known_risks": "Exact only for bipartite node count <= 180 (cap breaches measured reachable: 6/90 fixture snapshots); non-bipartite fallback shares logic with m26 (documented overlap); zero-score edge pruning leaves the weight objective exact but may reduce cardinality vs m24.",
+      "literature_inspiration": "Maximum-weight assignment (Kuhn-Munkres); prophet-style value-maximizing allocation (Ezra et al.).",
+      "file": "methods_d.py",
+      "decide_function": "decide_m25"
+    },
+    {
+      "method_id": "m26_greedy_one_swap",
+      "name": "Greedy + one-swap improvement",
+      "group": "D",
+      "mechanism": "Greedy take, then repeat improving pair exchanges: replace (a,b)+(c,d) with (a,d)+(c,b) or (a,c)+(b,d) when both replacements are feasible, non-past, non-overlapping and strictly increase total base weight; iterate to local optimum (integer weights guarantee termination).",
+      "required_inputs": [
+        "state.members",
+        "state.introductions"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": true,
+      "computational_complexity": "O(E^2) per pass, few passes",
+      "implementation_status": "implemented",
+      "known_risks": "Local optimum only; O(p^2) with p = matched pairs (latency-tested).",
+      "literature_inspiration": "Two-exchange local search on matchings (classic matching local improvement).",
+      "file": "methods_d.py",
+      "decide_function": "decide_m26"
+    },
+    {
+      "method_id": "m27_greedy_augmenting",
+      "name": "Greedy + augmenting-path improvement",
+      "group": "D",
+      "mechanism": "Greedy take, then short augmenting exchanges of length <= 3: if (x,x') is matched and free y adjacent to x and free z adjacent to x' exist with feasible edges, replace with (x',z)+(x,y), gaining +1 cardinality; loop until no gain (cap AUGMENT_ROUNDS_CAP=50).",
+      "required_inputs": [
+        "state.members",
+        "state.introductions"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": true,
+      "computational_complexity": "O(rounds * E) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Length-3 only: not exact maximum cardinality (that is m24); spirit overlaps m24's non-bipartite fallback.",
+      "literature_inspiration": "Berge augmenting paths; greedy + short augmenting exchange heuristics in online matching.",
+      "file": "methods_d.py",
+      "decide_function": "decide_m27"
+    },
+    {
+      "method_id": "m28_conflict_aware",
+      "name": "Conflict-aware greedy",
+      "group": "D",
+      "mechanism": "score = 3*base - pool_a - pool_b where pool_m = sum of base over all feasible edges incident to m (blocked-alternative value accounting; pools include the current pair).",
+      "required_inputs": [
+        "state.members",
+        "state.introductions"
+      ],
+      "asking": "baseline",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2) per match phase",
+      "implementation_status": "implemented",
+      "known_risks": "Pool sums can dominate base on dense variants; ranking overlaps degree-based m09/m10 (flagged as redundancy risk).",
+      "literature_inspiration": "Conflict-aware greedy: adjust scores by the value of alternatives blocked by consuming both endpoints (auction/conflict heuristics).",
+      "file": "methods_d.py",
+      "decide_function": "decide_m28"
+    },
+    {
+      "method_id": "m29_uncertainty_aware",
+      "name": "Uncertainty-aware policy",
+      "group": "E",
+      "mechanism": "Active asking: hard-constraint asks first but capped to keep SOFT_ASK_RESERVE=3 budget units for soft fields; soft asks ranked by information value = number of incident feasible edges whose partner already has that field observed (immediately resolvable comparisons); ask highest value first, never declined fields. Match phase = baseline_match on the refreshed state.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions",
+        "state.ask_budget_remaining",
+        "kit.OPTIONS"
+      ],
+      "asking": "active",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(a^2 * |SOFT|) ask scoring; O(a^2) match",
+      "implementation_status": "implemented",
+      "known_risks": "Value counts only one-sided-resolvable edges; may under-ask when both sides miss the same field; SOFT_ASK_RESERVE trades one constraints bundle per day (3 vs the control's 4) for soft coverage - reported as secondary ask cost, never ranked.",
+      "literature_inspiration": "Active preference elicitation / match-sensitive active learning (Charlin et al., ICML 2012); bandit matching with costly interviews.",
+      "file": "methods_e.py",
+      "decide_function": "decide_m29"
+    },
+    {
+      "method_id": "m30_targeted_info",
+      "name": "Targeted information policy",
+      "group": "E",
+      "mechanism": "VoI gate: hard-constraint asks first but capped to keep SOFT_ASK_RESERVE=3 budget units; then for each soft candidate (available member with unobserved non-declined field, sorted by member_id, field): enumerate kit.OPTIONS[k] truth-blind and ask only if at least one option changes today's greedy allocation (incident-edge score recomputation + greedy_take); budget-bounded. Match phase = baseline_match on the refreshed state.",
+      "required_inputs": [
+        "state.members",
+        "state.introductions",
+        "state.ask_budget_remaining",
+        "kit.OPTIONS"
+      ],
+      "asking": "active",
+      "waiting": false,
+      "matching_optimization": false,
+      "computational_complexity": "O(c * |OPTIONS| * (deg + E log E)) VoI gate, c = soft candidates evaluated",
+      "implementation_status": "implemented",
+      "known_risks": "Up to |OPTIONS| greedy passes per candidate, hard-capped at VOI_EVAL_CAP=96 recomputations per ask phase in fixed enumeration order (worst-case fixture-tested); measured workload <= ~800 soft-not-asked pairs/day on <= 18-edge graphs; SOFT_ASK_RESERVE trades one constraints bundle per day (3 vs 4); gate compares allocations, never truth.",
+      "literature_inspiration": "Value-of-information targeted clarification (VoI gate pattern validated in research/e3_rel_experiment E1); active learning without hidden state.",
+      "file": "methods_e.py",
+      "decide_function": "decide_m30"
+    }
+  ]
+}

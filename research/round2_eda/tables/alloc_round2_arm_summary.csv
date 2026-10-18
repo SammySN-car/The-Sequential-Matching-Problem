@@ -1,0 +1,6 @@
+source,arm,n_worlds,assignments_total,assignments_per_world,conversion_pct,mutual_pct,msmi_per_100_arrived
+round2,gated,72,5466,75.92,0.8416,14.4347,0.3194
+round2,greedy,72,5472,76.0,0.8406,14.3092,0.3194
+round2,no_asks,72,1408,19.56,0.4261,13.0682,0.0417
+round2,random,72,5529,76.79,0.832,14.1798,0.3194
+round2,ungated,72,5229,72.62,0.7458,13.3295,0.2708

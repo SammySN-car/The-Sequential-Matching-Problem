@@ -1,0 +1,12 @@
+{"day": 6, "invocation_seconds": 0.060318400006508455, "k_chosen": 2, "k_greedy": 2, "n_edges": 2, "phase": "match", "pid": 15828, "solver_seconds": 0.0003189999843016267}
+{"day": 4, "invocation_seconds": 0.04695930000161752, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 15828, "solver_seconds": 6.920000305399299e-05}
+{"day": 19, "invocation_seconds": 0.07402820000424981, "k_chosen": 1, "k_greedy": 1, "n_edges": 2, "phase": "match", "pid": 15828, "solver_seconds": 0.0001346999779343605}
+{"day": 34, "invocation_seconds": 0.08297690001199953, "k_chosen": 2, "k_greedy": 2, "n_edges": 2, "phase": "match", "pid": 15828, "solver_seconds": 9.799998952075839e-05}
+{"day": 5, "invocation_seconds": 0.07685140002286062, "k_chosen": 2, "k_greedy": 2, "n_edges": 2, "phase": "match", "pid": 15828, "solver_seconds": 8.709999383427203e-05}
+{"day": 15, "invocation_seconds": 0.06437630002619699, "k_chosen": 2, "k_greedy": 2, "n_edges": 2, "phase": "match", "pid": 15828, "solver_seconds": 9.390001650899649e-05}
+{"day": 10, "invocation_seconds": 0.05909509997582063, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 15828, "solver_seconds": 6.570000550709665e-05}
+{"day": 45, "invocation_seconds": 0.08648649998940527, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 15828, "solver_seconds": 0.0}
+{"day": 9, "invocation_seconds": 0.06351470001391135, "k_chosen": 2, "k_greedy": 2, "n_edges": 3, "phase": "match", "pid": 15828, "solver_seconds": 0.0001399999891873449}
+{"day": 26, "invocation_seconds": 0.08096890000160784, "k_chosen": 2, "k_greedy": 2, "n_edges": 4, "phase": "match", "pid": 15828, "solver_seconds": 0.0001847999810706824}
+{"day": 38, "invocation_seconds": 0.10055760000250302, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 15828, "solver_seconds": 0.0}
+{"day": 23, "invocation_seconds": 0.14922829999704845, "k_chosen": 2, "k_greedy": 2, "n_edges": 9, "phase": "match", "pid": 15828, "solver_seconds": 0.0003868000057991594}

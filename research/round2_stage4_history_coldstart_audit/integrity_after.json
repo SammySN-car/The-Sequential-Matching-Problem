@@ -1,0 +1,91 @@
+{
+  "checked": 17,
+  "all_match": true,
+  "files": {
+    "policy.py": {
+      "expected": "379CC2D9519E8D3B",
+      "got": "379CC2D9519E8D3B",
+      "match": true
+    },
+    "policy_ac.py": {
+      "expected": "90FB9AD306E89BFB",
+      "got": "90FB9AD306E89BFB",
+      "match": true
+    },
+    "kit.py": {
+      "expected": "0D2CB3D3B46CA2A6",
+      "got": "0D2CB3D3B46CA2A6",
+      "match": true
+    },
+    "evaluate.py": {
+      "expected": "D09CC14BF634A741",
+      "got": "D09CC14BF634A741",
+      "match": true
+    },
+    "organise.py": {
+      "expected": "DA9D6B3A197F1FF8",
+      "got": "DA9D6B3A197F1FF8",
+      "match": true
+    },
+    "Dockerfile": {
+      "expected": "FEF95FA3D6BC038F",
+      "got": "FEF95FA3D6BC038F",
+      "match": true
+    },
+    ".dockerignore": {
+      "expected": "6FA959B629F9ED8C",
+      "got": "6FA959B629F9ED8C",
+      "match": true
+    },
+    "research/round2_stage3_intermediate_floor/preregistration.md": {
+      "expected": "FA11A2FB4DF53D50",
+      "got": "FA11A2FB4DF53D50",
+      "match": true
+    },
+    "research/round2_stage3_intermediate_floor/final_interpretation_and_promotion_audit.md": {
+      "expected": "B76AE4ABAC72F5EB",
+      "got": "B76AE4ABAC72F5EB",
+      "match": true
+    },
+    "research/round2_stage3_intermediate_floor/promotion_audit.json": {
+      "expected": "0138D36F0B13DF42",
+      "got": "0138D36F0B13DF42",
+      "match": true
+    },
+    "research/round2_stage3_intermediate_floor/intermediate_policy.py": {
+      "expected": "A76FD0EE0C2B9579",
+      "got": "A76FD0EE0C2B9579",
+      "match": true
+    },
+    "research/round2_stage3_intermediate_floor/report.md": {
+      "expected": "D47BAE2512527587",
+      "got": "D47BAE2512527587",
+      "match": true
+    },
+    "research/round2_stage3_intermediate_floor/summary.json": {
+      "expected": "C4B4EF5690B617C6",
+      "got": "C4B4EF5690B617C6",
+      "match": true
+    },
+    "research/round2_stage2_floor_ablation/report.md": {
+      "expected": "09E4FF744184ADFA",
+      "got": "09E4FF744184ADFA",
+      "match": true
+    },
+    "research/round2_stage2_floor_ablation/interpretation.md": {
+      "expected": "E46A066AC6D97E2C",
+      "got": "E46A066AC6D97E2C",
+      "match": true
+    },
+    "docs/superpowers/round1-research-record.md": {
+      "expected": "661115F512A41B5A",
+      "got": "661115F512A41B5A",
+      "match": true
+    },
+    "results/artifact.sha256": {
+      "expected": "79ACD52BDC11C909",
+      "got": "79ACD52BDC11C909",
+      "match": true
+    }
+  }
+}

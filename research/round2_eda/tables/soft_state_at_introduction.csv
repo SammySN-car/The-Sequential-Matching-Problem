@@ -1,0 +1,8 @@
+variant,intros,soft_unknown_max_mean,soft_declined_max_mean,soft_obs_min_mean,soft_obs_max_mean,pct_soft_obs_min_zero
+development,1653,4.545,0.411,2.455,5.701,40.47
+sparse,410,4.705,0.437,2.295,5.688,41.46
+cold_start,1416,5.586,0.53,1.414,4.406,51.84
+delayed,1621,4.532,0.41,2.468,5.707,40.53
+shift,1677,4.546,0.408,2.454,5.72,40.49
+drift,1656,4.54,0.411,2.46,5.704,40.4
+ALL,8433,4.724,0.432,2.276,5.488,42.43

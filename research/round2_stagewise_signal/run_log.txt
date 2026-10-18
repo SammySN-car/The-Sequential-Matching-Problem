@@ -1,0 +1,62 @@
+[2026-10-13T04:02:51] ss0_validate start
+[2026-10-13T04:10:47] replay done: 15304 stage rows
+[2026-10-13T04:10:55] wrote stage_funnel.jsonl (15304 rows)
+[2026-10-13T04:10:55] ss0_validate PASSED (13/13 checks, 483.9s)
+[2026-10-13T04:17:28] ss1_counts start
+[2026-10-13T04:18:48] wrote stage_counts.csv (407 rows)
+[2026-10-13T04:18:48] wrote stage_by_variant.csv (6 rows)
+[2026-10-13T04:18:54] wrote funnel_summary.json
+[2026-10-13T04:18:54] ss1_counts done (85.5s)
+[2026-10-13T04:20:30] ss2_models start
+[2026-10-13T04:20:42] A_baseline_count/both_responded auc=0.5175 ap=0.6078 lift=1.02 refit_oof
+[2026-10-13T04:20:50] A_baseline_count/mutual auc=0.4964 ap=0.1461 lift=1.02 refit_oof
+[2026-10-13T04:21:03] A_baseline_count/date auc=0.4890 ap=0.1103 lift=1.00 refit_oof
+[2026-10-13T04:21:13] A_baseline_count/date_within_deadline auc=0.4858 ap=0.1103 lift=1.00 refit_oof
+[2026-10-13T04:21:21] A_baseline_count/timely_second auc=0.5133 ap=0.0147 lift=1.30 refit_oof
+[2026-10-13T04:21:30] A_baseline_count/final_msmi auc=0.5038 ap=0.0137 lift=1.22 frozen_oof
+[2026-10-13T04:21:43] B_soft_state/both_responded auc=0.4958 ap=0.5965 lift=1.00 refit_oof
+[2026-10-13T04:21:54] B_soft_state/mutual auc=0.5295 ap=0.1572 lift=1.10 refit_oof
+[2026-10-13T04:22:08] B_soft_state/date auc=0.5341 ap=0.1204 lift=1.09 refit_oof
+[2026-10-13T04:22:21] B_soft_state/date_within_deadline auc=0.5422 ap=0.1228 lift=1.12 refit_oof
+[2026-10-13T04:22:30] B_soft_state/timely_second auc=0.5940 ap=0.0285 lift=2.51 refit_oof
+[2026-10-13T04:22:40] B_soft_state/final_msmi auc=0.5634 ap=0.0175 lift=1.55 frozen_oof
+[2026-10-13T04:22:54] C_full_legal/both_responded auc=0.5122 ap=0.6100 lift=1.02 refit_oof
+[2026-10-13T04:23:08] C_full_legal/mutual auc=0.5206 ap=0.1542 lift=1.08 refit_oof
+[2026-10-13T04:23:24] C_full_legal/date auc=0.5343 ap=0.1218 lift=1.10 refit_oof
+[2026-10-13T04:23:38] C_full_legal/date_within_deadline auc=0.5495 ap=0.1270 lift=1.16 refit_oof
+[2026-10-13T04:23:47] C_full_legal/timely_second auc=0.5343 ap=0.0136 lift=1.20 refit_oof
+[2026-10-13T04:23:57] C_full_legal/final_msmi auc=0.5233 ap=0.0128 lift=1.13 frozen_oof
+[2026-10-13T04:23:59] wrote stage_model_metrics.csv (30 rows)
+[2026-10-13T04:24:00] wrote seed_group_metrics.csv (21 rows)
+[2026-10-13T04:24:00] wrote stage_oof_scores.json
+[2026-10-13T04:24:00] ss2_models done (209.5s)
+[2026-10-13T04:29:48] ss3_goal start
+[2026-10-13T04:30:12] ss3_goal start
+[2026-10-13T04:30:25] wrote stage_by_goal_status.csv (30 rows)
+[2026-10-13T04:31:40] wrote stage_by_soft_channel.csv (210 rows)
+[2026-10-13T04:32:22] ss3_goal start
+[2026-10-13T04:32:34] wrote stage_by_goal_status.csv (30 rows)
+[2026-10-13T04:33:50] wrote stage_by_soft_channel.csv (210 rows)
+[2026-10-13T04:33:50] wrote goal_signal.json
+[2026-10-13T04:33:50] ss3_goal done (88.3s)
+[2026-10-13T04:38:04] ss4_ranking start
+[2026-10-13T04:38:18] both_responded delta(B-A)=-0.0218 ci=[-0.0385,-0.0040]
+[2026-10-13T04:38:30] mutual delta(B-A)=0.0331 ci=[0.0107,0.0537]
+[2026-10-13T04:38:42] date delta(B-A)=0.0451 ci=[0.0253,0.0650]
+[2026-10-13T04:38:54] date_within_deadline delta(B-A)=0.0564 ci=[0.0384,0.0751]
+[2026-10-13T04:39:06] timely_second delta(B-A)=0.0807 ci=[0.0354,0.1343]
+[2026-10-13T04:39:18] final_msmi delta(B-A)=0.0596 ci=[0.0277,0.0938]
+[2026-10-13T04:39:18] wrote ranking_by_stage.json
+[2026-10-13T04:39:18] ss4_ranking done (74.0s)
+[2026-10-13T04:47:38] ss5_mechanism start
+[2026-10-13T04:47:38] verified 16/kit.py equation fragments
+[2026-10-13T04:47:38] wrote mechanism_notes.md (16 fragments verified)
+[2026-10-13T04:47:38] ss5_mechanism done (0.0s)
+[2026-10-13T04:50:38] ss6_report start
+[2026-10-13T04:51:04] ss6_report start
+[2026-10-13T04:53:04] ss6_report start
+[2026-10-13T04:53:44] ss6_report start
+[2026-10-13T04:53:44] wrote report.md (71 lines)
+[2026-10-13T04:53:44] ss6_report done (0.0s)
+[2026-10-13T04:55:29] ss_seal: sealed 29 files
+[2026-10-13T04:55:32] ss_verify PASSED (12/12)

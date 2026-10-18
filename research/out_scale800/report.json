@@ -1,0 +1,314 @@
+{
+  "n_rollouts": 3520,
+  "n_random": 3200,
+  "n_greedy": 320,
+  "n_worlds": 800,
+  "days": 60,
+  "follow_up": 40,
+  "n_rows": 259696,
+  "dataset_audit_violations": 0,
+  "n_immature": 0,
+  "source_audit": [],
+  "integrity": {
+    "checks": {
+      "forbidden_keys": true,
+      "structure_disclosure": true,
+      "snapshot_unchanged": true,
+      "rows_audit": true,
+      "label_stability": true,
+      "determinism": true
+    },
+    "violations": [],
+    "ok": true
+  },
+  "leakage": [],
+  "coverage": {
+    "random": {
+      "rollouts": 1280,
+      "opportunities": 171705,
+      "chosen": 93313,
+      "fraction": 0.5434495209807518
+    },
+    "greedy": {
+      "rollouts": 320,
+      "opportunities": 45065,
+      "chosen": 24181,
+      "fraction": 0.5365804948407855
+    }
+  },
+  "variant_balance": {
+    "development": {
+      "rows": 53041,
+      "positives": 524
+    },
+    "sparse": {
+      "rows": 12380,
+      "positives": 143
+    },
+    "cold_start": {
+      "rows": 41423,
+      "positives": 430
+    },
+    "delayed": {
+      "rows": 49119,
+      "positives": 456
+    },
+    "shift": {
+      "rows": 52286,
+      "positives": 515
+    },
+    "drift": {
+      "rows": 51447,
+      "positives": 501
+    }
+  },
+  "train_eval": {
+    "n_train_rows": 209238,
+    "n_val_rows": 50458,
+    "train_worlds": 640,
+    "val_worlds": 160,
+    "split_overlap": {
+      "worlds": 0,
+      "seeds": 0
+    },
+    "targets": {
+      "msmi": {
+        "train_n": 209238,
+        "val_n": 50458,
+        "train_pos": 2094,
+        "val_pos": 475,
+        "models": {
+          "constant": {
+            "n": 50458,
+            "positives": 475,
+            "prevalence": 0.009413769868009037,
+            "roc_auc": 0.5,
+            "auc_ci95": [
+              0.47391584311354495,
+              0.526084156886455
+            ],
+            "avg_precision": 0.009413769868009037,
+            "log_loss": 0.05330819795521994,
+            "brier": 0.009325503608225597
+          },
+          "hist_gb": {
+            "n": 50458,
+            "positives": 475,
+            "prevalence": 0.009413769868009037,
+            "roc_auc": 0.5937198015746407,
+            "auc_ci95": [
+              0.5666617808016222,
+              0.6207778223476591
+            ],
+            "avg_precision": 0.01227300020739052,
+            "log_loss": 0.05413815795614733,
+            "brier": 0.009469290898231609
+          }
+        }
+      },
+      "mutual": {
+        "train_n": 209238,
+        "val_n": 50458,
+        "train_pos": 30337,
+        "val_pos": 7108,
+        "models": {
+          "constant": {
+            "n": 50458,
+            "positives": 7108,
+            "prevalence": 0.14086963415117523,
+            "roc_auc": 0.5,
+            "auc_ci95": [
+              0.4927595341825871,
+              0.5072404658174129
+            ],
+            "avg_precision": 0.14086963415117523,
+            "log_loss": 0.4066079434388982,
+            "brier": 0.12104234129625083
+          },
+          "hist_gb": {
+            "n": 50458,
+            "positives": 7108,
+            "prevalence": 0.14086963415117523,
+            "roc_auc": 0.61314528880174,
+            "auc_ci95": [
+              0.6057567158287854,
+              0.6205338617746946
+            ],
+            "avg_precision": 0.19718715755920482,
+            "log_loss": 0.3965965204344219,
+            "brier": 0.11878505753259425
+          }
+        }
+      },
+      "date": {
+        "train_n": 209238,
+        "val_n": 50458,
+        "train_pos": 23537,
+        "val_pos": 5568,
+        "models": {
+          "constant": {
+            "n": 50458,
+            "positives": 5568,
+            "prevalence": 0.11034920131594593,
+            "roc_auc": 0.5,
+            "auc_ci95": [
+              0.49196084592907663,
+              0.5080391540709234
+            ],
+            "avg_precision": 0.11034920131594593,
+            "log_loss": 0.3472678666732692,
+            "brier": 0.09817683436772785
+          },
+          "hist_gb": {
+            "n": 50458,
+            "positives": 5568,
+            "prevalence": 0.11034920131594593,
+            "roc_auc": 0.6063953725165987,
+            "auc_ci95": [
+              0.5981532067941305,
+              0.6146375382390669
+            ],
+            "avg_precision": 0.15038421901940127,
+            "log_loss": 0.34055915854559154,
+            "brier": 0.09705057268008431
+          }
+        }
+      }
+    },
+    "top_features_mutual": [
+      {
+        "feature": "soft_relationship_goal_match",
+        "corr": 0.1419
+      },
+      {
+        "feature": "weighted_soft_score",
+        "corr": 0.1417
+      },
+      {
+        "feature": "soft_relationship_pace_match",
+        "corr": 0.1142
+      },
+      {
+        "feature": "soft_match_count",
+        "corr": 0.0703
+      },
+      {
+        "feature": "soft_conversations_match",
+        "corr": 0.062
+      },
+      {
+        "feature": "hist_yes_rate_mean",
+        "corr": 0.0477
+      },
+      {
+        "feature": "soft_lifestyle_match",
+        "corr": 0.04
+      },
+      {
+        "feature": "hist_n_missing_mean",
+        "corr": -0.037
+      },
+      {
+        "feature": "hist_n_missing_absdiff",
+        "corr": -0.0281
+      },
+      {
+        "feature": "hist_n_intros_mean",
+        "corr": -0.0254
+      }
+    ]
+  },
+  "calibration": {
+    "msmi": [
+      {
+        "n": 10092,
+        "mean_predicted": 0.00224,
+        "observed_rate": 0.00396
+      },
+      {
+        "n": 10092,
+        "mean_predicted": 0.00545,
+        "observed_rate": 0.00892
+      },
+      {
+        "n": 10092,
+        "mean_predicted": 0.00803,
+        "observed_rate": 0.00902
+      },
+      {
+        "n": 10091,
+        "mean_predicted": 0.01057,
+        "observed_rate": 0.0114
+      },
+      {
+        "n": 10091,
+        "mean_predicted": 0.02088,
+        "observed_rate": 0.01377
+      }
+    ],
+    "mutual": [
+      {
+        "n": 10092,
+        "mean_predicted": 0.07027,
+        "observed_rate": 0.06847
+      },
+      {
+        "n": 10092,
+        "mean_predicted": 0.11932,
+        "observed_rate": 0.12346
+      },
+      {
+        "n": 10092,
+        "mean_predicted": 0.14005,
+        "observed_rate": 0.1413
+      },
+      {
+        "n": 10091,
+        "mean_predicted": 0.15961,
+        "observed_rate": 0.16143
+      },
+      {
+        "n": 10091,
+        "mean_predicted": 0.23248,
+        "observed_rate": 0.20969
+      }
+    ],
+    "date": [
+      {
+        "n": 10092,
+        "mean_predicted": 0.05412,
+        "observed_rate": 0.05371
+      },
+      {
+        "n": 10092,
+        "mean_predicted": 0.09193,
+        "observed_rate": 0.0975
+      },
+      {
+        "n": 10092,
+        "mean_predicted": 0.10922,
+        "observed_rate": 0.10969
+      },
+      {
+        "n": 10091,
+        "mean_predicted": 0.12358,
+        "observed_rate": 0.12754
+      },
+      {
+        "n": 10091,
+        "mean_predicted": 0.18017,
+        "observed_rate": 0.16331
+      }
+    ]
+  },
+  "criteria": {
+    "integrity_clean": true,
+    "stage_signal": true,
+    "msmi_signal": true
+  },
+  "decision_notes": [
+    "pipeline learns the primary metric on held-out worlds: ready to design the A+C policy (requires explicit approval)"
+  ],
+  "decision": "PROCEED",
+  "elapsed_seconds": 4391.9
+}

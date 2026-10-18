@@ -1,0 +1,6 @@
+arm,total_positives,greedy_positives,delta_vs_greedy,rate_per_k,greedy_rate,bootstrap_B,bootstrap_seed,seed_group_ci95,ci_excludes_zero,seeds_positive,seeds_tied,seeds_negative,n_seed_groups,states_won,states_tied,states_lost,states_changed_set,headroom_n_states,headroom_k_t,headroom_total_positives,headroom_greedy_positives,headroom_delta_vs_greedy,headroom_seed_group_ci95,headroom_ci_excludes_zero,headroom_seeds_positive,headroom_seeds_tied,headroom_seeds_negative,headroom_states_won,headroom_states_tied,headroom_states_lost
+F1-SCORE,81,90,-9,0.009605,0.010672,2000,4242,"[-1.4286, 0.4286]",False,5,7,9,21,17,7518,25,1228,82,307,19,2,17,"[0.2857, 1.4762]",True,6,15,0,17,65,0
+F2-SOFT,94,90,4,0.011147,0.010672,2000,4242,"[-0.3333, 0.7619]",False,7,9,5,21,12,7540,8,1170,82,307,14,2,12,"[0.1905, 1.0]",True,7,14,0,12,70,0
+F3-OBSERV,85,90,-5,0.010079,0.010672,2000,4242,"[-0.9048, 0.4286]",False,8,5,8,21,18,7518,24,1432,82,307,21,2,19,"[0.4762, 1.381]",True,11,10,0,18,64,0
+F4-RANDOM,85.25,90,-4.75,0.010109,0.010672,2000,4242,"[-0.8814, 0.32]",False,12,1,8,21,68,7440,52,7560,82,307,24.61,2,22.61,"[0.7152, 1.4433]",True,17,4,0,68,12,2
+F5-ORACLE,161,90,71,0.019092,0.010672,2000,4242,"[2.1905, 4.5714]",True,17,4,0,21,70,7490,0,831,82,307,73,2,71,"[2.2857, 4.5238]",True,17,4,0,70,12,0

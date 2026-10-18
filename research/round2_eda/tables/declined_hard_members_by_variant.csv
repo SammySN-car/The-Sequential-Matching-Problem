@@ -1,0 +1,7 @@
+variant,members,members_with_declined_hard,pct
+development,26800,8755,32.668
+sparse,26800,8879,33.131
+cold_start,26600,10807,40.628
+delayed,26600,8702,32.714
+shift,26600,8863,33.32
+drift,26600,8911,33.5

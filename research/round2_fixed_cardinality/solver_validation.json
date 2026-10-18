@@ -1,0 +1,32 @@
+{
+ "V_SOLV_01a_synthetic": {
+  "checked": 12310,
+  "constraint_fail": 0,
+  "det_fail": 0,
+  "disagreements": 0
+ },
+ "V_SOLV_01b_real": {
+  "checked": {
+   "F1-SCORE": 7489,
+   "F2-SOFT": 7489,
+   "F3-OBSERV": 7489,
+   "F5-ORACLE": 7489
+  },
+  "constraint_fail": 0,
+  "disagreements": {
+   "F1-SCORE": 0,
+   "F2-SOFT": 0,
+   "F3-OBSERV": 0,
+   "F5-ORACLE": 0
+  },
+  "max_nodes": 2101,
+  "states": 7489
+ },
+ "V_SOLV_04_vs_greedy": {
+  "better": 1228,
+  "equal": 6332,
+  "node_limit": 0,
+  "worse": 0
+ },
+ "passed": true
+}

@@ -1,0 +1,99 @@
+{
+  "ask_cost_mean": {
+    "m03_reciprocal_min": 190.9,
+    "m14_mutual_regret": 190.9
+  },
+  "bonferroni_level": 99,
+  "candidates": [
+    "m03_reciprocal_min",
+    "m14_mutual_regret"
+  ],
+  "cluster_note": "Inference clusters on seed: 72 worlds -> 12 seed-level means (df = 11); per-variant gates mandatory (design section 9).",
+  "code_fingerprint": "fd5b92ff5999d1b8",
+  "coverage_delta": {
+    "m03_reciprocal_min": -0.0001,
+    "m14_mutual_regret": 0.0
+  },
+  "credible": [],
+  "guardrail_note": "Coverage delta >= -0.05 and ask cost are guardrails, reported not binding (design section 9).",
+  "incumbent_note": "Incumbent 0.4931 MSMI/100 is a different seed set and is never compared to these numbers.",
+  "keep_greedy_reason": "no credible candidate on Phase 3",
+  "n_seed_clusters": 12,
+  "not_ranked_note": "Ranking metric: mean paired delta of MSMI/100 vs control. Never AUC, offline expected value, mutual acceptances, introduction counts, or ask efficiency. Absolute numbers are never compared across seed sets.",
+  "per_method": {
+    "m03_reciprocal_min": {
+      "behavioral": {
+        "distinct_digests": 61,
+        "worlds_differing_from_control": 60
+      },
+      "ci95": [
+        -0.068602,
+        0.054713
+      ],
+      "ci99": [
+        -0.093954,
+        0.080066
+      ],
+      "cross_variant_dispersion_mean": 0.104711,
+      "eligible": true,
+      "ineligibility_reasons": [],
+      "invalid_episodes": 0,
+      "mean_delta": -0.006944444444444443,
+      "n_seeds": 12,
+      "n_units": 72,
+      "per_variant_mean_delta": {
+        "cold_start": -0.08333333333333333,
+        "delayed": -0.041666666666666664,
+        "development": 0.0,
+        "drift": 0.0,
+        "shift": 0.08333333333333333,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 190.9,
+        "coverage_mean": 0.3093,
+        "intros_per_100_mean": 32.285,
+        "max_inference_seconds": 16.2
+      }
+    },
+    "m14_mutual_regret": {
+      "behavioral": {
+        "distinct_digests": 61,
+        "worlds_differing_from_control": 0
+      },
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "ci99": [
+        0.0,
+        0.0
+      ],
+      "cross_variant_dispersion_mean": 0.0,
+      "eligible": true,
+      "ineligibility_reasons": [],
+      "invalid_episodes": 0,
+      "mean_delta": 0.0,
+      "n_seeds": 12,
+      "n_units": 72,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.0,
+        "development": 0.0,
+        "drift": 0.0,
+        "shift": 0.0,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 190.9,
+        "coverage_mean": 0.3094,
+        "intros_per_100_mean": 32.396,
+        "max_inference_seconds": 15.9
+      }
+    }
+  },
+  "phase": "confirm2",
+  "verdict": "Greedy remains the best empirically supported policy among the evaluated candidates.",
+  "winner": null,
+  "worlds": 72
+}

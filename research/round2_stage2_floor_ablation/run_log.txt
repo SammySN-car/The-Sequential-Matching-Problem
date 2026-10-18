@@ -1,0 +1,22 @@
+2026-10-07 10:56:21 | python research/round2_stage2_floor_ablation/purity_check.py | exit=1 | 0.5s
+2026-10-07 10:57:11 | python research/round2_stage2_floor_ablation/purity_check.py (retry) | exit=1 | 18.4s
+2026-10-07 10:57:57 | python research/round2_stage2_floor_ablation/purity_check.py (P5 fixed) | exit=1 | 19.6s
+2026-10-07 10:59:15 | python research/round2_stage2_floor_ablation/purity_check.py (floor_to_frozen) | exit=1 | 20.4s
+2026-10-07 10:59:58 | python research/round2_stage2_floor_ablation/purity_check.py (final) | exit=0 | 20.5s
+2026-10-07 11:03:46 | python evaluate.py --policy policy_ac.py --baseline greedy --seeds 101 --variants all --output research\round2_stage2_floor_ablation/arm_a_run_seed101.json | exit=0 | 214.2s
+2026-10-07 11:07:02 | python evaluate.py --policy research\round2_stage2_floor_ablation/ablation_policy.py --baseline greedy --seeds 101 --variants all --output research\round2_stage2_floor_ablation/arm_b_run_seed101.json | exit=0 | 196.1s
+2026-10-07 11:23:35 | python diagnose.py --arm frozen --seed 101 ... diag_arm_a_seed101.json | exit=0 | 237.3s
+2026-10-07 11:27:22 | python diagnose.py --arm nofloor --seed 101 ... diag_arm_b_seed101.json | exit=0 | 217.6s
+2026-10-07 11:33:34 | python evaluate.py --policy policy_ac.py --baseline greedy --seeds 102 --variants all --output research\round2_stage2_floor_ablation/arm_a_run_seed102.json | exit=0 | 217.7s
+2026-10-07 11:37:16 | python evaluate.py --policy research\round2_stage2_floor_ablation\ablation_policy.py --baseline greedy --seeds 102 --variants all --output research\round2_stage2_floor_ablation/arm_b_run_seed102.json | exit=0 | 222.0s
+2026-10-07 11:40:37 | python evaluate.py --policy policy_ac.py --baseline greedy --seeds 103 --variants all --output research\round2_stage2_floor_ablation/arm_a_run_seed103.json | exit=0 | 200.1s
+2026-10-07 11:44:28 | python evaluate.py --policy research\round2_stage2_floor_ablation\ablation_policy.py --baseline greedy --seeds 103 --variants all --output research\round2_stage2_floor_ablation/arm_b_run_seed103.json | exit=0 | 231.2s
+2026-10-07 12:56:27 | python diagnose.py --arm frozen --seed 102 -> diag_arm_a_seed102.json | exit=0 | 167.5s
+2026-10-07 12:59:17 | python diagnose.py --arm nofloor --seed 102 -> diag_arm_b_seed102.json | exit=0 | 170.1s
+2026-10-07 13:01:53 | python diagnose.py --arm frozen --seed 103 -> diag_arm_a_seed103.json | exit=0 | 156.1s
+2026-10-07 13:04:19 | python diagnose.py --arm nofloor --seed 103 -> diag_arm_b_seed103.json | exit=0 | 145.8s
+2026-10-07 13:06:22 | python evaluate.py (Arm B seed101 RERUN) -> arm_b_run_seed101_rerun.json | exit=0 | 106.9s
+2026-10-07 13:07:49 | python diagnose.py (Arm B seed101 RERUN) -> diag_arm_b_seed101_rerun.json | exit=0 | 87.1s
+2026-10-07 13:09:54 | python research/round2_stage2_floor_ablation/analyze.py | exit=0
+2026-10-07 13:12:14 | python analyze.py (greedy per-episode fix + seed table) | exit=0
+2026-10-07 13:20:18 | FINAL VERIFICATION: purity 11/11, frozen hashes OK, Round 1 + Stage 1.5 intact, 23 stage-2 files present, all fidelity OK, no new commits

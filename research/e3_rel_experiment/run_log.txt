@@ -1,0 +1,183 @@
+[2026-10-07T18:27:53Z] official[full] arm=C start cmd=C:\Python313\python.exe C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\evaluate.py --policy policy.py --baseline greedy --seeds 119,120,121,122,123,124,125,126,127,128,129,130 --variants all --output C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\research\e3_rel_experiment\per_arm\C.json
+[2026-10-07T18:27:53Z] official[full] arm=E1 start cmd=C:\Python313\python.exe C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\evaluate.py --policy C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\research\e3_rel_experiment\policy_e1.py --baseline greedy --seeds 119,120,121,122,123,124,125,126,127,128,129,130 --variants all --output C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\research\e3_rel_experiment\per_arm\E1.json
+[2026-10-07T18:27:53Z] official[full] arm=E2 start cmd=C:\Python313\python.exe C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\evaluate.py --policy C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\research\e3_rel_experiment\policy_e2.py --baseline greedy --seeds 119,120,121,122,123,124,125,126,127,128,129,130 --variants all --output C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\research\e3_rel_experiment\per_arm\E2.json
+[2026-10-07T18:27:53Z] official[full] arm=E3 start cmd=C:\Python313\python.exe C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\evaluate.py --policy C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\research\e3_rel_experiment\policy_e3.py --baseline greedy --seeds 119,120,121,122,123,124,125,126,127,128,129,130 --variants all --output C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\research\e3_rel_experiment\per_arm\E3.json
+[2026-10-07T18:49:22Z] official[full] arm=C exit=0 duration=1289.5s output=C.json
+[2026-10-07T18:49:22Z]   C|     0.32791666666666663,
+[2026-10-07T18:49:22Z]   C|     5.0,
+[2026-10-07T18:49:22Z]   C|     -193.16666666666666,
+[2026-10-07T18:49:22Z]   C|     -16.4750086860133
+[2026-10-07T18:49:22Z]   C|   ]
+[2026-10-07T18:49:22Z]   C| }
+[2026-10-07T18:51:07Z] official[full] arm=E1 exit=0 duration=1393.8s output=E1.json
+[2026-10-07T18:51:07Z]   E1|     0.328125,
+[2026-10-07T18:51:07Z]   E1|     5.159722222222222,
+[2026-10-07T18:51:07Z]   E1|     -235.48611111111111,
+[2026-10-07T18:51:07Z]   E1|     -17.835993370846456
+[2026-10-07T18:51:07Z]   E1|   ]
+[2026-10-07T18:51:07Z]   E1| }
+[2026-10-07T18:52:36Z] official[full] arm=E2 exit=0 duration=1482.9s output=E2.json
+[2026-10-07T18:52:36Z]   E2|     0.32861111111111113,
+[2026-10-07T18:52:36Z]   E2|     5.041666666666667,
+[2026-10-07T18:52:36Z]   E2|     -193.16666666666666,
+[2026-10-07T18:52:36Z]   E2|     -15.246744972286656
+[2026-10-07T18:52:36Z]   E2|   ]
+[2026-10-07T18:52:36Z]   E2| }
+[2026-10-07T18:54:24Z] official[full] arm=E3 exit=0 duration=1591.4s output=E3.json
+[2026-10-07T18:54:24Z]   E3|     0.328125,
+[2026-10-07T18:54:24Z]   E3|     5.159722222222222,
+[2026-10-07T18:54:24Z]   E3|     -236.0,
+[2026-10-07T18:54:24Z]   E3|     -17.78493736528132
+[2026-10-07T18:54:24Z]   E3|   ]
+[2026-10-07T18:54:24Z]   E3| }
+[2026-10-07T18:54:24Z] official[full] ALL ARMS OK
+[2026-10-07T18:56:28Z] mechanism parent spawning arm=C
+[2026-10-07T18:56:28Z] mechanism parent spawning arm=E1
+[2026-10-07T18:56:28Z] mechanism parent spawning arm=E2
+[2026-10-07T18:56:28Z] mechanism parent spawning arm=E3
+[2026-10-07T19:02:56Z] determinism slice start arm=C
+[2026-10-07T19:02:56Z] determinism slice start arm=E1
+[2026-10-07T19:02:56Z] determinism slice start arm=E2
+[2026-10-07T19:02:56Z] determinism slice start arm=E3
+[2026-10-07T19:08:33Z] determinism DONE pass=True duration=337s
+[2026-10-07T19:26:36Z] mechanism arm=E2 episodes=72 invalid=0 digest_mismatch=0 duration=1808.8s out=E2_mechanism.json
+[2026-10-07T19:27:54Z] mechanism arm=C episodes=72 invalid=0 digest_mismatch=0 duration=1886.4s out=C_mechanism.json
+[2026-10-07T19:27:54Z]   mech| [2026-10-07T19:27:54Z] mechanism arm=C episodes=72 invalid=0 digest_mismatch=0 duration=1886.4s out=C_mechanism.json
+[2026-10-07T19:29:40Z] mechanism arm=E3 episodes=72 invalid=0 digest_mismatch=0 duration=1992.5s out=E3_mechanism.json
+[2026-10-07T19:29:41Z] mechanism arm=E1 episodes=72 invalid=0 digest_mismatch=0 duration=1993.7s out=E1_mechanism.json
+[2026-10-07T19:29:41Z]   mech| [2026-10-07T19:29:41Z] mechanism arm=E1 episodes=72 invalid=0 digest_mismatch=0 duration=1993.7s out=E1_mechanism.json
+[2026-10-07T19:29:41Z]   mech| [2026-10-07T19:26:36Z] mechanism arm=E2 episodes=72 invalid=0 digest_mismatch=0 duration=1808.8s out=E2_mechanism.json
+[2026-10-07T19:29:41Z]   mech| [2026-10-07T19:29:40Z] mechanism arm=E3 episodes=72 invalid=0 digest_mismatch=0 duration=1992.5s out=E3_mechanism.json
+[2026-10-07T19:29:41Z] mechanism ALL ARMS OK
+[2026-10-07T19:34:16Z] official[stage2] arm=C start cmd=C:\Python313\python.exe C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\evaluate.py --policy policy.py --baseline greedy --seeds 131,132,133,134,135,136,137,138,139,140,141,142 --variants all --output C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\research\e3_rel_experiment\per_arm\s2_C.json
+[2026-10-07T19:34:16Z] official[stage2] arm=E1 start cmd=C:\Python313\python.exe C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\evaluate.py --policy C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\research\e3_rel_experiment\policy_e1.py --baseline greedy --seeds 131,132,133,134,135,136,137,138,139,140,141,142 --variants all --output C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\research\e3_rel_experiment\per_arm\s2_E1.json
+[2026-10-07T19:34:17Z] official[stage2] arm=E2 start cmd=C:\Python313\python.exe C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\evaluate.py --policy C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\research\e3_rel_experiment\policy_e2.py --baseline greedy --seeds 131,132,133,134,135,136,137,138,139,140,141,142 --variants all --output C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\research\e3_rel_experiment\per_arm\s2_E2.json
+[2026-10-07T19:34:17Z] official[stage2] arm=E3 start cmd=C:\Python313\python.exe C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\evaluate.py --policy C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\research\e3_rel_experiment\policy_e3.py --baseline greedy --seeds 131,132,133,134,135,136,137,138,139,140,141,142 --variants all --output C:\Users\samar\Downloads\New folder (11)\The-Sequential-Matching-Problem\research\e3_rel_experiment\per_arm\s2_E3.json
+[2026-10-07T19:55:03Z] official[stage2] arm=C exit=0 duration=1246.8s output=s2_C.json
+[2026-10-07T19:55:03Z]   C|     0.32625,
+[2026-10-07T19:55:03Z]   C|     5.152777777777778,
+[2026-10-07T19:55:03Z]   C|     -205.75,
+[2026-10-07T19:55:03Z]   C|     -15.90505149176008
+[2026-10-07T19:55:03Z]   C|   ]
+[2026-10-07T19:55:03Z]   C| }
+[2026-10-07T19:56:46Z] official[stage2] arm=E1 exit=0 duration=1349.1s output=s2_E1.json
+[2026-10-07T19:56:46Z]   E1|     0.32590277777777776,
+[2026-10-07T19:56:46Z]   E1|     5.208333333333333,
+[2026-10-07T19:56:46Z]   E1|     -246.98611111111111,
+[2026-10-07T19:56:46Z]   E1|     -17.208254472310525
+[2026-10-07T19:56:46Z]   E1|   ]
+[2026-10-07T19:56:46Z]   E1| }
+[2026-10-07T19:58:14Z] official[stage2] arm=E2 exit=0 duration=1437.7s output=s2_E2.json
+[2026-10-07T19:58:14Z]   E2|     0.32645833333333335,
+[2026-10-07T19:58:14Z]   E2|     5.277777777777778,
+[2026-10-07T19:58:14Z]   E2|     -205.75,
+[2026-10-07T19:58:14Z]   E2|     -14.718948530539315
+[2026-10-07T19:58:14Z]   E2|   ]
+[2026-10-07T19:58:14Z]   E2| }
+[2026-10-07T19:59:56Z] official[stage2] arm=E3 exit=0 duration=1539.1s output=s2_E3.json
+[2026-10-07T19:59:56Z]   E3|     0.3265277777777778,
+[2026-10-07T19:59:56Z]   E3|     5.263888888888889,
+[2026-10-07T19:59:56Z]   E3|     -250.81944444444446,
+[2026-10-07T19:59:56Z]   E3|     -17.077085223577644
+[2026-10-07T19:59:56Z]   E3|   ]
+[2026-10-07T19:59:56Z]   E3| }
+[2026-10-07T19:59:56Z] official[stage2] ALL ARMS OK
+[2026-10-07T20:02:45Z] container parent spawning arm=C
+[2026-10-07T20:02:45Z] container parent spawning arm=E1
+[2026-10-07T20:02:45Z] container parent spawning arm=E2
+[2026-10-07T20:02:45Z] container parent spawning arm=E3
+[2026-10-07T20:04:27Z] container[E2] seed=119 variant=development valid=True
+[2026-10-07T20:04:33Z] container[E3] seed=119 variant=development valid=True
+[2026-10-07T20:04:33Z] container[E1] seed=119 variant=development valid=True
+[2026-10-07T20:04:48Z] container[C] seed=119 variant=development valid=True
+[2026-10-07T20:06:08Z] container[E2] seed=130 variant=development valid=True
+[2026-10-07T20:06:19Z] container[E3] seed=130 variant=development valid=True
+[2026-10-07T20:06:19Z] container[E1] seed=130 variant=development valid=True
+[2026-10-07T20:06:49Z] container[C] seed=130 variant=development valid=True
+[2026-10-07T20:07:50Z] container[E2] seed=119 variant=sparse valid=True
+[2026-10-07T20:08:10Z] container[E1] seed=119 variant=sparse valid=True
+[2026-10-07T20:08:11Z] container[E3] seed=119 variant=sparse valid=True
+[2026-10-07T20:09:01Z] container[C] seed=119 variant=sparse valid=True
+[2026-10-07T20:09:40Z] container[E2] seed=130 variant=sparse valid=True
+[2026-10-07T20:10:07Z] container[E1] seed=130 variant=sparse valid=True
+[2026-10-07T20:10:07Z] container[E3] seed=130 variant=sparse valid=True
+[2026-10-07T20:11:13Z] container[C] seed=130 variant=sparse valid=True
+[2026-10-07T20:11:21Z] container[E2] seed=119 variant=cold_start valid=True
+[2026-10-07T20:11:51Z] container[E3] seed=119 variant=cold_start valid=True
+[2026-10-07T20:11:52Z] container[E1] seed=119 variant=cold_start valid=True
+[2026-10-07T20:12:56Z] container[E2] seed=130 variant=cold_start valid=True
+[2026-10-07T20:13:13Z] container[C] seed=119 variant=cold_start valid=True
+[2026-10-07T20:13:31Z] container[E1] seed=130 variant=cold_start valid=True
+[2026-10-07T20:13:32Z] container[E3] seed=130 variant=cold_start valid=True
+[2026-10-07T20:14:33Z] container[E2] seed=119 variant=delayed valid=True
+[2026-10-07T20:15:14Z] container[E1] seed=119 variant=delayed valid=True
+[2026-10-07T20:15:14Z] container[C] seed=130 variant=cold_start valid=True
+[2026-10-07T20:15:15Z] container[E3] seed=119 variant=delayed valid=True
+[2026-10-07T20:16:12Z] container[E2] seed=130 variant=delayed valid=True
+[2026-10-07T20:16:59Z] container[E3] seed=130 variant=delayed valid=True
+[2026-10-07T20:16:59Z] container[E1] seed=130 variant=delayed valid=True
+[2026-10-07T20:17:14Z] container[C] seed=119 variant=delayed valid=True
+[2026-10-07T20:17:50Z] container[E2] seed=119 variant=shift valid=True
+[2026-10-07T20:18:42Z] container[E3] seed=119 variant=shift valid=True
+[2026-10-07T20:18:43Z] container[E1] seed=119 variant=shift valid=True
+[2026-10-07T20:19:13Z] container[C] seed=130 variant=delayed valid=True
+[2026-10-07T20:19:28Z] container[E2] seed=130 variant=shift valid=True
+[2026-10-07T20:20:26Z] container[E3] seed=130 variant=shift valid=True
+[2026-10-07T20:20:26Z] container[E1] seed=130 variant=shift valid=True
+[2026-10-07T20:21:06Z] container[E2] seed=119 variant=drift valid=True
+[2026-10-07T20:21:11Z] container[C] seed=119 variant=shift valid=True
+[2026-10-07T20:22:08Z] container[E3] seed=119 variant=drift valid=True
+[2026-10-07T20:22:09Z] container[E1] seed=119 variant=drift valid=True
+[2026-10-07T20:22:43Z] container[E2] seed=130 variant=drift valid=True
+[2026-10-07T20:22:43Z] container[E2] DONE invalid=0 duration=1198s
+[2026-10-07T20:23:06Z] container[C] seed=130 variant=shift valid=True
+[2026-10-07T20:23:44Z] container[E3] seed=130 variant=drift valid=True
+[2026-10-07T20:23:44Z] container[E3] DONE invalid=0 duration=1259s
+[2026-10-07T20:23:45Z] container[E1] seed=130 variant=drift valid=True
+[2026-10-07T20:23:45Z] container[E1] DONE invalid=0 duration=1260s
+[2026-10-07T20:24:32Z] container[C] seed=119 variant=drift valid=True
+[2026-10-07T20:25:46Z] container[C] seed=130 variant=drift valid=True
+[2026-10-07T20:25:46Z] container[C] DONE invalid=0 duration=1381s
+[2026-10-07T20:25:46Z] container DONE pass=False
+[2026-10-07T20:30:40Z] ctrl-greedy[development/119] valid=True
+[2026-10-07T20:31:51Z] ctrl-greedy[development/130] valid=True
+[2026-10-07T20:32:57Z] ctrl-greedy[sparse/119] valid=True
+[2026-10-07T20:34:09Z] ctrl-greedy[sparse/130] valid=True
+[2026-10-07T20:35:19Z] ctrl-greedy[cold_start/119] valid=True
+[2026-10-07T20:36:21Z] ctrl-greedy[cold_start/130] valid=True
+[2026-10-07T20:37:24Z] ctrl-greedy[delayed/119] valid=True
+[2026-10-07T20:38:28Z] ctrl-greedy[delayed/130] valid=True
+[2026-10-07T20:39:32Z] ctrl-greedy[shift/119] valid=True
+[2026-10-07T20:40:37Z] ctrl-greedy[shift/130] valid=True
+[2026-10-07T20:41:43Z] ctrl-greedy[drift/119] valid=True
+[2026-10-07T20:42:45Z] ctrl-greedy[drift/130] valid=True
+[2026-10-07T20:42:45Z] ctrl-greedy DONE mismatches=12 duration=792s
+[2026-10-07T20:44:19Z] ctrl-ac[development/119] local=True container=True
+[2026-10-07T20:45:52Z] ctrl-ac[development/130] local=True container=True
+[2026-10-07T20:47:28Z] ctrl-ac[sparse/119] local=True container=True
+[2026-10-07T20:49:06Z] ctrl-ac[sparse/130] local=True container=True
+[2026-10-07T20:50:42Z] ctrl-ac[cold_start/119] local=True container=True
+[2026-10-07T20:52:16Z] ctrl-ac[cold_start/130] local=True container=True
+[2026-10-07T20:53:55Z] ctrl-ac[delayed/119] local=True container=True
+[2026-10-07T20:55:37Z] ctrl-ac[delayed/130] local=True container=True
+[2026-10-07T20:57:09Z] ctrl-ac[shift/119] local=True container=True
+[2026-10-07T20:58:43Z] ctrl-ac[shift/130] local=True container=True
+[2026-10-07T21:00:32Z] ctrl-ac[drift/119] local=True container=True
+[2026-10-07T21:02:35Z] ctrl-ac[drift/130] local=True container=True
+[2026-10-07T21:02:35Z] ctrl-ac DONE mismatches=0 invalid=0 duration=1189s
+[2026-10-07T21:02:35Z] control parity merged pass=False
+[2026-10-07T21:27:46Z] ctrl-greedy[development/119] valid=False
+[2026-10-07T21:29:51Z] ctrl-greedy[development/130] valid=True
+[2026-10-07T21:32:02Z] ctrl-greedy[sparse/119] valid=True
+[2026-10-07T21:34:10Z] ctrl-greedy[sparse/130] valid=True
+[2026-10-07T21:36:37Z] ctrl-greedy[cold_start/119] valid=True
+[2026-10-07T21:38:52Z] ctrl-greedy[cold_start/130] valid=True
+[2026-10-07T21:40:43Z] ctrl-greedy[delayed/119] valid=True
+[2026-10-07T21:42:27Z] ctrl-greedy[delayed/130] valid=True
+[2026-10-07T21:44:12Z] ctrl-greedy[shift/119] valid=True
+[2026-10-07T21:46:02Z] ctrl-greedy[shift/130] valid=True
+[2026-10-07T21:47:52Z] ctrl-greedy[drift/119] valid=True
+[2026-10-07T21:49:38Z] ctrl-greedy[drift/130] valid=True
+[2026-10-07T21:49:38Z] ctrl-greedy DONE mismatches=1 duration=1325s
+[2026-10-07T21:49:38Z] ctrl-ac reused from previous run
+[2026-10-07T21:49:38Z] control parity merged pass=False

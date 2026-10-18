@@ -1,0 +1,5 @@
+[FREEZE] analysis_plan.md frozen BEFORE any new diagnostic was examined.
+[FREEZE] sha256=d0006555e468c2515da76c0bc51e6515a0496ca67fa527fa485b7458159fde1f  bytes=14081  lines=266
+[2026-10-13T02:56:31] mo_seal: writing manifest_start then integrity LAST.
+[2026-10-13T02:59:47] mo_seal: writing manifest_start then integrity LAST.
+[2026-10-13T03:00:47] mo_seal: writing manifest_start then integrity LAST.

@@ -1,0 +1,7 @@
+variant,pct_arrived_after_day0,pct_early_exit_le60_diag
+development,30.306,11.919
+sparse,29.862,11.823
+cold_start,29.955,11.932
+delayed,29.929,11.805
+shift,30.376,11.779
+drift,30.417,11.802

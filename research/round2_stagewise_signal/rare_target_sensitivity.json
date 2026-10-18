@@ -1,0 +1,34 @@
+{
+ "conclusion": "For ~173-positive targets the OOF AUC carries material model-fit variance; a single flipped training positive moves AUC by ~0.03. Any timely_second-vs-final_msmi AUC gap of that order is NOT evidence of signal attenuation.",
+ "differing_row_indices": [
+  6540
+ ],
+ "differing_states": [
+  [
+   155,
+   "delayed",
+   16
+  ]
+ ],
+ "evaluation_side": {
+  "auc_modelA_on_A": 0.593999,
+  "auc_modelA_on_B": 0.594019,
+  "auc_modelB_on_A": 0.562616,
+  "auc_modelB_on_B": 0.563408,
+  "note": "Swapping only the EVALUATION target (1 label) moves AUC by <=0.001 for a fixed model."
+ },
+ "n_pos_A": 174,
+ "n_pos_B": 173,
+ "n_rows_differing": 1,
+ "target_A": "timely_second",
+ "target_B": "final_msmi",
+ "training_side": {
+  "auc_gap_same_evaluation_labels": 0.030611,
+  "auc_modelA_on_B": 0.594019,
+  "auc_modelB_on_B": 0.563408,
+  "max_abs_score_diff": 0.293083,
+  "note": "Two models whose TRAINING labels differ by a single row yield correlated-but-distinct scores; the same-evaluation-label AUC gap is therefore model-fit instability, not signal loss.",
+  "score_correlation": 0.798883
+ },
+ "unit": "seed group (GroupKFold by seed, 21 groups)"
+}

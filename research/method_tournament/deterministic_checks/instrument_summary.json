@@ -1,0 +1,45 @@
+{
+  "all_digest_match": true,
+  "digest_matches": 18,
+  "episodes": 18,
+  "per_arm": {
+    "__control__": {
+      "ask_cost_mean": 209.0,
+      "coverage_mean": 0.2783,
+      "episodes": 6,
+      "intros_per_100_mean": 24.25,
+      "msmi_per_introduction_mean": 0.0,
+      "mutual_per_introduction_mean": 0.1505,
+      "zero_selection_days_mean": 34.0
+    },
+    "m03_reciprocal_min": {
+      "ask_cost_mean": 209.0,
+      "coverage_mean": 0.2783,
+      "episodes": 6,
+      "intros_per_100_mean": 24.25,
+      "msmi_per_introduction_mean": 0.0,
+      "mutual_per_introduction_mean": 0.1505,
+      "zero_selection_days_mean": 34.0
+    },
+    "m14_mutual_regret": {
+      "ask_cost_mean": 209.0,
+      "coverage_mean": 0.2783,
+      "episodes": 6,
+      "intros_per_100_mean": 24.25,
+      "msmi_per_introduction_mean": 0.0,
+      "mutual_per_introduction_mean": 0.1505,
+      "zero_selection_days_mean": 34.0
+    }
+  },
+  "phase": "confirm2",
+  "sample_seed": 152,
+  "skipped": false,
+  "variants": [
+    "development",
+    "sparse",
+    "cold_start",
+    "delayed",
+    "shift",
+    "drift"
+  ]
+}

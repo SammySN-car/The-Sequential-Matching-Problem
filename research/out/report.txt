@@ -1,0 +1,68 @@
+SEQUENTIAL MATCHING - DATA PIPELINE VALIDATION REPORT (Round 1 research note)
+generated: 2026-10-06 14:28:42 | kit 1.0.0 | python 3.13.5
+
+A. SCALE AND INTEGRITY
+  rollouts: 440 (random 400 / greedy 40), worlds: 100, days 60 + 40 follow-up
+  rows (introduced pairs with matured labels): 32044
+  integrity suite: ALL CHECKS PASS
+    - determinism            pass
+    - forbidden_keys         pass
+    - label_stability        pass
+    - rows_audit             pass
+    - snapshot_unchanged     pass
+    - structure_disclosure   pass
+  rows audit violations: 0
+  dataset audit (32044 collected rows, per-row horizon): 0 violations
+  static source audit (hidden member reads): clean
+  rows dropped as immature (label None, never 0): 0
+  feature-name leakage audit: clean
+  structure-informed features disclosed: weighted_soft_score, weighted_soft_covered
+
+B. COVERAGE (opportunity exploration; same worlds for both policies)
+  random  rollouts 160 | opportunities  20319 | introduced 11376 | coverage 0.5599
+  greedy  rollouts  40 | opportunities   5381 | introduced 2972 | coverage 0.5523
+  random/greedy coverage ratio: 1.01x
+
+C. CLASS BALANCE
+  msmi    train 25847 rows /  236 positives (0.0091) | val  6197 /  70 (0.0113)
+  mutual  train 25847 rows / 3708 positives (0.1435) | val  6197 / 868 (0.1401)
+  date    train 25847 rows / 2884 positives (0.1116) | val  6197 / 677 (0.1092)
+  by variant (rows / positives for msmi):
+    cold_start   rows  5195 positives  49 prevalence 0.0094
+    delayed      rows  6290 positives  57 prevalence 0.0091
+    development  rows  6991 positives  66 prevalence 0.0094
+    drift        rows  6175 positives  70 prevalence 0.0113
+    shift        rows  5802 positives  54 prevalence 0.0093
+    sparse       rows  1591 positives  10 prevalence 0.0063
+
+D. SIGNAL (train/val split by whole worlds: 80 train worlds / 20 val worlds)
+  msmi    constant  AUC 0.5000 | AP 0.0113 (lift 1.00x) | logloss 0.0621 | brier 0.0112 | val n 6197 pos 70
+  msmi    hist_gb   AUC 0.5218 | AP 0.0111 (lift 0.99x) | logloss 0.0670 | brier 0.0114 | val n 6197 pos 70
+    calibration (hist_gb val, quantile bins): [{'n': 1240, 'mean_predicted': 0.00192, 'observed_rate': 0.00726}, {'n': 1240, 'mean_predicted': 0.00371, 'observed_rate': 0.01129}, {'n': 1239, 'mean_predicted': 0.00555, 'observed_rate': 0.01453}, {'n': 1239, 'mean_predicted': 0.0077, 'observed_rate': 0.01533}, {'n': 1239, 'mean_predicted': 0.02177, 'observed_rate': 0.00807}]
+  mutual  constant  AUC 0.5000 | AP 0.1401 (lift 1.00x) | logloss 0.4051 | brier 0.1205 | val n 6197 pos 868
+  mutual  hist_gb   AUC 0.5996 | AP 0.1898 (lift 1.36x) | logloss 0.3992 | brier 0.1193 | val n 6197 pos 868
+    calibration (hist_gb val, quantile bins): [{'n': 1240, 'mean_predicted': 0.06073, 'observed_rate': 0.07258}, {'n': 1240, 'mean_predicted': 0.11316, 'observed_rate': 0.12581}, {'n': 1239, 'mean_predicted': 0.13777, 'observed_rate': 0.15093}, {'n': 1239, 'mean_predicted': 0.15998, 'observed_rate': 0.14447}, {'n': 1239, 'mean_predicted': 0.23519, 'observed_rate': 0.20662}]
+  date    constant  AUC 0.5000 | AP 0.1092 (lift 1.00x) | logloss 0.3450 | brier 0.0973 | val n 6197 pos 677
+  date    hist_gb   AUC 0.6055 | AP 0.1536 (lift 1.41x) | logloss 0.3391 | brier 0.0967 | val n 6197 pos 677
+    calibration (hist_gb val, quantile bins): [{'n': 1240, 'mean_predicted': 0.04961, 'observed_rate': 0.05242}, {'n': 1240, 'mean_predicted': 0.09149, 'observed_rate': 0.1}, {'n': 1239, 'mean_predicted': 0.10707, 'observed_rate': 0.11542}, {'n': 1239, 'mean_predicted': 0.12437, 'observed_rate': 0.10896}, {'n': 1239, 'mean_predicted': 0.18354, 'observed_rate': 0.16949}]
+  top features by |point-biserial| with mutual: [('weighted_soft_score', 0.1377), ('soft_relationship_goal_match', 0.1343), ('soft_relationship_pace_match', 0.1116), ('soft_match_count', 0.0689), ('soft_conversations_match', 0.0688), ('hist_yes_rate_mean', 0.0545), ('soft_lifestyle_match', 0.0421), ('hist_n_missing_mean', -0.0324), ('day', -0.0322), ('hist_n_intros_mean', -0.0306)]
+
+E. LEAKAGE AND LEGALITY
+  - every feature is computed from Simulator.observe() at the introduction day t
+  - feedback with observed_day > t is dropped; fields with field_observed_day > t masked
+  - forbidden names (truth/bias/response_rate/exit_day/seed/variant/ids/events): audit clean = True
+  - rows with immature labels are dropped, never stored as 0 (maturity audit pass = True)
+  - splits are by whole world; no row-level split is possible
+  - labels are built post-episode from the complete event record; a short follow-up
+    would yield None labels (audited), never coerced zeros; policies never see events
+  - static source scan of research modules for hidden member reads: clean
+  - structure-informed features (weighted_soft_score, weighted_soft_covered) reuse published kit weights and are disclosed
+
+F. DECISION (pre-registered criteria)
+  integrity clean ............... True
+  stage signal (AP >= 1.3x prevalence on val) ... True
+  MSMI signal (val AUC >= 0.55 and AP >= 1.1x prevalence) ... False
+  DECISION: PROCEED WITH CHANGES
+    - stage signal exists but MSMI target is too rare/weak at this scale: consider more rollouts, auxiliary-target pretraining, or rarer-event strategies before the A+C policy
+
+This run validated the DATA PIPELINE only. No final policy, RL, or tuning here.

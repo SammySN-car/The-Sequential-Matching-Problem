@@ -1,0 +1,6 @@
+source,arm,n_worlds,assignments_total,assignments_per_world,conversion_pct,mutual_pct,msmi_per_100_arrived
+tournament_confirm1,__control__,36,2402,66.72,1.1241,16.8609,0.375
+tournament_confirm1,m03_reciprocal_min,36,2402,66.72,1.249,17.1524,0.4167
+tournament_confirm1,m14_mutual_regret,36,2402,66.72,1.1241,16.8609,0.375
+tournament_confirm1,m19_arrival_age,36,2408,66.89,1.0797,16.5282,0.3611
+tournament_confirm1,m26_greedy_one_swap,36,2402,66.72,1.1241,16.8609,0.375

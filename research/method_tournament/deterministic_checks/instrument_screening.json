@@ -1,0 +1,63 @@
+{
+  "all_digest_match": true,
+  "digest_matches": 30,
+  "episodes": 30,
+  "per_arm": {
+    "__control__": {
+      "ask_cost_mean": 206.0,
+      "coverage_mean": 0.3583,
+      "episodes": 6,
+      "intros_per_100_mean": 45.25,
+      "msmi_per_introduction_mean": 0.0088,
+      "mutual_per_introduction_mean": 0.149,
+      "zero_selection_days_mean": 19.83
+    },
+    "m03_reciprocal_min": {
+      "ask_cost_mean": 206.0,
+      "coverage_mean": 0.3575,
+      "episodes": 6,
+      "intros_per_100_mean": 45.083,
+      "msmi_per_introduction_mean": 0.0088,
+      "mutual_per_introduction_mean": 0.1494,
+      "zero_selection_days_mean": 20.33
+    },
+    "m14_mutual_regret": {
+      "ask_cost_mean": 206.0,
+      "coverage_mean": 0.3583,
+      "episodes": 6,
+      "intros_per_100_mean": 45.25,
+      "msmi_per_introduction_mean": 0.0088,
+      "mutual_per_introduction_mean": 0.149,
+      "zero_selection_days_mean": 19.83
+    },
+    "m19_arrival_age": {
+      "ask_cost_mean": 206.0,
+      "coverage_mean": 0.3575,
+      "episodes": 6,
+      "intros_per_100_mean": 45.833,
+      "msmi_per_introduction_mean": 0.0087,
+      "mutual_per_introduction_mean": 0.1274,
+      "zero_selection_days_mean": 19.0
+    },
+    "m26_greedy_one_swap": {
+      "ask_cost_mean": 206.0,
+      "coverage_mean": 0.3583,
+      "episodes": 6,
+      "intros_per_100_mean": 45.167,
+      "msmi_per_introduction_mean": 0.0088,
+      "mutual_per_introduction_mean": 0.1522,
+      "zero_selection_days_mean": 20.0
+    }
+  },
+  "phase": "screening",
+  "sample_seed": 143,
+  "skipped": false,
+  "variants": [
+    "development",
+    "sparse",
+    "cold_start",
+    "delayed",
+    "shift",
+    "drift"
+  ]
+}

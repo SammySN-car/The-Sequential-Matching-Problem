@@ -1,0 +1,207 @@
+{
+  "name": "e3_rel_experiment",
+  "stage_a_date": "2026-10-07",
+  "status": "stage_a_design_complete_pending_human_review_before_stage_b",
+  "objective": "Controlled 4-arm paired experiment: does REL value-of-information asks (E1), analytic pair scoring (E2), or their combination (E3) improve realized MSMI/100 over incumbent greedy under the actual sequential simulator, without leakage or invalidation?",
+  "incumbent": {
+    "policy": "policy.py --baseline greedy",
+    "msmi_per_100": 0.4931,
+    "intros_per_100": 38.1,
+    "mutual_per_100": 5.417,
+    "ask_cost_per_episode": 203.04
+  },
+  "stage_a_verdict": {
+    "plus_18_7_claim": "correctly computed but classified as ORACLE UPPER BOUND (hidden-truth reveal, pair-static, free-cost) - not a live MSMI forecast; see leakage_audit.md",
+    "e1_e2_e3_identifiable": true,
+    "e1_e2_e3_justified": "YES - the oracle upper bound is exactly what the experiment converts into a live number; all decision-time inputs of E2 are clean"
+  },
+  "arms": [
+    {
+      "id": "C",
+      "policy": "policy.py",
+      "argv": "--baseline greedy",
+      "asks": "baseline_asks (hard only)",
+      "match": "baseline_match (count score)"
+    },
+    {
+      "id": "E1",
+      "policy": "research/e3_rel_experiment/policy_e1.py",
+      "argv": "--baseline greedy",
+      "asks": "baseline_asks first, then VoI-gated REL (rel_common.rel_asks, count score_fn)",
+      "match": "baseline_match (count score, unchanged)"
+    },
+    {
+      "id": "E2",
+      "policy": "research/e3_rel_experiment/policy_e2.py",
+      "argv": "--baseline greedy",
+      "asks": "baseline_asks exactly (zero soft asks)",
+      "match": "kit take-while-free allocation with s_analytic"
+    },
+    {
+      "id": "E3",
+      "policy": "research/e3_rel_experiment/policy_e3.py",
+      "argv": "--baseline greedy",
+      "asks": "baseline_asks first, then VoI-gated REL (s_analytic score_fn)",
+      "match": "kit take-while-free allocation with s_analytic"
+    }
+  ],
+  "rel_fields": [
+    "relationship_goal",
+    "relationship_pace",
+    "lifestyle",
+    "conversations"
+  ],
+  "rel_ask_cost": 1,
+  "prohibited_in_all_arms": [
+    "MWM",
+    "local search",
+    "floor/threshold tuning",
+    "RL",
+    "retraining",
+    "history features",
+    "wait/hold rules",
+    "hard-ask redesign",
+    "hyperparameter search",
+    "modifying frozen files"
+  ],
+  "design": {
+    "stage_1": {
+      "seeds": [
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130
+      ],
+      "n_seeds": 12
+    },
+    "stage_2_extension": {
+      "seeds": [
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142
+      ],
+      "n_seeds": 12,
+      "only_if": "pre-registered rule below"
+    },
+    "variants": [
+      "development",
+      "sparse",
+      "cold_start",
+      "delayed",
+      "shift",
+      "drift"
+    ],
+    "episodes_per_arm_stage_1": 72,
+    "total_episodes_stage_1": 288,
+    "total_episodes_max_if_extended": 576,
+    "pairing": "same (seed, variant) unit across all 4 arms",
+    "seed_freshness": "119-142 never used for any live run; 101-118 excluded from decision experiment; research-data seeds 50000+ disjoint",
+    "engine": "evaluate.py episode() via research/e3_rel_experiment/run_experiment.py (frozen evaluate, simulator_class injection for instrumentation only)"
+  },
+  "metrics": {
+    "primary": "msmi_per_100_arrived_members (evaluate primary_score: equal-weight mean over the 6 variant family means)",
+    "secondary": [
+      "coverage",
+      "mutual_acceptances_per_100",
+      "ask_cost",
+      "inference_seconds",
+      "msmi_per_100_intros",
+      "intros_per_100_arrived"
+    ],
+    "mechanism": [
+      "intros_per_100",
+      "mutual_per_100",
+      "mutual_per_intro",
+      "coverage",
+      "msmi_per_intro",
+      "rel_asks_per_day",
+      "rel_ask_cost_per_episode",
+      "fraction_of_rel_asks_touching_a_member_introduced_that_day",
+      "fraction_of_days_where_revelation_changed_the_chosen_allocation",
+      "fraction_of_feasible_edges_affected_by_revelation",
+      "zero_selection_days"
+    ],
+    "guardrails": {
+      "invalid_episodes": "MUST be 0 for the whole run (evaluate eligible=True); any invalid -> do not interpret performance",
+      "latency": "every invocation < 10s (harness enforced); report mean inference_seconds vs control (alert if >2x)",
+      "determinism": "12-episode fixed slice rerun byte-identical (action_sha256 + metrics)",
+      "container_fidelity": "control arm official image vs local parity; E-arms via derived Dockerfile.e3 if feasible, else reported as control-only with reason",
+      "ask_budget": "no budget violation possible without protocol error (kit raises) - any such error is an invalid episode",
+      "no_hidden_reads": "static token scan of policy files + test suite; truth/params never in state (test_kit no-latent-leak)",
+      "json_protocol": "validate_response enforced by harness on every invocation"
+    }
+  },
+  "statistics": {
+    "unit": "primary inference at seed level: per-seed mean of the 6 paired variant diffs (conservative, matches stage4 practice); secondary at world x variant unit (72 pairs)",
+    "ci_method": "two-sided 95% paired t-interval over seed-level mean diffs (n=12); unit-level reported as W/T/L plus percentile bootstrap CI (10000 resamples, fixed rng seed 0)",
+    "comparisons": [
+      "E1 vs C",
+      "E2 vs C",
+      "E3 vs C",
+      "E3 vs E1",
+      "E3 vs E2"
+    ],
+    "power_honesty": {
+      "paired_sd_estimate": 0.2406,
+      "source": "stage4 (estimated from 3 seeds, unstable)",
+      "detectable_at_n12_seed_level_d80": 0.2,
+      "detectable_at_n24_seed_level_d80": 0.14,
+      "note": "if the true live effect is below the detectable scale, the experiment returns neutral/inconclusive - the decision rule then keeps greedy"
+    },
+    "interpretation_table": {
+      "E1_pos_E2_neutral": "information acquisition is the main opportunity",
+      "E2_pos_E1_neutral": "scoring is the main opportunity",
+      "E1_E2_pos_E3_clearly_better": "interaction/synergy",
+      "E1_E2_pos_E3_not": "interaction is hurting",
+      "all_neutral_or_negative": "STOP and submit greedy"
+    }
+  },
+  "stopping_rules": [
+    "any invalid episode in stage 1 -> halt, diagnose, fix as a new candidate; never interpret partial performance",
+    "stage-1 primary point estimate (E3 vs C) <= 0 -> stop; no stage-2 extension; keep greedy",
+    "stage-1 point > 0 but CI overlaps 0 -> extend exactly once to stage 2 (seeds 131-142)",
+    "after extension CI still overlaps 0 -> verdict 'inconclusive' -> keep greedy",
+    "CI entirely > 0 AND all guardrails green AND mechanism metrics show no volume collapse -> E3 (or winner arm) becomes the candidate replacement, subject to the final decision rule: credible realized MSMI improvement only"
+  ],
+  "final_decision_rule": "Replace greedy ONLY on credible realized MSMI improvement under the actual simulator with zero invalidity and no leakage. Higher mutual, higher intros, better AUC, higher offline pair value, or lower ask cost are NOT sufficient.",
+  "deliverables": {
+    "stage_a": [
+      "research/e3_rel_experiment/design.md",
+      "research/e3_rel_experiment/leakage_audit.md",
+      "research/e3_rel_experiment/experiment_plan.json"
+    ],
+    "stage_b": [
+      "research/e3_rel_experiment/report.md",
+      "research/e3_rel_experiment/summary.json",
+      "research/e3_rel_experiment/run_log.txt",
+      "research/e3_rel_experiment/integrity_before/",
+      "research/e3_rel_experiment/integrity_after/",
+      "research/e3_rel_experiment/hashes_manifest.txt",
+      "research/e3_rel_experiment/per_arm/",
+      "research/e3_rel_experiment/determinism_rerun.json",
+      "research/e3_rel_experiment/container_fidelity.json"
+    ]
+  },
+  "stage_b_preconditions": [
+    "human review/confirmation of this plan (execution method already prescribed by the workflow: stage B only if stage A validates)",
+    "existing tests pass: python -m unittest test_kit test_runner test_release test_policy + research.test_pipeline",
+    "integrity_before captured; frozen 6-file hashes match baseline"
+  ]
+}

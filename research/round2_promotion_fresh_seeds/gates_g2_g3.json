@@ -1,0 +1,48 @@
+{
+  "G2_determinism": [
+    {
+      "pair": "arm_greedy_seed107.json vs arm_greedy_seed107_rerun.json",
+      "equal_excl_inference": true,
+      "action_sha256_all_match": true,
+      "primary_match": true,
+      "n_diffs": 0,
+      "diffs": []
+    },
+    {
+      "pair": "arm_original_seed107.json vs arm_original_seed107_rerun.json",
+      "equal_excl_inference": true,
+      "action_sha256_all_match": true,
+      "primary_match": true,
+      "n_diffs": 0,
+      "diffs": []
+    },
+    {
+      "pair": "arm_floorhalf_seed107.json vs arm_floorhalf_seed107_rerun.json",
+      "equal_excl_inference": true,
+      "action_sha256_all_match": true,
+      "primary_match": true,
+      "n_diffs": 0,
+      "diffs": []
+    },
+    {
+      "pair": "arm_floorhalf_seed118.json vs arm_floorhalf_seed118_rerun.json",
+      "equal_excl_inference": true,
+      "action_sha256_all_match": true,
+      "primary_match": true,
+      "n_diffs": 0,
+      "diffs": []
+    }
+  ],
+  "G3_container": {
+    "scope": "A+C arm (arm B) seed 107, all 6 variants; image sequential-policy:1.0 (image policy.py/kit.py sha256 verified byte-identical to repo). Docker path runs policy.py with no args -> default ac mode == arm B; container-vs-local-arm-A was the initial (wrong-target) comparison, corrected here.",
+    "equal_excl_inference_and_mode": true,
+    "action_sha256_all_match": true,
+    "primary_match": true,
+    "local_mode": "trusted_local",
+    "container_mode": "container",
+    "note_initial_wrong_target": "compared vs greedy first (mismatch, expected: different policy); corrected to arm B",
+    "n_diffs": 0,
+    "diffs": [],
+    "arms_b_c_container_note": "A+C arms cannot run in the frozen image: Dockerfile ships kit.py+policy.py only with ENTRYPOINT policy.py; Dockerfile is frozen."
+  }
+}

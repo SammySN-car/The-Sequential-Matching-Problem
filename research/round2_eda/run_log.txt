@@ -1,0 +1,110 @@
+[2026-10-12T11:58:00Z] S02 population analysis start
+[2026-10-12T11:58:00Z] kit.py sha256 0d2cb3d3b46ca2a6ee7c8b74b78c55642ef98686e59a890ec18f66f2cabc1f3e
+[2026-10-12T11:58:00Z]   world set tournament_126: 126 worlds
+[2026-10-12T11:58:00Z]   world set scale800_800: 800 worlds
+[2026-10-12T11:58:00Z]   world set promotion_72: 72 worlds
+[2026-10-12T11:58:00Z]   demographics done for tournament_126
+[2026-10-12T11:58:04Z]   demographics done for scale800_800
+[2026-10-12T11:58:04Z] wrote population_demographics.csv (12 rows)
+[2026-10-12T11:58:30Z] S02 population analysis start
+[2026-10-12T11:58:30Z] kit.py sha256 0d2cb3d3b46ca2a6ee7c8b74b78c55642ef98686e59a890ec18f66f2cabc1f3e
+[2026-10-12T11:58:30Z]   world set tournament_126: 126 worlds
+[2026-10-12T11:58:30Z]   world set scale800_800: 800 worlds
+[2026-10-12T11:58:30Z]   world set promotion_72: 72 worlds
+[2026-10-12T11:58:31Z]   demographics done for tournament_126
+[2026-10-12T11:58:34Z]   demographics done for scale800_800
+[2026-10-12T11:58:34Z] wrote population_demographics.csv (12 rows)
+[2026-10-12T11:58:41Z] wrote field_status_by_variant.csv (126 rows)
+[2026-10-12T11:58:41Z] wrote hard_missing_per_member.csv (9 rows)
+[2026-10-12T11:58:41Z] wrote hard_declined_per_member.csv (7 rows)
+[2026-10-12T11:58:41Z] wrote declined_hard_members_by_variant.csv (6 rows)
+[2026-10-12T11:58:45Z] wrote declined_hard_cooccurrence_top25.csv (25 rows)
+[2026-10-12T11:58:45Z] wrote soft_coverage_per_member.csv (6 rows)
+[2026-10-12T11:59:03Z] wrote arrival_exit_by_variant.csv (6 rows)
+[2026-10-12T11:59:04Z] S02 done: {'members_examined_scale800': 160000, 'members_with_any_declined_hard_pct': 34.323, 'note': 'truth/exit_day used only where marked diagnostic; populations regenerated deterministically from recorded seeds via kit.generate (no rollouts).'}
+[2026-10-12T12:00:43Z] S03 graph-over-time analysis start
+[2026-10-12T12:00:43Z]   n01_days 7560 rows; n01_intros 8433 rows
+[2026-10-12T12:00:43Z] wrote graph_by_variant_day.csv (360 rows)
+[2026-10-12T12:00:43Z] wrote graph_variant_summary.csv (6 rows)
+[2026-10-12T12:00:43Z] wrote unique_pairs_vs_pairdays.csv (4 rows)
+[2026-10-12T12:00:43Z] wrote degree_at_introduction.csv (6 rows)
+[2026-10-12T12:00:43Z] wrote promotion_day_candidate_counts.csv (72 rows)
+[2026-10-12T12:00:44Z] S03 done
+[2026-10-12T12:01:50Z] S04 clarification analysis start
+[2026-10-12T12:01:50Z] wrote ask_spend_by_day.csv (60 rows)
+[2026-10-12T12:01:50Z] wrote soft_state_at_introduction.csv (7 rows)
+[2026-10-12T12:01:50Z]   intros with both members at 0 observed soft fields: 3578/8433 (42.4%)
+[2026-10-12T12:01:50Z] wrote promotion_ask_telemetry.csv (72 rows)
+[2026-10-12T12:01:50Z] wrote probe_ask_costs.csv (4 rows)
+[2026-10-12T12:01:50Z] wrote e3_rel_ask_headline.csv (3 rows)
+[2026-10-12T12:01:50Z] wrote edges_vs_cumulative_ask.csv (9 rows)
+[2026-10-12T12:01:50Z] S04 done
+[2026-10-12T12:07:24Z] S05 funnel start
+[2026-10-12T12:07:24Z] wrote funnel_n01_greedy.csv (10 rows)
+[2026-10-12T12:07:24Z]   n01: assigned=8433 -> both_responded=4743 -> both_accepted_(mutual)=1279 -> date_happened=965 -> second_yes_within_3d=91 -> msmi_(date_le_30d)=90
+[2026-10-12T12:07:26Z] wrote funnel_scale800.csv (5 rows)
+[2026-10-12T12:07:26Z] wrote funnel_scale800_by_variant.csv (6 rows)
+[2026-10-12T12:07:26Z] wrote funnel_n01_by_variant.csv (6 rows)
+[2026-10-12T12:07:26Z] wrote funnel_n01_by_day_band.csv (4 rows)
+[2026-10-12T12:09:15Z] S05 funnel start
+[2026-10-12T12:09:15Z] wrote funnel_n01_greedy.csv (10 rows)
+[2026-10-12T12:09:15Z]   n01: assigned=8433 -> both_responded=4743 -> both_accepted_(mutual)=1279 -> date_happened=965 -> second_yes_within_3d=91 -> msmi_(date_le_30d)=90
+[2026-10-12T12:09:17Z] wrote funnel_scale800.csv (5 rows)
+[2026-10-12T12:09:17Z] wrote funnel_scale800_by_variant.csv (6 rows)
+[2026-10-12T12:09:17Z] wrote funnel_n01_by_variant.csv (6 rows)
+[2026-10-12T12:09:17Z] wrote funnel_n01_by_day_band.csv (4 rows)
+[2026-10-12T12:09:17Z] wrote funnel_n01_by_soft_match.csv (3 rows)
+[2026-10-12T12:10:22Z] S05 funnel start
+[2026-10-12T12:10:22Z] wrote funnel_n01_greedy.csv (10 rows)
+[2026-10-12T12:10:22Z]   n01: assigned=8433 -> both_responded=4743 -> both_accepted_(mutual)=1279 -> date_happened=965 -> second_yes_within_3d=91 -> msmi_(date_le_30d)=90
+[2026-10-12T12:10:23Z] wrote funnel_scale800.csv (5 rows)
+[2026-10-12T12:10:23Z] wrote funnel_scale800_by_variant.csv (6 rows)
+[2026-10-12T12:10:23Z] wrote funnel_n01_by_variant.csv (6 rows)
+[2026-10-12T12:10:23Z] wrote funnel_n01_by_day_band.csv (4 rows)
+[2026-10-12T12:10:23Z] wrote funnel_n01_by_soft_match.csv (3 rows)
+[2026-10-12T12:10:23Z]   n01 intros chosen at a tied score: 5538/8433 (65.7%)
+[2026-10-12T12:10:23Z] wrote funnel_n01_by_tie_status.csv (2 rows)
+[2026-10-12T12:10:24Z] S05 done
+[2026-10-12T12:24:25Z] S06 scoring diagnostics start
+[2026-10-12T12:25:01Z] S06 scoring diagnostics start
+[2026-10-12T12:25:05Z]   imputed 924593 empty feature cells as 0.0
+[2026-10-12T12:25:05Z]   loaded 259696 rows, 44 features, 2569 positives, 800 worlds
+[2026-10-12T12:25:05Z]   fitting full feature set...
+[2026-10-12T12:26:00Z] S06 scoring diagnostics start
+[2026-10-12T12:26:04Z]   imputed 924593 empty feature cells as 0.0
+[2026-10-12T12:26:04Z]   loaded 259696 rows, 44 features, 2569 positives, 800 worlds
+[2026-10-12T12:26:04Z]   fitting full feature set...
+[2026-10-12T12:26:13Z]   full: global AUC 0.5932; within-day mean AUC 0.5811 (2022 two-class days); world-mean within-day 0.5825 ± 0.3050
+[2026-10-12T12:26:13Z]   fitting without soft features...
+[2026-10-12T12:26:36Z] S06 scoring diagnostics start
+[2026-10-12T12:26:39Z]   imputed 924593 empty feature cells as 0.0
+[2026-10-12T12:26:39Z]   loaded 259696 rows, 44 features, 2569 positives, 800 worlds
+[2026-10-12T12:26:39Z]   fitting full feature set...
+[2026-10-12T12:26:48Z]   full: global AUC 0.5932; within-day mean AUC 0.5811 (2022 two-class days); world-mean within-day 0.5825 ± 0.3050
+[2026-10-12T12:26:48Z]   fitting without soft features...
+[2026-10-12T12:26:53Z]   fitting state-only features (day/budget/competition/history)...
+[2026-10-12T12:26:56Z] wrote scoring_concordance_summary.csv (8 rows)
+[2026-10-12T12:26:56Z]   between-day score variance share: 66.0%
+[2026-10-12T12:26:57Z] wrote scoring_world_auc_distribution.csv (685 rows)
+[2026-10-12T12:26:57Z]   per-world AUC: n=685 mean=0.5854 med=0.5932 [0.002,0.987]
+[2026-10-12T12:26:57Z] S06 done
+[2026-10-12T12:30:40Z] S07 allocation start
+[2026-10-12T12:30:40Z] wrote alloc_round2_arm_summary.csv (5 rows)
+[2026-10-12T12:30:40Z] wrote alloc_round2_volume_vs_conversion.csv (4 rows)
+[2026-10-12T12:30:40Z]   round2 gated: dMSMI=+0.0000 vol=+0.0000 conv=+0.0000
+[2026-10-12T12:30:40Z]   round2 no_asks: dMSMI=-0.5556 vol=-0.3501 conv=-0.2055
+[2026-10-12T12:30:40Z]   round2 random: dMSMI=+0.0000 vol=+0.0012 conv=-0.0012
+[2026-10-12T12:30:40Z]   round2 ungated: dMSMI=-0.0972 vol=-0.0288 conv=-0.0684
+[2026-10-12T12:30:40Z]   tournament confirm1 methods: 5
+[2026-10-12T12:30:40Z] wrote alloc_tournament_arm_summary.csv (5 rows)
+[2026-10-12T12:30:40Z] wrote alloc_tournament_volume_vs_conversion.csv (4 rows)
+[2026-10-12T12:30:40Z] wrote alloc_greedy_optimality_structure.csv (6 rows)
+[2026-10-12T12:30:40Z]   greedy score_is_max: 5274/8433; tied: 5538/8433
+[2026-10-12T12:30:40Z] S07 done
+[2026-10-12T12:37:17Z] S08 generator source facts start
+[2026-10-12T12:37:17Z] wrote generator_source_facts.csv (19 rows)
+[2026-10-12T12:38:35Z] S08 generator source facts start
+[2026-10-12T12:38:35Z] wrote generator_source_facts.csv (19 rows)
+[2026-10-12T12:38:36Z] wrote generator_prior_multipliers.csv (5 rows)
+[2026-10-12T12:38:36Z] wrote generator_latent_map.csv (7 rows)
+[2026-10-12T12:38:36Z] S08 done - generator facts extracted; prior multipliers diagnostic-only

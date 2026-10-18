@@ -1,0 +1,12 @@
+{"day": 34, "invocation_seconds": 0.07536640000762418, "k_chosen": 3, "k_greedy": 3, "n_edges": 5, "phase": "match", "pid": 27556, "solver_seconds": 0.00018060000729747117}
+{"day": 0, "invocation_seconds": 0.06773429998429492, "k_chosen": 7, "k_greedy": 7, "n_edges": 12, "phase": "match", "pid": 27556, "solver_seconds": 0.0006341999978758395}
+{"day": 41, "invocation_seconds": 0.09288910002214834, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 27556, "solver_seconds": 7.040001219138503e-05}
+{"day": 19, "invocation_seconds": 0.11282199999550357, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 27556, "solver_seconds": 6.33999879937619e-05}
+{"day": 38, "invocation_seconds": 0.11457920001703314, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 27556, "solver_seconds": 0.0}
+{"day": 26, "invocation_seconds": 0.10674739998648874, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 27556, "solver_seconds": 9.610000415705144e-05}
+{"day": 27, "invocation_seconds": 0.08649489999515936, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 27556, "solver_seconds": 8.87999776750803e-05}
+{"day": 18, "invocation_seconds": 0.10768399998778477, "k_chosen": 3, "k_greedy": 3, "n_edges": 3, "phase": "match", "pid": 27556, "solver_seconds": 0.00013730002683587372}
+{"day": 7, "invocation_seconds": 0.05606069997884333, "k_chosen": 2, "k_greedy": 2, "n_edges": 2, "phase": "match", "pid": 27556, "solver_seconds": 0.00010490001295693219}
+{"day": 12, "invocation_seconds": 0.053682300000218675, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 27556, "solver_seconds": 6.399999256245792e-05}
+{"day": 41, "invocation_seconds": 0.09009820001665503, "k_chosen": 2, "k_greedy": 2, "n_edges": 3, "phase": "match", "pid": 27556, "solver_seconds": 0.00015020000864751637}
+{"day": 6, "invocation_seconds": 0.05481969998800196, "k_chosen": 2, "k_greedy": 2, "n_edges": 2, "phase": "match", "pid": 27556, "solver_seconds": 0.00023560001864098012}

@@ -1,0 +1,5 @@
+measure,value,note
+unique_feasible_pairs_assigned,8433,"distinct (world, unordered pair) ever introduced"
+pair_day_opportunities_assigned,8433,"distinct (world, day, pair) introductions"
+sum_daily_feasible_edges,15304,"sum of edges_total over decision days: (day, edge) opportunities, NOT unique pairs"
+sum_daily_selected_pairs,8433,equals intro rows

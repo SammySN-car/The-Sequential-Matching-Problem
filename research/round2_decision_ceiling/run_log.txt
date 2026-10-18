@@ -1,0 +1,502 @@
+﻿[2026-10-12] AMENDMENT 1 filed to analysis_plan.md before any counterfactual outcome was computed or inspected. Reason: matching_unique and alt_diff_endpoints are degenerate (empty-set and M\{p} always qualify), so C5 would have reported a vacuous ~100%. Replaced with alt_same_size / alt_same_size_same_endpoints / alt_same_size_diff_endpoints / batch_underfill. No metric other than those two defective terms changed. Analysis remains frozen.
+[2026-10-12T20:21:33] task0 start manifest files=274 git_lines=5
+[2026-10-12T20:22:50] G0 partial(3 worlds) [{"mismatched": 0, "passed": true, "test": "T1_pair_orientation", "tested": 50}, {"mismatched": 0, "passed": true, "test": "T2_batch_independence", "tested": 50}, {"mismatched": 0, "passed": true, "test": "T2L_snapshot_leak", "tested": 50}] 19.6s
+[2026-10-12T20:32:58] g0_results.json updated: T1_pair_orientation, T2L_snapshot_leak, T2_batch_independence
+[2026-10-12T20:32:58] G0 structure full(126) [{"mismatched": 0, "passed": true, "test": "T1_pair_orientation", "tested": 50}, {"mismatched": 0, "passed": true, "test": "T2_batch_independence", "tested": 50}, {"mismatched": 0, "passed": true, "test": "T2L_snapshot_leak", "tested": 50}] 514.4s
+[2026-10-12T20:39:27] G0 structure re-verify after clone_from optimization [{"mismatched": 0, "passed": true, "test": "T1_pair_orientation", "tested": 50}, {"mismatched": 0, "passed": true, "test": "T2_batch_independence", "tested": 50}, {"mismatched": 0, "passed": true, "test": "T2L_snapshot_leak", "tested": 50}]
+[2026-10-12T20:52:05] g0_results.json updated: T1_pair_orientation, T2L_snapshot_leak, T2_batch_independence
+[2026-10-12T20:52:05] G0 structure full(126) FINAL [{"mismatched": 0, "passed": true, "test": "T1_pair_orientation", "tested": 50}, {"mismatched": 0, "passed": true, "test": "T2_batch_independence", "tested": 50}, {"mismatched": 0, "passed": true, "test": "T2L_snapshot_leak", "tested": 50}] 725.7s
+[2026-10-12T20:52:42] T3 146/development selected=62 compared=62 mismatch=0 sums_ok=True
+[2026-10-12T20:52:50] T3 146/sparse selected=23 compared=23 mismatch=0 sums_ok=True
+[2026-10-12T20:52:57] T3 146/delayed selected=61 compared=61 mismatch=0 sums_ok=True
+[2026-10-12T20:53:03] T3 146/cold_start selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T20:53:10] T3 146/shift selected=62 compared=62 mismatch=0 sums_ok=True
+[2026-10-12T20:53:17] T3 146/drift selected=62 compared=62 mismatch=0 sums_ok=True
+[2026-10-12T20:53:23] T3 147/development selected=95 compared=95 mismatch=0 sums_ok=True
+[2026-10-12T20:53:30] T3 147/delayed selected=94 compared=94 mismatch=0 sums_ok=True
+[2026-10-12T20:53:38] T3 147/cold_start selected=78 compared=78 mismatch=0 sums_ok=True
+[2026-10-12T20:53:45] T3 147/sparse selected=41 compared=41 mismatch=0 sums_ok=True
+[2026-10-12T20:53:52] T3 147/shift selected=99 compared=99 mismatch=0 sums_ok=True
+[2026-10-12T20:53:59] T3 147/drift selected=95 compared=95 mismatch=0 sums_ok=True
+[2026-10-12T20:54:06] T3 148/development selected=70 compared=70 mismatch=0 sums_ok=True
+[2026-10-12T20:54:13] T3 148/sparse selected=17 compared=17 mismatch=0 sums_ok=True
+[2026-10-12T20:54:20] T3 148/delayed selected=68 compared=68 mismatch=0 sums_ok=True
+[2026-10-12T20:54:28] T3 148/cold_start selected=50 compared=50 mismatch=0 sums_ok=True
+[2026-10-12T20:54:35] T3 148/shift selected=71 compared=71 mismatch=0 sums_ok=True
+[2026-10-12T20:54:42] T3 148/drift selected=70 compared=70 mismatch=0 sums_ok=True
+[2026-10-12T20:54:48] T3 149/development selected=87 compared=87 mismatch=0 sums_ok=True
+[2026-10-12T20:54:55] T3 149/sparse selected=23 compared=23 mismatch=0 sums_ok=True
+[2026-10-12T20:55:01] T3 149/delayed selected=92 compared=92 mismatch=0 sums_ok=True
+[2026-10-12T20:55:08] T3 149/cold_start selected=59 compared=59 mismatch=0 sums_ok=True
+[2026-10-12T20:55:15] T3 149/shift selected=89 compared=89 mismatch=0 sums_ok=True
+[2026-10-12T20:55:21] T3 149/drift selected=88 compared=88 mismatch=0 sums_ok=True
+[2026-10-12T20:55:28] T3 150/development selected=54 compared=54 mismatch=0 sums_ok=True
+[2026-10-12T20:55:36] T3 150/sparse selected=17 compared=17 mismatch=0 sums_ok=True
+[2026-10-12T20:55:43] T3 150/cold_start selected=36 compared=36 mismatch=0 sums_ok=True
+[2026-10-12T20:55:50] T3 150/delayed selected=51 compared=51 mismatch=0 sums_ok=True
+[2026-10-12T20:55:57] T3 150/shift selected=54 compared=54 mismatch=0 sums_ok=True
+[2026-10-12T20:56:03] T3 150/drift selected=54 compared=54 mismatch=0 sums_ok=True
+[2026-10-12T20:56:09] T3 151/development selected=97 compared=97 mismatch=0 sums_ok=True
+[2026-10-12T20:56:16] T3 151/sparse selected=27 compared=27 mismatch=0 sums_ok=True
+[2026-10-12T20:56:22] T3 151/cold_start selected=96 compared=96 mismatch=0 sums_ok=True
+[2026-10-12T20:56:29] T3 151/delayed selected=89 compared=89 mismatch=0 sums_ok=True
+[2026-10-12T20:56:36] T3 151/shift selected=98 compared=98 mismatch=0 sums_ok=True
+[2026-10-12T20:56:42] T3 151/drift selected=97 compared=97 mismatch=0 sums_ok=True
+[2026-10-12T20:56:49] T3 152/development selected=54 compared=54 mismatch=0 sums_ok=True
+[2026-10-12T20:56:56] T3 152/sparse selected=21 compared=21 mismatch=0 sums_ok=True
+[2026-10-12T20:57:03] T3 152/cold_start selected=55 compared=55 mismatch=0 sums_ok=True
+[2026-10-12T20:57:10] T3 152/delayed selected=54 compared=54 mismatch=0 sums_ok=True
+[2026-10-12T20:57:17] T3 152/shift selected=53 compared=53 mismatch=0 sums_ok=True
+[2026-10-12T20:57:24] T3 152/drift selected=54 compared=54 mismatch=0 sums_ok=True
+[2026-10-12T20:57:32] T3 153/development selected=67 compared=67 mismatch=0 sums_ok=True
+[2026-10-12T20:57:39] T3 153/cold_start selected=54 compared=54 mismatch=0 sums_ok=True
+[2026-10-12T20:57:47] T3 153/sparse selected=11 compared=11 mismatch=0 sums_ok=True
+[2026-10-12T20:57:53] T3 153/delayed selected=70 compared=70 mismatch=0 sums_ok=True
+[2026-10-12T20:58:00] T3 153/shift selected=72 compared=72 mismatch=0 sums_ok=True
+[2026-10-12T20:58:05] T3 154/development selected=77 compared=77 mismatch=0 sums_ok=True
+[2026-10-12T20:58:09] T3 153/drift selected=68 compared=68 mismatch=0 sums_ok=True
+[2026-10-12T20:58:13] T3 154/sparse selected=22 compared=22 mismatch=0 sums_ok=True
+[2026-10-12T20:58:17] T3 154/cold_start selected=90 compared=90 mismatch=0 sums_ok=True
+[2026-10-12T20:58:22] T3 154/shift selected=79 compared=79 mismatch=0 sums_ok=True
+[2026-10-12T20:58:25] T3 154/delayed selected=82 compared=82 mismatch=0 sums_ok=True
+[2026-10-12T20:58:29] T3 154/drift selected=77 compared=77 mismatch=0 sums_ok=True
+[2026-10-12T20:58:33] T3 155/development selected=100 compared=100 mismatch=0 sums_ok=True
+[2026-10-12T20:58:37] T3 155/cold_start selected=79 compared=79 mismatch=0 sums_ok=True
+[2026-10-12T20:58:42] T3 155/sparse selected=22 compared=22 mismatch=0 sums_ok=True
+[2026-10-12T20:58:45] T3 155/delayed selected=88 compared=88 mismatch=0 sums_ok=True
+[2026-10-12T20:58:49] T3 155/shift selected=100 compared=100 mismatch=0 sums_ok=True
+[2026-10-12T20:58:53] T3 155/drift selected=100 compared=100 mismatch=0 sums_ok=True
+[2026-10-12T20:58:57] T3 156/development selected=88 compared=88 mismatch=0 sums_ok=True
+[2026-10-12T20:59:01] T3 156/sparse selected=24 compared=24 mismatch=0 sums_ok=True
+[2026-10-12T20:59:05] T3 156/cold_start selected=78 compared=78 mismatch=0 sums_ok=True
+[2026-10-12T20:59:08] T3 156/shift selected=87 compared=87 mismatch=0 sums_ok=True
+[2026-10-12T20:59:12] T3 156/delayed selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T20:59:16] T3 156/drift selected=88 compared=88 mismatch=0 sums_ok=True
+[2026-10-12T20:59:20] T3 157/development selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T20:59:25] T3 157/cold_start selected=53 compared=53 mismatch=0 sums_ok=True
+[2026-10-12T20:59:30] T3 157/sparse selected=23 compared=23 mismatch=0 sums_ok=True
+[2026-10-12T20:59:34] T3 157/delayed selected=72 compared=72 mismatch=0 sums_ok=True
+[2026-10-12T20:59:39] T3 157/shift selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T20:59:43] T3 157/drift selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T20:59:47] T3 158/development selected=102 compared=102 mismatch=0 sums_ok=True
+[2026-10-12T20:59:51] T3 158/sparse selected=14 compared=14 mismatch=0 sums_ok=True
+[2026-10-12T20:59:55] T3 158/cold_start selected=78 compared=78 mismatch=0 sums_ok=True
+[2026-10-12T20:59:59] T3 158/delayed selected=98 compared=98 mismatch=0 sums_ok=True
+[2026-10-12T21:00:03] T3 158/shift selected=104 compared=104 mismatch=0 sums_ok=True
+[2026-10-12T21:00:07] T3 158/drift selected=102 compared=102 mismatch=0 sums_ok=True
+[2026-10-12T21:00:11] T3 159/development selected=82 compared=82 mismatch=0 sums_ok=True
+[2026-10-12T21:00:15] T3 159/cold_start selected=59 compared=59 mismatch=0 sums_ok=True
+[2026-10-12T21:00:19] T3 159/sparse selected=11 compared=11 mismatch=0 sums_ok=True
+[2026-10-12T21:00:23] T3 159/delayed selected=79 compared=79 mismatch=0 sums_ok=True
+[2026-10-12T21:00:27] T3 159/shift selected=82 compared=82 mismatch=0 sums_ok=True
+[2026-10-12T21:00:32] T3 159/drift selected=82 compared=82 mismatch=0 sums_ok=True
+[2026-10-12T21:00:36] T3 160/development selected=49 compared=49 mismatch=0 sums_ok=True
+[2026-10-12T21:00:41] T3 160/sparse selected=15 compared=15 mismatch=0 sums_ok=True
+[2026-10-12T21:00:45] T3 160/cold_start selected=54 compared=54 mismatch=0 sums_ok=True
+[2026-10-12T21:00:50] T3 160/delayed selected=53 compared=53 mismatch=0 sums_ok=True
+[2026-10-12T21:00:54] T3 160/shift selected=50 compared=50 mismatch=0 sums_ok=True
+[2026-10-12T21:00:57] T3 161/development selected=84 compared=84 mismatch=0 sums_ok=True
+[2026-10-12T21:01:02] T3 160/drift selected=49 compared=49 mismatch=0 sums_ok=True
+[2026-10-12T21:01:06] T3 161/sparse selected=13 compared=13 mismatch=0 sums_ok=True
+[2026-10-12T21:01:10] T3 161/cold_start selected=77 compared=77 mismatch=0 sums_ok=True
+[2026-10-12T21:01:14] T3 161/delayed selected=91 compared=91 mismatch=0 sums_ok=True
+[2026-10-12T21:01:17] T3 161/shift selected=91 compared=91 mismatch=0 sums_ok=True
+[2026-10-12T21:01:21] T3 161/drift selected=84 compared=84 mismatch=0 sums_ok=True
+[2026-10-12T21:01:26] T3 162/development selected=75 compared=75 mismatch=0 sums_ok=True
+[2026-10-12T21:01:30] T3 162/sparse selected=11 compared=11 mismatch=0 sums_ok=True
+[2026-10-12T21:01:35] T3 162/cold_start selected=72 compared=72 mismatch=0 sums_ok=True
+[2026-10-12T21:01:39] T3 162/delayed selected=72 compared=72 mismatch=0 sums_ok=True
+[2026-10-12T21:01:43] T3 162/shift selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T21:01:47] T3 162/drift selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T21:01:52] T3 163/development selected=61 compared=61 mismatch=0 sums_ok=True
+[2026-10-12T21:01:56] T3 163/sparse selected=19 compared=19 mismatch=0 sums_ok=True
+[2026-10-12T21:02:00] T3 163/cold_start selected=51 compared=51 mismatch=0 sums_ok=True
+[2026-10-12T21:02:04] T3 163/delayed selected=61 compared=61 mismatch=0 sums_ok=True
+[2026-10-12T21:02:08] T3 163/shift selected=61 compared=61 mismatch=0 sums_ok=True
+[2026-10-12T21:02:13] T3 163/drift selected=61 compared=61 mismatch=0 sums_ok=True
+[2026-10-12T21:02:17] T3 143/development selected=114 compared=114 mismatch=0 sums_ok=True
+[2026-10-12T21:02:21] T3 143/sparse selected=18 compared=18 mismatch=0 sums_ok=True
+[2026-10-12T21:02:25] T3 143/cold_start selected=70 compared=70 mismatch=0 sums_ok=True
+[2026-10-12T21:02:30] T3 143/delayed selected=114 compared=114 mismatch=0 sums_ok=True
+[2026-10-12T21:02:34] T3 143/shift selected=113 compared=113 mismatch=0 sums_ok=True
+[2026-10-12T21:02:37] T3 143/drift selected=114 compared=114 mismatch=0 sums_ok=True
+[2026-10-12T21:02:42] T3 144/development selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T21:02:46] T3 144/sparse selected=15 compared=15 mismatch=0 sums_ok=True
+[2026-10-12T21:02:50] T3 144/cold_start selected=69 compared=69 mismatch=0 sums_ok=True
+[2026-10-12T21:02:54] T3 144/delayed selected=80 compared=80 mismatch=0 sums_ok=True
+[2026-10-12T21:02:58] T3 144/shift selected=79 compared=79 mismatch=0 sums_ok=True
+[2026-10-12T21:03:02] T3 144/drift selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T21:03:06] T3 145/development selected=83 compared=83 mismatch=0 sums_ok=True
+[2026-10-12T21:03:10] T3 145/sparse selected=23 compared=23 mismatch=0 sums_ok=True
+[2026-10-12T21:03:14] T3 145/cold_start selected=82 compared=82 mismatch=0 sums_ok=True
+[2026-10-12T21:03:19] T3 145/delayed selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T21:03:23] T3 145/shift selected=81 compared=81 mismatch=0 sums_ok=True
+[2026-10-12T21:03:28] T3 145/drift selected=83 compared=83 mismatch=0 sums_ok=True
+[2026-10-12T21:03:28] g0_results.json updated: T3_isolated_replay
+[2026-10-12T21:03:28] g0_results.json updated: T3_per_world
+[2026-10-12T21:03:28] T3 FULL {"dates_total": 965, "digest_ok": 126, "missing_total": 4209, "msmi_total": 90, "mutual_total": 1279, "n_compared": 8433, "n_immature": 0, "n_label_mismatch": 0, "n_mid_missing": 0, "n_selected": 8433, "n_unreplayed": 8433, "sums_ok": 126, "worlds": 126} 650.9s
+[2026-10-12T21:05:29] T3 146/development selected=62 compared=62 mismatch=0 sums_ok=True
+[2026-10-12T21:05:34] T3 146/sparse selected=23 compared=23 mismatch=0 sums_ok=True
+[2026-10-12T21:05:38] T3 146/delayed selected=61 compared=61 mismatch=0 sums_ok=True
+[2026-10-12T21:05:42] T3 146/cold_start selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T21:05:46] T3 146/shift selected=62 compared=62 mismatch=0 sums_ok=True
+[2026-10-12T21:05:50] T3 146/drift selected=62 compared=62 mismatch=0 sums_ok=True
+[2026-10-12T21:05:54] T3 147/development selected=95 compared=95 mismatch=0 sums_ok=True
+[2026-10-12T21:05:57] T3 147/delayed selected=94 compared=94 mismatch=0 sums_ok=True
+[2026-10-12T21:06:01] T3 147/cold_start selected=78 compared=78 mismatch=0 sums_ok=True
+[2026-10-12T21:06:05] T3 147/sparse selected=41 compared=41 mismatch=0 sums_ok=True
+[2026-10-12T21:06:09] T3 147/shift selected=99 compared=99 mismatch=0 sums_ok=True
+[2026-10-12T21:06:12] T3 147/drift selected=95 compared=95 mismatch=0 sums_ok=True
+[2026-10-12T21:06:16] T3 148/development selected=70 compared=70 mismatch=0 sums_ok=True
+[2026-10-12T21:06:20] T3 148/sparse selected=17 compared=17 mismatch=0 sums_ok=True
+[2026-10-12T21:06:24] T3 148/delayed selected=68 compared=68 mismatch=0 sums_ok=True
+[2026-10-12T21:06:28] T3 148/cold_start selected=50 compared=50 mismatch=0 sums_ok=True
+[2026-10-12T21:06:31] T3 148/shift selected=71 compared=71 mismatch=0 sums_ok=True
+[2026-10-12T21:06:35] T3 148/drift selected=70 compared=70 mismatch=0 sums_ok=True
+[2026-10-12T21:06:39] T3 149/development selected=87 compared=87 mismatch=0 sums_ok=True
+[2026-10-12T21:06:43] T3 149/sparse selected=23 compared=23 mismatch=0 sums_ok=True
+[2026-10-12T21:06:46] T3 149/delayed selected=92 compared=92 mismatch=0 sums_ok=True
+[2026-10-12T21:06:50] T3 149/cold_start selected=59 compared=59 mismatch=0 sums_ok=True
+[2026-10-12T21:06:54] T3 149/shift selected=89 compared=89 mismatch=0 sums_ok=True
+[2026-10-12T21:06:57] T3 149/drift selected=88 compared=88 mismatch=0 sums_ok=True
+[2026-10-12T21:07:01] T3 150/development selected=54 compared=54 mismatch=0 sums_ok=True
+[2026-10-12T21:07:05] T3 150/sparse selected=17 compared=17 mismatch=0 sums_ok=True
+[2026-10-12T21:07:09] T3 150/cold_start selected=36 compared=36 mismatch=0 sums_ok=True
+[2026-10-12T21:07:13] T3 150/delayed selected=51 compared=51 mismatch=0 sums_ok=True
+[2026-10-12T21:07:17] T3 150/shift selected=54 compared=54 mismatch=0 sums_ok=True
+[2026-10-12T21:07:21] T3 150/drift selected=54 compared=54 mismatch=0 sums_ok=True
+[2026-10-12T21:07:25] T3 151/development selected=97 compared=97 mismatch=0 sums_ok=True
+[2026-10-12T21:07:29] T3 151/sparse selected=27 compared=27 mismatch=0 sums_ok=True
+[2026-10-12T21:07:32] T3 151/cold_start selected=96 compared=96 mismatch=0 sums_ok=True
+[2026-10-12T21:07:36] T3 151/delayed selected=89 compared=89 mismatch=0 sums_ok=True
+[2026-10-12T21:07:40] T3 151/shift selected=98 compared=98 mismatch=0 sums_ok=True
+[2026-10-12T21:07:43] T3 151/drift selected=97 compared=97 mismatch=0 sums_ok=True
+[2026-10-12T21:07:47] T3 152/development selected=54 compared=54 mismatch=0 sums_ok=True
+[2026-10-12T21:07:51] T3 152/sparse selected=21 compared=21 mismatch=0 sums_ok=True
+[2026-10-12T21:07:55] T3 152/cold_start selected=55 compared=55 mismatch=0 sums_ok=True
+[2026-10-12T21:07:59] T3 152/delayed selected=54 compared=54 mismatch=0 sums_ok=True
+[2026-10-12T21:08:03] T3 152/shift selected=53 compared=53 mismatch=0 sums_ok=True
+[2026-10-12T21:08:07] T3 152/drift selected=54 compared=54 mismatch=0 sums_ok=True
+[2026-10-12T21:08:11] T3 153/development selected=67 compared=67 mismatch=0 sums_ok=True
+[2026-10-12T21:08:15] T3 153/cold_start selected=54 compared=54 mismatch=0 sums_ok=True
+[2026-10-12T21:08:19] T3 153/sparse selected=11 compared=11 mismatch=0 sums_ok=True
+[2026-10-12T21:08:23] T3 153/delayed selected=70 compared=70 mismatch=0 sums_ok=True
+[2026-10-12T21:08:27] T3 153/shift selected=72 compared=72 mismatch=0 sums_ok=True
+[2026-10-12T21:08:31] T3 154/development selected=77 compared=77 mismatch=0 sums_ok=True
+[2026-10-12T21:08:34] T3 153/drift selected=68 compared=68 mismatch=0 sums_ok=True
+[2026-10-12T21:08:38] T3 154/sparse selected=22 compared=22 mismatch=0 sums_ok=True
+[2026-10-12T21:08:42] T3 154/cold_start selected=90 compared=90 mismatch=0 sums_ok=True
+[2026-10-12T21:08:46] T3 154/shift selected=79 compared=79 mismatch=0 sums_ok=True
+[2026-10-12T21:08:49] T3 154/delayed selected=82 compared=82 mismatch=0 sums_ok=True
+[2026-10-12T21:08:53] T3 154/drift selected=77 compared=77 mismatch=0 sums_ok=True
+[2026-10-12T21:08:56] T3 155/development selected=100 compared=100 mismatch=0 sums_ok=True
+[2026-10-12T21:09:00] T3 155/cold_start selected=79 compared=79 mismatch=0 sums_ok=True
+[2026-10-12T21:09:04] T3 155/sparse selected=22 compared=22 mismatch=0 sums_ok=True
+[2026-10-12T21:09:08] T3 155/delayed selected=88 compared=88 mismatch=0 sums_ok=True
+[2026-10-12T21:09:11] T3 155/shift selected=100 compared=100 mismatch=0 sums_ok=True
+[2026-10-12T21:09:15] T3 155/drift selected=100 compared=100 mismatch=0 sums_ok=True
+[2026-10-12T21:09:19] T3 156/development selected=88 compared=88 mismatch=0 sums_ok=True
+[2026-10-12T21:09:23] T3 156/sparse selected=24 compared=24 mismatch=0 sums_ok=True
+[2026-10-12T21:09:26] T3 156/cold_start selected=78 compared=78 mismatch=0 sums_ok=True
+[2026-10-12T21:09:30] T3 156/shift selected=87 compared=87 mismatch=0 sums_ok=True
+[2026-10-12T21:09:33] T3 156/delayed selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T21:09:37] T3 156/drift selected=88 compared=88 mismatch=0 sums_ok=True
+[2026-10-12T21:09:41] T3 157/development selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T21:09:45] T3 157/cold_start selected=53 compared=53 mismatch=0 sums_ok=True
+[2026-10-12T21:09:49] T3 157/sparse selected=23 compared=23 mismatch=0 sums_ok=True
+[2026-10-12T21:09:53] T3 157/delayed selected=72 compared=72 mismatch=0 sums_ok=True
+[2026-10-12T21:09:57] T3 157/shift selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T21:10:00] T3 157/drift selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T21:10:04] T3 158/development selected=102 compared=102 mismatch=0 sums_ok=True
+[2026-10-12T21:10:08] T3 158/sparse selected=14 compared=14 mismatch=0 sums_ok=True
+[2026-10-12T21:10:12] T3 158/cold_start selected=78 compared=78 mismatch=0 sums_ok=True
+[2026-10-12T21:10:15] T3 158/delayed selected=98 compared=98 mismatch=0 sums_ok=True
+[2026-10-12T21:10:19] T3 158/shift selected=104 compared=104 mismatch=0 sums_ok=True
+[2026-10-12T21:10:23] T3 158/drift selected=102 compared=102 mismatch=0 sums_ok=True
+[2026-10-12T21:10:26] T3 159/development selected=82 compared=82 mismatch=0 sums_ok=True
+[2026-10-12T21:10:31] T3 159/cold_start selected=59 compared=59 mismatch=0 sums_ok=True
+[2026-10-12T21:10:35] T3 159/sparse selected=11 compared=11 mismatch=0 sums_ok=True
+[2026-10-12T21:10:39] T3 159/delayed selected=79 compared=79 mismatch=0 sums_ok=True
+[2026-10-12T21:10:42] T3 159/shift selected=82 compared=82 mismatch=0 sums_ok=True
+[2026-10-12T21:10:46] T3 159/drift selected=82 compared=82 mismatch=0 sums_ok=True
+[2026-10-12T21:10:50] T3 160/development selected=49 compared=49 mismatch=0 sums_ok=True
+[2026-10-12T21:10:54] T3 160/sparse selected=15 compared=15 mismatch=0 sums_ok=True
+[2026-10-12T21:10:58] T3 160/cold_start selected=54 compared=54 mismatch=0 sums_ok=True
+[2026-10-12T21:11:02] T3 160/delayed selected=53 compared=53 mismatch=0 sums_ok=True
+[2026-10-12T21:11:06] T3 160/shift selected=50 compared=50 mismatch=0 sums_ok=True
+[2026-10-12T21:11:10] T3 161/development selected=84 compared=84 mismatch=0 sums_ok=True
+[2026-10-12T21:11:14] T3 160/drift selected=49 compared=49 mismatch=0 sums_ok=True
+[2026-10-12T21:11:18] T3 161/sparse selected=13 compared=13 mismatch=0 sums_ok=True
+[2026-10-12T21:11:21] T3 161/cold_start selected=77 compared=77 mismatch=0 sums_ok=True
+[2026-10-12T21:11:25] T3 161/delayed selected=91 compared=91 mismatch=0 sums_ok=True
+[2026-10-12T21:11:29] T3 161/shift selected=91 compared=91 mismatch=0 sums_ok=True
+[2026-10-12T21:11:33] T3 161/drift selected=84 compared=84 mismatch=0 sums_ok=True
+[2026-10-12T21:11:37] T3 162/development selected=75 compared=75 mismatch=0 sums_ok=True
+[2026-10-12T21:11:41] T3 162/sparse selected=11 compared=11 mismatch=0 sums_ok=True
+[2026-10-12T21:11:45] T3 162/cold_start selected=72 compared=72 mismatch=0 sums_ok=True
+[2026-10-12T21:11:49] T3 162/delayed selected=72 compared=72 mismatch=0 sums_ok=True
+[2026-10-12T21:11:53] T3 162/shift selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T21:11:57] T3 162/drift selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T21:12:01] T3 163/development selected=61 compared=61 mismatch=0 sums_ok=True
+[2026-10-12T21:12:05] T3 163/sparse selected=19 compared=19 mismatch=0 sums_ok=True
+[2026-10-12T21:12:09] T3 163/cold_start selected=51 compared=51 mismatch=0 sums_ok=True
+[2026-10-12T21:12:13] T3 163/delayed selected=61 compared=61 mismatch=0 sums_ok=True
+[2026-10-12T21:12:17] T3 163/shift selected=61 compared=61 mismatch=0 sums_ok=True
+[2026-10-12T21:12:21] T3 163/drift selected=61 compared=61 mismatch=0 sums_ok=True
+[2026-10-12T21:12:26] T3 143/development selected=114 compared=114 mismatch=0 sums_ok=True
+[2026-10-12T21:12:30] T3 143/sparse selected=18 compared=18 mismatch=0 sums_ok=True
+[2026-10-12T21:12:35] T3 143/cold_start selected=70 compared=70 mismatch=0 sums_ok=True
+[2026-10-12T21:12:39] T3 143/delayed selected=114 compared=114 mismatch=0 sums_ok=True
+[2026-10-12T21:12:43] T3 143/shift selected=113 compared=113 mismatch=0 sums_ok=True
+[2026-10-12T21:12:47] T3 143/drift selected=114 compared=114 mismatch=0 sums_ok=True
+[2026-10-12T21:12:51] T3 144/development selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T21:12:55] T3 144/sparse selected=15 compared=15 mismatch=0 sums_ok=True
+[2026-10-12T21:12:59] T3 144/cold_start selected=69 compared=69 mismatch=0 sums_ok=True
+[2026-10-12T21:13:03] T3 144/delayed selected=80 compared=80 mismatch=0 sums_ok=True
+[2026-10-12T21:13:07] T3 144/shift selected=79 compared=79 mismatch=0 sums_ok=True
+[2026-10-12T21:13:11] T3 144/drift selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T21:13:15] T3 145/development selected=83 compared=83 mismatch=0 sums_ok=True
+[2026-10-12T21:13:19] T3 145/sparse selected=23 compared=23 mismatch=0 sums_ok=True
+[2026-10-12T21:13:23] T3 145/cold_start selected=82 compared=82 mismatch=0 sums_ok=True
+[2026-10-12T21:13:28] T3 145/delayed selected=76 compared=76 mismatch=0 sums_ok=True
+[2026-10-12T21:13:32] T3 145/shift selected=81 compared=81 mismatch=0 sums_ok=True
+[2026-10-12T21:13:36] T3 145/drift selected=83 compared=83 mismatch=0 sums_ok=True
+[2026-10-12T21:13:36] g0_results.json updated: T3_isolated_replay
+[2026-10-12T21:13:36] g0_results.json updated: T3_per_world
+[2026-10-12T21:13:36] g0_results.json updated: T5_determinism
+[2026-10-12T21:13:36] T3 PASS2 {"dates_total": 965, "digest_ok": 126, "missing_total": 4209, "msmi_total": 90, "mutual_total": 1279, "n_compared": 8433, "n_immature": 0, "n_label_mismatch": 0, "n_mid_missing": 0, "n_selected": 8433, "n_unreplayed": 0, "sums_ok": 126, "worlds": 126} T5 identical=True 492.5s
+[2026-10-12T21:14:27] g0_replay_validation.md written; verdict=GO
+[2026-10-12T21:14:27] G0 gate: GO
+[2026-10-12T21:17:06] task3 start: section 3 reconstruction
+[2026-10-12T21:25:39] wrote day_edges.jsonl (7560 rows)
+[2026-10-12T21:25:39] reconciliation {"max_edges_per_day": 37, "n_days": 7560, "n_days_frozen": 7560, "n_pairs_ge2": 2087, "n_pairs_ge2_frozen": 2087, "n_zero": 3566, "n_zero_frozen": 3566, "per_day_edge_mismatch": 0, "per_day_pair_mismatch": 0, "reconciled": true, "sum_edges_frozen": 15304, "sum_edges_total": 15304, "sum_n_pairs": 8433, "sum_n_pairs_frozen": 8433}
+[2026-10-12T22:18:47] task3 start: section 3 reconstruction
+[2026-10-12T22:33:17] wrote day_edges.jsonl (7560 rows)
+[2026-10-12T22:33:17] reconciliation {"max_edges_per_day": 37, "n_days": 7560, "n_days_frozen": 7560, "n_pairs_ge2": 2087, "n_pairs_ge2_frozen": 2087, "n_zero": 3566, "n_zero_frozen": 3566, "per_day_edge_mismatch": 0, "per_day_pair_mismatch": 0, "reconciled": true, "sum_edges_frozen": 15304, "sum_edges_total": 15304, "sum_n_pairs": 8433, "sum_n_pairs_frozen": 8433}
+[2026-10-12T22:33:17] wrote opportunity_summary.csv (36 strata rows)
+[2026-10-12T22:33:17] task3 done
+[2026-10-12T22:35:39] S3 headline: 3566/7560 days empty (47.2%%); alt_same_size on 2288 days (30.3%%); alt_same_endpoints 0.82%% vs alt_diff_endpoints 30.2%%; addition_possible 0 everywhere; alt_unknown 0; density 10+ days (291) have alt=1.0 and underfill 0.505; sparse variant alt=4.8%%.
+[2026-10-12T22:39:16] task4 start: counterfactual pass (G0 GO confirmed)
+[2026-10-12T22:53:01] counterfactual rows built: 15304
+[2026-10-12T22:53:02] wrote counterfactual_pairs.jsonl (15304 rows)
+[2026-10-12T22:53:02] wrote opportunity_by_world.csv (126 worlds)
+[2026-10-12T22:53:02] V V1_selected_pair_agreement passed=1 :: 8433/8433 selected pairs match frozen labels
+[2026-10-12T22:53:02] V V2_batch_independence passed=1 :: established by G0 T2 (0 mismatches)
+[2026-10-12T22:53:02] V V3_maturity passed=1 :: 15304 rows, 0 None labels at horizon 100
+[2026-10-12T22:53:02] V V4_count_integrity passed=1 :: total=15304 selected=8433 duplicate_keys=0
+[2026-10-12T22:53:02] V V5_orientation passed=1 :: all keys sorted ascending; G0 T1 passed
+[2026-10-12T22:53:02] V V6_feature_legality passed=1 :: 34 feature columns, none banned
+[2026-10-12T22:53:02] task4 done
+[2026-10-12T22:54:04] S4: 15304 opportunities, cf MSMI positives 173 (prev 0.0113); selected rate 0.0107 vs unselected 0.0121; 41/126 worlds have zero positives
+[2026-10-12T22:55:28] S4 reachability: 173 cf positives, 160 on choice days (recoverable ceiling), 13 forced; selection z=-0.819 p=0.413 (no association)
+[2026-10-12T23:11:07] task4 start: counterfactual pass (G0 GO confirmed)
+[2026-10-12T23:25:39] counterfactual rows built: 15304
+[2026-10-12T23:25:40] wrote counterfactual_pairs.jsonl (15304 rows)
+[2026-10-12T23:25:41] wrote pair_state.jsonl (15304 rows)
+[2026-10-12T23:25:41] wrote pair_state.jsonl (15304 rows)
+[2026-10-12T23:25:41] wrote opportunity_by_world.csv (126 worlds)
+[2026-10-12T23:25:41] V V1_selected_pair_agreement passed=1 :: 8433/8433 selected pairs match frozen labels
+[2026-10-12T23:25:41] V V2_batch_independence passed=1 :: established by G0 T2 (0 mismatches)
+[2026-10-12T23:25:41] V V3_maturity passed=1 :: 15304 rows, 0 None labels at horizon 100
+[2026-10-12T23:25:41] V V4_count_integrity passed=1 :: total=15304 selected=8433 duplicate_keys=0
+[2026-10-12T23:25:41] V V5_orientation passed=1 :: all keys sorted ascending; G0 T1 passed
+[2026-10-12T23:25:41] V V6_feature_legality passed=1 :: 34 feature columns, none banned
+[2026-10-12T23:25:41] task4 done
+[2026-10-12T23:35:49] task5 start: section 5 signal analysis
+[2026-10-12T23:35:51] frame rows=15304 positives=173 seeds=21 power=ok
+[2026-10-12T23:36:01] F1_baseline_count_score AUC=0.5038 AP=0.0137 within_state=0.5273 states=159
+[2026-10-12T23:36:09] F2_soft_state AUC=0.5634 AP=0.0175 within_state=0.5881 states=159
+[2026-10-12T23:36:18] F3_public_profile AUC=0.5508 AP=0.0142 within_state=0.5443 states=159
+[2026-10-12T23:36:27] F4_full_legal_observables AUC=0.5233 AP=0.0128 within_state=0.5177 states=159
+[2026-10-12T23:36:34] F5_state_only AUC=0.5289 AP=0.0124 within_state=0.5000 states=159
+[2026-10-12T23:36:45] ablation F2_minus_F1 delta=0.0596 ci=[0.0283, 0.0922]
+[2026-10-12T23:36:55] ablation F3_minus_F1 delta=0.0470 ci=[-0.0075, 0.1008]
+[2026-10-12T23:37:06] ablation F4_minus_F3 delta=-0.0275 ci=[-0.0714, 0.0136]
+[2026-10-12T23:37:07] wrote selection_effect.csv
+[2026-10-12T23:37:56] heterogeneity {"n_permutations": 200, "n_worlds": 21, "null_mean": 0.16743845566258103, "null_p_ge_observed": 0.5771144278606966, "observed_spread": 0.1623440297074796}
+[2026-10-12T23:37:56] wrote within_state_signal.csv (160 rows), ablation_deltas.csv (3)
+[2026-10-12T23:37:56] task5 done
+[2026-10-13T00:07:29] DEVIATION (implementation clarification, no metric changed): s3_signal.py stable_bucket() uses md5-truncated buckets instead of builtin hash() - hash() on str is PYTHONHASHSEED-salted per process and therefore is NOT the "fixed integer bucket" analysis_plan.md 5.1 declares. Bucket counts (GENDER_BUCKETS=7, ZONE_BUCKETS=97) unchanged.
+[2026-10-13T00:07:29] S5 headline: F1(score/count)=0.504 AUC [0.423,0.596] = chance; F2(+soft channel state)=0.563 AUC / 0.588 within-state, ablation F2-F1 delta=+0.0596 ci=[0.0283,0.0922] EXCLUDES ZERO; F4(everything)=0.523 - more legal features WORSE than F2; selection gap F1=-0.00067 ci=[-0.00144,-0.00002]; heterogeneity null p=0.577 (no real between-world variation); top1_hit~0.20
+[2026-10-13T00:12:22] task6 start: local oracle
+[2026-10-13T00:12:28] wrote oracle_by_day.jsonl (7560 rows)
+[2026-10-13T00:12:28] oracle overall: {"mean_collector_positives": 0.011905, "mean_local_gap": 0.010979, "mean_maxcard_positives": 1.149471, "mean_oracle_positives": 0.022884, "median_local_gap": 0, "n_days": 7560, "n_days_gap_ge1": 82, "n_days_oracle_pos_ge1": 166, "n_enum_failed": 0, "p90_local_gap": 0, "rel_gap_mean": 0.487952, "share_days_positive_headroom": 0.010847, "share_gap_ge1_among_oracle_pos": 0.493976, "stratum_type": "overall", "stratum_value": "all"}
+[2026-10-13T00:12:28] wrote local_oracle_headroom.csv (36 strata rows)
+[2026-10-13T00:12:28] task6 done
+[2026-10-13T00:17:03] S6: 166 days with oracle>=1 positive, 82 days gap>=1 (49.4%% of oracle days); sum gap=83; rel_gap_mean=0.488; n_enum_failed=0; brute-force+networkx agree
+[2026-10-13T00:29:28] task5 start: section 5 signal analysis
+[2026-10-13T00:29:29] frame rows=15304 positives=173 seeds=21 power=ok
+[2026-10-13T00:29:36] F1_baseline_count_score AUC=0.5038 AP=0.0137 within_state=0.5273 states=159
+[2026-10-13T00:29:41] F2_soft_state AUC=0.5634 AP=0.0175 within_state=0.5881 states=159
+[2026-10-13T00:29:47] F3_public_profile AUC=0.5508 AP=0.0142 within_state=0.5443 states=159
+[2026-10-13T00:29:53] F4_full_legal_observables AUC=0.5233 AP=0.0128 within_state=0.5177 states=159
+[2026-10-13T00:29:57] F5_state_only AUC=0.5289 AP=0.0124 within_state=0.5000 states=159
+[2026-10-13T00:30:02] ablation F2_minus_F1 delta=0.0596 ci=[0.0283, 0.0922]
+[2026-10-13T00:30:08] ablation F3_minus_F1 delta=0.0470 ci=[-0.0075, 0.1008]
+[2026-10-13T00:30:14] ablation F4_minus_F3 delta=-0.0275 ci=[-0.0714, 0.0136]
+[2026-10-13T00:30:14] wrote selection_effect.csv
+[2026-10-13T00:30:38] heterogeneity {"n_permutations": 200, "n_worlds": 21, "null_mean": 0.16743845566258103, "null_p_ge_observed": 0.5771144278606966, "observed_spread": 0.1623440297074796}
+[2026-10-13T00:30:38] wrote oof_scores.jsonl (15304 rows)
+[2026-10-13T00:30:38] wrote within_state_signal.csv (160 rows), ablation_deltas.csv (3)
+[2026-10-13T00:30:38] task5 done
+[2026-10-13T00:33:33] task5e start: decision relevance (question E)
+[2026-10-13T00:34:06] task5e start: decision relevance (question E)
+[2026-10-13T00:34:06] headroom states=82, of which with a composition choice=82
+[2026-10-13T00:36:47] task5e start: decision relevance (question E)
+[2026-10-13T00:36:47] headroom states=82, of which with a composition choice=82
+[2026-10-13T00:36:47] E F1_baseline_count_score states=82 auc_defined=82 within_auc=0.485098 argmax_beats=41/82
+[2026-10-13T00:36:47] E F2_soft_state states=82 auc_defined=82 within_auc=0.533647 argmax_beats=31/82
+[2026-10-13T00:36:47] E F3_public_profile states=82 auc_defined=82 within_auc=0.436867 argmax_beats=16/82
+[2026-10-13T00:36:47] E F4_full_legal_observables states=82 auc_defined=82 within_auc=0.495537 argmax_beats=18/82
+[2026-10-13T00:36:47] E F5_state_only states=82 auc_defined=82 within_auc=0.5 argmax_beats=55/82
+[2026-10-13T00:36:47] wrote decision_relevance.csv
+[2026-10-13T00:36:47] task5e done
+[2026-10-13T00:38:10] S5-E decision relevance (82 headroom+choice states): F1 within_auc=0.485 argmax_beats_collector 41/82 (50%); F2 0.534 / 31/82 (38%); F4 0.496 / 18/82 (22%); F5_state_only within_auc=0.500 EXACTLY (degenerate - no pair discrimination) yet argmax_beats 55/82 (67%), proving the argmax statistic is confounded by max-cardinality effects. No model with real pair discrimination beats greedy on headroom days.
+[2026-10-13T00:38:10] PLAN GAP CLOSED: analysis_plan.md 5.3 question E was omitted from plan_implementation.md Task 5; implemented as scripts/s3b_question_e.py + decision_relevance.csv (8. safeguard: all preregistered metrics reported).
+[2026-10-13T00:38:10] K6 FROZEN RULE READ FROM analysis_plan.md L437 ("F1 materially worse than F2/F3/F4 within-state, with CI excluding 0"), NOT the implementation plan's transcribed "F4-F1" wording; the three preregistered 5.3(C) contrasts are F2-F1, F3-F1, F4-F3 and are what s3_signal.py computes.
+[2026-10-13T00:40:29] task7 start: headroom synthesis
+[2026-10-13T00:41:17] task7 start: headroom synthesis
+[2026-10-13T00:41:17] wrote headroom_synthesis.json
+[2026-10-13T00:41:17] K1 classification=unresolved :: Too few genuine decision opportunities
+[2026-10-13T00:41:17] K2 classification=unresolved :: Available choices carry no usable information
+[2026-10-13T00:41:17] K3 classification=unresolved :: Information exists but sits in unselected choices
+[2026-10-13T00:41:17] K4 classification=supported :: Choices rarely change the MSMI outcome
+[2026-10-13T00:41:17] K5 classification=unresolved :: Choices structurally interchangeable but outcomes stochastic
+[2026-10-13T00:41:17] K6 classification=unresolved :: The collector score is miscalibrated to MSMI
+[2026-10-13T00:41:17] task7 done
+[2026-10-13T00:47:39] wrote report.md (145 lines)
+[2026-10-13T00:47:43] protected inputs unchanged = True (274 files)
+[2026-10-13T00:47:43] git status unchanged = True
+[2026-10-13T00:47:43] wrote integrity.sha256 (38 entries)
+[2026-10-13T00:47:43] task8 done
+[2026-10-13T00:49:04] FINAL VERIFICATION PASSED {"g0_digest_ok": 126, "g0_immature": 0, "g0_t3_compared": 8433, "g0_t3_mismatch": 0, "g0_t5_determinism": true, "g0_unreplayed": 0, "git_status_unchanged": true, "n_protected": 274, "oracle_bruteforce_disagree": 0, "oracle_enum_failed": 0, "oracle_solver_passed": true, "protected_unchanged": true, "reconciliation_ok": true, "v_checks_all_pass": true, "v_checks_n": 6}
+[2026-10-13T00:52:07] wrote report.md (149 lines)
+[2026-10-13T00:52:07] protected inputs unchanged = True (274 files)
+[2026-10-13T00:52:07] git status unchanged = True
+[2026-10-13T00:52:07] wrote integrity.sha256 (38 entries)
+[2026-10-13T00:52:07] task8 done
+[2026-10-13T00:53:05] audit complete: all deliverables present, integrity verified
+[2026-10-13T00:54:49] wrote report.md (149 lines)
+[2026-10-13T00:54:49] protected inputs unchanged = True (274 files)
+[2026-10-13T00:54:49] git status unchanged = True
+[2026-10-13T00:54:49] wrote integrity.sha256 (38 entries)
+[2026-10-13T00:54:49] task8 done
+[2026-10-13T00:55:27] wrote report.md (149 lines)
+[2026-10-13T00:55:28] protected inputs unchanged = True (274 files)
+[2026-10-13T00:55:28] git status unchanged = True
+[2026-10-13T00:55:28] sealing integrity.sha256 (final step; nothing is logged after this)
+[2026-10-13T01:25:02] fc_selectors start (base_seed=4242, R=100)
+[2026-10-13T01:26:13] fc_selectors start (base_seed=4242, R=100)
+[2026-10-13T01:26:14]   1500/7560 states  (0.9s)
+[2026-10-13T01:26:18]   3000/7560 states  (4.9s)
+[2026-10-13T01:26:18]   4500/7560 states  (5.3s)
+[2026-10-13T01:26:19]   6000/7560 states  (5.7s)
+[2026-10-13T01:26:19]   7500/7560 states  (6.3s)
+[2026-10-13T01:26:19] fc_selectors: 7560 states, solver/constraint failures=0
+[2026-10-13T01:26:19] wrote per_state_results.jsonl (7560 rows)
+[2026-10-13T01:26:19] wrote per_state_results.csv (7560 rows, 39 cols)
+[2026-10-13T01:26:19] task selectors done (6.4s)
+[2026-10-13T01:30:03] fc_stats start
+[2026-10-13T01:30:03] wrote per_seed_results.csv (21 rows)
+[2026-10-13T01:30:03] wrote per_variant_results.csv (6 rows)
+[2026-10-13T01:30:03]   F1-SCORE delta=-9.00  CI95[-1.429,+0.429]  seeds +/0/- = 5/7/9
+[2026-10-13T01:30:03]   F2-SOFT delta=+4.00  CI95[-0.333,+0.762]  seeds +/0/- = 7/9/5
+[2026-10-13T01:30:03]   F3-OBSERV delta=-5.00  CI95[-0.905,+0.429]  seeds +/0/- = 8/5/8
+[2026-10-13T01:30:03]   F4-RANDOM delta=-4.75  CI95[-0.881,+0.320]  seeds +/0/- = 12/1/8
+[2026-10-13T01:30:03]   F5-ORACLE delta=+71.00  CI95[+2.190,+4.571]  seeds +/0/- = 17/4/0
+[2026-10-13T01:30:03] CC-01: reproducing the audit F5_state_only argmax on the 82 headroom states
+[2026-10-13T01:30:47] fc_stats start
+[2026-10-13T01:30:47] wrote per_seed_results.csv (21 rows)
+[2026-10-13T01:30:47] wrote per_variant_results.csv (6 rows)
+[2026-10-13T01:30:47]   F1-SCORE delta=-9.00  CI95[-1.429,+0.429]  seeds +/0/- = 5/7/9
+[2026-10-13T01:30:47]   F2-SOFT delta=+4.00  CI95[-0.333,+0.762]  seeds +/0/- = 7/9/5
+[2026-10-13T01:30:47]   F3-OBSERV delta=-5.00  CI95[-0.905,+0.429]  seeds +/0/- = 8/5/8
+[2026-10-13T01:30:47]   F4-RANDOM delta=-4.75  CI95[-0.881,+0.320]  seeds +/0/- = 12/1/8
+[2026-10-13T01:30:47]   F5-ORACLE delta=+71.00  CI95[+2.190,+4.571]  seeds +/0/- = 17/4/0
+[2026-10-13T01:30:47] CC-01: reproducing the audit F5_state_only argmax on the 82 headroom states
+[2026-10-13T01:30:48]   CC-01: audit statistic pairs=323 vs greedy pairs=307 (flat in 82/82 states)
+[2026-10-13T01:30:48] wrote selector_summary.csv (5 rows)
+[2026-10-13T01:30:48] task stats done
+[2026-10-13T01:37:31] report start
+[2026-10-13T01:38:10] report start
+[2026-10-13T01:38:36] report start
+[2026-10-13T01:38:36] wrote report.md (259 lines)
+[2026-10-13T01:38:36] protected inputs unchanged = True (274 files)
+[2026-10-13T01:38:36] sealing integrity.sha256 (final step; nothing is logged after this)
+[2026-10-13T01:39:49] fc_stats start
+[2026-10-13T01:39:49] wrote per_seed_results.csv (21 rows)
+[2026-10-13T01:39:49] wrote per_variant_results.csv (6 rows)
+[2026-10-13T01:39:49]   F1-SCORE delta=-9.00  CI95[-1.429,+0.429]  seeds +/0/- = 5/7/9
+[2026-10-13T01:39:49]   F2-SOFT delta=+4.00  CI95[-0.333,+0.762]  seeds +/0/- = 7/9/5
+[2026-10-13T01:39:49]   F3-OBSERV delta=-5.00  CI95[-0.905,+0.429]  seeds +/0/- = 8/5/8
+[2026-10-13T01:39:49]   F4-RANDOM delta=-4.75  CI95[-0.881,+0.320]  seeds +/0/- = 12/1/8
+[2026-10-13T01:39:49]   F5-ORACLE delta=+71.00  CI95[+2.190,+4.571]  seeds +/0/- = 17/4/0
+[2026-10-13T01:39:50] CC-01: reproducing the audit F5_state_only argmax on the 82 headroom states
+[2026-10-13T01:39:50]   CC-01: audit statistic pairs=323 vs greedy pairs=307 (flat in 82/82 states)
+[2026-10-13T01:39:50]   CONTRAST F2-F1 delta=+13  CI95[+0.048,+1.238]  seeds +/0/- = 11/7/3
+[2026-10-13T01:39:50] wrote selector_summary.csv (5 rows)
+[2026-10-13T01:39:50] task stats done
+[2026-10-13T01:41:18] report start
+[2026-10-13T01:41:18] wrote report.md (259 lines)
+[2026-10-13T01:41:18] protected inputs unchanged = True (274 files)
+[2026-10-13T01:41:18] sealing integrity.sha256 (final step; nothing is logged after this)
+[2026-10-13T01:49:50] report start
+[2026-10-13T01:49:50] wrote report.md (259 lines)
+[2026-10-13T01:49:50] protected inputs unchanged = True (274 files)
+[2026-10-13T01:49:50] sealing integrity.sha256 (final step; nothing is logged after this)
+[2026-10-13T01:55:51] DEVIATION (external, not from this study): a 0-byte untracked grass.db appeared in the repo root at 2026-10-13 01:36:03, after the study baseline was captured. Verified: no file in the repo or in round2_decision_ceiling/scripts or round2_fixed_cardinality/scripts references "grass" or any .db path; all study writes are confined to research/round2_fixed_cardinality/ (plus the ceiling run log). Not deleted (not ours to delete); isolated in the verification rather than ignored.
+[2026-10-13T01:55:51] report start
+[2026-10-13T01:55:51] wrote report.md (259 lines)
+[2026-10-13T01:55:51] protected inputs unchanged = True (274 files)
+[2026-10-13T01:55:51] sealing integrity.sha256 (final step; nothing is logged after this)
+[2026-10-13T02:07:13] report start
+[2026-10-13T02:07:14] wrote report.md (259 lines)
+[2026-10-13T02:07:14] protected inputs unchanged = True (274 files)
+[2026-10-13T02:07:14] sealing integrity.sha256 (final step; nothing is logged after this)
+[2026-10-13T02:07:52] report start
+[2026-10-13T02:07:52] wrote report.md (259 lines)
+[2026-10-13T02:07:52] protected inputs unchanged = True (274 files)
+[2026-10-13T02:07:52] sealing integrity.sha256 (final step; nothing is logged after this)
+[2026-10-13T02:16:31] missed-oracle validation start
+[2026-10-13T02:16:31] V1: rebuilding frame and recomputing OOF scores
+[2026-10-13T02:16:37]   V1 recomputed OOF max|diff|: F1=0.0 F2=0.0 (6.1s)
+[2026-10-13T02:16:37] V4/V5: recomputing selectors at exact k_t
+[2026-10-13T02:17:39] missed-oracle validation start
+[2026-10-13T02:17:39] V1: rebuilding frame and recomputing OOF scores
+[2026-10-13T02:17:44]   V1 recomputed OOF max|diff|: F1=0.0 F2=0.0 (5.2s)
+[2026-10-13T02:17:44] V4/V5: recomputing selectors at exact k_t
+[2026-10-13T02:17:49] wrote recomputed_sets.jsonl
+[2026-10-13T02:17:49] missed-oracle validation PASS (10.2s)
+[2026-10-13T02:28:30] mo_analyze start
+[2026-10-13T02:28:31] wrote selection_diagnostics.jsonl (7560 rows)
+[2026-10-13T02:28:31] wrote selection_diagnostics (7560 rows) and positive_edge_ranks (67 rows)
+[2026-10-13T02:28:31] mo_analyze core done (0.6s)
+[2026-10-13T02:30:04] mo_analyze start
+[2026-10-13T02:30:05] wrote selection_diagnostics.jsonl (7560 rows)
+[2026-10-13T02:30:05] wrote selection_diagnostics (7560 rows) and positive_edge_ranks (67 rows)
+[2026-10-13T02:30:05] mo_analyze core done (0.6s)
+[2026-10-13T02:31:22] mo_analyze start
+[2026-10-13T02:31:23] wrote selection_diagnostics.jsonl (7560 rows)
+[2026-10-13T02:31:23] wrote selection_diagnostics (7560 rows) and positive_edge_ranks (173 rows)
+[2026-10-13T02:31:23] mo_analyze core done (0.7s)
+[2026-10-13T02:33:59] mo_stats start
+[2026-10-13T02:34:42] mo_stats start
+[2026-10-13T02:34:42] wrote per_seed_results.jsonl (21 rows)
+[2026-10-13T02:34:42] mo_stats done (0.2s)
+[2026-10-13T02:35:15] mo_analyze start
+[2026-10-13T02:35:16] wrote selection_diagnostics.jsonl (7560 rows)
+[2026-10-13T02:35:16] wrote selection_diagnostics (7560 rows) and positive_edge_ranks (173 rows)
+[2026-10-13T02:35:16] mo_analyze core done (0.7s)
+[2026-10-13T02:35:17] mo_stats start
+[2026-10-13T02:35:18] wrote per_seed_results.jsonl (21 rows)
+[2026-10-13T02:35:18] mo_stats done (0.3s)
+[2026-10-13T02:37:31] mo_tail start
+[2026-10-13T02:37:33] mo_tail done (1.5s)
+[2026-10-13T02:38:52] mo_tail start
+[2026-10-13T02:38:54] mo_tail done (2.3s)
+[2026-10-13T02:39:52] mo_taxonomy start
+[2026-10-13T02:39:53] wrote headroom_taxonomy_per_state.jsonl (7478 rows)
+[2026-10-13T02:39:53] mo_taxonomy done (0.3s)
+[2026-10-13T02:45:17] mo_tail start
+[2026-10-13T02:45:34] mo_tail done (17.1s)
+[2026-10-13T02:51:57] wrote gap_decomposition.csv (9 rows) and mechanism_flags.csv (3 rows)

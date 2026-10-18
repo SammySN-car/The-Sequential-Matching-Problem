@@ -1,0 +1,12 @@
+{
+ "audit_argmax_rule": "max total F5_state_only, tie-break = LARGEST matching",
+ "audit_argmax_total_pairs": 323,
+ "audit_argmax_total_positives": 16,
+ "conclusion": "The audit statistic selected 323 pairs against greedy's 307 on the same states. Its apparent advantage is therefore a VOLUME effect, not a ranking effect: F5_state_only is flat within all 82 headroom states, so the argmax tie-break is the only thing choosing among matchings.",
+ "fixed_k_F5_ORACLE_positives": 73,
+ "fixed_k_total_pairs": 307,
+ "greedy_pairs": 307,
+ "greedy_positives": 2,
+ "n_headroom_states": 82,
+ "n_states_where_F5_state_only_is_flat": 82
+}

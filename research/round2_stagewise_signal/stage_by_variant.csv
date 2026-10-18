@@ -1,0 +1,7 @@
+variant,n_opportunities,n_both_responded,rate_both_responded,n_mutual,rate_mutual,n_date,rate_date,n_date_within_deadline,rate_date_within_deadline,n_timely_second,rate_timely_second,n_final_msmi,rate_final_msmi,lost_responded_to_mutual,lost_mutual_to_date,lost_date_missed_deadline,lost_date_to_timely_second,lost_deadline_and_second_to_msmi
+cold_start,2476,1471,0.594103,371,0.149838,280,0.113086,280,0.113086,34,0.013732,34,0.013732,1100,91,0,246,246
+delayed,3023,1831,0.60569,438,0.144889,337,0.111479,329,0.108832,33,0.010916,32,0.010586,1393,101,8,304,297
+development,3089,1844,0.596957,454,0.146973,356,0.115248,356,0.115248,37,0.011978,37,0.011978,1390,98,0,319,319
+drift,3102,1850,0.596389,429,0.138298,335,0.107995,335,0.107995,35,0.011283,35,0.011283,1421,94,0,300,300
+shift,3125,1864,0.59648,413,0.13216,319,0.10208,319,0.10208,30,0.0096,30,0.0096,1451,94,0,289,289
+sparse,489,288,0.588957,78,0.159509,62,0.126789,62,0.126789,5,0.010225,5,0.010225,210,16,0,57,57

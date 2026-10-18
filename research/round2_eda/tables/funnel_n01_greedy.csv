@@ -1,0 +1,11 @@
+stage,n,denominator,denominator_stage,rate_pct,wilson95_lo_pct,wilson95_hi_pct
+assigned,8433,8433,-,100.0,99.954,100.0
+both_responded,4743,8433,assigned,56.243,55.182,57.299
+both_accepted_(mutual),1279,4743,both_responded,26.966,25.722,28.247
+date_happened,965,1279,mutual,75.45,73.017,77.73
+second_yes_within_3d,91,965,date,9.43,7.744,11.438
+msmi_(date_le_30d),90,91,second,98.901,94.035,99.806
+msmi_from_assigned,90,8433,assigned,1.067,0.869,1.31
+exactly_one_no_response,3171,8433,assigned,37.602,36.574,38.642
+both_no_response,519,8433,assigned,6.154,5.661,6.688
+declined_among_responded,3464,4743,both_responded,73.034,71.753,74.278

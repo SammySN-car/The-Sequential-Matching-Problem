@@ -1,0 +1,122 @@
+{
+  "schema": "round2_stage3_promotion_audit_v1",
+  "date": "2026-10-07",
+  "stage": "stage3",
+  "candidate": "floor_div_2",
+  "rule": "float(model[\"floor\"]) / 2.0",
+  "threshold": 0.003952587007648379,
+  "original_frozen_floor": 0.007905174015296758,
+  "shim_sha256": "A76FD0EE0C2B9579A6E6858081C62592A298066386C0D09013CF844FAA07991F",
+  "preregistration_sha256": "FA11A2FB4DF53D507AA8C4D1A905025FD6392F5B656CC997CEE83FED4BF2D491",
+  "promotion_status": "READY_FOR_FROZEN_CANDIDATE",
+  "promotion_status_code": 2,
+  "promotion_scope": "freeze floor/2 as the single candidate for a separate, freshly pre-registered final/generalization/promotion evaluation; NOT proven optimal, NOT proven to beat greedy, NOT proven to generalize; holdout performance unknown",
+  "experimental_integrity": "PASS",
+  "causal_interpretation": "PASS",
+  "performance_evidence": "PASS_AS_CANDIDACY_EVIDENCE_ONLY",
+  "robustness": "PASS",
+  "research_discipline": "PASS",
+  "evidence_level": "moderate",
+  "evidence_level_rationale": "integrity all-PASS with double-hash immutability; causal volume result replicated on two independent seed sets (18+/0/0-); but primary rests on 13 vs 9 vs 10 MSMI events with CI including 0, only 3 descriptive seed clusters, one fresh seed set, and the candidate still trails Round 1 greedy's observed primary",
+  "primary_metric_name": "MSMI_per_100",
+  "primary_metric": {
+    "frozen": 0.25,
+    "intermediate": 0.3611,
+    "nofloor": 0.2778
+  },
+  "primary_metric_events": {
+    "frozen": 9,
+    "intermediate": 13,
+    "nofloor": 10
+  },
+  "primary_metric_intermediate_minus_frozen_ci95_descriptive": [-0.167, 0.25],
+  "primary_metric_ci_includes_zero": true,
+  "secondary_metrics": {
+    "intro_per_ep": {"frozen": 57.94, "intermediate": 64.11, "nofloor": 69.17},
+    "mutual_per_intro": {"frozen": 0.1467, "intermediate": 0.1482, "nofloor": 0.1349},
+    "coverage": {"frozen": 0.3086, "intermediate": 0.3142, "nofloor": 0.3153},
+    "ask_cost_per_ep": {"frozen": 423.3, "intermediate": 417.9, "nofloor": 417.9},
+    "invalid": {"frozen": 0, "intermediate": 0, "nofloor": 0}
+  },
+  "volume_result": {
+    "nofloor_minus_frozen_intro": 11.22,
+    "nofloor_minus_frozen_sign": "18+/0/0-",
+    "nofloor_minus_frozen_ci95_descriptive": [10.5, 11.8],
+    "intermediate_minus_frozen_intro": 6.17,
+    "intermediate_minus_frozen_sign": "15+/1/2-",
+    "intermediate_minus_frozen_ci95_descriptive": [3.67, 8.33],
+    "stage2_replicated_on_fresh_seeds": true
+  },
+  "greedy_round1_primary": 0.389,
+  "greedy_comparison": {
+    "candidate_below_greedy": true,
+    "gap": 0.0279,
+    "paired": false,
+    "note": "different seed sets (greedy 101-103 vs candidate 104-106); no stored uncertainty interval for the comparison; none invented; does not establish greedy > floor/2 on common worlds nor floor/2 >= greedy anywhere"
+  },
+  "threshold_exploration_status": "ENDED",
+  "threshold_exploration_reaffirmed": true,
+  "private_holdout_touched": false,
+  "new_threshold_candidate_created": false,
+  "code_modified": false,
+  "policy_py_hash": "379CC2D9",
+  "policy_ac_py_hash": "90FB9AD3",
+  "historical_records_frozen": true,
+  "episodes": {"per_arm": 18, "total": 54, "valid": 54, "invalid": 0},
+  "seeds": [104, 105, 106],
+  "variants": ["development", "sparse", "cold_start", "delayed", "shift", "drift"],
+  "arms": {
+    "frozen": "float(model[\"floor\"])",
+    "intermediate": "float(model[\"floor\"]) / 2.0",
+    "nofloor": "-inf"
+  },
+  "integrity_checks": {
+    "preregistered_before_execution": true,
+    "shim_hash_registered_before_runs": true,
+    "both_hashes_immutable_after_execution": true,
+    "deterministic_rerun_identical_excl_inference_seconds": true,
+    "diagnostics_all_fidelity_ok": "9/9",
+    "fallbacks": 0,
+    "candidate_caps": 0,
+    "exceptions": 0,
+    "protocol_violations": 0,
+    "hidden_policy_changes": 0,
+    "frozen_hashes_unchanged": true,
+    "round1_stage15_stage2_records_intact": true,
+    "git_new_commits": 0
+  },
+  "robustness_checks": {
+    "intro_above_frozen_all_six_variants": true,
+    "primary_at_or_above_frozen_variants": "5/6",
+    "adverse_cells": ["delayed: MSMI/100 0 vs 0.3333 both other arms (noise-level at these counts)"],
+    "worst_variant_behavior": "no catastrophic cell; sparse primary 0.1667 >= frozen 0",
+    "deterministic": true,
+    "within_protocol_constraints": true
+  },
+  "evidence_caveats": [
+    "MSMI event counts small (9/13/10)",
+    "3 seed clusters; bootstrap descriptive only, no significance claims",
+    "selected sub-floor pairs are not unbiased samples of candidate bands",
+    "feasible-candidate counts are trajectory-dependent (endogenous depletion: zero-cand days 8/160/503)",
+    "long-horizon behavior unobserved",
+    "score calibration not established",
+    "candidate trails Round 1 greedy observed primary (.3611 vs .389)",
+    "advantage outside seeds 104-106 unknown by construction"
+  ],
+  "must_not_happen_next": [
+    "threshold sweeps or any post-hoc tuning of floor/2",
+    "creating another threshold candidate (floor/4, floor*0.75, quantile floors, etc.)",
+    "model/ask/matcher experiments aimed at crossing greedy .389 on development seeds",
+    "touching the private holdout without separate pre-registration naming floor/2 as sole candidate",
+    "rewriting Round 1 / Stage 1.5 / Stage 2 / Stage 3 records",
+    "claiming significance from 3 clusters or 13 MSMI events",
+    "automatic promotion of any kind"
+  ],
+  "artifact_files": [
+    "final_interpretation_and_promotion_audit.md",
+    "promotion_audit.json",
+    "preregistration.md", "preregistration.sha256",
+    "intermediate_policy.py", "diagnose3.py", "analyze3.py",
+    "report.md", "summary.json", "run_log.txt"
+  ]
+}

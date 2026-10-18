@@ -1,0 +1,349 @@
+{
+ "chosen_goal_states": {
+  "G0": {
+   "declined": 516,
+   "match": 1424,
+   "mismatch": 1259,
+   "unknown": 5234
+  },
+  "G1f": {
+   "declined": 555,
+   "match": 709,
+   "mismatch": 1164,
+   "unknown": 6005
+  },
+  "G1m": {
+   "declined": 520,
+   "match": 1440,
+   "mismatch": 1301,
+   "unknown": 5172
+  },
+  "G2": {
+   "declined": 541,
+   "match": 1576,
+   "mismatch": 720,
+   "unknown": 5596
+  },
+  "G3": {
+   "declined": 540,
+   "match": 1576,
+   "mismatch": 720,
+   "unknown": 5597
+  },
+  "G4": {
+   "declined": 572,
+   "match": 1312,
+   "mismatch": 813,
+   "unknown": 5736
+  },
+  "G5": {
+   "declined": 536,
+   "match": 1057,
+   "mismatch": 1236,
+   "unknown": 5604
+  }
+ },
+ "conventions": {
+  "bootstrap": "B=2000, rng 4242, percentile 95%",
+  "independent_unit": "seed group (21, six variants together)",
+  "label": "exploratory; counterfactual on recorded states only; no causal or sequential claim"
+ },
+ "g2_concentration": {
+  "G0": {
+   "observable": {
+    "hr_improved": 8,
+    "hr_sum_delta": 8,
+    "improved": 8,
+    "n_changed": 594,
+    "sum_delta": 2,
+    "worsened": 6
+   },
+   "unobservable": {
+    "hr_improved": 0,
+    "hr_sum_delta": 0,
+    "improved": 0,
+    "n_changed": 102,
+    "sum_delta": 0,
+    "worsened": 0
+   }
+  },
+  "G1m": {
+   "observable": {
+    "hr_improved": 9,
+    "hr_sum_delta": 8,
+    "improved": 9,
+    "n_changed": 605,
+    "sum_delta": 4,
+    "worsened": 5
+   },
+   "unobservable": {
+    "hr_improved": 0,
+    "hr_sum_delta": 0,
+    "improved": 0,
+    "n_changed": 102,
+    "sum_delta": 0,
+    "worsened": 0
+   }
+  }
+ },
+ "g2_improved_states_vs_G0": [
+  {
+   "day": 0,
+   "delta": 1,
+   "headroom": 1,
+   "observable": 1,
+   "seed": 148,
+   "variant": "development"
+  },
+  {
+   "day": 0,
+   "delta": 1,
+   "headroom": 1,
+   "observable": 1,
+   "seed": 148,
+   "variant": "shift"
+  },
+  {
+   "day": 0,
+   "delta": 1,
+   "headroom": 1,
+   "observable": 1,
+   "seed": 148,
+   "variant": "drift"
+  },
+  {
+   "day": 8,
+   "delta": 1,
+   "headroom": 1,
+   "observable": 1,
+   "seed": 149,
+   "variant": "delayed"
+  },
+  {
+   "day": 32,
+   "delta": 1,
+   "headroom": 1,
+   "observable": 1,
+   "seed": 149,
+   "variant": "delayed"
+  },
+  {
+   "day": 2,
+   "delta": 1,
+   "headroom": 1,
+   "observable": 1,
+   "seed": 157,
+   "variant": "development"
+  },
+  {
+   "day": 2,
+   "delta": 1,
+   "headroom": 1,
+   "observable": 1,
+   "seed": 157,
+   "variant": "shift"
+  },
+  {
+   "day": 2,
+   "delta": 1,
+   "headroom": 1,
+   "observable": 1,
+   "seed": 157,
+   "variant": "drift"
+  }
+ ],
+ "g2_seed_concentration": {
+  "G0": {
+   "ci95": [
+    -0.2857142857142857,
+    0.5714285714285714
+   ],
+   "per_seed_delta": {
+    "143": -1,
+    "144": 0,
+    "145": -1,
+    "146": 0,
+    "147": 0,
+    "148": 3,
+    "149": 2,
+    "150": 0,
+    "151": -1,
+    "152": 0,
+    "153": -1,
+    "154": 0,
+    "155": 0,
+    "156": 0,
+    "157": 2,
+    "158": 0,
+    "159": 0,
+    "160": 0,
+    "161": 0,
+    "162": 0,
+    "163": -1
+   },
+   "pos_tie_neg": {
+    "negative": 5,
+    "positive": 3,
+    "tied": 13
+   },
+   "top_seed": 148,
+   "top_seed_delta": 3,
+   "top_share_of_total": 1.5,
+   "total": 2
+  },
+  "G1m": {
+   "ci95": [
+    -0.23809523809523808,
+    0.7142857142857143
+   ],
+   "per_seed_delta": {
+    "143": 2,
+    "144": 0,
+    "145": -1,
+    "146": 0,
+    "147": 0,
+    "148": 3,
+    "149": 0,
+    "150": 0,
+    "151": -1,
+    "152": 0,
+    "153": -1,
+    "154": 0,
+    "155": 0,
+    "156": 0,
+    "157": 3,
+    "158": 0,
+    "159": 0,
+    "160": 0,
+    "161": 0,
+    "162": 0,
+    "163": -1
+   },
+   "pos_tie_neg": {
+    "negative": 4,
+    "positive": 3,
+    "tied": 14
+   },
+   "top_seed": 148,
+   "top_seed_delta": 3,
+   "top_share_of_total": 0.75,
+   "total": 4
+  }
+ },
+ "g2_worsened_states_vs_G0": [
+  {
+   "day": 16,
+   "delta": -1,
+   "headroom": 0,
+   "observable": 1,
+   "seed": 151,
+   "variant": "delayed"
+  },
+  {
+   "day": 27,
+   "delta": -1,
+   "headroom": 0,
+   "observable": 1,
+   "seed": 153,
+   "variant": "delayed"
+  },
+  {
+   "day": 0,
+   "delta": -1,
+   "headroom": 0,
+   "observable": 1,
+   "seed": 157,
+   "variant": "delayed"
+  },
+  {
+   "day": 6,
+   "delta": -1,
+   "headroom": 0,
+   "observable": 1,
+   "seed": 163,
+   "variant": "delayed"
+  },
+  {
+   "day": 0,
+   "delta": -1,
+   "headroom": 0,
+   "observable": 1,
+   "seed": 143,
+   "variant": "shift"
+  },
+  {
+   "day": 0,
+   "delta": -1,
+   "headroom": 0,
+   "observable": 1,
+   "seed": 145,
+   "variant": "delayed"
+  }
+ ],
+ "g3_vs_g2": {
+  "ci95": [
+   0.0,
+   0.0
+  ],
+  "delta_histogram": {
+   "0": 128
+  },
+  "n_states_conv_observable": 128,
+  "n_states_sets_differ": 128,
+  "net_delta": 0,
+  "per_seed_pos_tie_neg": {
+   "negative": 0,
+   "positive": 0,
+   "tied": 21
+  }
+ },
+ "goal_edge_table": {
+  "declined": {
+   "ci95_seed_group": [
+    0.010152,
+    0.034998
+   ],
+   "n_edges": 952,
+   "n_positive": 21,
+   "pooled_rate": 0.022059
+  },
+  "match": {
+   "ci95_seed_group": [
+    0.012569,
+    0.029428
+   ],
+   "n_edges": 2042,
+   "n_positive": 42,
+   "pooled_rate": 0.020568
+  },
+  "match_minus_mismatch_rate": {
+   "ci95_seed_group": [
+    0.009813,
+    0.027527
+   ],
+   "ci_excludes_zero": 1,
+   "point": 0.017986,
+   "reading": "descriptive association on recorded opportunities; no causal or sequential claim; unknown NOT compared as better/worse than mismatch"
+  },
+  "mismatch": {
+   "ci95_seed_group": [
+    0.000468,
+    0.005275
+   ],
+   "n_edges": 2324,
+   "n_positive": 6,
+   "pooled_rate": 0.002582
+  },
+  "unknown": {
+   "ci95_seed_group": [
+    0.007777,
+    0.013016
+   ],
+   "n_edges": 9986,
+   "n_positive": 104,
+   "pooled_rate": 0.010415
+  }
+ },
+ "n_states_all_undecided_or_unknown": 5898,
+ "n_states_goal_observable": 1662
+}

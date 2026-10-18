@@ -1,0 +1,608 @@
+{
+  "preregistration": "validation_plan.md",
+  "gate": "OPR_NOT_VALIDATED",
+  "D_A": {
+    "exact": 8433,
+    "total": 8433,
+    "match_rate": 1.0,
+    "pass": true
+  },
+  "D_B": {
+    "O": 90,
+    "E": 82.83918989732472,
+    "O_over_E": 1.0864422999736087,
+    "R": 0.7942415536282952,
+    "pass": true,
+    "variance_note": "exact: independent per-intro streams given world state"
+  },
+  "D_C": {
+    "deciles": [
+      {
+        "n": 843,
+        "mean_p": 0.0010435301634435842,
+        "empirical": 0.002372479240806643,
+        "sigma": 0.9373600300912794,
+        "gated": true,
+        "pass": true
+      },
+      {
+        "n": 843,
+        "mean_p": 0.0022008097438643293,
+        "empirical": 0.002372479240806643,
+        "sigma": 1.3605528445794473,
+        "gated": true,
+        "pass": true
+      },
+      {
+        "n": 843,
+        "mean_p": 0.0033714028110092445,
+        "empirical": 0.005931198102016607,
+        "sigma": 1.6829780551324895,
+        "gated": true,
+        "pass": true
+      },
+      {
+        "n": 844,
+        "mean_p": 0.004589852629276525,
+        "empirical": 0.001184834123222749,
+        "sigma": 1.9636525437432013,
+        "gated": true,
+        "pass": true
+      },
+      {
+        "n": 843,
+        "mean_p": 0.006033793283050393,
+        "empirical": 0.0011862396204033216,
+        "sigma": 2.2484665990644452,
+        "gated": true,
+        "pass": true
+      },
+      {
+        "n": 843,
+        "mean_p": 0.007807414078711006,
+        "empirical": 0.0035587188612099642,
+        "sigma": 2.5553764346981858,
+        "gated": true,
+        "pass": true
+      },
+      {
+        "n": 844,
+        "mean_p": 0.010231599203379906,
+        "empirical": 0.009478672985781991,
+        "sigma": 2.923452641131366,
+        "gated": true,
+        "pass": true
+      },
+      {
+        "n": 843,
+        "mean_p": 0.013548192155010113,
+        "empirical": 0.01542111506524318,
+        "sigma": 3.3564103598798316,
+        "gated": true,
+        "pass": true
+      },
+      {
+        "n": 843,
+        "mean_p": 0.01793018993902517,
+        "empirical": 0.022538552787663108,
+        "sigma": 3.8524987434448668,
+        "gated": true,
+        "pass": true
+      },
+      {
+        "n": 844,
+        "mean_p": 0.03145544967747005,
+        "empirical": 0.04265402843601896,
+        "sigma": 5.062526014967386,
+        "gated": true,
+        "pass": true
+      }
+    ],
+    "spearman_rho": 0.7781190959104827,
+    "spearman_exact_one_sided_p": 0.005380842151675485,
+    "pass": false
+  },
+  "D_D": {
+    "per_variant": {
+      "cold_start": {
+        "n": 1416,
+        "O": 21,
+        "E": 14.688174794610193,
+        "R": 1.6634173664227148,
+        "flag_abs_R_gt_4": false
+      },
+      "delayed": {
+        "n": 1621,
+        "O": 15,
+        "E": 16.27735670850294,
+        "R": -0.3196572438887681,
+        "flag_abs_R_gt_4": false
+      },
+      "development": {
+        "n": 1653,
+        "O": 17,
+        "E": 16.70941180853199,
+        "R": 0.07176475083542395,
+        "flag_abs_R_gt_4": false
+      },
+      "drift": {
+        "n": 1656,
+        "O": 17,
+        "E": 15.877070270879656,
+        "R": 0.2844197228091767,
+        "flag_abs_R_gt_4": false
+      },
+      "shift": {
+        "n": 1677,
+        "O": 17,
+        "E": 14.804830091779895,
+        "R": 0.5756528125082214,
+        "flag_abs_R_gt_4": false
+      },
+      "sparse": {
+        "n": 410,
+        "O": 3,
+        "E": 4.482346223020046,
+        "R": -0.7070896824216978,
+        "flag_abs_R_gt_4": false
+      }
+    }
+  },
+  "D_E": {
+    "p50": 0.006851715631499199,
+    "p90": 0.021293797770021744,
+    "p99": 0.04503360901926712,
+    "max": 0.08197847672764867,
+    "min": 7.524884668824433e-05
+  },
+  "D2": {
+    "replay_accepted": 144,
+    "replay_total": 144,
+    "acceptance_rate": 1.0,
+    "reliable": true
+  },
+  "G4": {
+    "S": 22,
+    "n_eff": 59,
+    "ties_excluded": 13,
+    "binomial_one_sided_p": 0.981828410021473,
+    "pass": false,
+    "pearson_r": -0.09839210429926634,
+    "mean_predicted_delta": 0.00911621694962505,
+    "mean_realized_delta": 0.125,
+    "rows": [
+      {
+        "seed": 119,
+        "variant": "cold_start",
+        "predicted_delta": -0.010471579542568277,
+        "realized_delta": 0
+      },
+      {
+        "seed": 119,
+        "variant": "delayed",
+        "predicted_delta": 0.004005715146554789,
+        "realized_delta": 0
+      },
+      {
+        "seed": 119,
+        "variant": "development",
+        "predicted_delta": -0.014209107078002714,
+        "realized_delta": -1
+      },
+      {
+        "seed": 119,
+        "variant": "drift",
+        "predicted_delta": -0.021234527024996952,
+        "realized_delta": 0
+      },
+      {
+        "seed": 119,
+        "variant": "shift",
+        "predicted_delta": -0.022431719280171958,
+        "realized_delta": 0
+      },
+      {
+        "seed": 119,
+        "variant": "sparse",
+        "predicted_delta": 0.0,
+        "realized_delta": 0
+      },
+      {
+        "seed": 120,
+        "variant": "cold_start",
+        "predicted_delta": 0.06093941237585754,
+        "realized_delta": 1
+      },
+      {
+        "seed": 120,
+        "variant": "delayed",
+        "predicted_delta": -0.012857577304249634,
+        "realized_delta": 1
+      },
+      {
+        "seed": 120,
+        "variant": "development",
+        "predicted_delta": -0.038532722047762924,
+        "realized_delta": 1
+      },
+      {
+        "seed": 120,
+        "variant": "drift",
+        "predicted_delta": -0.011664499826137487,
+        "realized_delta": 1
+      },
+      {
+        "seed": 120,
+        "variant": "shift",
+        "predicted_delta": -0.0010817998689269803,
+        "realized_delta": 1
+      },
+      {
+        "seed": 120,
+        "variant": "sparse",
+        "predicted_delta": 0.0,
+        "realized_delta": 0
+      },
+      {
+        "seed": 121,
+        "variant": "cold_start",
+        "predicted_delta": 0.013597001440194212,
+        "realized_delta": 0
+      },
+      {
+        "seed": 121,
+        "variant": "delayed",
+        "predicted_delta": 0.012960290868482383,
+        "realized_delta": -1
+      },
+      {
+        "seed": 121,
+        "variant": "development",
+        "predicted_delta": 0.07886340227551925,
+        "realized_delta": 0
+      },
+      {
+        "seed": 121,
+        "variant": "drift",
+        "predicted_delta": 0.07450830966591016,
+        "realized_delta": 0
+      },
+      {
+        "seed": 121,
+        "variant": "shift",
+        "predicted_delta": 0.0029056065942850706,
+        "realized_delta": 0
+      },
+      {
+        "seed": 121,
+        "variant": "sparse",
+        "predicted_delta": 0.0,
+        "realized_delta": 0
+      },
+      {
+        "seed": 122,
+        "variant": "cold_start",
+        "predicted_delta": -0.010259998000533677,
+        "realized_delta": 0
+      },
+      {
+        "seed": 122,
+        "variant": "delayed",
+        "predicted_delta": -0.024969632397167096,
+        "realized_delta": 0
+      },
+      {
+        "seed": 122,
+        "variant": "development",
+        "predicted_delta": 0.024676941784989914,
+        "realized_delta": -1
+      },
+      {
+        "seed": 122,
+        "variant": "drift",
+        "predicted_delta": 0.01699936003629432,
+        "realized_delta": -1
+      },
+      {
+        "seed": 122,
+        "variant": "shift",
+        "predicted_delta": -0.020552018478984913,
+        "realized_delta": 1
+      },
+      {
+        "seed": 122,
+        "variant": "sparse",
+        "predicted_delta": 0.0,
+        "realized_delta": 0
+      },
+      {
+        "seed": 123,
+        "variant": "cold_start",
+        "predicted_delta": 0.05363173356366513,
+        "realized_delta": 0
+      },
+      {
+        "seed": 123,
+        "variant": "delayed",
+        "predicted_delta": 0.01907489583764599,
+        "realized_delta": 0
+      },
+      {
+        "seed": 123,
+        "variant": "development",
+        "predicted_delta": 0.006277411974545899,
+        "realized_delta": 1
+      },
+      {
+        "seed": 123,
+        "variant": "drift",
+        "predicted_delta": 0.017692422123356977,
+        "realized_delta": 1
+      },
+      {
+        "seed": 123,
+        "variant": "shift",
+        "predicted_delta": 0.002757281220357455,
+        "realized_delta": 0
+      },
+      {
+        "seed": 123,
+        "variant": "sparse",
+        "predicted_delta": 0.0,
+        "realized_delta": 0
+      },
+      {
+        "seed": 124,
+        "variant": "cold_start",
+        "predicted_delta": 0.008094856832136288,
+        "realized_delta": -1
+      },
+      {
+        "seed": 124,
+        "variant": "delayed",
+        "predicted_delta": -0.028119101934247603,
+        "realized_delta": 0
+      },
+      {
+        "seed": 124,
+        "variant": "development",
+        "predicted_delta": -0.007361670596570891,
+        "realized_delta": 0
+      },
+      {
+        "seed": 124,
+        "variant": "drift",
+        "predicted_delta": 0.0035268149453991926,
+        "realized_delta": 0
+      },
+      {
+        "seed": 124,
+        "variant": "shift",
+        "predicted_delta": 0.011281932749808932,
+        "realized_delta": 0
+      },
+      {
+        "seed": 124,
+        "variant": "sparse",
+        "predicted_delta": 0.0,
+        "realized_delta": 0
+      },
+      {
+        "seed": 125,
+        "variant": "cold_start",
+        "predicted_delta": -0.018348534444509124,
+        "realized_delta": 0
+      },
+      {
+        "seed": 125,
+        "variant": "delayed",
+        "predicted_delta": 0.08763026069288804,
+        "realized_delta": 0
+      },
+      {
+        "seed": 125,
+        "variant": "development",
+        "predicted_delta": 0.0,
+        "realized_delta": -1
+      },
+      {
+        "seed": 125,
+        "variant": "drift",
+        "predicted_delta": -0.0024483145099964965,
+        "realized_delta": 0
+      },
+      {
+        "seed": 125,
+        "variant": "shift",
+        "predicted_delta": -0.011070128778061461,
+        "realized_delta": 1
+      },
+      {
+        "seed": 125,
+        "variant": "sparse",
+        "predicted_delta": 0.0,
+        "realized_delta": 0
+      },
+      {
+        "seed": 126,
+        "variant": "cold_start",
+        "predicted_delta": 0.0,
+        "realized_delta": 0
+      },
+      {
+        "seed": 126,
+        "variant": "delayed",
+        "predicted_delta": -0.005574718304027337,
+        "realized_delta": 0
+      },
+      {
+        "seed": 126,
+        "variant": "development",
+        "predicted_delta": 0.03503411083016028,
+        "realized_delta": 1
+      },
+      {
+        "seed": 126,
+        "variant": "drift",
+        "predicted_delta": 0.030494243873395277,
+        "realized_delta": 0
+      },
+      {
+        "seed": 126,
+        "variant": "shift",
+        "predicted_delta": 0.024358472495107364,
+        "realized_delta": 1
+      },
+      {
+        "seed": 126,
+        "variant": "sparse",
+        "predicted_delta": 0.0,
+        "realized_delta": 0
+      },
+      {
+        "seed": 127,
+        "variant": "cold_start",
+        "predicted_delta": 0.0032558214899505167,
+        "realized_delta": 0
+      },
+      {
+        "seed": 127,
+        "variant": "delayed",
+        "predicted_delta": 0.03215519085281915,
+        "realized_delta": 0
+      },
+      {
+        "seed": 127,
+        "variant": "development",
+        "predicted_delta": 0.00849378741893958,
+        "realized_delta": 0
+      },
+      {
+        "seed": 127,
+        "variant": "drift",
+        "predicted_delta": 0.0070038739285380736,
+        "realized_delta": 0
+      },
+      {
+        "seed": 127,
+        "variant": "shift",
+        "predicted_delta": 0.006946133683367384,
+        "realized_delta": 0
+      },
+      {
+        "seed": 127,
+        "variant": "sparse",
+        "predicted_delta": 0.0,
+        "realized_delta": 0
+      },
+      {
+        "seed": 128,
+        "variant": "cold_start",
+        "predicted_delta": 0.015090447596914802,
+        "realized_delta": -1
+      },
+      {
+        "seed": 128,
+        "variant": "delayed",
+        "predicted_delta": -0.0011963403276386009,
+        "realized_delta": 1
+      },
+      {
+        "seed": 128,
+        "variant": "development",
+        "predicted_delta": 0.005003115185868101,
+        "realized_delta": 1
+      },
+      {
+        "seed": 128,
+        "variant": "drift",
+        "predicted_delta": 0.010499127489172255,
+        "realized_delta": 1
+      },
+      {
+        "seed": 128,
+        "variant": "shift",
+        "predicted_delta": -0.02538760176336513,
+        "realized_delta": 1
+      },
+      {
+        "seed": 128,
+        "variant": "sparse",
+        "predicted_delta": 0.0,
+        "realized_delta": 0
+      },
+      {
+        "seed": 129,
+        "variant": "cold_start",
+        "predicted_delta": 0.0017803158444729128,
+        "realized_delta": 1
+      },
+      {
+        "seed": 129,
+        "variant": "delayed",
+        "predicted_delta": 0.07032311460311225,
+        "realized_delta": 0
+      },
+      {
+        "seed": 129,
+        "variant": "development",
+        "predicted_delta": 0.07990518262057789,
+        "realized_delta": 0
+      },
+      {
+        "seed": 129,
+        "variant": "drift",
+        "predicted_delta": 0.06486539782662404,
+        "realized_delta": 0
+      },
+      {
+        "seed": 129,
+        "variant": "shift",
+        "predicted_delta": 0.06828998344416681,
+        "realized_delta": 0
+      },
+      {
+        "seed": 129,
+        "variant": "sparse",
+        "predicted_delta": 0.0,
+        "realized_delta": 0
+      },
+      {
+        "seed": 130,
+        "variant": "cold_start",
+        "predicted_delta": -0.021579368192497728,
+        "realized_delta": 0
+      },
+      {
+        "seed": 130,
+        "variant": "delayed",
+        "predicted_delta": 6.916105088572433e-05,
+        "realized_delta": 0
+      },
+      {
+        "seed": 130,
+        "variant": "development",
+        "predicted_delta": -0.0009363567006288598,
+        "realized_delta": 0
+      },
+      {
+        "seed": 130,
+        "variant": "drift",
+        "predicted_delta": 0.0003356622663955866,
+        "realized_delta": 0
+      },
+      {
+        "seed": 130,
+        "variant": "shift",
+        "predicted_delta": -0.001432673197667711,
+        "realized_delta": 0
+      },
+      {
+        "seed": 130,
+        "variant": "sparse",
+        "predicted_delta": 0.004760817343357704,
+        "realized_delta": 0
+      }
+    ]
+  }
+}

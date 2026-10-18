@@ -1,0 +1,108 @@
+{
+  "count": 17,
+  "illegal_count": 0,
+  "rows": [
+    {
+      "class": "LEGAL OBSERVABLE",
+      "legality": "LEGAL",
+      "name": "age_diff",
+      "source": "abs(a.age - b.age)"
+    },
+    {
+      "class": "LEGAL OBSERVABLE",
+      "legality": "LEGAL",
+      "name": "age_slack",
+      "source": "min over both directions of min(partner.age - age_min, age_max - partner.age), from observed fields"
+    },
+    {
+      "class": "LEGAL OBSERVABLE",
+      "legality": "LEGAL",
+      "name": "gender_fit_ab",
+      "source": "1 if b.gender in a.fields['who_to_meet']"
+    },
+    {
+      "class": "LEGAL OBSERVABLE",
+      "legality": "LEGAL",
+      "name": "gender_fit_ba",
+      "source": "1 if a.gender in b.fields['who_to_meet']"
+    },
+    {
+      "class": "LEGAL OBSERVABLE",
+      "legality": "LEGAL",
+      "name": "zone_common",
+      "source": "len(set(a.acceptable_zones) & set(b.acceptable_zones))"
+    },
+    {
+      "class": "LEGAL OBSERVABLE",
+      "legality": "LEGAL",
+      "name": "schedule_overlap",
+      "source": "len(set(a.schedule) & set(b.schedule))"
+    },
+    {
+      "class": "LEGAL OBSERVABLE",
+      "legality": "LEGAL",
+      "name": "arrival_diff",
+      "source": "abs(a.arrived_day - b.arrived_day)"
+    },
+    {
+      "class": "LEGAL OBSERVABLE",
+      "legality": "LEGAL",
+      "name": "soft_equal",
+      "source": "count of SOFT fields both observed and equal (greedy's own score)"
+    },
+    {
+      "class": "LEGAL OBSERVABLE",
+      "legality": "LEGAL",
+      "name": "soft_differ",
+      "source": "count of SOFT fields both observed and unequal"
+    },
+    {
+      "class": "LEGAL OBSERVABLE",
+      "legality": "LEGAL",
+      "name": "soft_missing",
+      "source": "count of SOFT fields unobserved for either member"
+    },
+    {
+      "class": "LEGAL OBSERVABLE",
+      "legality": "LEGAL",
+      "name": "soft_declined",
+      "source": "count of SOFT fields with field_status=='declined' for either member"
+    },
+    {
+      "class": "LEGAL OBSERVABLE",
+      "legality": "LEGAL",
+      "name": "goal_agree",
+      "source": "1 if both relationship_goal observed and equal, else 0"
+    },
+    {
+      "class": "LEGAL OBSERVABLE",
+      "legality": "LEGAL",
+      "name": "prev_intros_mean",
+      "source": "mean over the two members of past introduction counts (state['introductions'])"
+    },
+    {
+      "class": "LEGAL OBSERVABLE",
+      "legality": "LEGAL",
+      "name": "hist_yes",
+      "source": "count of feedback events (state['feedback'], observed_day <= day) with positive value involving a or b: response 'yes' / date True / second 'yes'"
+    },
+    {
+      "class": "LEGAL OBSERVABLE",
+      "legality": "LEGAL",
+      "name": "current_day",
+      "source": "state['day']"
+    },
+    {
+      "class": "STRUCTURE-INFORMED",
+      "legality": "LEGAL",
+      "name": "degree_a",
+      "source": "number of feasible candidate partners member a has in the current state graph"
+    },
+    {
+      "class": "STRUCTURE-INFORMED",
+      "legality": "LEGAL",
+      "name": "degree_b",
+      "source": "same for member b"
+    }
+  ]
+}

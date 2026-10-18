@@ -1,0 +1,15 @@
+{
+  "slice_seeds": [
+    119,
+    130
+  ],
+  "episodes_per_arm": 12,
+  "mismatches": {
+    "C": [],
+    "E1": [],
+    "E2": [],
+    "E3": []
+  },
+  "pass": true,
+  "duration_seconds": 337.24705719947815
+}

@@ -1,0 +1,16 @@
+{
+ "max_edges_per_day": 37,
+ "n_days": 7560,
+ "n_days_frozen": 7560,
+ "n_pairs_ge2": 2087,
+ "n_pairs_ge2_frozen": 2087,
+ "n_zero": 3566,
+ "n_zero_frozen": 3566,
+ "per_day_edge_mismatch": 0,
+ "per_day_pair_mismatch": 0,
+ "reconciled": true,
+ "sum_edges_frozen": 15304,
+ "sum_edges_total": 15304,
+ "sum_n_pairs": 8433,
+ "sum_n_pairs_frozen": 8433
+}

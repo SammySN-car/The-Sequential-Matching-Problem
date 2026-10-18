@@ -1,0 +1,7 @@
+{
+ "base_seed": 4242,
+ "max_reshuffles": 36,
+ "n_replicates_needing_reshuffle": 12653,
+ "n_replicates_total": 756000,
+ "replicates_per_state": 100
+}

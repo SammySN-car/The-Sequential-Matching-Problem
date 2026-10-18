@@ -1,0 +1,3 @@
+{"day": 23, "invocation_seconds": 0.0990987999830395, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 28824, "solver_seconds": 7.409998215734959e-05}
+{"day": 38, "invocation_seconds": 0.08874009997816756, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 28824, "solver_seconds": 0.0}
+{"day": 50, "invocation_seconds": 0.08807810000143945, "k_chosen": 2, "k_greedy": 2, "n_edges": 10, "phase": "match", "pid": 28824, "solver_seconds": 0.0004209000035189092}

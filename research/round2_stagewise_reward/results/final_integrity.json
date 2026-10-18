@@ -1,0 +1,95 @@
+{
+  "checks": [
+    {
+      "detail": "bi_verify exit=0; 7 checks; [bi_verify] ALL CHECKS PASSED (0 failures)",
+      "name": "a_baseline_integrity",
+      "status": "PASS"
+    },
+    {
+      "detail": "analysis_plan.md sha256=80615fbcc3d09c41 declared=80615fbcc3d09c41 task6_recorded=80615fbcc3d09c41",
+      "name": "b_plan_hash_frozen",
+      "status": "PASS"
+    },
+    {
+      "detail": "model_artifact.json sha256=7f1ddfe00211e260 declared=7f1ddfe00211e260 prefix_7f1ddfe0=True",
+      "name": "c_model_artifact_frozen",
+      "status": "PASS"
+    },
+    {
+      "detail": "pilot=1 fit=399 val=100 final_eval=100; artifact fit/val/excluded match=True; pairwise_disjoint=True",
+      "name": "d1_seed_groups_disjoint",
+      "status": "PASS"
+    },
+    {
+      "detail": "no file named seed_70xxx and no '\"seed(_group)?\": 70xxx' row in 1602 data files (357177979 bytes scanned); seeds 70001-70100 never simulated",
+      "name": "d2_final_eval_seeds_untouched",
+      "status": "PASS"
+    },
+    {
+      "detail": "no scripts/sr_eval_run.py, scripts/sr_eval_aggregate.py, results/paired_stats.json, results/cardinality_check.json on disk; final paired evaluation was skipped per plan S.11 stop",
+      "name": "d3_final_eval_outputs_absent",
+      "status": "PASS"
+    },
+    {
+      "detail": "26/26 plan-S.12 deliverables present",
+      "name": "e_deliverables_present",
+      "status": "PASS"
+    },
+    {
+      "detail": "solver_validation.passed=false; v4 max_seconds=17.199 (>3.0 gate); v4_max_seconds_lt_3=False; v4_zero_node_limit_failures=False; node_limit_failures=15",
+      "name": "f1_solver_validation_narrative",
+      "status": "PASS"
+    },
+    {
+      "detail": "pilot_report.overall=PASS (P1-P6)",
+      "name": "f2_pilot_report_pass",
+      "status": "PASS"
+    },
+    {
+      "detail": "model_artifact stage statuses={'s1': 'OK', 's2': 'OK', 's3': 'OK'}; train_metrics fit gates passed=True",
+      "name": "f3_model_stages_ok",
+      "status": "PASS"
+    },
+    {
+      "detail": "12 integrity checks all ok=True; problems=0",
+      "name": "f4_offline_ranking_integrity",
+      "status": "PASS"
+    },
+    {
+      "detail": "run_log.txt 20 lines, 7081 bytes; MAIN COLLECTION line present=True",
+      "name": "g_run_log_main_collection",
+      "status": "PASS"
+    },
+    {
+      "detail": "pilot_candidate_official: 6 episodes, all valid=True (smoke only, pilot seed)",
+      "name": "h_candidate_pilot_valid",
+      "status": "PASS"
+    },
+    {
+      "detail": "226531 label rows across 500 seed groups; max_observed_day=93 <= 99",
+      "name": "j_label_maturity_within_horizon",
+      "status": "PASS"
+    },
+    {
+      "detail": "integrity.sha256 present",
+      "name": "i1_manifest_present",
+      "status": "PASS"
+    },
+    {
+      "detail": "1638 entries recomputed; bad=none",
+      "name": "i2_manifest_entries_match",
+      "status": "PASS"
+    },
+    {
+      "detail": "sorted=True unique=True; excludes integrity.sha256 and __pycache__",
+      "name": "i3_manifest_sorted_unique",
+      "status": "PASS"
+    }
+  ],
+  "decision": "STOP / REDESIGN",
+  "n_pass": 17,
+  "n_total": 17,
+  "note": "final verification of the sealed experiment directory; the pre-registered final paired evaluation (seeds 70001-70100) was skipped per analysis_plan S.11 stop conditions and R1.1 decision rules 1-2 (V4 dense-timing gates failed), so realized MSMIs and the paired effect size are NOT MEASURED",
+  "overall": "PASS",
+  "task": 11
+}

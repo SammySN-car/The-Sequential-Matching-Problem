@@ -1,0 +1,54 @@
+[2026-10-13 15:51:44] bi0_inventory start
+[2026-10-13 15:51:44] inventory: 21/21 directories exist; missing=none
+[2026-10-13 15:51:44] protected: 9 hashed, missing=none
+[2026-10-13 15:51:44] seal round2_decision_ceiling          entries=38 stale(non-runlog)=none run_log_stale=['research/round2_decision_ceiling/run_log.txt']
+[2026-10-13 15:51:44] seal round2_eda                       entries=58 stale(non-runlog)=['__pycache__/eda_common.cpython-313.pyc', 'eda_common.py', 'evidence_inventory.md', 'plots/ask_spend_by_day.png', 'plots/edges_vs_asks.png', 'plots/field_status_stacked.png', 'plots/funnel_comparison.png', 'plots/graph_edges_by_day.png', 'plots/hard_declined_hist.png', 'plots/mutual_by_soft_match.png', 'plots/soft_coverage_by_variant.png', 'plots/volume_vs_conversion.png', 'report.md', 's02_population.py', 's03_graph.py', 's04_asks.py', 's05_funnel.py', 's06_scoring.py', 's07_allocation.py', 's08_simulator.py', 'tables/alloc_greedy_optimality_structure.csv', 'tables/alloc_round2_arm_summary.csv', 'tables/alloc_round2_volume_vs_conversion.csv', 'tables/alloc_tournament_arm_summary.csv', 'tables/alloc_tournament_volume_vs_conversion.csv', 'tables/arrival_exit_by_variant.csv', 'tables/ask_spend_by_day.csv', 'tables/declined_hard_cooccurrence_top25.csv', 'tables/declined_hard_members_by_variant.csv', 'tables/degree_at_introduction.csv', 'tables/e3_rel_ask_headline.csv', 'tables/edges_vs_cumulative_ask.csv', 'tables/field_status_by_variant.csv', 'tables/funnel_n01_by_day_band.csv', 'tables/funnel_n01_by_soft_match.csv', 'tables/funnel_n01_by_tie_status.csv', 'tables/funnel_n01_by_variant.csv', 'tables/funnel_n01_greedy.csv', 'tables/funnel_scale800.csv', 'tables/funnel_scale800_by_variant.csv', 'tables/generator_latent_map.csv', 'tables/generator_prior_multipliers.csv', 'tables/generator_source_facts.csv', 'tables/graph_by_variant_day.csv', 'tables/graph_variant_summary.csv', 'tables/hard_declined_per_member.csv', 'tables/hard_missing_per_member.csv', 'tables/population_demographics.csv', 'tables/probe_ask_costs.csv', 'tables/promotion_ask_telemetry.csv', 'tables/promotion_day_candidate_counts.csv', 'tables/s02_summary.json', 'tables/scoring_concordance_summary.csv', 'tables/scoring_world_auc_distribution.csv', 'tables/soft_coverage_per_member.csv', 'tables/soft_state_at_introduction.csv', 'tables/unique_pairs_vs_pairdays.csv'] run_log_stale=['run_log.txt']
+[2026-10-13 15:51:44] seal round2_fixed_cardinality         entries=23 stale(non-runlog)=none run_log_stale=none
+[2026-10-13 15:51:44] seal round2_goal_rule                 entries=22 stale(non-runlog)=none run_log_stale=['research/round2_goal_rule/run_log.txt']
+[2026-10-13 15:51:44] seal round2_missed_oracle             entries=26 stale(non-runlog)=none run_log_stale=none
+[2026-10-13 15:51:44] seal round2_opr                       entries=11 stale(non-runlog)=['g0_findings.md', 'opr_core.py', 'opr_design.md', 'report.md', 'test_opr.py', 'validate_opr.py', 'validation_d1.json', 'validation_d2.json', 'validation_plan.md', 'validation_results.json'] run_log_stale=['opr_run_log.txt']
+[2026-10-13 15:51:44] seal round2_stagewise_signal          entries=29 stale(non-runlog)=none run_log_stale=['research/round2_stagewise_signal/run_log.txt']
+[2026-10-13 15:51:46] A4 scan: 20 files reference F2; policy/runner/evaluate files=none
+[2026-10-13 15:51:46] counterfactual seed groups: n=21 [143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163]
+[2026-10-13 15:51:46] input hashes: 46 recorded, missing=none
+[2026-10-13 15:51:46] bi0 done in 2.1s -> input_hashes.json (ok=False)
+[2026-10-13 15:52:49] bi0_inventory start
+[2026-10-13 15:52:49] inventory: 21/21 directories exist; missing=none
+[2026-10-13 15:52:49] protected: 9 hashed, missing=none
+[2026-10-13 15:52:49] seal round2_decision_ceiling          entries=38 stale(non-runlog)=none run_log_stale=['research/round2_decision_ceiling/run_log.txt']
+[2026-10-13 15:52:49] seal round2_eda                       entries=58 stale(non-runlog)=none run_log_stale=none
+[2026-10-13 15:52:49] seal round2_fixed_cardinality         entries=23 stale(non-runlog)=none run_log_stale=none
+[2026-10-13 15:52:49] seal round2_goal_rule                 entries=22 stale(non-runlog)=none run_log_stale=['research/round2_goal_rule/run_log.txt']
+[2026-10-13 15:52:49] seal round2_missed_oracle             entries=26 stale(non-runlog)=none run_log_stale=none
+[2026-10-13 15:52:49] seal round2_opr                       entries=11 stale(non-runlog)=none run_log_stale=none
+[2026-10-13 15:52:49] seal round2_stagewise_signal          entries=29 stale(non-runlog)=none run_log_stale=['research/round2_stagewise_signal/run_log.txt']
+[2026-10-13 15:52:49] A4 scan: 20 files reference F2; policy/runner/evaluate files=none
+[2026-10-13 15:52:49] counterfactual seed groups: n=21 [143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163]
+[2026-10-13 15:52:49] input hashes: 46 recorded, missing=none
+[2026-10-13 15:52:49] bi0 done in 0.4s -> input_hashes.json (ok=True)
+[2026-10-13 16:00:15] commands: bi0_inventory.py (x3 during patching), bi1_source_facts.py (x4 during patching); temp patch scripts in $env:TEMP (bi_patch1-8, bi_peek1-2)
+[2026-10-13 16:07:28] bi2: start (POST HOC integrity checks, plan sec.7)
+[2026-10-13 16:07:28] bi2: loaded gr per_state: 7560 rows, 21 seeds
+[2026-10-13 16:07:28] bi2: C1 totals={'G0': 90, 'G1f': 81, 'G1m': 88, 'G2': 92, 'G3': 92, 'G4': 94, 'G5': 161} sum_k_t=8433 headroom=82 match=True
+[2026-10-13 16:07:28] bi2: wrote corrected_paired_ci.csv (14 rows)
+[2026-10-13 16:07:28] bi2: C2: 14 pairs, exact evaluation.json matches=14/14
+[2026-10-13 16:07:28] bi2: wrote corrected_set_diffs.csv (11 rows)
+[2026-10-13 16:07:28] bi2: C3 diffs={'states_differing_G0_vs_G1f': 1228, 'states_differing_G0_vs_G1m': 80, 'states_differing_G1f_vs_G1m': 1232} count_sums={'G0': 7245, 'G1f': 3752, 'G1m': 7358, 'G2': 6045, 'G3': 6117, 'G4': 5754, 'G5': 5422}
+[2026-10-13 16:07:28] bi2: C4 gr={'G0': 2, 'G1f': 19, 'G1m': 2, 'G2': 10, 'G3': 10, 'G4': 14, 'G5': 73} mo={'P_GREEDY': 2, 'P_F1': 19, 'P_F2': 14, 'P_F3': 21, 'P_F5': 73}
+[2026-10-13 16:07:28] bi2: wrote corrected_rank_direction.csv (21 rows)
+[2026-10-13 16:07:28] bi2: C5 published mean_base_pct=0.388022 corrected=0.343518 | share pub=0.323699 corrected=0.341040
+[2026-10-13 16:07:29] bi2: C6 rank=60 conflict=7 rt=101 p1=81 p2=94 pg=90 p5=161 checks=True
+[2026-10-13 16:07:29] bi2: C7 fc main=5/5 fc headroom=5/5 contrast=True gr_pairs=14/14
+[2026-10-13 16:07:29] bi2: wrote corrected_totals.csv (7 rows)
+[2026-10-13 16:07:29] bi2: wrote corrected_summary.json; failures=0
+[2026-10-13 16:07:29] bi2: done in 0.7s
+[2026-10-13 16:20:00] commands: bi3_matrix.py x2 (first run 1 citation failure -> citation patched to research/round1_submission/report.md, second run 0 failures); temp scripts $env:TEMP bi3fix.py
+[2026-10-13 16:20:00] bi3: 42 rows, 17 columns, classifications={'CORRECT_AND_COMPARABLE': 29, 'CORRECT_BUT_NOT_COMPARABLE': 4, 'DIRECTION_BUG': 7, 'OTHER_IMPLEMENTATION_DEFECT': 1, 'UNVERIFIABLE_FROM_SAVED_ARTIFACTS': 1}; direction_bug_applies=yes rows=7; failures=0 -> study_audit.csv + matrix_summary.json
+[2026-10-13 16:24:00] commands: bi4_validate.py x5 (pass-then-fix: 'pass' kw syntax, bi1/bi0 key names); final 25/25 checks -> validation.json
+[2026-10-13 16:24:00] bi4: upstream bi0/bi1/bi2/bi3 all pass; C2 14/14; C7 5+5+1 exact; matrix 42 rows no empty cells; claim-critical numbers verified; protected 9/9 unchanged; plan hash e04280fc... ok
+[2026-10-13 16:30:00] authored: corrected_evidence_hierarchy.md (4 tiers), report.md (7 questions + 15-row status table)
+[2026-10-13 16:38:00] correction pass: report/hierarchy had mixed fc-convention and gr-convention CIs for the same pairs (checkpoint-level transcription issue). Authority check against research/round2_goal_rule/evaluation.json bootstrap block and research/round2_fixed_cardinality/statistics.json overall: seed-level win/tie/loss counts IDENTICAL across studies (F1 5/7/9, F2 7/9/5, F5 17/4/0); only CI endpoints differ by RNG consumption design (fc: one shared random.Random(4242); gr: fresh np.random.default_rng(4242) per pair). report Q4 list relabelled (C2, gr bootstrap) with values 0.7143/1.3345/2.2381/4.6190 seeds 17/4/0; bootstrap-convention note added; hierarchy T1.2 relabelled both; no conclusion changed.
+[2026-10-13 16:42:00] commands: bi5_report_check.py x4 (unicode-minus normalization, c3/c6 key names, stale detail string); final 36/36 -> report_check.json
+[2026-10-13 16:50:00] commands: bi_seal.py written (excludes integrity.sha256 itself + __pycache__); bi_verify.py written (own seal byte-exact incl. unsealed-extras scan; 7 prior seals re-read via their own manifests with bi0's path-base + run_log tolerance rules; 9 protected vs bi0 hashes; frozen plan hash; bi4/bi5 gates)
+[2026-10-13 16:50:00] final sequence: bi4_validate.py (re-run), bi5_report_check.py (re-run), bi_seal.py, bi_verify.py -- console output authoritative; no study file written after bi_seal
+[2026-10-13 16:51:00] bi_verify first run: PASS own_seal (25 files), PASS prior_seals (7/7, 207 entries), then NameError (ih not loaded after section-2 rewrite). Fix: reload input_hashes.json in main(); re-run bi_seal afterwards because bi_verify.py itself is sealed.

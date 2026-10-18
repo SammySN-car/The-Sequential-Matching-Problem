@@ -1,0 +1,12 @@
+{"day": 30, "invocation_seconds": 0.08633210000698455, "k_chosen": 1, "k_greedy": 1, "n_edges": 2, "phase": "match", "pid": 27820, "solver_seconds": 0.00012969999806955457}
+{"day": 38, "invocation_seconds": 0.10147439999855123, "k_chosen": 2, "k_greedy": 2, "n_edges": 2, "phase": "match", "pid": 27820, "solver_seconds": 0.00012140002218075097}
+{"day": 22, "invocation_seconds": 0.06784850000985898, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 27820, "solver_seconds": 0.0}
+{"day": 57, "invocation_seconds": 0.08699010001146235, "k_chosen": 1, "k_greedy": 1, "n_edges": 2, "phase": "match", "pid": 27820, "solver_seconds": 0.00011289998656138778}
+{"day": 27, "invocation_seconds": 0.09230960000422783, "k_chosen": 2, "k_greedy": 2, "n_edges": 5, "phase": "match", "pid": 27820, "solver_seconds": 0.00022429999080486596}
+{"day": 7, "invocation_seconds": 0.07393149999552406, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 27820, "solver_seconds": 0.000513400009367615}
+{"day": 29, "invocation_seconds": 0.08236899998155423, "k_chosen": 2, "k_greedy": 2, "n_edges": 6, "phase": "match", "pid": 27820, "solver_seconds": 0.00029799999902024865}
+{"day": 32, "invocation_seconds": 0.0837570000148844, "k_chosen": 1, "k_greedy": 1, "n_edges": 2, "phase": "match", "pid": 27820, "solver_seconds": 0.00011230001109652221}
+{"day": 34, "invocation_seconds": 0.0876064000185579, "k_chosen": 2, "k_greedy": 2, "n_edges": 3, "phase": "match", "pid": 27820, "solver_seconds": 0.0001345000055152923}
+{"day": 0, "invocation_seconds": 0.06328569998731837, "k_chosen": 11, "k_greedy": 11, "n_edges": 26, "phase": "match", "pid": 27820, "solver_seconds": 0.004566399991745129}
+{"day": 27, "invocation_seconds": 0.11750649998430163, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 27820, "solver_seconds": 0.0}
+{"day": 25, "invocation_seconds": 0.21538340000552125, "k_chosen": 2, "k_greedy": 2, "n_edges": 2, "phase": "match", "pid": 27820, "solver_seconds": 0.00025710000772960484}

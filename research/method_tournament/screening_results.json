@@ -1,0 +1,1316 @@
+{
+  "behavioral_diversity": {
+    "m01_greedy_baseline": {
+      "distinct_digests": 15,
+      "worlds_differing_from_control": 0
+    },
+    "m02_reciprocal_sum": {
+      "distinct_digests": 16,
+      "worlds_differing_from_control": 17
+    },
+    "m03_reciprocal_min": {
+      "distinct_digests": 15,
+      "worlds_differing_from_control": 15
+    },
+    "m04_reciprocal_product": {
+      "distinct_digests": 15,
+      "worlds_differing_from_control": 15
+    },
+    "m05_harmonic_reciprocal": {
+      "distinct_digests": 15,
+      "worlds_differing_from_control": 15
+    },
+    "m06_bottleneck": {
+      "distinct_digests": 17,
+      "worlds_differing_from_control": 18
+    },
+    "m07_prune_and_greedy": {
+      "distinct_digests": 15,
+      "worlds_differing_from_control": 18
+    },
+    "m08_weighted_compatibility": {
+      "distinct_digests": 16,
+      "worlds_differing_from_control": 17
+    },
+    "m09_partner_scarcity": {
+      "distinct_digests": 15,
+      "worlds_differing_from_control": 13
+    },
+    "m10_degree_balanced": {
+      "distinct_digests": 15,
+      "worlds_differing_from_control": 14
+    },
+    "m11_scarcity_x_compat": {
+      "distinct_digests": 15,
+      "worlds_differing_from_control": 14
+    },
+    "m12_regret_score": {
+      "distinct_digests": 15,
+      "worlds_differing_from_control": 13
+    },
+    "m13_opportunity_cost": {
+      "distinct_digests": 15,
+      "worlds_differing_from_control": 13
+    },
+    "m14_mutual_regret": {
+      "distinct_digests": 15,
+      "worlds_differing_from_control": 0
+    },
+    "m15_reserve_high_option": {
+      "distinct_digests": 15,
+      "worlds_differing_from_control": 13
+    },
+    "m16_patient_policy": {
+      "distinct_digests": 13,
+      "worlds_differing_from_control": 18
+    },
+    "m17_daily_quota": {
+      "distinct_digests": 16,
+      "worlds_differing_from_control": 18
+    },
+    "m18_time_threshold": {
+      "distinct_digests": 12,
+      "worlds_differing_from_control": 18
+    },
+    "m19_arrival_age": {
+      "distinct_digests": 17,
+      "worlds_differing_from_control": 17
+    },
+    "m20_new_arrival_protection": {
+      "distinct_digests": 16,
+      "worlds_differing_from_control": 18
+    },
+    "m21_delay_cost_threshold": {
+      "distinct_digests": 15,
+      "worlds_differing_from_control": 18
+    },
+    "m22_market_thickness": {
+      "distinct_digests": 9,
+      "worlds_differing_from_control": 18
+    },
+    "m23_hybrid_patient_greedy": {
+      "distinct_digests": 16,
+      "worlds_differing_from_control": 18
+    },
+    "m24_max_cardinality": {
+      "distinct_digests": 15,
+      "worlds_differing_from_control": 18
+    },
+    "m25_max_weight": {
+      "distinct_digests": 16,
+      "worlds_differing_from_control": 18
+    },
+    "m26_greedy_one_swap": {
+      "distinct_digests": 15,
+      "worlds_differing_from_control": 18
+    },
+    "m27_greedy_augmenting": {
+      "distinct_digests": 15,
+      "worlds_differing_from_control": 18
+    },
+    "m28_conflict_aware": {
+      "distinct_digests": 15,
+      "worlds_differing_from_control": 15
+    },
+    "m29_uncertainty_aware": {
+      "distinct_digests": 17,
+      "worlds_differing_from_control": 18
+    },
+    "m30_targeted_info": {
+      "distinct_digests": 17,
+      "worlds_differing_from_control": 18
+    }
+  },
+  "cluster_note": "Inference clusters on seed: 6 per-variant deltas are averaged per seed -> 3 seed-level means (df = 2); screening is gate-only (design section 9).",
+  "code_fingerprint": "1247e79768da7524",
+  "control_parity": {
+    "mismatched_worlds": [],
+    "worlds_checked": 18
+  },
+  "diagnostic_candidates": [],
+  "dispersion": {
+    "m01_greedy_baseline": 0.0,
+    "m02_reciprocal_sum": 0.173451,
+    "m03_reciprocal_min": 0.0,
+    "m04_reciprocal_product": 0.091287,
+    "m05_harmonic_reciprocal": 0.091287,
+    "m06_bottleneck": 0.455671,
+    "m07_prune_and_greedy": 0.313436,
+    "m08_weighted_compatibility": 0.298913,
+    "m09_partner_scarcity": 0.250616,
+    "m10_degree_balanced": 0.068041,
+    "m11_scarcity_x_compat": 0.154108,
+    "m12_regret_score": 0.086066,
+    "m13_opportunity_cost": 0.086066,
+    "m14_mutual_regret": 0.0,
+    "m15_reserve_high_option": 0.068041,
+    "m16_patient_policy": 0.313436,
+    "m17_daily_quota": 0.309533,
+    "m18_time_threshold": 0.361592,
+    "m19_arrival_age": 0.068041,
+    "m20_new_arrival_protection": 0.4581,
+    "m21_delay_cost_threshold": 0.427353,
+    "m22_market_thickness": 0.408084,
+    "m23_hybrid_patient_greedy": 0.391235,
+    "m24_max_cardinality": 0.269275,
+    "m25_max_weight": 0.313436,
+    "m26_greedy_one_swap": 0.0,
+    "m27_greedy_augmenting": 0.287983,
+    "m28_conflict_aware": 0.159328,
+    "m29_uncertainty_aware": 0.443676,
+    "m30_targeted_info": 0.388344
+  },
+  "eligible_ranking": [
+    "m19_arrival_age",
+    "m03_reciprocal_min",
+    "m14_mutual_regret",
+    "m26_greedy_one_swap"
+  ],
+  "m01_excluded_note": "m01_greedy_baseline is excluded from eligibility, ranking, and retention (parity/diagnostic only; design section 7).",
+  "no_winner_note": "Phase 1 has 18 paired worlds: no method may be called a winner from screening alone.",
+  "not_ranked_note": "Ranking metric: mean paired delta of MSMI/100 vs control. Never AUC, offline expected value, mutual acceptances, introduction counts, or ask efficiency. Absolute numbers are never compared across seed sets.",
+  "per_method": {
+    "m01_greedy_baseline": {
+      "behavioral": {
+        "distinct_digests": 15,
+        "worlds_differing_from_control": 0
+      },
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "ci99": [
+        0.0,
+        0.0
+      ],
+      "cross_variant_dispersion_mean": 0.0,
+      "eligible": true,
+      "ineligibility_reasons": [],
+      "invalid_episodes": 0,
+      "mean_delta": 0.0,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.0,
+        "development": 0.0,
+        "drift": 0.0,
+        "shift": 0.0,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3422,
+        "intros_per_100_mean": 37.944,
+        "max_inference_seconds": 21.4
+      }
+    },
+    "m02_reciprocal_sum": {
+      "behavioral": {
+        "distinct_digests": 16,
+        "worlds_differing_from_control": 17
+      },
+      "ci95": [
+        -0.147306,
+        0.09175
+      ],
+      "ci99": [
+        -0.303472,
+        0.247917
+      ],
+      "cross_variant_dispersion_mean": 0.173451,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "catastrophic family: cold_start, shift"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.027777777777777776,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": -0.16666666666666666,
+        "delayed": 0.0,
+        "development": 0.0,
+        "drift": 0.16666666666666666,
+        "shift": -0.16666666666666666,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3439,
+        "intros_per_100_mean": 38.25,
+        "max_inference_seconds": 21.0
+      }
+    },
+    "m03_reciprocal_min": {
+      "behavioral": {
+        "distinct_digests": 15,
+        "worlds_differing_from_control": 15
+      },
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "ci99": [
+        0.0,
+        0.0
+      ],
+      "cross_variant_dispersion_mean": 0.0,
+      "eligible": true,
+      "ineligibility_reasons": [],
+      "invalid_episodes": 0,
+      "mean_delta": 0.0,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.0,
+        "development": 0.0,
+        "drift": 0.0,
+        "shift": 0.0,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3422,
+        "intros_per_100_mean": 37.889,
+        "max_inference_seconds": 20.5
+      }
+    },
+    "m04_reciprocal_product": {
+      "behavioral": {
+        "distinct_digests": 15,
+        "worlds_differing_from_control": 15
+      },
+      "ci95": [
+        -0.441917,
+        0.27525
+      ],
+      "ci99": [
+        -0.910417,
+        0.74375
+      ],
+      "cross_variant_dispersion_mean": 0.091287,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "mean delta -0.0833 below -0.05",
+        "catastrophic family: development, drift, shift"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.08333333333333333,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.0,
+        "development": -0.16666666666666666,
+        "drift": -0.16666666666666666,
+        "shift": -0.16666666666666666,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3425,
+        "intros_per_100_mean": 37.889,
+        "max_inference_seconds": 20.4
+      }
+    },
+    "m05_harmonic_reciprocal": {
+      "behavioral": {
+        "distinct_digests": 15,
+        "worlds_differing_from_control": 15
+      },
+      "ci95": [
+        -0.441917,
+        0.27525
+      ],
+      "ci99": [
+        -0.910417,
+        0.74375
+      ],
+      "cross_variant_dispersion_mean": 0.091287,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "mean delta -0.0833 below -0.05",
+        "catastrophic family: development, drift, shift"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.08333333333333333,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.0,
+        "development": -0.16666666666666666,
+        "drift": -0.16666666666666666,
+        "shift": -0.16666666666666666,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3425,
+        "intros_per_100_mean": 37.889,
+        "max_inference_seconds": 20.3
+      }
+    },
+    "m06_bottleneck": {
+      "behavioral": {
+        "distinct_digests": 17,
+        "worlds_differing_from_control": 18
+      },
+      "ci95": [
+        -0.27525,
+        0.441917
+      ],
+      "ci99": [
+        -0.74375,
+        0.910417
+      ],
+      "cross_variant_dispersion_mean": 0.455671,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "catastrophic family: cold_start"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": 0.08333333333333333,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": -0.16666666666666666,
+        "delayed": 0.5,
+        "development": 0.0,
+        "drift": 0.0,
+        "shift": 0.16666666666666666,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3461,
+        "intros_per_100_mean": 39.194,
+        "max_inference_seconds": 20.7
+      }
+    },
+    "m07_prune_and_greedy": {
+      "behavioral": {
+        "distinct_digests": 15,
+        "worlds_differing_from_control": 18
+      },
+      "ci95": [
+        -0.313972,
+        -0.074917
+      ],
+      "ci99": [
+        -0.470139,
+        0.08125
+      ],
+      "cross_variant_dispersion_mean": 0.313436,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "mean delta -0.1944 below -0.05",
+        "catastrophic family: cold_start, development, drift, shift, sparse"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.19444444444444445,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": -0.5,
+        "delayed": 0.0,
+        "development": -0.16666666666666666,
+        "drift": -0.16666666666666666,
+        "shift": -0.16666666666666666,
+        "sparse": -0.16666666666666666
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.1142,
+        "intros_per_100_mean": 9.111,
+        "max_inference_seconds": 20.1
+      }
+    },
+    "m08_weighted_compatibility": {
+      "behavioral": {
+        "distinct_digests": 16,
+        "worlds_differing_from_control": 17
+      },
+      "ci95": [
+        -0.207028,
+        0.207028
+      ],
+      "ci99": [
+        -0.477517,
+        0.477517
+      ],
+      "cross_variant_dispersion_mean": 0.298913,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "catastrophic family: cold_start, shift"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": 0.0,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": -0.3333333333333333,
+        "delayed": 0.0,
+        "development": 0.16666666666666666,
+        "drift": 0.3333333333333333,
+        "shift": -0.16666666666666666,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3439,
+        "intros_per_100_mean": 38.611,
+        "max_inference_seconds": 20.1
+      }
+    },
+    "m09_partner_scarcity": {
+      "behavioral": {
+        "distinct_digests": 15,
+        "worlds_differing_from_control": 13
+      },
+      "ci95": [
+        -0.922685,
+        0.644907
+      ],
+      "ci99": [
+        -1.946738,
+        1.66896
+      ],
+      "cross_variant_dispersion_mean": 0.250616,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "mean delta -0.1389 below -0.05",
+        "catastrophic family: development, drift, shift"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.1388888888888889,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.0,
+        "development": -0.3333333333333333,
+        "drift": -0.3333333333333333,
+        "shift": -0.16666666666666666,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3442,
+        "intros_per_100_mean": 39.694,
+        "max_inference_seconds": 20.3
+      }
+    },
+    "m10_degree_balanced": {
+      "behavioral": {
+        "distinct_digests": 15,
+        "worlds_differing_from_control": 14
+      },
+      "ci95": [
+        -0.147306,
+        0.09175
+      ],
+      "ci99": [
+        -0.303472,
+        0.247917
+      ],
+      "cross_variant_dispersion_mean": 0.068041,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "catastrophic family: delayed"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.027777777777777776,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": -0.16666666666666666,
+        "development": 0.0,
+        "drift": 0.0,
+        "shift": 0.0,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3422,
+        "intros_per_100_mean": 38.417,
+        "max_inference_seconds": 19.3
+      }
+    },
+    "m11_scarcity_x_compat": {
+      "behavioral": {
+        "distinct_digests": 15,
+        "worlds_differing_from_control": 14
+      },
+      "ci95": [
+        -0.344019,
+        0.288463
+      ],
+      "ci99": [
+        -0.757197,
+        0.701641
+      ],
+      "cross_variant_dispersion_mean": 0.154108,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "catastrophic family: development, drift"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.027777777777777776,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.16666666666666666,
+        "development": -0.16666666666666666,
+        "drift": -0.16666666666666666,
+        "shift": 0.0,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3425,
+        "intros_per_100_mean": 39.333,
+        "max_inference_seconds": 19.5
+      }
+    },
+    "m12_regret_score": {
+      "behavioral": {
+        "distinct_digests": 15,
+        "worlds_differing_from_control": 13
+      },
+      "ci95": [
+        -0.294611,
+        0.1835
+      ],
+      "ci99": [
+        -0.606944,
+        0.495833
+      ],
+      "cross_variant_dispersion_mean": 0.086066,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "mean delta -0.0556 below -0.05",
+        "catastrophic family: development, drift"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.05555555555555555,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.0,
+        "development": -0.16666666666666666,
+        "drift": -0.16666666666666666,
+        "shift": 0.0,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3422,
+        "intros_per_100_mean": 37.5,
+        "max_inference_seconds": 21.0
+      }
+    },
+    "m13_opportunity_cost": {
+      "behavioral": {
+        "distinct_digests": 15,
+        "worlds_differing_from_control": 13
+      },
+      "ci95": [
+        -0.294611,
+        0.1835
+      ],
+      "ci99": [
+        -0.606944,
+        0.495833
+      ],
+      "cross_variant_dispersion_mean": 0.086066,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "mean delta -0.0556 below -0.05",
+        "catastrophic family: development, drift"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.05555555555555555,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.0,
+        "development": -0.16666666666666666,
+        "drift": -0.16666666666666666,
+        "shift": 0.0,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3422,
+        "intros_per_100_mean": 37.5,
+        "max_inference_seconds": 19.0
+      }
+    },
+    "m14_mutual_regret": {
+      "behavioral": {
+        "distinct_digests": 15,
+        "worlds_differing_from_control": 0
+      },
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "ci99": [
+        0.0,
+        0.0
+      ],
+      "cross_variant_dispersion_mean": 0.0,
+      "eligible": true,
+      "ineligibility_reasons": [],
+      "invalid_episodes": 0,
+      "mean_delta": 0.0,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.0,
+        "development": 0.0,
+        "drift": 0.0,
+        "shift": 0.0,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3422,
+        "intros_per_100_mean": 37.944,
+        "max_inference_seconds": 20.8
+      }
+    },
+    "m15_reserve_high_option": {
+      "behavioral": {
+        "distinct_digests": 15,
+        "worlds_differing_from_control": 13
+      },
+      "ci95": [
+        -0.147306,
+        0.09175
+      ],
+      "ci99": [
+        -0.303472,
+        0.247917
+      ],
+      "cross_variant_dispersion_mean": 0.068041,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "catastrophic family: delayed"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.027777777777777776,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": -0.16666666666666666,
+        "development": 0.0,
+        "drift": 0.0,
+        "shift": 0.0,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3422,
+        "intros_per_100_mean": 38.417,
+        "max_inference_seconds": 23.3
+      }
+    },
+    "m16_patient_policy": {
+      "behavioral": {
+        "distinct_digests": 13,
+        "worlds_differing_from_control": 18
+      },
+      "ci95": [
+        -0.313972,
+        -0.074917
+      ],
+      "ci99": [
+        -0.470139,
+        0.08125
+      ],
+      "cross_variant_dispersion_mean": 0.313436,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "mean delta -0.1944 below -0.05",
+        "catastrophic family: cold_start, development, drift, shift, sparse"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.19444444444444445,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": -0.5,
+        "delayed": 0.0,
+        "development": -0.16666666666666666,
+        "drift": -0.16666666666666666,
+        "shift": -0.16666666666666666,
+        "sparse": -0.16666666666666666
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.0831,
+        "intros_per_100_mean": 5.944,
+        "max_inference_seconds": 19.6
+      }
+    },
+    "m17_daily_quota": {
+      "behavioral": {
+        "distinct_digests": 16,
+        "worlds_differing_from_control": 18
+      },
+      "ci95": [
+        -0.290362,
+        0.123695
+      ],
+      "ci99": [
+        -0.56085,
+        0.394183
+      ],
+      "cross_variant_dispersion_mean": 0.309533,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "mean delta -0.0833 below -0.05",
+        "catastrophic family: delayed, development, drift, shift"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.08333333333333333,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": -0.16666666666666666,
+        "development": -0.16666666666666666,
+        "drift": -0.16666666666666666,
+        "shift": -0.16666666666666666,
+        "sparse": 0.16666666666666666
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3428,
+        "intros_per_100_mean": 38.194,
+        "max_inference_seconds": 19.7
+      }
+    },
+    "m18_time_threshold": {
+      "behavioral": {
+        "distinct_digests": 12,
+        "worlds_differing_from_control": 18
+      },
+      "ci95": [
+        -0.313972,
+        -0.074917
+      ],
+      "ci99": [
+        -0.470139,
+        0.08125
+      ],
+      "cross_variant_dispersion_mean": 0.361592,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "mean delta -0.1944 below -0.05",
+        "catastrophic family: cold_start, development, drift, shift, sparse"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.19444444444444445,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": -0.5,
+        "delayed": 0.0,
+        "development": -0.16666666666666666,
+        "drift": -0.16666666666666666,
+        "shift": -0.16666666666666666,
+        "sparse": -0.16666666666666666
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.1142,
+        "intros_per_100_mean": 9.5,
+        "max_inference_seconds": 26.9
+      }
+    },
+    "m19_arrival_age": {
+      "behavioral": {
+        "distinct_digests": 17,
+        "worlds_differing_from_control": 17
+      },
+      "ci95": [
+        -0.09175,
+        0.147306
+      ],
+      "ci99": [
+        -0.247917,
+        0.303472
+      ],
+      "cross_variant_dispersion_mean": 0.068041,
+      "eligible": true,
+      "ineligibility_reasons": [],
+      "invalid_episodes": 0,
+      "mean_delta": 0.027777777777777776,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.16666666666666666,
+        "development": 0.0,
+        "drift": 0.0,
+        "shift": 0.0,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3425,
+        "intros_per_100_mean": 37.944,
+        "max_inference_seconds": 44.6
+      }
+    },
+    "m20_new_arrival_protection": {
+      "behavioral": {
+        "distinct_digests": 16,
+        "worlds_differing_from_control": 18
+      },
+      "ci95": [
+        -1.049024,
+        0.993468
+      ],
+      "ci99": [
+        -2.383312,
+        2.327757
+      ],
+      "cross_variant_dispersion_mean": 0.4581,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "catastrophic family: cold_start"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.02777777777777778,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": -0.3333333333333333,
+        "delayed": 0.16666666666666666,
+        "development": 0.0,
+        "drift": 0.0,
+        "shift": 0.0,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3453,
+        "intros_per_100_mean": 38.972,
+        "max_inference_seconds": 43.7
+      }
+    },
+    "m21_delay_cost_threshold": {
+      "behavioral": {
+        "distinct_digests": 15,
+        "worlds_differing_from_control": 18
+      },
+      "ci95": [
+        -0.457028,
+        -0.042972
+      ],
+      "ci99": [
+        -0.727517,
+        0.227517
+      ],
+      "cross_variant_dispersion_mean": 0.427353,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "mean delta -0.2500 below -0.05",
+        "catastrophic family: cold_start, development, drift, shift, sparse"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.25,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": -0.5,
+        "delayed": 0.0,
+        "development": -0.16666666666666666,
+        "drift": -0.3333333333333333,
+        "shift": -0.3333333333333333,
+        "sparse": -0.16666666666666666
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.1711,
+        "intros_per_100_mean": 15.361,
+        "max_inference_seconds": 40.4
+      }
+    },
+    "m22_market_thickness": {
+      "behavioral": {
+        "distinct_digests": 9,
+        "worlds_differing_from_control": 18
+      },
+      "ci95": [
+        -0.736519,
+        0.125408
+      ],
+      "ci99": [
+        -1.299586,
+        0.688475
+      ],
+      "cross_variant_dispersion_mean": 0.408084,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "mean delta -0.3056 below -0.05",
+        "catastrophic family: cold_start, delayed, development, drift, shift, sparse"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.3055555555555556,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": -0.5,
+        "delayed": -0.16666666666666666,
+        "development": -0.3333333333333333,
+        "drift": -0.3333333333333333,
+        "shift": -0.3333333333333333,
+        "sparse": -0.16666666666666666
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.0,
+        "intros_per_100_mean": 0.0,
+        "max_inference_seconds": 40.3
+      }
+    },
+    "m23_hybrid_patient_greedy": {
+      "behavioral": {
+        "distinct_digests": 16,
+        "worlds_differing_from_control": 18
+      },
+      "ci95": [
+        -0.542075,
+        0.319852
+      ],
+      "ci99": [
+        -1.105142,
+        0.882919
+      ],
+      "cross_variant_dispersion_mean": 0.391235,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "mean delta -0.1111 below -0.05",
+        "catastrophic family: cold_start, sparse"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.1111111111111111,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": -0.5,
+        "delayed": 0.0,
+        "development": 0.0,
+        "drift": 0.0,
+        "shift": 0.0,
+        "sparse": -0.16666666666666666
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.2739,
+        "intros_per_100_mean": 21.056,
+        "max_inference_seconds": 28.9
+      }
+    },
+    "m24_max_cardinality": {
+      "behavioral": {
+        "distinct_digests": 15,
+        "worlds_differing_from_control": 18
+      },
+      "ci95": [
+        -0.147306,
+        0.09175
+      ],
+      "ci99": [
+        -0.303472,
+        0.247917
+      ],
+      "cross_variant_dispersion_mean": 0.269275,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "catastrophic family: development, drift"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.027777777777777776,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.16666666666666666,
+        "development": -0.16666666666666666,
+        "drift": -0.16666666666666666,
+        "shift": 0.0,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3444,
+        "intros_per_100_mean": 38.194,
+        "max_inference_seconds": 29.4
+      }
+    },
+    "m25_max_weight": {
+      "behavioral": {
+        "distinct_digests": 16,
+        "worlds_differing_from_control": 18
+      },
+      "ci95": [
+        -0.313972,
+        -0.074917
+      ],
+      "ci99": [
+        -0.470139,
+        0.08125
+      ],
+      "cross_variant_dispersion_mean": 0.313436,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "mean delta -0.1944 below -0.05",
+        "catastrophic family: cold_start, development, drift, shift, sparse"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.19444444444444445,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": -0.5,
+        "delayed": 0.0,
+        "development": -0.16666666666666666,
+        "drift": -0.16666666666666666,
+        "shift": -0.16666666666666666,
+        "sparse": -0.16666666666666666
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.1767,
+        "intros_per_100_mean": 16.0,
+        "max_inference_seconds": 35.1
+      }
+    },
+    "m26_greedy_one_swap": {
+      "behavioral": {
+        "distinct_digests": 15,
+        "worlds_differing_from_control": 18
+      },
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "ci99": [
+        0.0,
+        0.0
+      ],
+      "cross_variant_dispersion_mean": 0.0,
+      "eligible": true,
+      "ineligibility_reasons": [],
+      "invalid_episodes": 0,
+      "mean_delta": 0.0,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.0,
+        "development": 0.0,
+        "drift": 0.0,
+        "shift": 0.0,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3422,
+        "intros_per_100_mean": 37.917,
+        "max_inference_seconds": 49.4
+      }
+    },
+    "m27_greedy_augmenting": {
+      "behavioral": {
+        "distinct_digests": 15,
+        "worlds_differing_from_control": 18
+      },
+      "ci95": [
+        -0.883833,
+        0.5505
+      ],
+      "ci99": [
+        -1.820833,
+        1.4875
+      ],
+      "cross_variant_dispersion_mean": 0.287983,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "mean delta -0.1667 below -0.05",
+        "catastrophic family: cold_start, development, drift, shift"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.16666666666666666,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": -0.16666666666666666,
+        "delayed": 0.0,
+        "development": -0.3333333333333333,
+        "drift": -0.3333333333333333,
+        "shift": -0.16666666666666666,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3436,
+        "intros_per_100_mean": 38.75,
+        "max_inference_seconds": 51.2
+      }
+    },
+    "m28_conflict_aware": {
+      "behavioral": {
+        "distinct_digests": 15,
+        "worlds_differing_from_control": 15
+      },
+      "ci95": [
+        -0.486519,
+        0.375408
+      ],
+      "ci99": [
+        -1.049586,
+        0.938475
+      ],
+      "cross_variant_dispersion_mean": 0.159328,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "mean delta -0.0556 below -0.05",
+        "catastrophic family: development, drift, shift"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": -0.05555555555555556,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.16666666666666666,
+        "development": -0.16666666666666666,
+        "drift": -0.16666666666666666,
+        "shift": -0.16666666666666666,
+        "sparse": 0.0
+      },
+      "secondary": {
+        "ask_cost_mean": 201.7,
+        "coverage_mean": 0.3428,
+        "intros_per_100_mean": 38.667,
+        "max_inference_seconds": 32.3
+      }
+    },
+    "m29_uncertainty_aware": {
+      "behavioral": {
+        "distinct_digests": 17,
+        "worlds_differing_from_control": 18
+      },
+      "ci95": [
+        -0.537751,
+        0.704418
+      ],
+      "ci99": [
+        -1.349217,
+        1.515884
+      ],
+      "cross_variant_dispersion_mean": 0.443676,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "catastrophic family: cold_start, sparse"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": 0.08333333333333333,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": -0.3333333333333333,
+        "delayed": 0.3333333333333333,
+        "development": 0.0,
+        "drift": 0.0,
+        "shift": 0.6666666666666666,
+        "sparse": -0.16666666666666666
+      },
+      "secondary": {
+        "ask_cost_mean": 307.7,
+        "coverage_mean": 0.3439,
+        "intros_per_100_mean": 35.583,
+        "max_inference_seconds": 37.1
+      }
+    },
+    "m30_targeted_info": {
+      "behavioral": {
+        "distinct_digests": 17,
+        "worlds_differing_from_control": 18
+      },
+      "ci95": [
+        -0.211278,
+        0.266833
+      ],
+      "ci99": [
+        -0.523611,
+        0.579167
+      ],
+      "cross_variant_dispersion_mean": 0.388344,
+      "eligible": false,
+      "ineligibility_reasons": [
+        "catastrophic family: drift, sparse"
+      ],
+      "invalid_episodes": 0,
+      "mean_delta": 0.027777777777777776,
+      "n_seeds": 3,
+      "n_units": 18,
+      "per_variant_mean_delta": {
+        "cold_start": 0.0,
+        "delayed": 0.5,
+        "development": 0.0,
+        "drift": -0.16666666666666666,
+        "shift": 0.0,
+        "sparse": -0.16666666666666666
+      },
+      "secondary": {
+        "ask_cost_mean": 249.2,
+        "coverage_mean": 0.3464,
+        "intros_per_100_mean": 36.472,
+        "max_inference_seconds": 45.2
+      }
+    }
+  },
+  "phase": "screening",
+  "retained": [
+    "m19_arrival_age",
+    "m03_reciprocal_min",
+    "m14_mutual_regret",
+    "m26_greedy_one_swap"
+  ],
+  "seeds": [
+    143,
+    144,
+    145
+  ],
+  "top5": [
+    "m19_arrival_age",
+    "m03_reciprocal_min",
+    "m14_mutual_regret",
+    "m26_greedy_one_swap"
+  ],
+  "variants": [
+    "development",
+    "sparse",
+    "cold_start",
+    "delayed",
+    "shift",
+    "drift"
+  ],
+  "worlds": 18
+}

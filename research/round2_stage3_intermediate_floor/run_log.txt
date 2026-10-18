@@ -1,0 +1,26 @@
+2026-10-07 13:55:08 | PRE-RUN REGISTRATION | preregistration.md SHA256=FA11A2FB4DF53D507AA8C4D1A905025FD6392F5B656CC997CEE83FED4BF2D491 (immutable)
+2026-10-07 13:55:08 | PRE-RUN REGISTRATION | intermediate_policy.py SHA256=A76FD0EE0C2B9579A6E6858081C62592A298066386C0D09013CF844FAA07991F (Arm-2 shim; rule: floor argument halved at call time; 0.007905174015296758 -> 0.003952587007648379)
+2026-10-07 13:55:08 | PRE-RUN REGISTRATION | Arm-1 apparatus: policy_ac.py (frozen); Arm-3 apparatus: research/round2_stage2_floor_ablation/ablation_policy.py (unchanged); evaluator: evaluate.py (frozen)
+2026-10-07 13:55:08 | PRE-RUN REGISTRATION | seeds=104,105,106 variants=all 18 eps/arm primary=MSMI/100 | NO RUNS YET
+2026-10-07 13:58:14 | python evaluate.py --policy policy_ac.py --seeds 104 -> arm_frozen_seed104.json | exit=0 | 143.3s
+2026-10-07 13:58:14 | python evaluate.py --policy intermediate_policy.py --seeds 104 -> arm_intermediate_seed104.json | exit=0 | 142.5s
+2026-10-07 13:58:15 | python evaluate.py --policy stage2/ablation_policy.py --seeds 104 -> arm_nofloor_seed104.json | exit=0 | 141.7s
+2026-10-07 14:01:09 | python evaluate.py --policy policy_ac.py --seeds 105 -> arm_frozen_seed105.json | exit=0 | 156.1s
+2026-10-07 14:01:12 | python evaluate.py --policy intermediate_policy.py --seeds 105 -> arm_intermediate_seed105.json | exit=0 | 157s
+2026-10-07 14:01:12 | python evaluate.py --policy stage2/ablation_policy.py --seeds 105 -> arm_nofloor_seed105.json | exit=0 | 155.6s
+2026-10-07 14:03:48 | python evaluate.py --policy intermediate_policy.py --seeds 106 -> arm_intermediate_seed106.json | exit=0 | 135.3s
+2026-10-07 14:03:48 | python evaluate.py --policy policy_ac.py --seeds 106 -> arm_frozen_seed106.json | exit=0 | 137.4s
+2026-10-07 14:03:48 | python evaluate.py --policy stage2/ablation_policy.py --seeds 106 -> arm_nofloor_seed106.json | exit=0 | 134.4s
+2026-10-07 14:05:55 | python evaluate.py (Arm-2 seed104 DETERMINISM RERUN) -> arm_intermediate_seed104_rerun.json | exit=0 | 114s
+2026-10-07 14:10:19 | diagnose3.py --arm intermediate --seed 104 -> diag_arm_intermediate_seed104.json | exit=0 | 124.3s
+2026-10-07 14:10:20 | diagnose3.py --arm nofloor --seed 104 -> diag_arm_nofloor_seed104.json | exit=0 | 124.6s
+2026-10-07 14:10:24 | diagnose3.py --arm frozen --seed 104 -> diag_arm_frozen_seed104.json | exit=0 | 128.7s
+2026-10-07 14:12:52 | diagnose3.py --arm frozen --seed 105 -> diag_arm_frozen_seed105.json | exit=0 | 138.6s
+2026-10-07 14:12:53 | diagnose3.py --arm intermediate --seed 105 -> diag_arm_intermediate_seed105.json | exit=0 | 137.8s
+2026-10-07 14:12:53 | diagnose3.py --arm nofloor --seed 105 -> diag_arm_nofloor_seed105.json | exit=0 | 136.6s
+2026-10-07 14:15:17 | diagnose3.py --arm intermediate --seed 106 -> diag_arm_intermediate_seed106.json | exit=0 | 131.3s
+2026-10-07 14:15:20 | diagnose3.py --arm nofloor --seed 106 -> diag_arm_nofloor_seed106.json | exit=0 | 132.1s
+2026-10-07 14:15:21 | diagnose3.py --arm frozen --seed 106 -> diag_arm_frozen_seed106.json | exit=0 | 137s
+2026-10-07 14:33:22 | python analyze3.py | exit=1 | 2s
+2026-10-07 14:34:16 | python analyze3.py (summary-key fix) | exit=0 | 1.8s
+2026-10-07 14:37:07 | FINAL VERIFICATION: 27/27 files, 0 json errors, prereg+shim hashes immutable, frozen policy hashes OK, no new commits, Round1+Stage1.5+Stage2 intact, holdout untouched, all fidelity OK, determinism OK, 0 invalids

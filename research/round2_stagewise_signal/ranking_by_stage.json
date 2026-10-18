@@ -1,0 +1,334 @@
+{
+ "goal_ranking": {
+  "both_responded": {
+   "diff_ci": [
+    -0.084022,
+    0.091258
+   ],
+   "excludes_zero_rate": false,
+   "excludes_zero_score": false,
+   "n_match": 2042,
+   "n_match_edges": 2042,
+   "n_mismatch": 2324,
+   "rate_diff": 0.00582,
+   "rate_match": 0.622429,
+   "rate_mismatch": 0.616609,
+   "score_delta": -0.004693,
+   "score_delta_ci": [
+    -0.03794,
+    0.020921
+   ]
+  },
+  "date": {
+   "diff_ci": [
+    0.096066,
+    0.156308
+   ],
+   "excludes_zero_rate": true,
+   "excludes_zero_score": true,
+   "n_match": 2042,
+   "n_match_edges": 2042,
+   "n_mismatch": 2324,
+   "rate_diff": 0.125167,
+   "rate_match": 0.173359,
+   "rate_mismatch": 0.048193,
+   "score_delta": 0.099075,
+   "score_delta_ci": [
+    0.090079,
+    0.110059
+   ]
+  },
+  "date_within_deadline": {
+   "diff_ci": [
+    0.095597,
+    0.156921
+   ],
+   "excludes_zero_rate": true,
+   "excludes_zero_score": true,
+   "n_match": 2042,
+   "n_match_edges": 2042,
+   "n_mismatch": 2324,
+   "rate_diff": 0.125048,
+   "rate_match": 0.17238,
+   "rate_mismatch": 0.047332,
+   "score_delta": 0.104748,
+   "score_delta_ci": [
+    0.089909,
+    0.117851
+   ]
+  },
+  "final_msmi": {
+   "diff_ci": [
+    0.009813,
+    0.027527
+   ],
+   "excludes_zero_rate": true,
+   "excludes_zero_score": true,
+   "n_match": 2042,
+   "n_match_edges": 2042,
+   "n_mismatch": 2324,
+   "rate_diff": 0.017986,
+   "rate_match": 0.020568,
+   "rate_mismatch": 0.002582,
+   "score_delta": 0.011761,
+   "score_delta_ci": [
+    0.009398,
+    0.014057
+   ]
+  },
+  "mutual": {
+   "diff_ci": [
+    0.114637,
+    0.186441
+   ],
+   "excludes_zero_rate": true,
+   "excludes_zero_score": true,
+   "n_match": 2042,
+   "n_match_edges": 2042,
+   "n_mismatch": 2324,
+   "rate_diff": 0.149685,
+   "rate_match": 0.219393,
+   "rate_mismatch": 0.069707,
+   "score_delta": 0.130441,
+   "score_delta_ci": [
+    0.117471,
+    0.145554
+   ]
+  },
+  "timely_second": {
+   "diff_ci": [
+    0.010084,
+    0.028158
+   ],
+   "excludes_zero_rate": true,
+   "excludes_zero_score": true,
+   "n_match": 2042,
+   "n_match_edges": 2042,
+   "n_mismatch": 2324,
+   "rate_diff": 0.018476,
+   "rate_match": 0.021058,
+   "rate_mismatch": 0.002582,
+   "score_delta": 0.010624,
+   "score_delta_ci": [
+    0.00755,
+    0.013707
+   ]
+  }
+ },
+ "interpretation_rules": [
+  "delta_B_minus_A isolates the soft-state representation (incl. relationship_goal) marginal ranking contribution, both feature sets frozen; CI is a paired seed-group bootstrap.",
+  "The timely_second-vs-final_msmi AUC gap is within model-fit instability (see rare_target_sensitivity); it is NOT read as signal attenuation.",
+  "Findings about intermediate outcomes are separate from final MSMI; better prediction of mutual/date is not claimed to raise final MSMI."
+ ],
+ "per_seed_consistency": {
+  "both_responded": {
+   "auc_max": 0.55231,
+   "auc_median": 0.494912,
+   "auc_min": 0.397295,
+   "n_seeds_auc_gt_0_5": 9,
+   "n_seeds_with_auc": 21
+  },
+  "date": {
+   "auc_max": 0.657833,
+   "auc_median": 0.524573,
+   "auc_min": 0.440682,
+   "n_seeds_auc_gt_0_5": 14,
+   "n_seeds_with_auc": 21
+  },
+  "date_within_deadline": {
+   "auc_max": 0.692788,
+   "auc_median": 0.525326,
+   "auc_min": 0.478343,
+   "n_seeds_auc_gt_0_5": 20,
+   "n_seeds_with_auc": 21
+  },
+  "final_msmi": {
+   "auc_max": 0.966752,
+   "auc_median": 0.621656,
+   "auc_min": 0.330342,
+   "n_seeds_auc_gt_0_5": 18,
+   "n_seeds_with_auc": 21
+  },
+  "mutual": {
+   "auc_max": 0.62414,
+   "auc_median": 0.524298,
+   "auc_min": 0.429612,
+   "n_seeds_auc_gt_0_5": 18,
+   "n_seeds_with_auc": 21
+  },
+  "timely_second": {
+   "auc_max": 0.909264,
+   "auc_median": 0.630402,
+   "auc_min": 0.330342,
+   "n_seeds_auc_gt_0_5": 17,
+   "n_seeds_with_auc": 21
+  }
+ },
+ "per_stage_signal": [
+  {
+   "auc_A": 0.517531,
+   "auc_B": 0.495766,
+   "auc_B_ci": [
+    0.477428,
+    0.512459
+   ],
+   "auc_C": 0.512153,
+   "delta_B_minus_A": -0.021765,
+   "delta_B_minus_A_ci": [
+    -0.038525,
+    -0.003973
+   ],
+   "delta_excludes_zero": true,
+   "lift_B": 0.997845,
+   "n_pos": 9148,
+   "power_flag": "ok",
+   "prevalence": 0.597752,
+   "stage": "both_responded"
+  },
+  {
+   "auc_A": 0.496381,
+   "auc_B": 0.529466,
+   "auc_B_ci": [
+    0.515651,
+    0.543097
+   ],
+   "auc_C": 0.520648,
+   "delta_B_minus_A": 0.033084,
+   "delta_B_minus_A_ci": [
+    0.0107,
+    0.053686
+   ],
+   "delta_excludes_zero": true,
+   "lift_B": 1.102001,
+   "n_pos": 2183,
+   "power_flag": "ok",
+   "prevalence": 0.142642,
+   "stage": "mutual"
+  },
+  {
+   "auc_A": 0.488987,
+   "auc_B": 0.534119,
+   "auc_B_ci": [
+    0.513554,
+    0.553895
+   ],
+   "auc_C": 0.534279,
+   "delta_B_minus_A": 0.045132,
+   "delta_B_minus_A_ci": [
+    0.025255,
+    0.06495
+   ],
+   "delta_excludes_zero": true,
+   "lift_B": 1.091227,
+   "n_pos": 1689,
+   "power_flag": "ok",
+   "prevalence": 0.110363,
+   "stage": "date"
+  },
+  {
+   "auc_A": 0.485826,
+   "auc_B": 0.54224,
+   "auc_B_ci": [
+    0.525981,
+    0.560618
+   ],
+   "auc_C": 0.549497,
+   "delta_B_minus_A": 0.056414,
+   "delta_B_minus_A_ci": [
+    0.038446,
+    0.075071
+   ],
+   "delta_excludes_zero": true,
+   "lift_B": 1.118282,
+   "n_pos": 1681,
+   "power_flag": "ok",
+   "prevalence": 0.109841,
+   "stage": "date_within_deadline"
+  },
+  {
+   "auc_A": 0.513319,
+   "auc_B": 0.593999,
+   "auc_B_ci": [
+    0.514327,
+    0.677555
+   ],
+   "auc_C": 0.534288,
+   "delta_B_minus_A": 0.08068,
+   "delta_B_minus_A_ci": [
+    0.035446,
+    0.134327
+   ],
+   "delta_excludes_zero": true,
+   "lift_B": 2.5103,
+   "n_pos": 174,
+   "power_flag": "ok",
+   "prevalence": 0.01137,
+   "stage": "timely_second"
+  },
+  {
+   "auc_A": 0.503788,
+   "auc_B": 0.563408,
+   "auc_B_ci": [
+    0.488127,
+    0.644772
+   ],
+   "auc_C": 0.523253,
+   "delta_B_minus_A": 0.05962,
+   "delta_B_minus_A_ci": [
+    0.027658,
+    0.093835
+   ],
+   "delta_excludes_zero": true,
+   "lift_B": 1.545042,
+   "n_pos": 173,
+   "power_flag": "ok",
+   "prevalence": 0.011304,
+   "stage": "final_msmi"
+  }
+ ],
+ "positive_edge_rank_summary": {
+  "f2_better_than_baseline_share": 0.323699,
+  "mean_baseline_percentile": 0.388022,
+  "mean_f2_percentile": 0.454823,
+  "median_f2_percentile": 0.416667,
+  "n_f2_selected": 94,
+  "n_missed_by_F2": 67,
+  "n_positive_edges": 173,
+  "n_ranked_in_F5": 161,
+  "note": "f2_percentile = competition rank / n_edges within the state, using the frozen selector F2 score (positive_edge_ranks.csv). Lower percentile = better rank."
+ },
+ "rare_target_sensitivity": {
+  "conclusion": "For ~173-positive targets the OOF AUC carries material model-fit variance; a single flipped training positive moves AUC by ~0.03. Any timely_second-vs-final_msmi AUC gap of that order is NOT evidence of signal attenuation.",
+  "differing_row_indices": [
+   6540
+  ],
+  "differing_states": [
+   [
+    155,
+    "delayed",
+    16
+   ]
+  ],
+  "evaluation_side": {
+   "auc_modelA_on_A": 0.593999,
+   "auc_modelA_on_B": 0.594019,
+   "auc_modelB_on_A": 0.562616,
+   "auc_modelB_on_B": 0.563408,
+   "note": "Swapping only the EVALUATION target (1 label) moves AUC by <=0.001 for a fixed model."
+  },
+  "n_pos_A": 174,
+  "n_pos_B": 173,
+  "n_rows_differing": 1,
+  "target_A": "timely_second",
+  "target_B": "final_msmi",
+  "training_side": {
+   "auc_gap_same_evaluation_labels": 0.030611,
+   "auc_modelA_on_B": 0.594019,
+   "auc_modelB_on_B": 0.563408,
+   "max_abs_score_diff": 0.293083,
+   "note": "Two models whose TRAINING labels differ by a single row yield correlated-but-distinct scores; the same-evaluation-label AUC gap is therefore model-fit instability, not signal loss.",
+   "score_correlation": 0.798883
+  },
+  "unit": "seed group (GroupKFold by seed, 21 groups)"
+ }
+}

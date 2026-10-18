@@ -1,0 +1,75 @@
+{
+ "F2_behaviour_on_zero_headroom": {
+  "a_no_positive_edges": {
+   "P_F2": 0,
+   "P_F5": 0,
+   "P_GREEDY": 0,
+   "n": 7394
+  },
+  "b_greedy_set_is_optimal": {
+   "P_F2": 50,
+   "P_F5": 55,
+   "P_GREEDY": 55,
+   "n": 52
+  },
+  "d_alternative_optima": {
+   "P_F2": 30,
+   "P_F5": 33,
+   "P_GREEDY": 33,
+   "n": 32
+  }
+ },
+ "F2_minus_GREEDY_on_zero_headroom": -8,
+ "F2_total_on_zero_headroom": 80,
+ "GREEDY_total_on_zero_headroom": 88,
+ "by_variant": {
+  "cold_start": {
+   "a_no_positive_edges": 1226,
+   "b_greedy_set_is_optimal": 18,
+   "d_alternative_optima": 3
+  },
+  "delayed": {
+   "a_no_positive_edges": 1230,
+   "b_greedy_set_is_optimal": 10,
+   "d_alternative_optima": 4
+  },
+  "development": {
+   "a_no_positive_edges": 1225,
+   "b_greedy_set_is_optimal": 7,
+   "d_alternative_optima": 8
+  },
+  "drift": {
+   "a_no_positive_edges": 1227,
+   "b_greedy_set_is_optimal": 7,
+   "d_alternative_optima": 8
+  },
+  "shift": {
+   "a_no_positive_edges": 1231,
+   "b_greedy_set_is_optimal": 7,
+   "d_alternative_optima": 9
+  },
+  "sparse": {
+   "a_no_positive_edges": 1255,
+   "b_greedy_set_is_optimal": 3
+  }
+ },
+ "caveat": "A zero-headroom state means the local counterfactual oracle gains nothing over greedy at this day and this cardinality. It does NOT mean F2 has no predictive signal there, nor that no alternative decisions exist. Both are reported separately above.",
+ "counts": {
+  "a_no_positive_edges": 7394,
+  "b_greedy_set_is_optimal": 52,
+  "d_alternative_optima": 32
+ },
+ "fractions": {
+  "a_no_positive_edges": 0.988767,
+  "b_greedy_set_is_optimal": 0.006954,
+  "d_alternative_optima": 0.004279
+ },
+ "invariant": "P_F5 == P_GREEDY on every zero-headroom state",
+ "invariant_holds": true,
+ "mutually_exclusive_categories": [
+  "a_no_positive_edges",
+  "b_greedy_set_is_optimal",
+  "d_alternative_optima"
+ ],
+ "n_zero_headroom_states": 7478
+}

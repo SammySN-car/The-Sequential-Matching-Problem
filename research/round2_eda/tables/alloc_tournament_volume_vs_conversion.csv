@@ -1,0 +1,5 @@
+arm,baseline,n_paired_worlds,mean_delta_msmi,mean_volume_effect,mean_conversion_effect,volume_share_of_total
+m03_reciprocal_min,__control__,36,0.08333,0.00221,0.08112,0.027
+m19_arrival_age,__control__,36,-0.02778,0.00223,-0.03001,-0.08
+m14_mutual_regret,__control__,36,0.0,0.0,0.0,
+m26_greedy_one_swap,__control__,36,0.0,0.0,0.0,

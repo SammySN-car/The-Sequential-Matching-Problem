@@ -1,0 +1,13 @@
+{"day": 50, "invocation_seconds": 0.09733570000389591, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 29412, "solver_seconds": 0.0}
+{"day": 54, "invocation_seconds": 0.1023785000143107, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 29412, "solver_seconds": 0.0}
+{"day": 49, "invocation_seconds": 0.10681359999580309, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 29412, "solver_seconds": 0.0}
+{"day": 39, "invocation_seconds": 0.11707760000717826, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 29412, "solver_seconds": 0.0}
+{"day": 40, "invocation_seconds": 0.10682340001221746, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 29412, "solver_seconds": 0.0}
+{"day": 54, "invocation_seconds": 0.10203090001596138, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 29412, "solver_seconds": 0.0}
+{"day": 29, "invocation_seconds": 0.09162400002242066, "k_chosen": 2, "k_greedy": 2, "n_edges": 3, "phase": "match", "pid": 29412, "solver_seconds": 0.00014449999434873462}
+{"day": 53, "invocation_seconds": 0.10480790000292473, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 29412, "solver_seconds": 0.0}
+{"day": 18, "invocation_seconds": 0.07757880000281148, "k_chosen": 2, "k_greedy": 2, "n_edges": 3, "phase": "match", "pid": 29412, "solver_seconds": 0.00013839997700415552}
+{"day": 46, "invocation_seconds": 0.07709649999742396, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 29412, "solver_seconds": 0.0}
+{"day": 44, "invocation_seconds": 0.09849130001384765, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 29412, "solver_seconds": 0.0}
+{"day": 37, "invocation_seconds": 0.1038612000120338, "k_chosen": 2, "k_greedy": 2, "n_edges": 3, "phase": "match", "pid": 29412, "solver_seconds": 0.00010420000762678683}
+{"day": 32, "invocation_seconds": 0.08427160000428557, "k_chosen": 2, "k_greedy": 2, "n_edges": 6, "phase": "match", "pid": 29412, "solver_seconds": 0.00021990001550875604}

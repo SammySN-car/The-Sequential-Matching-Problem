@@ -1,0 +1,6 @@
+feature_set,n_headroom_choice_states,n_states_auc_defined,n_states_single_class,within_state_auc_mean,within_state_auc_posweighted,n_states_argmax_compared,n_states_argmax_beats_collector,argmax_beats_collector_rate,collector_positive_states
+F1_baseline_count_score,82,82,0,0.485098,,82,41,0.5,2
+F2_soft_state,82,82,0,0.533647,,82,31,0.378049,2
+F3_public_profile,82,82,0,0.436867,,82,16,0.195122,2
+F4_full_legal_observables,82,82,0,0.495537,,82,18,0.219512,2
+F5_state_only,82,82,0,0.5,,82,55,0.670732,2

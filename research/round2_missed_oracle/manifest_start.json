@@ -1,0 +1,31 @@
+{
+ "n_files": 26,
+ "sha256": {
+  "research/round2_missed_oracle/analysis_plan.md": "d0006555e468c2515da76c0bc51e6515a0496ca67fa527fa485b7458159fde1f",
+  "research/round2_missed_oracle/decomposition_agg.json": "9bf77aa59cdce1ac4d00bf7b279b933d4b509c86f5a7d7caea63e204a1b370e6",
+  "research/round2_missed_oracle/gap_decomposition.csv": "1cc4a5ea7596dcc7c546297f9e676e2631552df0cb8fb97c12f1c3751d6387c3",
+  "research/round2_missed_oracle/headroom_taxonomy.json": "33bcc0c9080d93d7ecfea9653b539e9d30d24562592b3b149a7e9c3ef0be569a",
+  "research/round2_missed_oracle/headroom_taxonomy_per_state.jsonl": "545f6dec43242130c9f6ae49893a3ecf08103fb1a00e54cfd3b256a693206a53",
+  "research/round2_missed_oracle/manifest_start.json": "835b059106970f722e675db35dae77bf96bccd045820650fb15deb9851be3724",
+  "research/round2_missed_oracle/mechanism_flags.csv": "322b4f815a93f48fd3fc5a3c6f16c086e41c7d81fa30d1533709fecccc863948",
+  "research/round2_missed_oracle/per_seed_results.csv": "98ce7193a302c18b95292002652883d7b5d98ee7d2fe57810e89d4554b8eb818",
+  "research/round2_missed_oracle/per_seed_results.jsonl": "f7d4e8204d6213feb17d2fed45ad9fc865b8fa0adcbc3d84b09e5721641e271b",
+  "research/round2_missed_oracle/positive_edge_ranks.csv": "776f9051a784de1af3c8223d346b65bd2ef49d654557488bc1864ad6d323db49",
+  "research/round2_missed_oracle/recomputed_sets.jsonl": "ac220dcf704821fb9b821410b20045d878ac7236476b1365b21205271c7dd3a6",
+  "research/round2_missed_oracle/report.md": "59eb09c37623e93c871541deb9952d4cf0c1d80232ef0b9a2f7338e14470afdc",
+  "research/round2_missed_oracle/run_log.txt": "e74c7677831ee4f4bff6808e355490d993e2f66e12d4bbe55b50ebc66db2d1da",
+  "research/round2_missed_oracle/scripts/mo_analyze.py": "7f8c9487daebe874e5d06da2e31bc72f84dded5b4410df01450d9d66b0a85205",
+  "research/round2_missed_oracle/scripts/mo_decomp.py": "b22a4471971d0217a993aecc203837243da68fe4a8b1d766633196f1f180028f",
+  "research/round2_missed_oracle/scripts/mo_seal.py": "b0ed3c234c6831353999cac7d3e71aacd8199bcfd65c702a2138a131365ce2e8",
+  "research/round2_missed_oracle/scripts/mo_stats.py": "218282e5acd728d3bb733cae3d6b215236b3715906764ac715570115cf6ed264",
+  "research/round2_missed_oracle/scripts/mo_tail.py": "a69585146fb061212d9ac7bfc606898af098268e86c52d4beb952b3776782e0b",
+  "research/round2_missed_oracle/scripts/mo_taxonomy.py": "f409f6ce77f05f4cca179c8a76bf03008a8d8eacdcca67ac121900c698e83b8f",
+  "research/round2_missed_oracle/scripts/mo_validate.py": "082fc5538785c40f3ac06d541c48ff21ff6e48c6a272dd99ed59624cb9e23eb6",
+  "research/round2_missed_oracle/scripts/mo_verify.py": "b4b42f440687f835e7ac618cb9dd70ee2358a909573dc33d0c56f3eb98d951f7",
+  "research/round2_missed_oracle/selection_diagnostics.csv": "ff2580d831d5c90bae2b0ee5f22b4eac3c035ce6fae9b3b9e20b74879dba2367",
+  "research/round2_missed_oracle/selection_diagnostics.jsonl": "e35c336369869819978b9d39af4c78ba687ce3d69a61d4631b06d6f5c6c073e9",
+  "research/round2_missed_oracle/statistics.json": "e4f1456b510cf0733e262db527454e184c02d3ac200de02acbbc5124f2ca8fc7",
+  "research/round2_missed_oracle/tail_signal.json": "9fa1c54bc67788b6fc246260f09dcba5a0139121eebd138ff09cc8cedda83c5a",
+  "research/round2_missed_oracle/validation.json": "e24d25f61877779f30266e935db4d619856b0e18af662f2f9efc3fd0fd1caf34"
+ }
+}

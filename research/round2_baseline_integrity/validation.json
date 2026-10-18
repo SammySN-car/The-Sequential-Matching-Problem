@@ -1,0 +1,133 @@
+{
+ "checks": [
+  {
+   "check": "bi0_clean",
+   "detail": "inputs_missing=[] protected_missing=[] seal_fail=[] seed_err=None f2_policy=[]",
+   "passed": true
+  },
+  {
+   "check": "bi0_inventory_21",
+   "detail": "n=21",
+   "passed": true
+  },
+  {
+   "check": "bi1_pass",
+   "detail": "facts=10 failures=[] neg_hits=[]",
+   "passed": true
+  },
+  {
+   "check": "bi2_pass",
+   "detail": "failures=[]",
+   "passed": true
+  },
+  {
+   "check": "bi3_pass",
+   "detail": "rows=42 failures=[]",
+   "passed": true
+  },
+  {
+   "check": "c2_all_14_match",
+   "detail": "14/14 failures=[]",
+   "passed": true
+  },
+  {
+   "check": "c7_main",
+   "detail": "[]",
+   "passed": true
+  },
+  {
+   "check": "c7_headroom",
+   "detail": "[]",
+   "passed": true
+  },
+  {
+   "check": "c7_contrast",
+   "detail": "{'delta': 13, 'match': True, 'mine': [0.0476, 1.2381], 'published': [0.0476, 1.2381], 'published_delta': 13}",
+   "passed": true
+  },
+  {
+   "check": "c7_gr_pairs",
+   "detail": "14/14",
+   "passed": true
+  },
+  {
+   "check": "matrix_42_rows",
+   "detail": "n=42",
+   "passed": true
+  },
+  {
+   "check": "matrix_no_empty_cells",
+   "detail": "[]",
+   "passed": true
+  },
+  {
+   "check": "matrix_vocab",
+   "detail": "[]",
+   "passed": true
+  },
+  {
+   "check": "matrix_bug_rows",
+   "detail": "n=7",
+   "passed": true
+  },
+  {
+   "check": "ci_14_rows",
+   "detail": "n=14",
+   "passed": true
+  },
+  {
+   "check": "ci_all_match_published",
+   "detail": "[]",
+   "passed": true
+  },
+  {
+   "check": "g4_g1m_delta_6_incl0",
+   "detail": "delta=6 ci=[-0.2857,0.9524]",
+   "passed": true
+  },
+  {
+   "check": "g2_g0_delta_2_incl0",
+   "detail": "delta=2 ci=[-0.2857,0.5714]",
+   "passed": true
+  },
+  {
+   "check": "g4_g1f_delta_13_excl0",
+   "detail": "delta=13 excl0=True",
+   "passed": true
+  },
+  {
+   "check": "c5_count_pct_corrected",
+   "detail": "pub=0.388022 corr=0.343518",
+   "passed": true
+  },
+  {
+   "check": "c5_f2_better_share",
+   "detail": "pub=0.323699 corr=0.34104",
+   "passed": true
+  },
+  {
+   "check": "c5_sign_chain",
+   "detail": "rows=173",
+   "passed": true
+  },
+  {
+   "check": "protected_recorded",
+   "detail": "n=9",
+   "passed": true
+  },
+  {
+   "check": "protected_unchanged",
+   "detail": "[]",
+   "passed": true
+  },
+  {
+   "check": "plan_frozen",
+   "detail": "e04280fc79e44271",
+   "passed": true
+  }
+ ],
+ "failures": [],
+ "generated": "2026-10-13 18:16:31",
+ "n_checks": 25,
+ "n_failed": 0
+}

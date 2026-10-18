@@ -1,0 +1,2271 @@
+{
+  "design": {
+    "arms": [
+      "greedy",
+      "original",
+      "floorhalf"
+    ],
+    "bootstrap": {
+      "ci": "percentile 95%",
+      "method_family": "same as Stage 2/3 analyze scripts",
+      "reps": 10000,
+      "unit": "seed cluster"
+    },
+    "metric_definitions": {
+      "date_rate_per_100_intro": "100 * dates / assignments",
+      "intro_per_100_arrived": "100 * assignments / arrived_members",
+      "msmi_per_100_intro": "100 * msmi / assignments",
+      "mutual_per_intro": "mutual_acceptances / assignments"
+    },
+    "official_episodes": 216,
+    "primary_metric": "msmi_per_100_arrived_members via evaluate.summarise",
+    "seeds": [
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118
+    ],
+    "variants": [
+      "development",
+      "sparse",
+      "cold_start",
+      "delayed",
+      "shift",
+      "drift"
+    ],
+    "worlds_per_arm": 72
+  },
+  "diagnostics": {
+    "floorhalf": {
+      "asks_n_per_episode": 152.556,
+      "asks_n_total": 10984,
+      "diagnostic_arm_threshold": "floor_half",
+      "fidelity_pass_seeds": "12/12",
+      "per_seed": {
+        "107": {
+          "after_arm_floor": 1022,
+          "feasible": 1849,
+          "fidelity_ok": true,
+          "introduced": 510,
+          "removed_by_floor": 827,
+          "zero_sel_with_cand": 100
+        },
+        "108": {
+          "after_arm_floor": 641,
+          "feasible": 1500,
+          "fidelity_ok": true,
+          "introduced": 412,
+          "removed_by_floor": 859,
+          "zero_sel_with_cand": 130
+        },
+        "109": {
+          "after_arm_floor": 1103,
+          "feasible": 2074,
+          "fidelity_ok": true,
+          "introduced": 588,
+          "removed_by_floor": 971,
+          "zero_sel_with_cand": 96
+        },
+        "110": {
+          "after_arm_floor": 549,
+          "feasible": 872,
+          "fidelity_ok": true,
+          "introduced": 350,
+          "removed_by_floor": 323,
+          "zero_sel_with_cand": 65
+        },
+        "111": {
+          "after_arm_floor": 640,
+          "feasible": 1368,
+          "fidelity_ok": true,
+          "introduced": 385,
+          "removed_by_floor": 728,
+          "zero_sel_with_cand": 111
+        },
+        "112": {
+          "after_arm_floor": 699,
+          "feasible": 2002,
+          "fidelity_ok": true,
+          "introduced": 450,
+          "removed_by_floor": 1303,
+          "zero_sel_with_cand": 110
+        },
+        "113": {
+          "after_arm_floor": 612,
+          "feasible": 1571,
+          "fidelity_ok": true,
+          "introduced": 387,
+          "removed_by_floor": 959,
+          "zero_sel_with_cand": 131
+        },
+        "114": {
+          "after_arm_floor": 690,
+          "feasible": 1610,
+          "fidelity_ok": true,
+          "introduced": 432,
+          "removed_by_floor": 920,
+          "zero_sel_with_cand": 100
+        },
+        "115": {
+          "after_arm_floor": 472,
+          "feasible": 860,
+          "fidelity_ok": true,
+          "introduced": 293,
+          "removed_by_floor": 388,
+          "zero_sel_with_cand": 111
+        },
+        "116": {
+          "after_arm_floor": 758,
+          "feasible": 1465,
+          "fidelity_ok": true,
+          "introduced": 483,
+          "removed_by_floor": 707,
+          "zero_sel_with_cand": 112
+        },
+        "117": {
+          "after_arm_floor": 825,
+          "feasible": 1811,
+          "fidelity_ok": true,
+          "introduced": 482,
+          "removed_by_floor": 986,
+          "zero_sel_with_cand": 98
+        },
+        "118": {
+          "after_arm_floor": 654,
+          "feasible": 1148,
+          "fidelity_ok": true,
+          "introduced": 406,
+          "removed_by_floor": 494,
+          "zero_sel_with_cand": 100
+        }
+      },
+      "pooled": {
+        "above_frozen_floor_total": 5007,
+        "above_intermediate_floor_total": 8665,
+        "after_floor_neq_feasible_days": 3287,
+        "after_floor_total": 8665,
+        "ask_cost": 30220,
+        "cap_hits": 0,
+        "decisions": 4320,
+        "fallback_used": 0,
+        "feasible_total": 18130,
+        "frontier_recheck_failures": 0,
+        "greedy_below_floor_n": 8618,
+        "greedy_n": 11491,
+        "greedy_overlap_n": 3772,
+        "instrument_mismatches": 0,
+        "introduced": 5178,
+        "removed_by_floor": 9465,
+        "seed_changed_days": 1392,
+        "selected_total": 5178,
+        "zero_candidate_days": 537,
+        "zero_selected_with_cand": 1264
+      },
+      "survivorship_pooled": {
+        "ge_frozen": {
+          "msmi": 41,
+          "mutual": 546,
+          "n": 3394
+        },
+        "lt_intermediate": {
+          "msmi": 0,
+          "mutual": 0,
+          "n": 0
+        },
+        "mid_band": {
+          "msmi": 17,
+          "mutual": 227,
+          "n": 1784
+        },
+        "unscored": {
+          "msmi": 0,
+          "mutual": 0,
+          "n": 0
+        }
+      },
+      "zero_selected_categories": {
+        "all_below_floor": 1264
+      }
+    },
+    "greedy": {
+      "asks_count_note": "ask COUNT for greedy is not recorded by the official harness (only cost); B/C counts from diagnostics",
+      "asks_n_per_episode": null,
+      "note": "zero-selection diagnostics are defined relative to the A+C floor-filtered matcher; greedy arm has no floor filter - not instrumented (same scope as Stage 3)"
+    },
+    "original": {
+      "asks_n_per_episode": 156.083,
+      "asks_n_total": 11238,
+      "diagnostic_arm_threshold": "floor_original",
+      "fidelity_pass_seeds": "12/12",
+      "per_seed": {
+        "107": {
+          "after_arm_floor": 801,
+          "feasible": 3207,
+          "fidelity_ok": true,
+          "introduced": 486,
+          "removed_by_floor": 2406,
+          "zero_sel_with_cand": 136
+        },
+        "108": {
+          "after_arm_floor": 491,
+          "feasible": 2719,
+          "fidelity_ok": true,
+          "introduced": 356,
+          "removed_by_floor": 2228,
+          "zero_sel_with_cand": 155
+        },
+        "109": {
+          "after_arm_floor": 709,
+          "feasible": 3367,
+          "fidelity_ok": true,
+          "introduced": 483,
+          "removed_by_floor": 2658,
+          "zero_sel_with_cand": 108
+        },
+        "110": {
+          "after_arm_floor": 453,
+          "feasible": 2795,
+          "fidelity_ok": true,
+          "introduced": 332,
+          "removed_by_floor": 2342,
+          "zero_sel_with_cand": 138
+        },
+        "111": {
+          "after_arm_floor": 501,
+          "feasible": 3228,
+          "fidelity_ok": true,
+          "introduced": 355,
+          "removed_by_floor": 2727,
+          "zero_sel_with_cand": 158
+        },
+        "112": {
+          "after_arm_floor": 573,
+          "feasible": 4977,
+          "fidelity_ok": true,
+          "introduced": 396,
+          "removed_by_floor": 4404,
+          "zero_sel_with_cand": 155
+        },
+        "113": {
+          "after_arm_floor": 541,
+          "feasible": 2450,
+          "fidelity_ok": true,
+          "introduced": 376,
+          "removed_by_floor": 1909,
+          "zero_sel_with_cand": 152
+        },
+        "114": {
+          "after_arm_floor": 515,
+          "feasible": 3316,
+          "fidelity_ok": true,
+          "introduced": 364,
+          "removed_by_floor": 2801,
+          "zero_sel_with_cand": 165
+        },
+        "115": {
+          "after_arm_floor": 375,
+          "feasible": 2185,
+          "fidelity_ok": true,
+          "introduced": 268,
+          "removed_by_floor": 1810,
+          "zero_sel_with_cand": 185
+        },
+        "116": {
+          "after_arm_floor": 564,
+          "feasible": 2891,
+          "fidelity_ok": true,
+          "introduced": 425,
+          "removed_by_floor": 2327,
+          "zero_sel_with_cand": 138
+        },
+        "117": {
+          "after_arm_floor": 612,
+          "feasible": 4299,
+          "fidelity_ok": true,
+          "introduced": 430,
+          "removed_by_floor": 3687,
+          "zero_sel_with_cand": 143
+        },
+        "118": {
+          "after_arm_floor": 454,
+          "feasible": 3124,
+          "fidelity_ok": true,
+          "introduced": 327,
+          "removed_by_floor": 2670,
+          "zero_sel_with_cand": 183
+        }
+      },
+      "pooled": {
+        "above_frozen_floor_total": 6589,
+        "above_intermediate_floor_total": 22463,
+        "after_floor_neq_feasible_days": 4210,
+        "after_floor_total": 6589,
+        "ask_cost": 30488,
+        "cap_hits": 0,
+        "decisions": 4320,
+        "fallback_used": 0,
+        "feasible_total": 38558,
+        "frontier_recheck_failures": 0,
+        "greedy_below_floor_n": 19740,
+        "greedy_n": 23348,
+        "greedy_overlap_n": 3041,
+        "instrument_mismatches": 0,
+        "introduced": 4598,
+        "removed_by_floor": 31969,
+        "seed_changed_days": 0,
+        "selected_total": 4598,
+        "zero_candidate_days": 56,
+        "zero_selected_with_cand": 1816
+      },
+      "survivorship_pooled": {
+        "ge_frozen": {
+          "msmi": 54,
+          "mutual": 733,
+          "n": 4598
+        },
+        "lt_intermediate": {
+          "msmi": 0,
+          "mutual": 0,
+          "n": 0
+        },
+        "mid_band": {
+          "msmi": 0,
+          "mutual": 0,
+          "n": 0
+        },
+        "unscored": {
+          "msmi": 0,
+          "mutual": 0,
+          "n": 0
+        }
+      },
+      "zero_selected_categories": {
+        "all_below_floor": 1816
+      }
+    }
+  },
+  "generated": "2026-10-07 17:32:47",
+  "integrity": {
+    "g1": {
+      "invalid": 0,
+      "official_episodes": 216,
+      "pass": true,
+      "rerun_and_container_episodes": 30
+    },
+    "g2": {
+      "all_equal": true,
+      "pairs": [
+        {
+          "action_sha256_all_match": true,
+          "diffs": [],
+          "equal_excl_inference": true,
+          "n_diffs": 0,
+          "pair": "arm_greedy_seed107.json vs arm_greedy_seed107_rerun.json",
+          "primary_match": true
+        },
+        {
+          "action_sha256_all_match": true,
+          "diffs": [],
+          "equal_excl_inference": true,
+          "n_diffs": 0,
+          "pair": "arm_original_seed107.json vs arm_original_seed107_rerun.json",
+          "primary_match": true
+        },
+        {
+          "action_sha256_all_match": true,
+          "diffs": [],
+          "equal_excl_inference": true,
+          "n_diffs": 0,
+          "pair": "arm_floorhalf_seed107.json vs arm_floorhalf_seed107_rerun.json",
+          "primary_match": true
+        },
+        {
+          "action_sha256_all_match": true,
+          "diffs": [],
+          "equal_excl_inference": true,
+          "n_diffs": 0,
+          "pair": "arm_floorhalf_seed118.json vs arm_floorhalf_seed118_rerun.json",
+          "primary_match": true
+        }
+      ]
+    },
+    "g3": {
+      "detail": {
+        "action_sha256_all_match": true,
+        "arms_b_c_container_note": "A+C arms cannot run in the frozen image: Dockerfile ships kit.py+policy.py only with ENTRYPOINT policy.py; Dockerfile is frozen.",
+        "container_mode": "container",
+        "diffs": [],
+        "equal_excl_inference_and_mode": true,
+        "local_mode": "trusted_local",
+        "n_diffs": 0,
+        "note_initial_wrong_target": "compared vs greedy first (mismatch, expected: different policy); corrected to arm B",
+        "primary_match": true,
+        "scope": "A+C arm (arm B) seed 107, all 6 variants; image sequential-policy:1.0 (image policy.py/kit.py sha256 verified byte-identical to repo). Docker path runs policy.py with no args -> default ac mode == arm B; container-vs-local-arm-A was the initial (wrong-target) comparison, corrected here."
+      },
+      "pass": true
+    },
+    "g5": {
+      "note": "only public seeds 107-118 used; organise.py never executed; no organiser/holdout artifacts exist in repo; git head unchanged (see integrity_after.json)"
+    }
+  },
+  "mutual_no_harm": {
+    "exceeds_warning_threshold": false,
+    "floorhalf_mean_per_100": 5.368056,
+    "original_mean_per_100": 5.090278,
+    "paired_diff_ci95_cluster": [
+      -0.569444,
+      1.111111
+    ],
+    "paired_diff_mean": 0.277778,
+    "relative_change_ci95": [
+      -9.5908,
+      24.5562
+    ],
+    "relative_change_pct": 5.457,
+    "seed_level_wt_l": {
+      "losses": 5,
+      "ties": 0,
+      "wins": 7
+    },
+    "warning_threshold_from_prior_research": "-8% relative degradation (reference)",
+    "worlds": {
+      "losses": 27,
+      "ties": 9,
+      "wins": 36
+    }
+  },
+  "official_per_arm": {
+    "floorhalf": {
+      "inference_seconds_mean": 29.675,
+      "label": "C floor/2 (candidate)",
+      "official_overall": {
+        "ask_cost": 419.72222222222223,
+        "coverage": 0.34020833333333333,
+        "inference_seconds": 29.67453624156446,
+        "msmi_per_100_arrived_members": 0.4027777777777778,
+        "mutual_acceptances_per_100": 5.368055555555555
+      },
+      "pooled_72": {
+        "ask_cost": 419.722222,
+        "assignments": 71.916667,
+        "coverage": 0.340208,
+        "date_rate_per_100_intro": 12.295974,
+        "intro_per_100_arrived": 35.958333,
+        "msmi_per_100_arrived_members": 0.402778,
+        "msmi_per_100_intro": 1.053672,
+        "mutual_acceptances_per_100": 5.368056,
+        "mutual_per_intro": 0.157573
+      },
+      "pooled_72_median": {
+        "ask_cost": 407.5,
+        "assignments": 76.5,
+        "coverage": 0.36,
+        "date_rate_per_100_intro": 11.281818,
+        "intro_per_100_arrived": 38.25,
+        "msmi_per_100_arrived_members": 0.25,
+        "msmi_per_100_intro": 0.406504,
+        "mutual_acceptances_per_100": 5.0,
+        "mutual_per_intro": 0.145898
+      },
+      "primary_score_official": 0.4027777777777778,
+      "scenario_means": {
+        "cold_start": {
+          "ask_cost": 494.5833333333333,
+          "coverage": 0.3125,
+          "inference_seconds": 33.344976550006926,
+          "msmi_per_100_arrived_members": 0.2916666666666667,
+          "mutual_acceptances_per_100": 5.166666666666667
+        },
+        "delayed": {
+          "ask_cost": 407.8333333333333,
+          "coverage": 0.3879166666666667,
+          "inference_seconds": 28.238859058270464,
+          "msmi_per_100_arrived_members": 0.4166666666666667,
+          "mutual_acceptances_per_100": 6.291666666666667
+        },
+        "development": {
+          "ask_cost": 408.9166666666667,
+          "coverage": 0.3875,
+          "inference_seconds": 29.075424791459227,
+          "msmi_per_100_arrived_members": 0.5833333333333334,
+          "mutual_acceptances_per_100": 6.416666666666667
+        },
+        "drift": {
+          "ask_cost": 408.9166666666667,
+          "coverage": 0.3879166666666667,
+          "inference_seconds": 27.06481199998719,
+          "msmi_per_100_arrived_members": 0.5416666666666666,
+          "mutual_acceptances_per_100": 6.083333333333333
+        },
+        "shift": {
+          "ask_cost": 410.0833333333333,
+          "coverage": 0.3879166666666667,
+          "inference_seconds": 28.82126332470216,
+          "msmi_per_100_arrived_members": 0.5,
+          "mutual_acceptances_per_100": 5.916666666666667
+        },
+        "sparse": {
+          "ask_cost": 388,
+          "coverage": 0.1775,
+          "inference_seconds": 31.501881724960793,
+          "msmi_per_100_arrived_members": 0.08333333333333333,
+          "mutual_acceptances_per_100": 2.3333333333333335
+        }
+      }
+    },
+    "greedy": {
+      "inference_seconds_mean": 19.806,
+      "label": "A greedy (reference)",
+      "official_overall": {
+        "ask_cost": 203.04166666666666,
+        "coverage": 0.34618055555555555,
+        "inference_seconds": 19.80563270281871,
+        "msmi_per_100_arrived_members": 0.4930555555555555,
+        "mutual_acceptances_per_100": 5.416666666666667
+      },
+      "pooled_72": {
+        "ask_cost": 203.041667,
+        "assignments": 76.194444,
+        "coverage": 0.346181,
+        "date_rate_per_100_intro": 11.710137,
+        "intro_per_100_arrived": 38.097222,
+        "msmi_per_100_arrived_members": 0.493056,
+        "msmi_per_100_intro": 1.198861,
+        "mutual_acceptances_per_100": 5.416667,
+        "mutual_per_intro": 0.143801
+      },
+      "pooled_72_median": {
+        "ask_cost": 201.0,
+        "assignments": 84.0,
+        "coverage": 0.37,
+        "date_rate_per_100_intro": 11.651584,
+        "intro_per_100_arrived": 42.0,
+        "msmi_per_100_arrived_members": 0.5,
+        "msmi_per_100_intro": 1.13651,
+        "mutual_acceptances_per_100": 5.25,
+        "mutual_per_intro": 0.14611
+      },
+      "primary_score_official": 0.4930555555555555,
+      "scenario_means": {
+        "cold_start": {
+          "ask_cost": 235.25,
+          "coverage": 0.32166666666666666,
+          "inference_seconds": 20.185936991775332,
+          "msmi_per_100_arrived_members": 0.3333333333333333,
+          "mutual_acceptances_per_100": 5.416666666666667
+        },
+        "delayed": {
+          "ask_cost": 196,
+          "coverage": 0.3929166666666667,
+          "inference_seconds": 19.513369158754358,
+          "msmi_per_100_arrived_members": 0.375,
+          "mutual_acceptances_per_100": 6.458333333333333
+        },
+        "development": {
+          "ask_cost": 196,
+          "coverage": 0.39375,
+          "inference_seconds": 18.715423375018872,
+          "msmi_per_100_arrived_members": 0.7916666666666666,
+          "mutual_acceptances_per_100": 6.791666666666667
+        },
+        "drift": {
+          "ask_cost": 196,
+          "coverage": 0.39375,
+          "inference_seconds": 19.880268491474755,
+          "msmi_per_100_arrived_members": 0.75,
+          "mutual_acceptances_per_100": 6.25
+        },
+        "shift": {
+          "ask_cost": 196,
+          "coverage": 0.39375,
+          "inference_seconds": 20.065418499803247,
+          "msmi_per_100_arrived_members": 0.625,
+          "mutual_acceptances_per_100": 5.833333333333333
+        },
+        "sparse": {
+          "ask_cost": 199,
+          "coverage": 0.18125,
+          "inference_seconds": 20.47337970008569,
+          "msmi_per_100_arrived_members": 0.08333333333333333,
+          "mutual_acceptances_per_100": 1.75
+        }
+      }
+    },
+    "original": {
+      "inference_seconds_mean": 30.155,
+      "label": "B original floor",
+      "official_overall": {
+        "ask_cost": 423.44444444444446,
+        "coverage": 0.33131944444444444,
+        "inference_seconds": 30.155012645867018,
+        "msmi_per_100_arrived_members": 0.375,
+        "mutual_acceptances_per_100": 5.090277777777778
+      },
+      "pooled_72": {
+        "ask_cost": 423.444444,
+        "assignments": 63.861111,
+        "coverage": 0.331319,
+        "date_rate_per_100_intro": 13.15612,
+        "intro_per_100_arrived": 31.930556,
+        "msmi_per_100_arrived_members": 0.375,
+        "msmi_per_100_intro": 1.191653,
+        "mutual_acceptances_per_100": 5.090278,
+        "mutual_per_intro": 0.162985
+      },
+      "pooled_72_median": {
+        "ask_cost": 411.0,
+        "assignments": 69.5,
+        "coverage": 0.35,
+        "date_rate_per_100_intro": 12.973352,
+        "intro_per_100_arrived": 34.75,
+        "msmi_per_100_arrived_members": 0.25,
+        "msmi_per_100_intro": 0.505051,
+        "mutual_acceptances_per_100": 4.5,
+        "mutual_per_intro": 0.158947
+      },
+      "primary_score_official": 0.375,
+      "scenario_means": {
+        "cold_start": {
+          "ask_cost": 499.6666666666667,
+          "coverage": 0.31,
+          "inference_seconds": 33.57898149159155,
+          "msmi_per_100_arrived_members": 0.25,
+          "mutual_acceptances_per_100": 4.791666666666667
+        },
+        "delayed": {
+          "ask_cost": 413.5833333333333,
+          "coverage": 0.37833333333333335,
+          "inference_seconds": 28.685410699797405,
+          "msmi_per_100_arrived_members": 0.3333333333333333,
+          "mutual_acceptances_per_100": 6.333333333333333
+        },
+        "development": {
+          "ask_cost": 412.6666666666667,
+          "coverage": 0.37625,
+          "inference_seconds": 29.013411408591008,
+          "msmi_per_100_arrived_members": 0.5833333333333334,
+          "mutual_acceptances_per_100": 5.875
+        },
+        "drift": {
+          "ask_cost": 412.6666666666667,
+          "coverage": 0.3770833333333333,
+          "inference_seconds": 28.45640481665032,
+          "msmi_per_100_arrived_members": 0.5416666666666666,
+          "mutual_acceptances_per_100": 5.625
+        },
+        "shift": {
+          "ask_cost": 412.4166666666667,
+          "coverage": 0.3745833333333333,
+          "inference_seconds": 28.994472650335712,
+          "msmi_per_100_arrived_members": 0.375,
+          "mutual_acceptances_per_100": 5.75
+        },
+        "sparse": {
+          "ask_cost": 389.6666666666667,
+          "coverage": 0.17166666666666666,
+          "inference_seconds": 32.201394808236124,
+          "msmi_per_100_arrived_members": 0.16666666666666666,
+          "mutual_acceptances_per_100": 2.1666666666666665
+        }
+      }
+    }
+  },
+  "paired_contrasts": {
+    "floorhalf_minus_greedy": {
+      "ask_cost": {
+        "ci95_cluster": [
+          210.819444,
+          222.902778
+        ],
+        "max": 287,
+        "mean": 216.680556,
+        "median": 207.5,
+        "min": 155,
+        "seed_level": {
+          "ci95": [
+            210.819444,
+            222.791667
+          ],
+          "mean": 216.680556,
+          "median": 213.666667,
+          "per_seed": {
+            "107": 203.833333,
+            "108": 207.166667,
+            "109": 213.833333,
+            "110": 228,
+            "111": 213.5,
+            "112": 207.5,
+            "113": 226.333333,
+            "114": 224.333333,
+            "115": 206,
+            "116": 206,
+            "117": 236.833333,
+            "118": 226.833333
+          },
+          "wt_l": {
+            "losses": 0,
+            "ties": 0,
+            "wins": 12
+          }
+        },
+        "worlds": {
+          "losses": 0,
+          "ties": 0,
+          "wins": 72
+        }
+      },
+      "assignments": {
+        "ci95_cluster": [
+          -6.305556,
+          -2.208333
+        ],
+        "max": 8,
+        "mean": -4.277778,
+        "median": -3.5,
+        "min": -17,
+        "seed_level": {
+          "ci95": [
+            -6.319444,
+            -2.236111
+          ],
+          "mean": -4.277778,
+          "median": -3.75,
+          "per_seed": {
+            "107": -4.166667,
+            "108": -3.666667,
+            "109": -3.5,
+            "110": -10.5,
+            "111": -5.5,
+            "112": -7.833333,
+            "113": 3.166667,
+            "114": -1.166667,
+            "115": -3.833333,
+            "116": -1.333333,
+            "117": -9.666667,
+            "118": -3.333333
+          },
+          "wt_l": {
+            "losses": 11,
+            "ties": 0,
+            "wins": 1
+          }
+        },
+        "worlds": {
+          "losses": 52,
+          "ties": 5,
+          "wins": 15
+        }
+      },
+      "coverage": {
+        "ci95_cluster": [
+          -0.009792,
+          -0.002569
+        ],
+        "max": 0.02,
+        "mean": -0.005972,
+        "median": -0.005,
+        "min": -0.03,
+        "seed_level": {
+          "ci95": [
+            -0.009792,
+            -0.002569
+          ],
+          "mean": -0.005972,
+          "median": -0.004167,
+          "per_seed": {
+            "107": -0.005,
+            "108": -0.003333,
+            "109": -0.003333,
+            "110": -0.01,
+            "111": -0.01,
+            "112": -0.021667,
+            "113": 0.003333,
+            "114": 0.0,
+            "115": -0.010833,
+            "116": 0.0,
+            "117": -0.0025,
+            "118": -0.008333
+          },
+          "wt_l": {
+            "losses": 9,
+            "ties": 2,
+            "wins": 1
+          }
+        },
+        "worlds": {
+          "losses": 42,
+          "ties": 18,
+          "wins": 12
+        }
+      },
+      "date_rate_per_100_intro": {
+        "ci95_cluster": [
+          -1.356219,
+          2.911731
+        ],
+        "max": 19.466474,
+        "mean": 0.585838,
+        "median": -0.887537,
+        "min": -10.357143,
+        "seed_level": {
+          "ci95": [
+            -1.283079,
+            2.989433
+          ],
+          "mean": 0.585838,
+          "median": -1.099053,
+          "per_seed": {
+            "107": 2.77356,
+            "108": -2.22805,
+            "109": -1.669341,
+            "110": 10.212561,
+            "111": -1.398718,
+            "112": 1.126748,
+            "113": -2.031887,
+            "114": -3.692101,
+            "115": 1.305642,
+            "116": -2.092884,
+            "117": 5.523913,
+            "118": -0.799388
+          },
+          "wt_l": {
+            "losses": 7,
+            "ties": 0,
+            "wins": 5
+          }
+        },
+        "worlds": {
+          "losses": 40,
+          "ties": 1,
+          "wins": 31
+        }
+      },
+      "intro_per_100_arrived": {
+        "ci95_cluster": [
+          -3.166667,
+          -1.145833
+        ],
+        "max": 4.0,
+        "mean": -2.138889,
+        "median": -1.75,
+        "min": -8.5,
+        "seed_level": {
+          "ci95": [
+            -3.166667,
+            -1.118056
+          ],
+          "mean": -2.138889,
+          "median": -1.875,
+          "per_seed": {
+            "107": -2.083333,
+            "108": -1.833333,
+            "109": -1.75,
+            "110": -5.25,
+            "111": -2.75,
+            "112": -3.916667,
+            "113": 1.583333,
+            "114": -0.583333,
+            "115": -1.916667,
+            "116": -0.666667,
+            "117": -4.833333,
+            "118": -1.666667
+          },
+          "wt_l": {
+            "losses": 11,
+            "ties": 0,
+            "wins": 1
+          }
+        },
+        "worlds": {
+          "losses": 52,
+          "ties": 5,
+          "wins": 15
+        }
+      },
+      "msmi_per_100_arrived_members": {
+        "ci95_cluster": [
+          -0.256944,
+          0.069444
+        ],
+        "max": 1.5,
+        "mean": -0.090278,
+        "median": 0.0,
+        "min": -1.5,
+        "seed_level": {
+          "ci95": [
+            -0.256944,
+            0.069444
+          ],
+          "mean": -0.090278,
+          "median": -0.041667,
+          "per_seed": {
+            "107": 0.25,
+            "108": 0.166667,
+            "109": -0.5,
+            "110": 0.25,
+            "111": -0.333333,
+            "112": 0.083333,
+            "113": -0.5,
+            "114": -0.25,
+            "115": -0.166667,
+            "116": 0.166667,
+            "117": -0.416667,
+            "118": 0.166667
+          },
+          "wt_l": {
+            "losses": 6,
+            "ties": 0,
+            "wins": 6
+          }
+        },
+        "worlds": {
+          "losses": 27,
+          "ties": 24,
+          "wins": 21
+        }
+      },
+      "msmi_per_100_intro": {
+        "ci95_cluster": [
+          -0.516488,
+          0.271342
+        ],
+        "max": 5.357143,
+        "mean": -0.145189,
+        "median": 0.0,
+        "min": -4.761905,
+        "seed_level": {
+          "ci95": [
+            -0.518385,
+            0.266349
+          ],
+          "mean": -0.145189,
+          "median": -0.337605,
+          "per_seed": {
+            "107": 0.489067,
+            "108": -0.137575,
+            "109": -0.743312,
+            "110": 1.367911,
+            "111": -0.81963,
+            "112": 0.061289,
+            "113": -1.119682,
+            "114": -0.572635,
+            "115": -0.537634,
+            "116": 0.767714,
+            "117": -0.564895,
+            "118": 0.06711
+          },
+          "wt_l": {
+            "losses": 7,
+            "ties": 0,
+            "wins": 5
+          }
+        },
+        "worlds": {
+          "losses": 27,
+          "ties": 19,
+          "wins": 26
+        }
+      },
+      "mutual_acceptances_per_100": {
+        "ci95_cluster": [
+          -0.763889,
+          0.694444
+        ],
+        "max": 3.5,
+        "mean": -0.048611,
+        "median": 0.0,
+        "min": -5.5,
+        "seed_level": {
+          "ci95": [
+            -0.784722,
+            0.708333
+          ],
+          "mean": -0.048611,
+          "median": 0.0,
+          "per_seed": {
+            "107": 1.666667,
+            "108": -1.166667,
+            "109": -0.166667,
+            "110": 2.0,
+            "111": 0.333333,
+            "112": 0.833333,
+            "113": -1.583333,
+            "114": -1.166667,
+            "115": 0.166667,
+            "116": -2.166667,
+            "117": 1.5,
+            "118": -0.833333
+          },
+          "wt_l": {
+            "losses": 6,
+            "ties": 0,
+            "wins": 6
+          }
+        },
+        "worlds": {
+          "losses": 29,
+          "ties": 9,
+          "wins": 34
+        }
+      },
+      "mutual_per_intro": {
+        "ci95_cluster": [
+          -0.007714,
+          0.036724
+        ],
+        "max": 0.177778,
+        "mean": 0.013772,
+        "median": 0.009535,
+        "min": -0.103114,
+        "seed_level": {
+          "ci95": [
+            -0.007972,
+            0.036513
+          ],
+          "mean": 0.013772,
+          "median": 0.017638,
+          "per_seed": {
+            "107": 0.029012,
+            "108": -0.004478,
+            "109": 0.00915,
+            "110": 0.092461,
+            "111": 0.026127,
+            "112": 0.045123,
+            "113": -0.038837,
+            "114": -0.033764,
+            "115": 0.027215,
+            "116": -0.02787,
+            "117": 0.064677,
+            "118": -0.023557
+          },
+          "wt_l": {
+            "losses": 5,
+            "ties": 0,
+            "wins": 7
+          }
+        },
+        "worlds": {
+          "losses": 31,
+          "ties": 0,
+          "wins": 41
+        }
+      }
+    },
+    "floorhalf_minus_original": {
+      "ask_cost": {
+        "ci95_cluster": [
+          -5.333333,
+          -1.944444
+        ],
+        "max": 10,
+        "mean": -3.722222,
+        "median": -4.0,
+        "min": -14,
+        "seed_level": {
+          "ci95": [
+            -5.319444,
+            -1.972222
+          ],
+          "mean": -3.722222,
+          "median": -4.0,
+          "per_seed": {
+            "107": -5.333333,
+            "108": -2,
+            "109": 3.333333,
+            "110": -5.5,
+            "111": -4.166667,
+            "112": -3,
+            "113": -2.833333,
+            "114": -7.833333,
+            "115": -5.5,
+            "116": -3.833333,
+            "117": -0.333333,
+            "118": -7.666667
+          },
+          "wt_l": {
+            "losses": 11,
+            "ties": 0,
+            "wins": 1
+          }
+        },
+        "worlds": {
+          "losses": 51,
+          "ties": 6,
+          "wins": 15
+        }
+      },
+      "assignments": {
+        "ci95_cluster": [
+          5.694444,
+          10.708333
+        ],
+        "max": 27,
+        "mean": 8.055556,
+        "median": 6.0,
+        "min": -2,
+        "seed_level": {
+          "ci95": [
+            5.611111,
+            10.625
+          ],
+          "mean": 8.055556,
+          "median": 8.833333,
+          "per_seed": {
+            "107": 4,
+            "108": 9.333333,
+            "109": 17.5,
+            "110": 3,
+            "111": 5,
+            "112": 9,
+            "113": 1.833333,
+            "114": 11.333333,
+            "115": 4.166667,
+            "116": 9.666667,
+            "117": 8.666667,
+            "118": 13.166667
+          },
+          "wt_l": {
+            "losses": 0,
+            "ties": 0,
+            "wins": 12
+          }
+        },
+        "worlds": {
+          "losses": 3,
+          "ties": 4,
+          "wins": 65
+        }
+      },
+      "coverage": {
+        "ci95_cluster": [
+          0.005278,
+          0.012431
+        ],
+        "max": 0.03,
+        "mean": 0.008889,
+        "median": 0.01,
+        "min": -0.015,
+        "seed_level": {
+          "ci95": [
+            0.005486,
+            0.012431
+          ],
+          "mean": 0.008889,
+          "median": 0.008333,
+          "per_seed": {
+            "107": 0.009167,
+            "108": 0.015833,
+            "109": 0.005,
+            "110": 0.013333,
+            "111": 0.001667,
+            "112": 0.011667,
+            "113": 0.004167,
+            "114": 0.0175,
+            "115": -0.001667,
+            "116": 0.004167,
+            "117": 0.0075,
+            "118": 0.018333
+          },
+          "wt_l": {
+            "losses": 1,
+            "ties": 0,
+            "wins": 11
+          }
+        },
+        "worlds": {
+          "losses": 8,
+          "ties": 12,
+          "wins": 52
+        }
+      },
+      "date_rate_per_100_intro": {
+        "ci95_cluster": [
+          -2.929059,
+          1.225884
+        ],
+        "max": 12.030075,
+        "mean": -0.860146,
+        "median": -1.01095,
+        "min": -13.389228,
+        "seed_level": {
+          "ci95": [
+            -2.936586,
+            1.170386
+          ],
+          "mean": -0.860146,
+          "median": -1.40575,
+          "per_seed": {
+            "107": -1.234743,
+            "108": -5.011526,
+            "109": -7.698455,
+            "110": 4.620839,
+            "111": -0.031343,
+            "112": 1.913884,
+            "113": 3.392147,
+            "114": -3.244093,
+            "115": -3.42981,
+            "116": -1.576757,
+            "117": 4.346651,
+            "118": -2.368543
+          },
+          "wt_l": {
+            "losses": 8,
+            "ties": 0,
+            "wins": 4
+          }
+        },
+        "worlds": {
+          "losses": 40,
+          "ties": 1,
+          "wins": 31
+        }
+      },
+      "intro_per_100_arrived": {
+        "ci95_cluster": [
+          2.791667,
+          5.326389
+        ],
+        "max": 13.5,
+        "mean": 4.027778,
+        "median": 3.0,
+        "min": -1.0,
+        "seed_level": {
+          "ci95": [
+            2.826389,
+            5.347222
+          ],
+          "mean": 4.027778,
+          "median": 4.416667,
+          "per_seed": {
+            "107": 2.0,
+            "108": 4.666667,
+            "109": 8.75,
+            "110": 1.5,
+            "111": 2.5,
+            "112": 4.5,
+            "113": 0.916667,
+            "114": 5.666667,
+            "115": 2.083333,
+            "116": 4.833333,
+            "117": 4.333333,
+            "118": 6.583333
+          },
+          "wt_l": {
+            "losses": 0,
+            "ties": 0,
+            "wins": 12
+          }
+        },
+        "worlds": {
+          "losses": 3,
+          "ties": 4,
+          "wins": 65
+        }
+      },
+      "msmi_per_100_arrived_members": {
+        "ci95_cluster": [
+          -0.118056,
+          0.1875
+        ],
+        "max": 1.5,
+        "mean": 0.027778,
+        "median": 0.0,
+        "min": -0.5,
+        "seed_level": {
+          "ci95": [
+            -0.118056,
+            0.1875
+          ],
+          "mean": 0.027778,
+          "median": 0.0,
+          "per_seed": {
+            "107": 0.25,
+            "108": -0.166667,
+            "109": -0.25,
+            "110": -0.166667,
+            "111": 0.0,
+            "112": 0.166667,
+            "113": 0.5,
+            "114": -0.333333,
+            "115": -0.25,
+            "116": 0.5,
+            "117": 0.0,
+            "118": 0.083333
+          },
+          "wt_l": {
+            "losses": 5,
+            "ties": 2,
+            "wins": 5
+          }
+        },
+        "worlds": {
+          "losses": 20,
+          "ties": 31,
+          "wins": 21
+        }
+      },
+      "msmi_per_100_intro": {
+        "ci95_cluster": [
+          -0.68724,
+          0.453899
+        ],
+        "max": 5.357143,
+        "mean": -0.137981,
+        "median": 0.0,
+        "min": -5.0,
+        "seed_level": {
+          "ci95": [
+            -0.677907,
+            0.431886
+          ],
+          "mean": -0.137981,
+          "median": -0.06231,
+          "per_seed": {
+            "107": 0.468796,
+            "108": -1.375057,
+            "109": -0.661246,
+            "110": -0.965942,
+            "111": 0.010979,
+            "112": 0.291069,
+            "113": 1.853455,
+            "114": -1.508587,
+            "115": -0.980392,
+            "116": 1.315957,
+            "117": -0.135599,
+            "118": 0.030799
+          },
+          "wt_l": {
+            "losses": 6,
+            "ties": 0,
+            "wins": 6
+          }
+        },
+        "worlds": {
+          "losses": 28,
+          "ties": 23,
+          "wins": 21
+        }
+      },
+      "mutual_acceptances_per_100": {
+        "ci95_cluster": [
+          -0.569444,
+          1.090278
+        ],
+        "max": 4.5,
+        "mean": 0.277778,
+        "median": 0.25,
+        "min": -6.0,
+        "seed_level": {
+          "ci95": [
+            -0.541667,
+            1.097222
+          ],
+          "mean": 0.277778,
+          "median": 0.25,
+          "per_seed": {
+            "107": 0.083333,
+            "108": -1.083333,
+            "109": -2.75,
+            "110": 2.416667,
+            "111": 1.416667,
+            "112": 0.416667,
+            "113": 0.666667,
+            "114": -0.416667,
+            "115": -0.583333,
+            "116": 0.5,
+            "117": 2.916667,
+            "118": -0.25
+          },
+          "wt_l": {
+            "losses": 5,
+            "ties": 0,
+            "wins": 7
+          }
+        },
+        "worlds": {
+          "losses": 27,
+          "ties": 9,
+          "wins": 36
+        }
+      },
+      "mutual_per_intro": {
+        "ci95_cluster": [
+          -0.031424,
+          0.020444
+        ],
+        "max": 0.166667,
+        "mean": -0.005413,
+        "median": -0.014245,
+        "min": -0.155633,
+        "seed_level": {
+          "ci95": [
+            -0.030679,
+            0.020304
+          ],
+          "mean": -0.005413,
+          "median": -0.006825,
+          "per_seed": {
+            "107": -0.014058,
+            "108": -0.056988,
+            "109": -0.086254,
+            "110": 0.061332,
+            "111": 0.024094,
+            "112": 0.010605,
+            "113": 0.028205,
+            "114": -0.041281,
+            "115": -0.034347,
+            "116": 0.000409,
+            "117": 0.072552,
+            "118": -0.029221
+          },
+          "wt_l": {
+            "losses": 6,
+            "ties": 0,
+            "wins": 6
+          }
+        },
+        "worlds": {
+          "losses": 41,
+          "ties": 2,
+          "wins": 29
+        }
+      }
+    },
+    "original_minus_greedy": {
+      "ask_cost": {
+        "ci95_cluster": [
+          214.347222,
+          226.902778
+        ],
+        "max": 292,
+        "mean": 220.402778,
+        "median": 206.0,
+        "min": 157,
+        "seed_level": {
+          "ci95": [
+            214.333333,
+            226.736111
+          ],
+          "mean": 220.402778,
+          "median": 214.583333,
+          "per_seed": {
+            "107": 209.166667,
+            "108": 209.166667,
+            "109": 210.5,
+            "110": 233.5,
+            "111": 217.666667,
+            "112": 210.5,
+            "113": 229.166667,
+            "114": 232.166667,
+            "115": 211.5,
+            "116": 209.833333,
+            "117": 237.166667,
+            "118": 234.5
+          },
+          "wt_l": {
+            "losses": 0,
+            "ties": 0,
+            "wins": 12
+          }
+        },
+        "worlds": {
+          "losses": 0,
+          "ties": 0,
+          "wins": 72
+        }
+      },
+      "assignments": {
+        "ci95_cluster": [
+          -15.375,
+          -8.958333
+        ],
+        "max": 6,
+        "mean": -12.333333,
+        "median": -13.0,
+        "min": -29,
+        "seed_level": {
+          "ci95": [
+            -15.333333,
+            -8.958333
+          ],
+          "mean": -12.333333,
+          "median": -12.75,
+          "per_seed": {
+            "107": -8.166667,
+            "108": -13,
+            "109": -21,
+            "110": -13.5,
+            "111": -10.5,
+            "112": -16.833333,
+            "113": 1.333333,
+            "114": -12.5,
+            "115": -8,
+            "116": -11,
+            "117": -18.333333,
+            "118": -16.5
+          },
+          "wt_l": {
+            "losses": 11,
+            "ties": 0,
+            "wins": 1
+          }
+        },
+        "worlds": {
+          "losses": 68,
+          "ties": 1,
+          "wins": 3
+        }
+      },
+      "coverage": {
+        "ci95_cluster": [
+          -0.020278,
+          -0.009861
+        ],
+        "max": 0.01,
+        "mean": -0.014861,
+        "median": -0.0125,
+        "min": -0.05,
+        "seed_level": {
+          "ci95": [
+            -0.020139,
+            -0.009861
+          ],
+          "mean": -0.014861,
+          "median": -0.012917,
+          "per_seed": {
+            "107": -0.014167,
+            "108": -0.019167,
+            "109": -0.008333,
+            "110": -0.023333,
+            "111": -0.011667,
+            "112": -0.033333,
+            "113": -0.000833,
+            "114": -0.0175,
+            "115": -0.009167,
+            "116": -0.004167,
+            "117": -0.01,
+            "118": -0.026667
+          },
+          "wt_l": {
+            "losses": 12,
+            "ties": 0,
+            "wins": 0
+          }
+        },
+        "worlds": {
+          "losses": 64,
+          "ties": 4,
+          "wins": 4
+        }
+      },
+      "date_rate_per_100_intro": {
+        "ci95_cluster": [
+          -0.401035,
+          3.253885
+        ],
+        "max": 14.901961,
+        "mean": 1.445983,
+        "median": 1.810112,
+        "min": -9.750813,
+        "seed_level": {
+          "ci95": [
+            -0.428927,
+            3.23262
+          ],
+          "mean": 1.445983,
+          "median": 1.373208,
+          "per_seed": {
+            "107": 4.008303,
+            "108": 2.783477,
+            "109": 6.029114,
+            "110": 5.591722,
+            "111": -1.367375,
+            "112": -0.787137,
+            "113": -5.424034,
+            "114": -0.448007,
+            "115": 4.735452,
+            "116": -0.516128,
+            "117": 1.177262,
+            "118": 1.569154
+          },
+          "wt_l": {
+            "losses": 5,
+            "ties": 0,
+            "wins": 7
+          }
+        },
+        "worlds": {
+          "losses": 26,
+          "ties": 0,
+          "wins": 46
+        }
+      },
+      "intro_per_100_arrived": {
+        "ci95_cluster": [
+          -7.652778,
+          -4.458333
+        ],
+        "max": 3.0,
+        "mean": -6.166667,
+        "median": -6.5,
+        "min": -14.5,
+        "seed_level": {
+          "ci95": [
+            -7.6875,
+            -4.506944
+          ],
+          "mean": -6.166667,
+          "median": -6.375,
+          "per_seed": {
+            "107": -4.083333,
+            "108": -6.5,
+            "109": -10.5,
+            "110": -6.75,
+            "111": -5.25,
+            "112": -8.416667,
+            "113": 0.666667,
+            "114": -6.25,
+            "115": -4.0,
+            "116": -5.5,
+            "117": -9.166667,
+            "118": -8.25
+          },
+          "wt_l": {
+            "losses": 11,
+            "ties": 0,
+            "wins": 1
+          }
+        },
+        "worlds": {
+          "losses": 68,
+          "ties": 1,
+          "wins": 3
+        }
+      },
+      "msmi_per_100_arrived_members": {
+        "ci95_cluster": [
+          -0.340278,
+          0.076389
+        ],
+        "max": 1.0,
+        "mean": -0.118056,
+        "median": 0.0,
+        "min": -1.5,
+        "seed_level": {
+          "ci95": [
+            -0.333333,
+            0.076389
+          ],
+          "mean": -0.118056,
+          "median": -0.041667,
+          "per_seed": {
+            "107": 0.0,
+            "108": 0.333333,
+            "109": -0.25,
+            "110": 0.416667,
+            "111": -0.333333,
+            "112": -0.083333,
+            "113": -1.0,
+            "114": 0.083333,
+            "115": 0.083333,
+            "116": -0.333333,
+            "117": -0.416667,
+            "118": 0.083333
+          },
+          "wt_l": {
+            "losses": 6,
+            "ties": 1,
+            "wins": 5
+          }
+        },
+        "worlds": {
+          "losses": 22,
+          "ties": 34,
+          "wins": 16
+        }
+      },
+      "msmi_per_100_intro": {
+        "ci95_cluster": [
+          -0.721971,
+          0.697576
+        ],
+        "max": 7.407407,
+        "mean": -0.007209,
+        "median": 0.0,
+        "min": -4.615385,
+        "seed_level": {
+          "ci95": [
+            -0.72045,
+            0.664752
+          ],
+          "mean": -0.007209,
+          "median": -0.030898,
+          "per_seed": {
+            "107": 0.020271,
+            "108": 1.237482,
+            "109": -0.082066,
+            "110": 2.333853,
+            "111": -0.830609,
+            "112": -0.229779,
+            "113": -2.973138,
+            "114": 0.935951,
+            "115": 0.442758,
+            "116": -0.548243,
+            "117": -0.429295,
+            "118": 0.036311
+          },
+          "wt_l": {
+            "losses": 6,
+            "ties": 0,
+            "wins": 6
+          }
+        },
+        "worlds": {
+          "losses": 22,
+          "ties": 23,
+          "wins": 27
+        }
+      },
+      "mutual_acceptances_per_100": {
+        "ci95_cluster": [
+          -1.125,
+          0.513889
+        ],
+        "max": 6.0,
+        "mean": -0.326389,
+        "median": -0.5,
+        "min": -6.0,
+        "seed_level": {
+          "ci95": [
+            -1.111111,
+            0.493056
+          ],
+          "mean": -0.326389,
+          "median": -0.5,
+          "per_seed": {
+            "107": 1.583333,
+            "108": -0.083333,
+            "109": 2.583333,
+            "110": -0.416667,
+            "111": -1.083333,
+            "112": 0.416667,
+            "113": -2.25,
+            "114": -0.75,
+            "115": 0.75,
+            "116": -2.666667,
+            "117": -1.416667,
+            "118": -0.583333
+          },
+          "wt_l": {
+            "losses": 8,
+            "ties": 0,
+            "wins": 4
+          }
+        },
+        "worlds": {
+          "losses": 37,
+          "ties": 7,
+          "wins": 28
+        }
+      },
+      "mutual_per_intro": {
+        "ci95_cluster": [
+          -0.004396,
+          0.041963
+        ],
+        "max": 0.15873,
+        "mean": 0.019184,
+        "median": 0.014657,
+        "min": -0.115493,
+        "seed_level": {
+          "ci95": [
+            -0.005282,
+            0.042741
+          ],
+          "mean": 0.019184,
+          "median": 0.019323,
+          "per_seed": {
+            "107": 0.04307,
+            "108": 0.05251,
+            "109": 0.095403,
+            "110": 0.031129,
+            "111": 0.002033,
+            "112": 0.034518,
+            "113": -0.067042,
+            "114": 0.007517,
+            "115": 0.061562,
+            "116": -0.028279,
+            "117": -0.007875,
+            "118": 0.005664
+          },
+          "wt_l": {
+            "losses": 3,
+            "ties": 0,
+            "wins": 9
+          }
+        },
+        "worlds": {
+          "losses": 28,
+          "ties": 0,
+          "wins": 44
+        }
+      }
+    }
+  },
+  "per_variant": {
+    "cold_start": {
+      "floorhalf": {
+        "ask_cost": 494.583333,
+        "assignments": 66.916667,
+        "coverage": 0.3125,
+        "msmi_per_100_arrived_members": 0.291667,
+        "mutual_acceptances_per_100": 5.166667,
+        "mutual_per_intro": 0.153152
+      },
+      "floorhalf_minus_greedy": {
+        "assign_delta_mean": -2.8333,
+        "assign_wt_l": {
+          "losses": 9,
+          "ties": 0,
+          "wins": 3
+        },
+        "msmi_ci95": [
+          -0.333333,
+          0.333333
+        ],
+        "msmi_delta_mean": -0.041667,
+        "msmi_wt_l": {
+          "losses": 4,
+          "ties": 6,
+          "wins": 2
+        }
+      },
+      "floorhalf_minus_original": {
+        "assign_delta_mean": 5.8333,
+        "assign_wt_l": {
+          "losses": 1,
+          "ties": 1,
+          "wins": 10
+        },
+        "msmi_ci95": [
+          -0.25,
+          0.375
+        ],
+        "msmi_delta_mean": 0.041667,
+        "msmi_wt_l": {
+          "losses": 4,
+          "ties": 5,
+          "wins": 3
+        }
+      },
+      "greedy": {
+        "ask_cost": 235.25,
+        "assignments": 69.75,
+        "coverage": 0.321667,
+        "msmi_per_100_arrived_members": 0.333333,
+        "mutual_acceptances_per_100": 5.416667,
+        "mutual_per_intro": 0.161336
+      },
+      "original": {
+        "ask_cost": 499.666667,
+        "assignments": 61.083333,
+        "coverage": 0.31,
+        "msmi_per_100_arrived_members": 0.25,
+        "mutual_acceptances_per_100": 4.791667,
+        "mutual_per_intro": 0.156914
+      }
+    },
+    "delayed": {
+      "floorhalf": {
+        "ask_cost": 407.833333,
+        "assignments": 81.25,
+        "coverage": 0.387917,
+        "msmi_per_100_arrived_members": 0.416667,
+        "mutual_acceptances_per_100": 6.291667,
+        "mutual_per_intro": 0.154945
+      },
+      "floorhalf_minus_greedy": {
+        "assign_delta_mean": -8.75,
+        "assign_wt_l": {
+          "losses": 10,
+          "ties": 0,
+          "wins": 2
+        },
+        "msmi_ci95": [
+          -0.291667,
+          0.333333
+        ],
+        "msmi_delta_mean": 0.041667,
+        "msmi_wt_l": {
+          "losses": 4,
+          "ties": 3,
+          "wins": 5
+        }
+      },
+      "floorhalf_minus_original": {
+        "assign_delta_mean": 7.1667,
+        "assign_wt_l": {
+          "losses": 1,
+          "ties": 0,
+          "wins": 11
+        },
+        "msmi_ci95": [
+          -0.125,
+          0.291667
+        ],
+        "msmi_delta_mean": 0.083333,
+        "msmi_wt_l": {
+          "losses": 2,
+          "ties": 6,
+          "wins": 4
+        }
+      },
+      "greedy": {
+        "ask_cost": 196,
+        "assignments": 90,
+        "coverage": 0.392917,
+        "msmi_per_100_arrived_members": 0.375,
+        "mutual_acceptances_per_100": 6.458333,
+        "mutual_per_intro": 0.143363
+      },
+      "original": {
+        "ask_cost": 413.583333,
+        "assignments": 74.083333,
+        "coverage": 0.378333,
+        "msmi_per_100_arrived_members": 0.333333,
+        "mutual_acceptances_per_100": 6.333333,
+        "mutual_per_intro": 0.17128
+      }
+    },
+    "development": {
+      "floorhalf": {
+        "ask_cost": 408.916667,
+        "assignments": 86.583333,
+        "coverage": 0.3875,
+        "msmi_per_100_arrived_members": 0.583333,
+        "mutual_acceptances_per_100": 6.416667,
+        "mutual_per_intro": 0.150344
+      },
+      "floorhalf_minus_greedy": {
+        "assign_delta_mean": -4,
+        "assign_wt_l": {
+          "losses": 8,
+          "ties": 0,
+          "wins": 4
+        },
+        "msmi_ci95": [
+          -0.625,
+          0.208333
+        ],
+        "msmi_delta_mean": -0.208333,
+        "msmi_wt_l": {
+          "losses": 6,
+          "ties": 2,
+          "wins": 4
+        }
+      },
+      "floorhalf_minus_original": {
+        "assign_delta_mean": 11,
+        "assign_wt_l": {
+          "losses": 0,
+          "ties": 0,
+          "wins": 12
+        },
+        "msmi_ci95": [
+          -0.208333,
+          0.25
+        ],
+        "msmi_delta_mean": 0.0,
+        "msmi_wt_l": {
+          "losses": 4,
+          "ties": 4,
+          "wins": 4
+        }
+      },
+      "greedy": {
+        "ask_cost": 196,
+        "assignments": 90.583333,
+        "coverage": 0.39375,
+        "msmi_per_100_arrived_members": 0.791667,
+        "mutual_acceptances_per_100": 6.791667,
+        "mutual_per_intro": 0.149771
+      },
+      "original": {
+        "ask_cost": 412.666667,
+        "assignments": 75.583333,
+        "coverage": 0.37625,
+        "msmi_per_100_arrived_members": 0.583333,
+        "mutual_acceptances_per_100": 5.875,
+        "mutual_per_intro": 0.153899
+      }
+    },
+    "drift": {
+      "floorhalf": {
+        "ask_cost": 408.916667,
+        "assignments": 86.916667,
+        "coverage": 0.387917,
+        "msmi_per_100_arrived_members": 0.541667,
+        "mutual_acceptances_per_100": 6.083333,
+        "mutual_per_intro": 0.142788
+      },
+      "floorhalf_minus_greedy": {
+        "assign_delta_mean": -4.1667,
+        "assign_wt_l": {
+          "losses": 8,
+          "ties": 0,
+          "wins": 4
+        },
+        "msmi_ci95": [
+          -0.625,
+          0.208333
+        ],
+        "msmi_delta_mean": -0.208333,
+        "msmi_wt_l": {
+          "losses": 6,
+          "ties": 2,
+          "wins": 4
+        }
+      },
+      "floorhalf_minus_original": {
+        "assign_delta_mean": 11.25,
+        "assign_wt_l": {
+          "losses": 0,
+          "ties": 0,
+          "wins": 12
+        },
+        "msmi_ci95": [
+          -0.208333,
+          0.208333
+        ],
+        "msmi_delta_mean": 0.0,
+        "msmi_wt_l": {
+          "losses": 4,
+          "ties": 4,
+          "wins": 4
+        }
+      },
+      "greedy": {
+        "ask_cost": 196,
+        "assignments": 91.083333,
+        "coverage": 0.39375,
+        "msmi_per_100_arrived_members": 0.75,
+        "mutual_acceptances_per_100": 6.25,
+        "mutual_per_intro": 0.137992
+      },
+      "original": {
+        "ask_cost": 412.666667,
+        "assignments": 75.666667,
+        "coverage": 0.377083,
+        "msmi_per_100_arrived_members": 0.541667,
+        "mutual_acceptances_per_100": 5.625,
+        "mutual_per_intro": 0.146194
+      }
+    },
+    "shift": {
+      "floorhalf": {
+        "ask_cost": 410.083333,
+        "assignments": 87.083333,
+        "coverage": 0.387917,
+        "msmi_per_100_arrived_members": 0.5,
+        "mutual_acceptances_per_100": 5.916667,
+        "mutual_per_intro": 0.137026
+      },
+      "floorhalf_minus_greedy": {
+        "assign_delta_mean": -4.9167,
+        "assign_wt_l": {
+          "losses": 10,
+          "ties": 1,
+          "wins": 1
+        },
+        "msmi_ci95": [
+          -0.5,
+          0.25
+        ],
+        "msmi_delta_mean": -0.125,
+        "msmi_wt_l": {
+          "losses": 5,
+          "ties": 3,
+          "wins": 4
+        }
+      },
+      "floorhalf_minus_original": {
+        "assign_delta_mean": 11.75,
+        "assign_wt_l": {
+          "losses": 0,
+          "ties": 0,
+          "wins": 12
+        },
+        "msmi_ci95": [
+          -0.125,
+          0.375
+        ],
+        "msmi_delta_mean": 0.125,
+        "msmi_wt_l": {
+          "losses": 3,
+          "ties": 4,
+          "wins": 5
+        }
+      },
+      "greedy": {
+        "ask_cost": 196,
+        "assignments": 92,
+        "coverage": 0.39375,
+        "msmi_per_100_arrived_members": 0.625,
+        "mutual_acceptances_per_100": 5.833333,
+        "mutual_per_intro": 0.128885
+      },
+      "original": {
+        "ask_cost": 412.416667,
+        "assignments": 75.333333,
+        "coverage": 0.374583,
+        "msmi_per_100_arrived_members": 0.375,
+        "mutual_acceptances_per_100": 5.75,
+        "mutual_per_intro": 0.148871
+      }
+    },
+    "sparse": {
+      "floorhalf": {
+        "ask_cost": 388,
+        "assignments": 22.75,
+        "coverage": 0.1775,
+        "msmi_per_100_arrived_members": 0.083333,
+        "mutual_acceptances_per_100": 2.333333,
+        "mutual_per_intro": 0.207182
+      },
+      "floorhalf_minus_greedy": {
+        "assign_delta_mean": -1,
+        "assign_wt_l": {
+          "losses": 7,
+          "ties": 4,
+          "wins": 1
+        },
+        "msmi_ci95": [
+          -0.166667,
+          0.166667
+        ],
+        "msmi_delta_mean": 0.0,
+        "msmi_wt_l": {
+          "losses": 2,
+          "ties": 8,
+          "wins": 2
+        }
+      },
+      "floorhalf_minus_original": {
+        "assign_delta_mean": 1.3333,
+        "assign_wt_l": {
+          "losses": 1,
+          "ties": 3,
+          "wins": 8
+        },
+        "msmi_ci95": [
+          -0.25,
+          0.083333
+        ],
+        "msmi_delta_mean": -0.083333,
+        "msmi_wt_l": {
+          "losses": 3,
+          "ties": 8,
+          "wins": 1
+        }
+      },
+      "greedy": {
+        "ask_cost": 199,
+        "assignments": 23.75,
+        "coverage": 0.18125,
+        "msmi_per_100_arrived_members": 0.083333,
+        "mutual_acceptances_per_100": 1.75,
+        "mutual_per_intro": 0.141461
+      },
+      "original": {
+        "ask_cost": 389.666667,
+        "assignments": 21.416667,
+        "coverage": 0.171667,
+        "msmi_per_100_arrived_members": 0.166667,
+        "mutual_acceptances_per_100": 2.166667,
+        "mutual_per_intro": 0.200757
+      }
+    }
+  },
+  "round1_reference": {
+    "greedy_primary_seeds_101_103": 0.389,
+    "note": "Round 1 greedy on DIFFERENT seeds; only within-fresh-seed arm comparisons are inferentially comparable"
+  },
+  "runtime": {
+    "inference_seconds_per_episode_mean": {
+      "floorhalf": 29.675,
+      "greedy": 19.806,
+      "original": 30.155
+    },
+    "note": "wall = full evaluate.py subprocess (6 episodes); inference seconds nondeterministic (excluded from G2/G3 comparisons)",
+    "per_seed_run_wall_seconds_6_episodes": {
+      "floorhalf": {
+        "max_s": 194.9,
+        "mean_s": 189.6,
+        "min_s": 179.8,
+        "n_runs": 12
+      },
+      "greedy": {
+        "max_s": 131.5,
+        "mean_s": 129.3,
+        "min_s": 127.0,
+        "n_runs": 12
+      },
+      "original": {
+        "max_s": 199.1,
+        "mean_s": 192.3,
+        "min_s": 181.1,
+        "n_runs": 12
+      }
+    }
+  },
+  "schema": "round2_promotion_summary_v1",
+  "volume_confirmation": {
+    "ci95_cluster": [
+      5.666667,
+      10.597222
+    ],
+    "criterion_from_prior_research": "C > B introductions in >= 80% of 72 paired worlds",
+    "mean_delta": 8.0556,
+    "median_delta": 6.0,
+    "meets_80pct": true,
+    "n_worlds": 72,
+    "pct_wins": 90.28,
+    "per_seed_mean_delta": {
+      "107": 4,
+      "108": 9.3333,
+      "109": 17.5,
+      "110": 3,
+      "111": 5,
+      "112": 9,
+      "113": 1.8333,
+      "114": 11.3333,
+      "115": 4.1667,
+      "116": 9.6667,
+      "117": 8.6667,
+      "118": 13.1667
+    },
+    "seed_level_wt_l": {
+      "losses": 0,
+      "ties": 0,
+      "wins": 12
+    },
+    "totals_per_arm": {
+      "floorhalf": 5178,
+      "greedy": 5486,
+      "original": 4598
+    },
+    "worlds": {
+      "losses": 3,
+      "ties": 4,
+      "wins": 65
+    }
+  }
+}

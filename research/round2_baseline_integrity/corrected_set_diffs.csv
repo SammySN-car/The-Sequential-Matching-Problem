@@ -1,0 +1,12 @@
+metric,value
+states_differing_G0_vs_G1f,1228
+states_differing_G0_vs_G1m,80
+states_differing_G1f_vs_G1m,1232
+soft_match_count_sum_G0,7245
+soft_match_count_sum_G1f,3752
+soft_match_count_sum_G1m,7358
+soft_match_count_sum_G2,6045
+soft_match_count_sum_G3,6117
+soft_match_count_sum_G4,5754
+soft_match_count_sum_G5,5422
+cardinality_violations,0

@@ -1,0 +1,4 @@
+stratum,n_positive_edges,n_captured_F2,n_missed,n_coverable,missed_flag_A,missed_flag_B,missed_flag_D,missed_flag_E,missed_with_neg_outranking,missed_with_vertex_conflict
+ALL,173,94,67,161,46,66,37,0,46,66
+HEADROOM,85,14,59,73,39,58,36,0,39,58
+NONHEADROOM,88,80,8,88,7,8,1,0,7,8

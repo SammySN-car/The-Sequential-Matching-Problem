@@ -1,0 +1,12 @@
+{"day": 44, "invocation_seconds": 0.07587950001470745, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 18148, "solver_seconds": 0.0}
+{"day": 31, "invocation_seconds": 0.08188529999461025, "k_chosen": 1, "k_greedy": 1, "n_edges": 4, "phase": "match", "pid": 18148, "solver_seconds": 0.00016300001880154014}
+{"day": 0, "invocation_seconds": 0.07575240000733174, "k_chosen": 6, "k_greedy": 6, "n_edges": 7, "phase": "match", "pid": 18148, "solver_seconds": 0.0002856000210158527}
+{"day": 0, "invocation_seconds": 0.07513959999778308, "k_chosen": 2, "k_greedy": 2, "n_edges": 2, "phase": "match", "pid": 18148, "solver_seconds": 0.00021299999207258224}
+{"day": 50, "invocation_seconds": 0.09772649998194538, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 18148, "solver_seconds": 0.0}
+{"day": 5, "invocation_seconds": 0.07144319999497384, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 18148, "solver_seconds": 0.0}
+{"day": 44, "invocation_seconds": 0.11448220000602305, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 18148, "solver_seconds": 0.0}
+{"day": 43, "invocation_seconds": 0.08153229998424649, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 18148, "solver_seconds": 6.72000169288367e-05}
+{"day": 34, "invocation_seconds": 0.12696080000023358, "k_chosen": 1, "k_greedy": 1, "n_edges": 4, "phase": "match", "pid": 18148, "solver_seconds": 0.00018229999113827944}
+{"day": 3, "invocation_seconds": 0.06284020000020973, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 18148, "solver_seconds": 0.0}
+{"day": 57, "invocation_seconds": 0.08274270000401884, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 18148, "solver_seconds": 6.749999010935426e-05}
+{"day": 41, "invocation_seconds": 0.0867471000237856, "k_chosen": 2, "k_greedy": 2, "n_edges": 7, "phase": "match", "pid": 18148, "solver_seconds": 0.00030899999546818435}

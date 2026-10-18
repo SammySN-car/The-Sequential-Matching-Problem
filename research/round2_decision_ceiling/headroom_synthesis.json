@@ -1,0 +1,302 @@
+{
+ "causes": {
+  "K1": {
+   "cause": "Too few genuine decision opportunities",
+   "classification": "unresolved",
+   "decision_rule": "supported if zero_edge_share > 0.50 and share_days_with_alternative_same_size < 0.10; not_supported if zero_edge_share < 0.25 and share_days_with_alternative_same_size > 0.40; otherwise unresolved",
+   "evidence": {
+    "addition_possible_everywhere": "0.0",
+    "mean_batch_underfill": "0.033995",
+    "mean_competing_edges": "0.432155",
+    "mean_edges_per_day": 2.0243,
+    "n_days": "7560",
+    "selected_with_alt_partner_share": "0.2381",
+    "share_days_with_alternative_same_size": 0.302646,
+    "zero_edge_days": "3566",
+    "zero_edge_share": 0.4717
+   },
+   "evidence_class": "measured fact",
+   "note": "decision rule recorded in analysis_plan.md and plan_implementation.md; applied mechanically to the evidence stored alongside it",
+   "reading": "Scarcity is real but partial: 47.2% of days carry no candidate edge at all, yet 30.3% of days carry a genuine composition choice and those days hold 70.1% of all introductions. The preregistered rule straddles the two thresholds, so the mechanical verdict is unresolved.",
+   "rule_conditions_met": {
+    "not_supported": false,
+    "supported": false
+   }
+  },
+  "K2": {
+   "cause": "Available choices carry no usable information",
+   "classification": "unresolved",
+   "decision_rule": "supported if the F4 within-state AUC CI includes 0.5 and every ablation CI includes 0; not_supported if F4 within-state CI excludes 0.5 and at least one ablation CI excludes 0; otherwise unresolved",
+   "evidence": {
+    "ablation_ci_includes_zero": {
+     "F2_minus_F1": false,
+     "F3_minus_F1": true,
+     "F4_minus_F3": true
+    },
+    "ablations": {
+     "F2_minus_F1": {
+      "ci95_high": "0.092176",
+      "ci95_low": "0.028301",
+      "contrast": "F2_minus_F1",
+      "delta_auc": "0.05962",
+      "excludes_zero": "1"
+     },
+     "F3_minus_F1": {
+      "ci95_high": "0.100799",
+      "ci95_low": "-0.007549",
+      "contrast": "F3_minus_F1",
+      "delta_auc": "0.046997",
+      "excludes_zero": "0"
+     },
+     "F4_minus_F3": {
+      "ci95_high": "0.013631",
+      "ci95_low": "-0.071432",
+      "contrast": "F4_minus_F3",
+      "delta_auc": "-0.027532",
+      "excludes_zero": "0"
+     }
+    },
+    "f1": {
+     "auc": "0.503788",
+     "ci_hi": "0.596202",
+     "ci_lo": "0.422945",
+     "lift": "1.216197",
+     "n_states": "159",
+     "power_flag": "ok",
+     "pr_auc": "0.013748",
+     "top1_hit_rate": "0.207547",
+     "within": "0.527288"
+    },
+    "f2": {
+     "auc": "0.563408",
+     "ci_hi": "0.644951",
+     "ci_lo": "0.491963",
+     "lift": "1.545042",
+     "n_states": "159",
+     "power_flag": "ok",
+     "pr_auc": "0.017466",
+     "top1_hit_rate": "0.201258",
+     "within": "0.588117"
+    },
+    "f4": {
+     "auc": "0.523253",
+     "ci_hi": "0.598585",
+     "ci_lo": "0.464604",
+     "lift": "1.131223",
+     "n_states": "159",
+     "power_flag": "ok",
+     "pr_auc": "0.012788",
+     "top1_hit_rate": "0.176101",
+     "within": "0.517656"
+    },
+    "f5_state_only": {
+     "auc": "0.528903",
+     "ci_hi": "0.58574",
+     "ci_lo": "0.473473",
+     "lift": "1.09597",
+     "n_states": "159",
+     "power_flag": "ok",
+     "pr_auc": "0.012389",
+     "top1_hit_rate": "0.188679",
+     "within": "0.5"
+    },
+    "question_E": {
+     "argmax_beats_collector_rate": "0.378049",
+     "collector_positive_states": "2",
+     "feature_set": "F2_soft_state",
+     "n_headroom_choice_states": "82",
+     "n_states_argmax_beats_collector": "31",
+     "n_states_argmax_compared": "82",
+     "n_states_auc_defined": "82",
+     "n_states_single_class": "0",
+     "within_state_auc_mean": "0.533647",
+     "within_state_auc_posweighted": ""
+    }
+   },
+   "evidence_class": "statistical inference",
+   "note": "decision rule recorded in analysis_plan.md and plan_implementation.md; applied mechanically to the evidence stored alongside it",
+   "reading": "The strong form is not supported: F2-F1 excludes zero, so soft channel state does carry usable information. The weak form is also not supported by the rule, because F4 CI includes 0.5. Question E is decisive against the strong form on the days that matter: F2 argmax beats the collector on only 31/82 headroom states.",
+   "rule_conditions_met": {
+    "not_supported": false,
+    "supported": false
+   }
+  },
+  "K3": {
+   "cause": "Information exists but sits in unselected choices",
+   "classification": "unresolved",
+   "decision_rule": "supported if a large score_gap coexists with a collapsed selected-only AUC and oracle-positive days far outnumber gap days; otherwise unresolved",
+   "evidence": {
+    "headroom_states": "82",
+    "observed_score_gap": "-0.000667",
+    "oracle_pos_days": "166",
+    "question_E": {
+     "argmax_beats_collector_rate": "0.378049",
+     "collector_positive_states": "2",
+     "feature_set": "F2_soft_state",
+     "n_headroom_choice_states": "82",
+     "n_states_argmax_beats_collector": "31",
+     "n_states_argmax_compared": "82",
+     "n_states_auc_defined": "82",
+     "n_states_single_class": "0",
+     "within_state_auc_mean": "0.533647",
+     "within_state_auc_posweighted": ""
+    },
+    "selection_effect": {
+     "F1_baseline_count_score": {
+      "auc_all": "0.503788",
+      "auc_selected_only": "0.501889",
+      "feature_set": "F1_baseline_count_score",
+      "gap_ci95_high": "-1.9e-05",
+      "gap_ci95_low": "-0.001436",
+      "score_gap_selected_minus_not": "-0.000667"
+     },
+     "F4_full_legal_observables": {
+      "auc_all": "0.523253",
+      "auc_selected_only": "0.527805",
+      "feature_set": "F4_full_legal_observables",
+      "gap_ci95_high": "0.000606",
+      "gap_ci95_low": "-0.000755",
+      "score_gap_selected_minus_not": "-6e-06"
+     }
+    }
+   },
+   "evidence_class": "statistical inference",
+   "note": "decision rule recorded in analysis_plan.md and plan_implementation.md; applied mechanically to the evidence stored alongside it",
+   "reading": "No selection effect is present. The collector does not prefer high-information pairs, so nothing is being \"hidden\" in the unselected set that the selected set lacks. Question E shows models score unselected positives no better than selected ones.",
+   "rule_conditions_met": {
+    "large_score_gap": false,
+    "note": "\"large\" is not numerically operationalised in the frozen rule; the observed F1 gap is -0.00067, orders of magnitude below any plausible threshold"
+   }
+  },
+  "K4": {
+   "cause": "Choices rarely change the MSMI outcome",
+   "classification": "supported",
+   "decision_rule": "supported if share_days_positive_headroom < 0.10; not_supported if > 0.40; otherwise unresolved",
+   "evidence": {
+    "collector": "0.011905",
+    "mean_local_gap": "0.010979",
+    "n_days_gap_ge1": "82",
+    "n_days_oracle_pos_ge1": "166",
+    "oracle": "0.022884",
+    "share_days_positive_headroom": "0.010847",
+    "share_gap_ge1_among_oracle_pos": "0.493976"
+   },
+   "evidence_class": "measured fact",
+   "note": "decision rule recorded in analysis_plan.md and plan_implementation.md; applied mechanically to the evidence stored alongside it",
+   "reading": "Only 82 of 7,560 days (1.08%) had any MSMI headroom at all. Even a perfect per-day hindsight oracle reaches 173 positives across the whole corpus versus the collector's 90.",
+   "rule_conditions_met": {
+    "not_supported": false,
+    "supported": true
+   }
+  },
+  "K5": {
+   "cause": "Choices structurally interchangeable but outcomes stochastic",
+   "classification": "unresolved",
+   "decision_rule": "supported only if alt_same_size is high AND share_gap_ge1 is low; either alone is unresolved",
+   "evidence": {
+    "alt_same_size": 0.302646,
+    "f1_within_state": "0.527288",
+    "mean_local_gap": "0.010979",
+    "selection_signal_gap": "-0.000667",
+    "share_gap_ge1": "0.010847"
+   },
+   "evidence_class": "measured fact",
+   "note": "decision rule recorded in analysis_plan.md and plan_implementation.md; applied mechanically to the evidence stored alongside it",
+   "reading": "Both component facts hold in the direction K5 predicts - 30.3% of days are structurally interchangeable while only 1.08% of days show any outcome headroom - but the rule cannot be applied without inventing thresholds, so it is recorded as unresolved.",
+   "rule_conditions_met": {
+    "alt_same_size_observed": 0.302646,
+    "note": "the frozen rule uses the qualitative terms \"high\" and \"low\" without numeric thresholds; selecting thresholds after observing the values would be post-hoc, so the rule is not applied mechanically",
+    "share_gap_ge1_observed": 0.010847
+   }
+  },
+  "K6": {
+   "cause": "The collector score is miscalibrated to MSMI",
+   "classification": "unresolved",
+   "decision_rule": "F1 materially worse than F2/F3/F4 within-state, with CI excluding 0 (analysis_plan.md L437)",
+   "evidence": {
+    "f1_auc": "0.503788",
+    "f1_auc_ci": [
+     "0.422945",
+     "0.596202"
+    ],
+    "f1_bettered_by_F2_F3_F4": {
+     "F2_soft_state": true,
+     "F3_public_profile": true,
+     "F4_full_legal_observables": false
+    },
+    "other_preregistered_contrasts": {
+     "F3_minus_F1": {
+      "ci95_high": "0.100799",
+      "ci95_low": "-0.007549",
+      "contrast": "F3_minus_F1",
+      "delta_auc": "0.046997",
+      "excludes_zero": "0"
+     },
+     "F4_minus_F3": {
+      "ci95_high": "0.013631",
+      "ci95_low": "-0.071432",
+      "contrast": "F4_minus_F3",
+      "delta_auc": "-0.027532",
+      "excludes_zero": "0"
+     }
+    },
+    "preregistered_ci_carrying_contrast": {
+     "ci95_high": "0.092176",
+     "ci95_low": "0.028301",
+     "contrast": "F2_minus_F1",
+     "delta_auc": "0.05962",
+     "excludes_zero": "1"
+    },
+    "question_E": {
+     "argmax_beats_collector_rate": "0.5",
+     "collector_positive_states": "2",
+     "feature_set": "F1_baseline_count_score",
+     "n_headroom_choice_states": "82",
+     "n_states_argmax_beats_collector": "41",
+     "n_states_argmax_compared": "82",
+     "n_states_auc_defined": "82",
+     "n_states_single_class": "0",
+     "within_state_auc_mean": "0.485098",
+     "within_state_auc_posweighted": ""
+    },
+    "with_state_auc_by_set": {
+     "F1_baseline_count_score": 0.527288,
+     "F2_soft_state": 0.588117,
+     "F3_public_profile": 0.544277,
+     "F4_full_legal_observables": 0.517656,
+     "F5_state_only": 0.5
+    }
+   },
+   "evidence_class": "statistical inference",
+   "note": "decision rule recorded in analysis_plan.md and plan_implementation.md; applied mechanically to the evidence stored alongside it",
+   "reading": "The collector's own score sits at chance (AUC 0.504, CI [0.423, 0.596]) and F2-F1 excludes zero, both consistent with miscalibration. But F4 is slightly worse than F1 within-state, so the frozen conjunct fails, and no within-state delta CI was preregistered. Verdict is unresolved rather than supported.",
+   "rule_conditions_met": {
+    "f2_better": true,
+    "f2_minus_f1_ci_excludes_zero": true,
+    "f3_better": true,
+    "f4_better": false,
+    "note": "the conjunct requires all three of F2/F3/F4 to beat F1 within-state; F4 does not"
+   }
+  }
+ },
+ "classification_counts": {
+  "not_supported": 0,
+  "supported": 1,
+  "unresolved": 5
+ },
+ "generated_by": "s5_headroom.py",
+ "historical_hypotheses": "H1-H9 frozen EDA statuses are referenced only, never retested or restatused",
+ "safeguards": [
+  "counterfactual != observed",
+  "one-day oracle != sequential",
+  "prediction != policy improvement",
+  "seed-group clustered uncertainty",
+  "no causality from association",
+  "all preregistered metrics reported",
+  "OPR gates not revisited",
+  "small oracle gap != greedy optimal",
+  "large oracle gap != hidden randomness sole cause",
+  "no policy or strategy recommendation"
+ ],
+ "separation": "information_headroom=K2,K3,K6 ; action_headroom=K1,K4,K5 ; never fused"
+}

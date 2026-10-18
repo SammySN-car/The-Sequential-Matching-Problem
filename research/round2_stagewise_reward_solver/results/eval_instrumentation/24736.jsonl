@@ -1,0 +1,12 @@
+{"day": 9, "invocation_seconds": 0.05852379999123514, "k_chosen": 2, "k_greedy": 2, "n_edges": 3, "phase": "match", "pid": 24736, "solver_seconds": 0.00015440001152455807}
+{"day": 29, "invocation_seconds": 0.0923285000026226, "k_chosen": 3, "k_greedy": 3, "n_edges": 5, "phase": "match", "pid": 24736, "solver_seconds": 0.0002009000163525343}
+{"day": 24, "invocation_seconds": 0.10751280002295971, "k_chosen": 2, "k_greedy": 2, "n_edges": 2, "phase": "match", "pid": 24736, "solver_seconds": 0.00012010001228190958}
+{"day": 23, "invocation_seconds": 0.13094920001458377, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 24736, "solver_seconds": 0.0}
+{"day": 16, "invocation_seconds": 0.08379800000693649, "k_chosen": 2, "k_greedy": 2, "n_edges": 6, "phase": "match", "pid": 24736, "solver_seconds": 0.00031269999453797936}
+{"day": 36, "invocation_seconds": 0.08727119999821298, "k_chosen": 3, "k_greedy": 3, "n_edges": 8, "phase": "match", "pid": 24736, "solver_seconds": 0.00037819999852217734}
+{"day": 36, "invocation_seconds": 0.08882480001193471, "k_chosen": 2, "k_greedy": 2, "n_edges": 7, "phase": "match", "pid": 24736, "solver_seconds": 0.00034249998861923814}
+{"day": 40, "invocation_seconds": 0.09100889999535866, "k_chosen": 2, "k_greedy": 2, "n_edges": 2, "phase": "match", "pid": 24736, "solver_seconds": 8.939998224377632e-05}
+{"day": 50, "invocation_seconds": 0.09698590001789853, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 24736, "solver_seconds": 9.659997886046767e-05}
+{"day": 12, "invocation_seconds": 0.05675930000143126, "k_chosen": 2, "k_greedy": 2, "n_edges": 3, "phase": "match", "pid": 24736, "solver_seconds": 0.00013520001084543765}
+{"day": 5, "invocation_seconds": 0.052317699999548495, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 24736, "solver_seconds": 0.00024369999300688505}
+{"day": 41, "invocation_seconds": 0.09315850000712089, "k_chosen": 1, "k_greedy": 1, "n_edges": 4, "phase": "match", "pid": 24736, "solver_seconds": 0.0002793999738059938}

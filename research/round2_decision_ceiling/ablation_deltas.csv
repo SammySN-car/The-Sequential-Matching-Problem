@@ -1,0 +1,4 @@
+contrast,delta_auc,ci95_low,ci95_high,excludes_zero
+F2_minus_F1,0.05962,0.028301,0.092176,1
+F3_minus_F1,0.046997,-0.007549,0.100799,0
+F4_minus_F3,-0.027532,-0.071432,0.013631,0

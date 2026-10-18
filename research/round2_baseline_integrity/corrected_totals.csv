@@ -1,0 +1,8 @@
+arm,positives,delta_vs_G0,per_intro_rate,headroom_positives,zero_headroom_positives,soft_match_count_sum,states_changed_vs_G0
+G0,90,0,0.010672,2,88,7245,0
+G1f,81,-9,0.009605,19,62,3752,1228
+G1m,88,-2,0.010435,2,86,7358,80
+G2,92,2,0.01091,10,82,6045,696
+G3,92,2,0.01091,10,82,6117,722
+G4,94,4,0.011147,14,80,5754,1170
+G5,161,71,0.019092,73,88,5422,831

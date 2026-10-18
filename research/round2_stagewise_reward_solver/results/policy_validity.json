@@ -1,0 +1,34 @@
+{
+  "experiment": "round2_stagewise_reward_solver",
+  "task": 3,
+  "script": "scripts/srws_policy_test.py",
+  "pilot_seed": 40001,
+  "gates": {
+    "P1_greedy_parity": {
+      "pass": true
+    },
+    "P2_protocol_conformance": {
+      "pass": true
+    },
+    "P3_determinism": {
+      "pass": true
+    }
+  },
+  "pilot": {
+    "inprocess_states": 48,
+    "inprocess_p1_ask_fail": 0,
+    "inprocess_p1_k_fail": 0,
+    "inprocess_p1_feas_fail": 0,
+    "inprocess_p2_fail": 0,
+    "inprocess_p3_fail": 0,
+    "pilot_episodes": 6,
+    "pilot_invalid": 0,
+    "pilot_lines": 360,
+    "pilot_cardinality_violations": 0,
+    "solver_seconds_max": 0.003165699978126213,
+    "invocation_seconds_max": 0.14673959999345243,
+    "pilot_determinism_sha": "aa2b1ca58bd5f281e3aedf9f4dc4979f2894423ad7a4daf95b463f293c699a54"
+  },
+  "benchmark_state_note": "P1/P2/P3 are validated in-process on a 48-state generated population (all 6 variants, day0+day5 greedy replay, seeds {40001,101,424242,7}) and end-to-end on the parent pilot seed group 40001 (6 episodes). The exhaustive 'every benchmark state (S.7)' restatement is finalised in Task 4 when the R-A..R-D corpus is materialised; identical properties are exercised here.",
+  "passed": true
+}

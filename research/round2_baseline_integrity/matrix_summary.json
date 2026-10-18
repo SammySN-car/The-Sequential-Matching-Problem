@@ -1,0 +1,13 @@
+{
+ "classification_counts": {
+  "CORRECT_AND_COMPARABLE": 29,
+  "CORRECT_BUT_NOT_COMPARABLE": 4,
+  "DIRECTION_BUG": 7,
+  "OTHER_IMPLEMENTATION_DEFECT": 1,
+  "UNVERIFIABLE_FROM_SAVED_ARTIFACTS": 1
+ },
+ "direction_bug_rows": 7,
+ "failures": [],
+ "generated": "2026-10-13 17:49:41",
+ "n_rows": 42
+}

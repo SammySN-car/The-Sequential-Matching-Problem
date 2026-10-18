@@ -1,0 +1,4 @@
+arm,rel_asks_per_episode, voi_gate_precision,note
+C/E2,0,,no REL asks (control and scorer-only arms)
+E1,42.3,,VoI gate: 76.6% of REL-ask days changed the allocation; 87.6% of asks on changed days (report.md section 3)
+E3,42.8,,67.7% allocation-change days; 18.5% edge scores changed

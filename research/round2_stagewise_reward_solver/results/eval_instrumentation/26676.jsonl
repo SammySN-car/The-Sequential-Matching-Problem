@@ -1,0 +1,13 @@
+{"day": 5, "invocation_seconds": 0.05056569998851046, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 26676, "solver_seconds": 0.0}
+{"day": 33, "invocation_seconds": 0.1063094999990426, "k_chosen": 1, "k_greedy": 1, "n_edges": 1, "phase": "match", "pid": 26676, "solver_seconds": 6.920000305399299e-05}
+{"day": 9, "invocation_seconds": 0.06269479999900796, "k_chosen": 1, "k_greedy": 1, "n_edges": 2, "phase": "match", "pid": 26676, "solver_seconds": 0.00011669998639263213}
+{"day": 57, "invocation_seconds": 0.07698149999487214, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 26676, "solver_seconds": 0.0}
+{"day": 51, "invocation_seconds": 0.09720119999838062, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 26676, "solver_seconds": 0.0}
+{"day": 26, "invocation_seconds": 0.11609959998168051, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 26676, "solver_seconds": 0.0}
+{"day": 38, "invocation_seconds": 0.1037322000192944, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 26676, "solver_seconds": 0.0}
+{"day": 0, "invocation_seconds": 0.0615727000113111, "k_chosen": 4, "k_greedy": 4, "n_edges": 5, "phase": "match", "pid": 26676, "solver_seconds": 0.00020760000916197896}
+{"day": 22, "invocation_seconds": 0.07708370001637377, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 26676, "solver_seconds": 0.0}
+{"day": 29, "invocation_seconds": 0.08945359999779612, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 26676, "solver_seconds": 0.0}
+{"day": 52, "invocation_seconds": 0.08291559998178855, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 26676, "solver_seconds": 0.0}
+{"day": 22, "invocation_seconds": 0.08215140001266263, "k_chosen": 0, "k_greedy": 0, "n_edges": 0, "phase": "match", "pid": 26676, "solver_seconds": 0.0}
+{"day": 24, "invocation_seconds": 0.09307949998765253, "k_chosen": 4, "k_greedy": 4, "n_edges": 13, "phase": "match", "pid": 26676, "solver_seconds": 0.0010353999969083816}

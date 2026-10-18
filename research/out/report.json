@@ -1,0 +1,286 @@
+{
+  "n_rollouts": 440,
+  "n_random": 400,
+  "n_greedy": 40,
+  "n_worlds": 100,
+  "days": 60,
+  "follow_up": 40,
+  "n_rows": 32044,
+  "dataset_audit_violations": 0,
+  "n_immature": 0,
+  "source_audit": [],
+  "integrity": {
+    "checks": {
+      "forbidden_keys": true,
+      "structure_disclosure": true,
+      "snapshot_unchanged": true,
+      "rows_audit": true,
+      "label_stability": true,
+      "determinism": true
+    },
+    "violations": [],
+    "ok": true
+  },
+  "leakage": [],
+  "coverage": {
+    "random": {
+      "rollouts": 160,
+      "opportunities": 20319,
+      "chosen": 11376,
+      "fraction": 0.55987007234608
+    },
+    "greedy": {
+      "rollouts": 40,
+      "opportunities": 5381,
+      "chosen": 2972,
+      "fraction": 0.5523136963389704
+    }
+  },
+  "variant_balance": {
+    "development": {
+      "rows": 6991,
+      "positives": 66
+    },
+    "sparse": {
+      "rows": 1591,
+      "positives": 10
+    },
+    "cold_start": {
+      "rows": 5195,
+      "positives": 49
+    },
+    "delayed": {
+      "rows": 6290,
+      "positives": 57
+    },
+    "shift": {
+      "rows": 5802,
+      "positives": 54
+    },
+    "drift": {
+      "rows": 6175,
+      "positives": 70
+    }
+  },
+  "train_eval": {
+    "n_train_rows": 25847,
+    "n_val_rows": 6197,
+    "train_worlds": 80,
+    "val_worlds": 20,
+    "targets": {
+      "msmi": {
+        "train_n": 25847,
+        "val_n": 6197,
+        "train_pos": 236,
+        "val_pos": 70,
+        "models": {
+          "constant": {
+            "n": 6197,
+            "positives": 70,
+            "prevalence": 0.011295788284653864,
+            "roc_auc": 0.5,
+            "avg_precision": 0.011295788284653864,
+            "log_loss": 0.062115336538168885,
+            "brier": 0.011172881260487821
+          },
+          "hist_gb": {
+            "n": 6197,
+            "positives": 70,
+            "prevalence": 0.011295788284653864,
+            "roc_auc": 0.5217526638532024,
+            "avg_precision": 0.011141164139329657,
+            "log_loss": 0.06698234907485283,
+            "brier": 0.011408561228273176
+          }
+        }
+      },
+      "mutual": {
+        "train_n": 25847,
+        "val_n": 6197,
+        "train_pos": 3708,
+        "val_pos": 868,
+        "models": {
+          "constant": {
+            "n": 6197,
+            "positives": 868,
+            "prevalence": 0.1400677747297079,
+            "roc_auc": 0.5,
+            "avg_precision": 0.1400677747297079,
+            "log_loss": 0.4051336196681069,
+            "brier": 0.12046029761683795
+          },
+          "hist_gb": {
+            "n": 6197,
+            "positives": 868,
+            "prevalence": 0.1400677747297079,
+            "roc_auc": 0.599586818668048,
+            "avg_precision": 0.18982290491284495,
+            "log_loss": 0.3992432436851724,
+            "brier": 0.11927374188282422
+          }
+        }
+      },
+      "date": {
+        "train_n": 25847,
+        "val_n": 6197,
+        "train_pos": 2884,
+        "val_pos": 677,
+        "models": {
+          "constant": {
+            "n": 6197,
+            "positives": 677,
+            "prevalence": 0.10924640955300952,
+            "roc_auc": 0.5,
+            "avg_precision": 0.10924640955300952,
+            "log_loss": 0.3449644971047667,
+            "brier": 0.09731707570575764
+          },
+          "hist_gb": {
+            "n": 6197,
+            "positives": 677,
+            "prevalence": 0.10924640955300952,
+            "roc_auc": 0.6054667597884957,
+            "avg_precision": 0.15357041989908404,
+            "log_loss": 0.3391095635659903,
+            "brier": 0.0966695023822282
+          }
+        }
+      }
+    },
+    "top_features_mutual": [
+      {
+        "feature": "weighted_soft_score",
+        "corr": 0.1377
+      },
+      {
+        "feature": "soft_relationship_goal_match",
+        "corr": 0.1343
+      },
+      {
+        "feature": "soft_relationship_pace_match",
+        "corr": 0.1116
+      },
+      {
+        "feature": "soft_match_count",
+        "corr": 0.0689
+      },
+      {
+        "feature": "soft_conversations_match",
+        "corr": 0.0688
+      },
+      {
+        "feature": "hist_yes_rate_mean",
+        "corr": 0.0545
+      },
+      {
+        "feature": "soft_lifestyle_match",
+        "corr": 0.0421
+      },
+      {
+        "feature": "hist_n_missing_mean",
+        "corr": -0.0324
+      },
+      {
+        "feature": "day",
+        "corr": -0.0322
+      },
+      {
+        "feature": "hist_n_intros_mean",
+        "corr": -0.0306
+      }
+    ]
+  },
+  "calibration": {
+    "msmi": [
+      {
+        "n": 1240,
+        "mean_predicted": 0.00192,
+        "observed_rate": 0.00726
+      },
+      {
+        "n": 1240,
+        "mean_predicted": 0.00371,
+        "observed_rate": 0.01129
+      },
+      {
+        "n": 1239,
+        "mean_predicted": 0.00555,
+        "observed_rate": 0.01453
+      },
+      {
+        "n": 1239,
+        "mean_predicted": 0.0077,
+        "observed_rate": 0.01533
+      },
+      {
+        "n": 1239,
+        "mean_predicted": 0.02177,
+        "observed_rate": 0.00807
+      }
+    ],
+    "mutual": [
+      {
+        "n": 1240,
+        "mean_predicted": 0.06073,
+        "observed_rate": 0.07258
+      },
+      {
+        "n": 1240,
+        "mean_predicted": 0.11316,
+        "observed_rate": 0.12581
+      },
+      {
+        "n": 1239,
+        "mean_predicted": 0.13777,
+        "observed_rate": 0.15093
+      },
+      {
+        "n": 1239,
+        "mean_predicted": 0.15998,
+        "observed_rate": 0.14447
+      },
+      {
+        "n": 1239,
+        "mean_predicted": 0.23519,
+        "observed_rate": 0.20662
+      }
+    ],
+    "date": [
+      {
+        "n": 1240,
+        "mean_predicted": 0.04961,
+        "observed_rate": 0.05242
+      },
+      {
+        "n": 1240,
+        "mean_predicted": 0.09149,
+        "observed_rate": 0.1
+      },
+      {
+        "n": 1239,
+        "mean_predicted": 0.10707,
+        "observed_rate": 0.11542
+      },
+      {
+        "n": 1239,
+        "mean_predicted": 0.12437,
+        "observed_rate": 0.10896
+      },
+      {
+        "n": 1239,
+        "mean_predicted": 0.18354,
+        "observed_rate": 0.16949
+      }
+    ]
+  },
+  "criteria": {
+    "integrity_clean": true,
+    "stage_signal": true,
+    "msmi_signal": false
+  },
+  "decision_notes": [
+    "stage signal exists but MSMI target is too rare/weak at this scale: consider more rollouts, auxiliary-target pretraining, or rarer-event strategies before the A+C policy"
+  ],
+  "decision": "PROCEED WITH CHANGES",
+  "elapsed_seconds": 531.8
+}

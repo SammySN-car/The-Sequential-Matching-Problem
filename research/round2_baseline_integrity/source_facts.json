@@ -1,0 +1,58 @@
+{
+ "facts": [
+  {
+   "classification": "CORRECT",
+   "file": "kit.py",
+   "id": "kit.baseline_match"
+  },
+  {
+   "classification": "CORRECT",
+   "file": "research/next_method_search/n01_autopsy.py",
+   "id": "n01.allocate"
+  },
+  {
+   "classification": "CORRECT_BUT_STALE_DOCUMENTATION",
+   "file": "research/round2_decision_ceiling/scripts/s1_opportunities.py",
+   "id": "s1_opportunities day_edges writer"
+  },
+  {
+   "classification": "DIRECTION_BUG",
+   "file": "research/round2_fixed_cardinality/scripts/fc_selectors.py",
+   "id": "fc_selectors F1-SCORE + solve_exact_k"
+  },
+  {
+   "classification": "DIRECTION_BUG (faithful reproduction)",
+   "file": "research/round2_missed_oracle/scripts/mo_validate.py",
+   "id": "mo_validate F1-SCORE reproduction"
+  },
+  {
+   "classification": "CORRECT (defect reproduced only as a labelled series)",
+   "file": "research/round2_goal_rule/scripts/gr_common.py",
+   "id": "gr_common weight_g1f / weight_g1m"
+  },
+  {
+   "classification": "CORRECT",
+   "file": "policy.py",
+   "id": "policy.py A+C scoring, floor, candidates"
+  },
+  {
+   "classification": "CORRECT",
+   "file": "research/method_tournament/alloc.py",
+   "id": "method_tournament greedy_take + retained methods"
+  },
+  {
+   "classification": "SUSPECTED_DIRECTION_BUG (impact decided by C5)",
+   "file": "research/round2_missed_oracle/scripts/mo_analyze.py",
+   "id": "mo_analyze baseline rank (suspected second inversion)"
+  },
+  {
+   "classification": "CORRECT (independent of the F1 defect)",
+   "file": "research/round2_missed_oracle/scripts/mo_analyze.py",
+   "id": "mo decomposition formulas (claim C)"
+  }
+ ],
+ "failures": [],
+ "generated": "2026-10-13 16:00:15",
+ "n_facts": 10,
+ "negation_scan_hits": []
+}

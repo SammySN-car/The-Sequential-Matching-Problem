@@ -1,0 +1,185 @@
+{
+  "experiment": "round2_stagewise_reward_solver",
+  "task": 2,
+  "script": "scripts/srws_solver_test.py",
+  "master_seed": 20261014,
+  "scale": 1.0,
+  "elapsed_seconds": 171.721,
+  "total_cases": 11200,
+  "feasible_cases": 9071,
+  "infeasible_cases": 2129,
+  "gates": {
+    "C1_bruteforce_objective": {
+      "pass": true,
+      "objective_mismatch": 0,
+      "feasibility_mismatch": 0
+    },
+    "C2_determinism": {
+      "pass": true,
+      "det_fail": 0
+    },
+    "C3_structure": {
+      "pass": true,
+      "struct_fail": 0
+    },
+    "C4_tie_policy": {
+      "pass": true,
+      "tie_mismatch": 0
+    },
+    "C5_crosscheck_old_solver": {
+      "pass": true,
+      "agree": 8406,
+      "disagree": 665,
+      "disagree_explained_old_float_or_limit": 665,
+      "disagree_new_solver_suboptimal": 0,
+      "skipped_infeasible_or_node_limit": 0,
+      "note": "old fc_matching uses float EPS=1e-9 + node limit; divergences on near-tie/last-bit cases are expected and, when the new solver's objective equals the exhaustive optimum, attributed to the old solver."
+    },
+    "C6_exactk_from_greedy": {
+      "pass": true,
+      "checked": 9071,
+      "violations": 0,
+      "note": "evaluated on generated graphs (k = greedy matching cardinality); benchmark-state (S.7) restatement runs in Task 4 corpus."
+    },
+    "volume_min_10000": {
+      "pass": true,
+      "required": 10000,
+      "actual": 11200
+    }
+  },
+  "per_family": {
+    "F1-empty": {
+      "cases": 500,
+      "feasible": 146,
+      "infeasible": 354,
+      "objective_mismatch": 0,
+      "tie_mismatch": 0,
+      "det_fail": 0,
+      "struct_fail": 0,
+      "old_agree": 146,
+      "old_disagree": 0,
+      "c6_checked": 146,
+      "c6_viol": 0
+    },
+    "F2-k0": {
+      "cases": 500,
+      "feasible": 500,
+      "infeasible": 0,
+      "objective_mismatch": 0,
+      "tie_mismatch": 0,
+      "det_fail": 0,
+      "struct_fail": 0,
+      "old_agree": 500,
+      "old_disagree": 0,
+      "c6_checked": 500,
+      "c6_viol": 0
+    },
+    "F3-isolated-oddeven": {
+      "cases": 1200,
+      "feasible": 1013,
+      "infeasible": 187,
+      "objective_mismatch": 0,
+      "tie_mismatch": 0,
+      "det_fail": 0,
+      "struct_fail": 0,
+      "old_agree": 1013,
+      "old_disagree": 0,
+      "c6_checked": 1013,
+      "c6_viol": 0
+    },
+    "F4-sparse": {
+      "cases": 2200,
+      "feasible": 1546,
+      "infeasible": 654,
+      "objective_mismatch": 0,
+      "tie_mismatch": 0,
+      "det_fail": 0,
+      "struct_fail": 0,
+      "old_agree": 1546,
+      "old_disagree": 0,
+      "c6_checked": 1546,
+      "c6_viol": 0
+    },
+    "F5-dense": {
+      "cases": 1500,
+      "feasible": 1483,
+      "infeasible": 17,
+      "objective_mismatch": 0,
+      "tie_mismatch": 0,
+      "det_fail": 0,
+      "struct_fail": 0,
+      "old_agree": 1483,
+      "old_disagree": 0,
+      "c6_checked": 1483,
+      "c6_viol": 0
+    },
+    "F6-equal-weight-tie": {
+      "cases": 1500,
+      "feasible": 1463,
+      "infeasible": 37,
+      "objective_mismatch": 0,
+      "tie_mismatch": 0,
+      "det_fail": 0,
+      "struct_fail": 0,
+      "old_agree": 1463,
+      "old_disagree": 0,
+      "c6_checked": 1463,
+      "c6_viol": 0
+    },
+    "F7-zero-nearzero": {
+      "cases": 1000,
+      "feasible": 968,
+      "infeasible": 32,
+      "objective_mismatch": 0,
+      "tie_mismatch": 0,
+      "det_fail": 0,
+      "struct_fail": 0,
+      "old_agree": 838,
+      "old_disagree": 130,
+      "c6_checked": 968,
+      "c6_viol": 0
+    },
+    "F8-close-float": {
+      "cases": 1000,
+      "feasible": 972,
+      "infeasible": 28,
+      "objective_mismatch": 0,
+      "tie_mismatch": 0,
+      "det_fail": 0,
+      "struct_fail": 0,
+      "old_agree": 437,
+      "old_disagree": 535,
+      "c6_checked": 972,
+      "c6_viol": 0
+    },
+    "F9-greedy-block": {
+      "cases": 800,
+      "feasible": 800,
+      "infeasible": 0,
+      "objective_mismatch": 0,
+      "tie_mismatch": 0,
+      "det_fail": 0,
+      "struct_fail": 0,
+      "old_agree": 800,
+      "old_disagree": 0,
+      "c6_checked": 800,
+      "c6_viol": 0
+    },
+    "F10-infeasible-structural": {
+      "cases": 1000,
+      "feasible": 180,
+      "infeasible": 820,
+      "objective_mismatch": 0,
+      "tie_mismatch": 0,
+      "det_fail": 0,
+      "struct_fail": 0,
+      "old_agree": 180,
+      "old_disagree": 0,
+      "c6_checked": 180,
+      "c6_viol": 0
+    }
+  },
+  "failing_cases": [],
+  "benchmark_state_note": "C2/C5/C6 reference 'every benchmark state (S.7)'. The S.7 corpus is materialised in Task 4 (srws_benchmark.py); this Task-2 battery validates the identical correctness properties on the >=10k generated small-graph population and cross-checks the old solver there. Benchmark-state restatements are appended to results when the corpus exists.",
+  "passed": true
+}

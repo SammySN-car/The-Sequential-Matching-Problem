@@ -1,0 +1,148 @@
+{
+  "task": "Broad research/audit-only next-strategy review for the Romeo-and-Juliet (Vouchsafe) sequential reciprocal matching challenge (MSMI objective).",
+  "date": "2026-10-07",
+  "constraints_observed": [
+    "no simulator episodes for decisions; no retraining; no threshold tuning; no commits",
+    "frozen files untouched: policy.py, policy_ac.py, kit.py, evaluate.py, organise.py, Dockerfile",
+    "new artifacts only under research/next_strategy_research/"
+  ],
+  "header": {
+    "current_best_policy": "policy.py greedy (count-of-equal-soft-fields, always-take, full hard-ask saturation); promotion seeds 107-118",
+    "current_best_msmi_per_100": 0.4931,
+    "current_intros_per_100": 38.1,
+    "current_mutual_per_100": 5.417,
+    "current_ask_units_per_episode": 203,
+    "biggest_unresolved_opportunity": {
+      "description": "REL-reveal + analytic scorer raises expected pair-value sum +18.7% (0.784 -> 0.931, W/T/L 67/1/4 over 72 worlds), never tested live",
+      "evidence_label": "established by our experiments (offline, replica-validated); live transfer untested"
+    },
+    "biggest_waste": {
+      "description": "517 free ask-units per episode idle (456 on days 22-59) after hard-ask saturation at day ~19.4; REL reveal costs only ~225.5 units",
+      "evidence_label": "established by our experiments"
+    }
+  },
+  "headline_findings": [
+    {
+      "finding": "Current count score Spearman vs true pair value = 0.120 (nearly blind)",
+      "label": "established by our experiments"
+    },
+    {
+      "finding": "Analytic score + REL fully revealed: +18.7% expected pair value, W/T/L 67/1/4; equals revealed-truth condition because the analytic scorer reads only the 4 outcome-relevant fields",
+      "label": "established by our experiments (offline)"
+    },
+    {
+      "finding": "REL-reveal with count score alone: +7.5% (56/1/15); analytic alone: +5.2% (51/0/21); all-7 reveal dilutes to +4.3%",
+      "label": "established by our experiments (offline)"
+    },
+    {
+      "finding": "Combined gains hold under default weights on every variant (shift +0.119, cold_start +0.228, sparse +0.030); variant is not observable in state",
+      "label": "established by our experiments (offline)"
+    },
+    {
+      "finding": "Allocation gap ~0: MWM vs greedy +0.0008 current score, -0.020 under best score (MWM trades cardinality for score; total value falls)",
+      "label": "established by our experiments"
+    },
+    {
+      "finding": "Ask headroom: 0/61/456 free units by phase, 517 total, ~203 spent, hard-ask exhaust day 19.43",
+      "label": "established by our experiments"
+    },
+    {
+      "finding": "Direct-MSMI model: AUC 0.594 CI [0.567,0.621], logloss worse than constant; mutual 0.613; relational soft features dominate",
+      "label": "established by our experiments"
+    },
+    {
+      "finding": "Frozen logs support supervised counterfactual labels (98.7% of greedy pairs have independent random-collector label; same world/pair/day deterministic 4251/4251) but NOT OPE/IPS (deterministic propensities)",
+      "label": "established by our experiments (data audit) + suggested by literature (OPE limits)"
+    },
+    {
+      "finding": "Cold-start better attacked with asks than history features (cold_start reveals +0.118/+0.228 vs stage4 MSMI history CI includes 0)",
+      "label": "established by our experiments (offline) / stage4"
+    }
+  ],
+  "validation": {
+    "greedy_replica_all_ok_72_worlds": true,
+    "official_assignments_le_static_edges_seed107_all_variants": true,
+    "research_world_50000_development": "89 introduced pairs subset of 90 static edges, 0 outside, 0 declined-hard members introduced",
+    "deployable_scores_use_default_kit_weights": true
+  },
+  "axes": {
+    "A_soft_field_value_of_information": "PRIMARY OPPORTUNITY - measured +18.7% combined; ask REL only (4 outcome fields), VoI-gated, inside idle budget",
+    "B_selective_labels_prediction": "Do not retrain direct-MSMI scorer; no OPE from deterministic logs; live paired evaluation only",
+    "C_matching_allocation": "STOP - measured ~0/negative under all scores",
+    "D_sequential_wait_hold": "Third-tier - option value only days 0-19 (arrivals end day 20); untested; volume-suppression risk",
+    "E_cold_start_history": "STOP for scorer (stage4 inconclusive for MSMI); member-level bias/response estimation is the only untapped remnant (weak)",
+    "F_literature": "Optimizer's curse, value-of-information ask acquisition, selective labels/ES funnel, robust matching bounds, dynamic-market waiting"
+  },
+  "decision_tree": [
+    {
+      "rank": 1,
+      "id": "E3",
+      "experiment": "Analytic scorer (default weights, missing->prior) + VoI-gated REL soft asks, new policy file",
+      "why": "captures full +18.7% offline, fits 225.5/517 idle budget",
+      "on_failure": "decompose via E1/E2"
+    },
+    {
+      "rank": 2,
+      "id": "E1",
+      "experiment": "REL soft asks only (count score unchanged)",
+      "why": "isolates information mechanism (+7.5% offline), low-risk shippable subset"
+    },
+    {
+      "rank": 3,
+      "id": "E2",
+      "experiment": "Analytic scorer only (no new asks)",
+      "why": "isolates scoring mechanism (+5.2% offline), zero ask-budget risk"
+    },
+    {
+      "rank": 4,
+      "id": "E4",
+      "experiment": "Wait/hold reservation gate, days 0-19 only",
+      "why": "dynamic-market option value [plausible but untested]; only if 1-3 neutral with volume intact"
+    },
+    {
+      "rank": 5,
+      "id": "E5",
+      "experiment": "Member-level response/bias estimation from feedback logs",
+      "why": "axis-E remnant, weak evidence"
+    },
+    {
+      "rank": 6,
+      "id": "STOP",
+      "experiment": "Do not run: MWM/allocation, hard-ask expansion, A+C floor/threshold tuning, A+C matcher tweaks, direct-MSMI retrain, variant-aware weights"
+    }
+  ],
+  "experiment_protocol": {
+    "arms": "greedy control + E1 + E2 + E3 (paired, fresh seeds x all 6 variants)",
+    "primary_metric": "MSMI/100 vs 0.4931",
+    "guardrails": "intros/100 >= 36 (base 38.10); mutual/100 >= 5.2 (base 5.417); ask <= 12/day",
+    "stopping_rules": "stop arm on volume collapse or budget violation; report paired W/T/L (n=12 detects ~0.2-scale at paired SD ~0.24)",
+    "implementation_surface": "new policy file only; evaluate.py invocation contract unchanged"
+  },
+  "recommendation": "Run E3 next: new policy scoring feasible pairs with the analytic scorer on default kit weights and spending idle budget on VoI-gated REL soft asks before introductions, paired vs official greedy on fresh seeds across 6 variants; keep allocation/history/threshold lines closed.",
+  "community_wisdom": [
+    {
+      "title": "Ride-Hailing Dispatch Algorithm: How Uber DISCO & Grab DispatchGym Match Drivers",
+      "url": "https://dev.to/vesviet/system-design-ride-hailing-dispatch-algorithm-how-uber-disco-grab-dispatchgym-match-drivers-pp4",
+      "relevance": "greedy vs batched global matching; batching needs simultaneous requests - our batch=1 setting explains measured MWM gap ~0"
+    },
+    {
+      "title": "Debiasing Graph Neural Networks for Recommendation with Causal RL",
+      "url": "https://dev.to/tasfinmahmud/debiasing-graph-neural-networks-for-recommendation-with-causal-rl-2783",
+      "relevance": "exposure-bias feedback loops and IPS needing exposure probabilities - matches our no-OPE-from-deterministic-logs audit"
+    }
+  ],
+  "caveats": [
+    "v_oracle is a transparent proxy (shared first date=0, drift ignored, date-window ignored)",
+    "static analysis cannot distinguish delayed/drift variants (no RNG branch in kit.generate)",
+    "offline +18.7% is expected pair value, not live MSMI - transfer is the hypothesis E3 tests",
+    "training-data label agreement is inflated by ~99% negative base rates"
+  ],
+  "artifacts": [
+    "research/next_strategy_research/report.md",
+    "research/next_strategy_research/static_analysis.py",
+    "research/next_strategy_research/static_analysis.json",
+    "research/next_strategy_research/data_analysis.py",
+    "research/next_strategy_research/data_analysis.json",
+    "research/next_strategy_research/summary.json"
+  ]
+}
