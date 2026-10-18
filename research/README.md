@@ -16,7 +16,7 @@ raw dumps: `states.jsonl` (85 MB), `out_scale800/rows.csv` (83 MB),
 per-experiment dumps (5.3-8.3 MB): `stage_funnel.jsonl` (8.3 MB),
 `day_edges.jsonl` (8.1 MB), `n01_introductions.jsonl` (7.9 MB),
 `selector_sets.jsonl` (7.7 MB), `per_state_results.jsonl` (6.9 MB),
-`oof_scores.jsonl` (5.8 MB) and `stage_oof_scores.json` (5.3 MB).
+`oof_scores.jsonl` (5.7 MB) and `stage_oof_scores.json` (5.3 MB).
 Tests that need an excluded dump skip when the file is absent instead of
 failing (e.g. the export check-mode test skips without `out_scale800/rows.csv`).
 
@@ -72,8 +72,8 @@ appendix at the bottom preserves the imported Round 1 pipeline README.
 ### next_strategy_research
 - **Question:** where is the remaining value? Audit-only review of scoring
   concordance, idle ask budget and prior evidence (no episodes, no tuning).
-- **Verdict:** see report - no verdict recorded (audit only; the "+18.7%"
-  opportunity is explicitly untested live).
+- **Verdict:** no single verdict; per-axis verdicts (A-F) in the report (audit
+  only; the "+18.7%" opportunity is explicitly untested live).
 - **Key numbers:** Spearman 0.12 between the collector score and true pair
   value; +18.7% offline expected pair value (replica-validated); 517 free ask
   units per episode unused; current best MSMI/100 0.4931 (seeds 107-118).
