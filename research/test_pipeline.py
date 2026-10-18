@@ -908,6 +908,14 @@ class TestExportParityGates(unittest.TestCase):
 class TestExportCheckMode(unittest.TestCase):
     """--check verifies the embedded blob read-only: never rewrites policy.py."""
 
+    @classmethod
+    def setUpClass(cls):
+        rows_path = REPO_ROOT / 'research' / 'out_scale800' / 'rows.csv'
+        if not rows_path.exists():
+            raise unittest.SkipTest(
+                'research/out_scale800/rows.csv not present '
+                '(bulk input excluded from the curated branch)')
+
     def test_check_mode_passes_and_does_not_write_policy(self):
         import subprocess
         import sys

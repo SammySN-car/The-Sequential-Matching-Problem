@@ -13,6 +13,8 @@ snapshots/states/labels), `hard_constraint_clarification/tmp/` and
 raw dumps: `states.jsonl` (85 MB), `out_scale800/rows.csv` (83 MB),
 `pair_state.jsonl` (39 MB), `feasible_edges_val.jsonl` (23 MB),
 `counterfactual_pairs.jsonl` (17 MB) and `out/rows.csv` (10 MB).
+Tests that need an excluded dump skip when the file is absent instead of
+failing (e.g. the export check-mode test skips without `out_scale800/rows.csv`).
 
 Each entry in the index below states: name -> question -> verdict -> key
 numbers -> entry-point file. Claims are strictly from that folder's own
