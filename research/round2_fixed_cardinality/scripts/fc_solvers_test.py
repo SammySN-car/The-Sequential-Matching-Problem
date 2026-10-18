@@ -50,6 +50,12 @@ say('  synthetic checks=%d  disagreements=%d  constraint_fail=%d  det_fail=%d  (
 
 # ---------- (b) real study graphs -------------------------------------------
 say('--- V-SOLV-01b: every real state with n_edges <= 16, all four weightings ---')
+REQUIRED = ('counterfactual_pairs.jsonl', 'oof_scores.jsonl', 'day_edges.jsonl')
+missing = [n for n in REQUIRED if not (c.OUT / n).exists()]
+if missing:
+    say('SKIP: %s not present (excluded from the curated branch; see '
+        'research/README.md)' % ', '.join(missing))
+    sys.exit(0)
 labels = defaultdict(dict)
 for line in open(c.OUT / 'counterfactual_pairs.jsonl', encoding='utf-8'):
     r = json.loads(line)

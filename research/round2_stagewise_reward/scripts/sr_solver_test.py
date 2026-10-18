@@ -1251,6 +1251,13 @@ def main(argv=None):
     parser.add_argument('--quick', action='store_true',
                         help='fast smoke subset; prints only, writes no files')
     args = parser.parse_args(argv)
+    guarded = (('data/states.jsonl', STATES),
+               ('data/states/seed_40001.jsonl', PILOT_STATES))
+    missing = [name for name, path in guarded if not path.exists()]
+    if missing:
+        say('SKIP: %s not present (excluded from the curated branch; see '
+            'research/README.md)' % ', '.join(missing))
+        return 0
     doc = None
     try:
         doc, _v3 = run_battery(quick=args.quick)

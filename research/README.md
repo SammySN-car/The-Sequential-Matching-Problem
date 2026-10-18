@@ -12,7 +12,11 @@ snapshots/states/labels), `hard_constraint_clarification/tmp/` and
 `hard_constraint_clarification/logs/`, and every file >= 5 MB - the six large
 raw dumps: `states.jsonl` (85 MB), `out_scale800/rows.csv` (83 MB),
 `pair_state.jsonl` (39 MB), `feasible_edges_val.jsonl` (23 MB),
-`counterfactual_pairs.jsonl` (17 MB) and `out/rows.csv` (10 MB).
+`counterfactual_pairs.jsonl` (17 MB) and `out/rows.csv` (10 MB), plus seven
+per-experiment dumps (5.3-8.3 MB): `stage_funnel.jsonl` (8.3 MB),
+`day_edges.jsonl` (8.1 MB), `n01_introductions.jsonl` (7.9 MB),
+`selector_sets.jsonl` (7.7 MB), `per_state_results.jsonl` (6.9 MB),
+`oof_scores.jsonl` (5.8 MB) and `stage_oof_scores.json` (5.3 MB).
 Tests that need an excluded dump skip when the file is absent instead of
 failing (e.g. the export check-mode test skips without `out_scale800/rows.csv`).
 
