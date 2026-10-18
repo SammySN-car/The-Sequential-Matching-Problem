@@ -418,6 +418,17 @@ class TestIntegrity(unittest.TestCase):
                     'snapshot_unchanged', 'label_stability', 'determinism'):
             self.assertTrue(report['checks'][key], (key, report))
 
+
+def _have_sklearn():
+    try:
+        import numpy  # noqa: F401
+        import sklearn  # noqa: F401
+        return True
+    except ImportError:
+        return False
+
+
+@unittest.skipUnless(_have_sklearn(), 'numpy+sklearn required')
 class TestAnalyze(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -506,6 +517,7 @@ class TestAnalyze(unittest.TestCase):
         self.assertEqual(leakage_audit(), [])
         self.assertTrue(features.audit_feature_keys(['truth', 'bias', 'seed']))
 
+@unittest.skipUnless(_have_sklearn(), 'numpy+sklearn required')
 class TestStageTargets(unittest.TestCase):
     def test_mutual_and_date_labels(self):
         from labels import label_mutual, label_date
@@ -551,6 +563,7 @@ class TestStageTargets(unittest.TestCase):
         X2, y2, _ = build_dataset(rows, feature_keys=['x'], target='label')
         self.assertEqual(list(y2), [1, 0])
 
+@unittest.skipUnless(_have_sklearn(), 'numpy+sklearn required')
 class TestDriver(unittest.TestCase):
     def test_flatten_row_handles_meta_targets_and_nan(self):
         from run_experiment import flatten_row, META_COLUMNS, FEATURE_COLUMN_PREFIX
@@ -588,6 +601,7 @@ class TestDriver(unittest.TestCase):
         sections = {'integrity_clean': True, 'stage_signal': True, 'msmi_signal': True}
         self.assertEqual(decide(sections), 'PROCEED')
 
+@unittest.skipUnless(_have_sklearn(), 'numpy+sklearn required')
 class TestReviewFixes(unittest.TestCase):
     def _row(self, **over):
         from features import FEATURE_KEYS
@@ -704,6 +718,7 @@ class TestReviewFixes(unittest.TestCase):
         self.assertEqual(first, [ (r['world_seed'], r['day'], r['a']) for r in rows ])
 
 
+@unittest.skipUnless(_have_sklearn(), 'numpy+sklearn required')
 class TestScaleUpAdditions(unittest.TestCase):
     """Scale-up run additions: AUC confidence intervals + split-overlap proof."""
 
@@ -797,15 +812,6 @@ class TestScaleUpAdditions(unittest.TestCase):
         self.assertIn('AUC CI95 [0.4500, 0.5900]', text)
         self.assertIn('split overlap', text)
         self.assertIn('0 worlds / 0 seeds', text)
-
-
-def _have_sklearn():
-    try:
-        import numpy  # noqa: F401
-        import sklearn  # noqa: F401
-        return True
-    except ImportError:
-        return False
 
 
 @unittest.skipUnless(_have_sklearn(), 'numpy+sklearn required')
